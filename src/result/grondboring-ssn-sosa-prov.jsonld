@@ -159,6 +159,26 @@
             "@id": "rdfs:range",
             "@type": "@id"
         },
+        "madeBySensor": {
+            "@id": "sosa:madeBySensor",
+            "@type": "@id"
+        },
+        "observedProperty": {
+            "@id": "sosa:observedProperty",
+            "@type": "@id"
+        },
+        "subject": {
+            "@id": "dcterms:subject",
+            "@type": "@id"
+        },
+        "isPropertyOf": {
+            "@id": "ssn:isPropertyOf",
+            "@type": "@id"
+        },
+        "wasOriginatedBy": {
+            "@id": "ssn:wasOriginatedBy",
+            "@type": "@id"
+        },
         "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
         "adms": "http://www.w3.org/ns/adms#",
         "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",

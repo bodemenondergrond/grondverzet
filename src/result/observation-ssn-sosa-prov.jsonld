@@ -159,6 +159,26 @@
             "@id": "rdfs:range",
             "@type": "@id"
         },
+        "madeBySensor": {
+            "@id": "sosa:madeBySensor",
+            "@type": "@id"
+        },
+        "observedProperty": {
+            "@id": "sosa:observedProperty",
+            "@type": "@id"
+        },
+        "subject": {
+            "@id": "dcterms:subject",
+            "@type": "@id"
+        },
+        "isPropertyOf": {
+            "@id": "ssn:isPropertyOf",
+            "@type": "@id"
+        },
+        "wasOriginatedBy": {
+            "@id": "ssn:wasOriginatedBy",
+            "@type": "@id"
+        },
         "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
         "adms": "http://www.w3.org/ns/adms#",
         "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",
@@ -237,7 +257,7 @@
                 "unitMeasure": "qudt-unit:M",
                 "value": "20.0"
             },
-            "sosa:madeBySensor": {
+            "madeBySensor": {
                 "@id": "ag:agent001",
                 "@type": "dcterms:Agent",
                 "actedOnBehalfOf": {
@@ -245,15 +265,11 @@
                     "@type": "dcterms:Agent"
                 }
             },
-            "sosa:observedProperty": {
+            "observedProperty": {
                 "@id": "obs_prop:diepte_boorgat001",
                 "@type": "sosa:ObservableProperty",
-                "dcterms:subject": {
-                    "@id": "prop:diepte"
-                },
-                "ssn:isPropertyOf": {
-                    "@id": "boorgat:boorgat001"
-                }
+                "subject": "prop:diepte",
+                "isPropertyOf": "boorgat:boorgat001"
             },
             "phenomenonTime": {
                 "@id": "moment:boring1965-068140",
@@ -265,7 +281,7 @@
                 "@id": "cl-bpt:meten_van_de_diepte_van_een_gat",
                 "@type": "sosa:Procedure"
             },
-            "ssn:wasOriginatedBy": {
+            "wasOriginatedBy": {
                 "@id": "opdracht:2007-005512",
                 "@type": "boe:Opdracht",
                 "wasAttributedTo": "ag:agent003"
@@ -310,20 +326,18 @@
                 "unitMeasure": "qudt-unit:PERCENT",
                 "value": "24.0"
             },
-            "sosa:madeBySensor": {
+            "madeBySensor": {
                 "@id": "ag:agent003",
                 "@type": "dcterms:Agent"
             },
-            "sosa:observedProperty": {
+            "observedProperty": {
                 "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
                 "@type": "sosa:ObservableProperty",
-                "dcterms:subject": {
+                "subject": {
                     "@id": "prop:kleigehalte",
                     "@type": "skos:Concept"
                 },
-                "ssn:isPropertyOf": {
-                    "@id": "result:boorgat001-sam1965-068140-a"
-                }
+                "isPropertyOf": "result:boorgat001-sam1965-068140-a"
             },
             "phenomenonTime": {
                 "@id": "moment:boring1965-068140",
@@ -335,7 +349,7 @@
                 "@id": "cl-bpt:bepaling_kleigehalte",
                 "@type": "sosa:Procedure"
             },
-            "ssn:wasOriginatedBy": {
+            "wasOriginatedBy": {
                 "@id": "opdracht:2007-005512",
                 "@type": "boe:Opdracht",
                 "wasAttributedTo": "ag:agent003"
