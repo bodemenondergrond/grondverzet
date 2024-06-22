@@ -258,8 +258,13 @@
                     "asWKT": "POINT(4.5660602119239 51.219401186425)"
                 },
                 "hasProperty": {
-                    "@id": "prop:diepte",
-                    "@type": "skos:Concept"
+                    "@id": "obs_prop:diepte_boorgat001",
+                    "@type": "sosa:ObservableProperty",
+                    "subject": {
+                        "@id": "prop:diepte",
+                        "@type": "skos:Concept"
+                    },
+                    "isPropertyOf": "boorgat:boorgat001"
                 }
             },
             "hasResult": {
@@ -322,8 +327,13 @@
                     "asWKT": "POINT(4.5660602119239 51.219401186425)"
                 },
                 "hasProperty": {
-                    "@id": "prop:diepte",
-                    "@type": "skos:Concept"
+                    "@id": "obs_prop:diepte_boorgat001",
+                    "@type": "sosa:ObservableProperty",
+                    "subject": {
+                        "@id": "prop:diepte",
+                        "@type": "skos:Concept"
+                    },
+                    "isPropertyOf": "boorgat:boorgat001"
                 }
             },
             "hasResult": {
@@ -378,8 +388,13 @@
                     "asWKT": "POINT(4.5660602119239 51.219401186425)"
                 },
                 "hasProperty": {
-                    "@id": "prop:diepte",
-                    "@type": "skos:Concept"
+                    "@id": "obs_prop:diepte_boorgat001",
+                    "@type": "sosa:ObservableProperty",
+                    "subject": {
+                        "@id": "prop:diepte",
+                        "@type": "skos:Concept"
+                    },
+                    "isPropertyOf": "boorgat:boorgat001"
                 }
             },
             "hasResult": {

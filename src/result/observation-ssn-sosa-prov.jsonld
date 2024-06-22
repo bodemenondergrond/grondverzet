@@ -251,8 +251,13 @@
                     "asWKT": "POINT(4.5660602119239 51.219401186425)"
                 },
                 "hasProperty": {
-                    "@id": "prop:diepte",
-                    "@type": "skos:Concept"
+                    "@id": "obs_prop:diepte_boorgat001",
+                    "@type": "sosa:ObservableProperty",
+                    "subject": {
+                        "@id": "prop:diepte",
+                        "@type": "skos:Concept"
+                    },
+                    "isPropertyOf": "boorgat:boorgat001"
                 }
             },
             "hasResult": {
@@ -269,12 +274,7 @@
                     "@type": "prov:Agent"
                 }
             },
-            "observedProperty": {
-                "@id": "obs_prop:diepte_boorgat001",
-                "@type": "sosa:ObservableProperty",
-                "subject": "prop:diepte",
-                "isPropertyOf": "boorgat:boorgat001"
-            },
+            "observedProperty": "obs_prop:diepte_boorgat001",
             "phenomenonTime": {
                 "@id": "moment:boring1965-068140",
                 "@type": "time:Instant",
@@ -307,9 +307,23 @@
                         "asWKT": "POINT(4.5660602119239 51.219401186425)"
                     },
                     "hasProperty": {
-                        "@id": "prop:diepte",
-                        "@type": "skos:Concept"
+                        "@id": "obs_prop:diepte_boorgat001",
+                        "@type": "sosa:ObservableProperty",
+                        "subject": {
+                            "@id": "prop:diepte",
+                            "@type": "skos:Concept"
+                        },
+                        "isPropertyOf": "boorgat:boorgat001"
                     }
+                },
+                "hasProperty": {
+                    "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
+                    "@type": "sosa:ObservableProperty",
+                    "subject": {
+                        "@id": "prop:kleigehalte",
+                        "@type": "skos:Concept"
+                    },
+                    "isPropertyOf": "result:boorgat001-sam1965-068140-a"
                 },
                 "sampleDiepteTot": {
                     "@id": "result:boorgat001-sam1965-068140-a-tot",
@@ -334,15 +348,7 @@
                 "@id": "ag:agent003",
                 "@type": "prov:Agent"
             },
-            "observedProperty": {
-                "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
-                "@type": "sosa:ObservableProperty",
-                "subject": {
-                    "@id": "prop:kleigehalte",
-                    "@type": "skos:Concept"
-                },
-                "isPropertyOf": "result:boorgat001-sam1965-068140-a"
-            },
+            "observedProperty": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
             "phenomenonTime": {
                 "@id": "moment:boring1965-068140",
                 "@type": "time:Instant",

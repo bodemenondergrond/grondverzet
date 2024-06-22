@@ -321,8 +321,13 @@
                     "asWKT": "POINT(4.5660602119239 51.219401186425)"
                 },
                 "hasProperty": {
-                    "@id": "prop:diepte",
-                    "@type": "skos:Concept"
+                    "@id": "obs_prop:diepte_boorgat001",
+                    "@type": "sosa:ObservableProperty",
+                    "subject": {
+                        "@id": "prop:diepte",
+                        "@type": "skos:Concept"
+                    },
+                    "isPropertyOf": "boorgat:boorgat001"
                 }
             },
             "hasResult": {
@@ -456,6 +461,15 @@
                 "@id": "result:boorgat001-sam1965-068140-a",
                 "@type": "sosa:Sample",
                 "isSampleOf": "boorgat:boorgat001",
+                "hasProperty": {
+                    "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
+                    "@type": "sosa:ObservableProperty",
+                    "subject": {
+                        "@id": "prop:kleigehalte",
+                        "@type": "skos:Concept"
+                    },
+                    "isPropertyOf": "result:boorgat001-sam1965-068140-a"
+                },
                 "sampleDiepteTot": {
                     "@id": "result:boorgat001-sam1965-068140-a-tot",
                     "@type": "grondboringbeno:Diepte",

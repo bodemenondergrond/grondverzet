@@ -212,6 +212,7 @@ sam:1965-068140-a  a   sosa:Sampling ; #grondboringen:Grondboring;
 result:boorgat001-sam1965-068140-a a sosa:Sample ;
                                    grondboringbeno:sampleDiepteVan result:boorgat001-sam1965-068140-a-van ;
                                    grondboringbeno:sampleDiepteTot result:boorgat001-sam1965-068140-a-tot ;
+                                   ssn:hasProperty   obs_prop:kleigehalte_boorgat001-sam1965-068140-a;
                                    sosa:isSampleOf boorgat:boorgat001 .
 
 result:boorgat001-sam1965-068140-a-van 	a grondboringbeno:Diepte ;
@@ -334,7 +335,7 @@ result:boorgat001-act1965-068140-3 a sosa:Result ;
                                    schema:about boorgat:boorgat001 .
 
 boorgat:boorgat001 a grondboringbeno:Boorgat ; # sosa:Result, geosparql:Feature  ;
-                   ssn:hasProperty prop:diepte ;
+                   ssn:hasProperty obs_prop:diepte_boorgat001 ;
                    geosparql:hasGeometry geometrie:boorgat001 .
 
 

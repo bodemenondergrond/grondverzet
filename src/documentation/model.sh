@@ -1,8 +1,4 @@
 #!/bin/bash
-  sparql --results=TTL --data=../source/grondboring-ssn-sosa-prov.ttl --query model.rq  > model.ttl
-  rdf2dot  model.ttl | dot -Tpng > model.png
-  rdf2dot  model.ttl  > model.dot
-
   sparql --results=TTL --data=../result/grondboring-ssn-sosa-prov.jsonld --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > model_grondboring.png
 
