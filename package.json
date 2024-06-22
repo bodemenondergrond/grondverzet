@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "name": "grondverzet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main/nodejs/01_codelijst_skos_from_csv.js",
+
+  "keywords": [
+    "milieuinfo",
+    "linked data",
+    "skos",
+    "rdfjs",
+    "dcat",
+    "maven"
+  ],
+  "author": "Vlaamse Overheid, Departement omgeving",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
