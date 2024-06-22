@@ -1,9 +1,10 @@
 @prefix act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/> .
 @prefix adms:                <http://www.w3.org/ns/adms#> .
-@prefix agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
-@prefix association:         <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
+@prefix ag:                  <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
+@prefix ass:                 <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
 @prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
 @prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
+@prefix boe:                 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#> .
 @prefix boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
 @prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
 @prefix boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/> .
@@ -60,70 +61,6 @@
 geosparql:Geometry  rdf:type  "rdfs:Resource";
         geosparql:asWKT  "http://www.opengis.net/ont/geosparql#wktLiteral" .
 
-sosa:Sampling  rdf:type            "rdfs:Resource";
-        adms:identifier            adms:Identifier;
-        sosa:hasFeatureOfInterest  grondboringbeno:Boorgat;
-        sosa:hasResult             sosa:Sample;
-        sosa:madeByActuator        grondboringen:Boor;
-        sosa:resultTime            time:Instant;
-        sosa:usedProcedure         sosa:Procedure .
-
-sosa:Actuation  rdf:type           "rdfs:Resource";
-        adms:identifier            adms:Identifier;
-        sosa:hasFeatureOfInterest  grondboringbeno:Boorgat;
-        sosa:hasResult             sosa:Result;
-        sosa:madeByActuator        grondboringen:Boor;
-        sosa:resultTime            "http://www.w3.org/2001/XMLSchema#dateTime";
-        sosa:resultTime            time:Instant;
-        sosa:usedProcedure         sosa:Procedure .
-
-time:Instant  rdf:type      "rdfs:Resource";
-        time:inXSDDateTime  "http://www.w3.org/2001/XMLSchema#dateTime" .
-
-sosa:Procedure  rdf:type  "rdfs:Resource";
-        rdfs:seeAlso     "rdfs:Resource";
-        skos:exactMatch  sosa:Procedure .
-
-grondboringbeno:Boorgat
-        rdf:type               "rdfs:Resource";
-        geosparql:hasGeometry  geosparql:Geometry;
-        ssn:hasProperty        skos:Concept .
-
-sosa:Observation  rdf:type         "rdfs:Resource";
-        adms:identifier            "rdfs:Resource";
-        sosa:hasFeatureOfInterest  sosa:Sample , grondboringbeno:Boorgat;
-        sosa:hasResult             sosa:Result;
-        sosa:madeBySensor          dcterms:Agent;
-        sosa:observedProperty      sosa:ObservableProperty;
-        sosa:phenomenonTime        time:Instant;
-        sosa:resultTime            "http://www.w3.org/2001/XMLSchema#dateTime";
-        sosa:usedProcedure         sosa:Procedure;
-        ssn:wasOriginatedBy        <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht> .
-
-dcterms:Agent  rdf:type       "rdfs:Resource";
-        prov:actedOnBehalfOf  dcterms:Agent .
-
-grondboringbeno:Bijlage
-        rdf:type         "rdfs:Resource";
-        rdfs:seeAlso     "rdfs:Resource";
-        dcterms:creator  dcterms:Agent;
-        dcterms:date     "http://www.w3.org/2001/XMLSchema#date";
-        schema:about     grondboringen:Grondboring .
-
-sosa:ObservableProperty
-        rdf:type          "rdfs:Resource";
-        dcterms:subject   skos:Concept;
-        ssn:isPropertyOf  grondboringbeno:Boorgat , sosa:Sample .
-
-sosa:Result  rdf:type                 "rdfs:Resource";
-        rdf:value                     "http://www.w3.org/2001/XMLSchema#integer";
-        sdmx-attribute:unitMeasure    "rdfs:Resource";
-        grondboringbeno:postconditie  grondboringbeno:Diepte;
-        grondboringbeno:preconditie   grondboringbeno:Diepte;
-        schema:about                  grondboringbeno:Boorgat .
-
-prov:Role  rdf:type  "rdfs:Resource" .
-
 sosa:Sample  rdf:type    "rdfs:Resource";
         sosa:isSampleOf  grondboringbeno:Boorgat;
         grondboringbeno:sampleDiepteTot
@@ -131,53 +68,35 @@ sosa:Sample  rdf:type    "rdfs:Resource";
         grondboringbeno:sampleDiepteVan
                 grondboringbeno:Diepte .
 
-adms:Identifier  rdf:type  "rdfs:Resource";
-        skos:notation  "https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/KBIN-BGD" , "https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/boornummer" .
+grondboringbeno:Boorgat
+        rdf:type               "rdfs:Resource";
+        geosparql:hasGeometry  geosparql:Geometry;
+        ssn:hasProperty        skos:Concept .
 
 grondboringen:Boor  rdf:type  "rdfs:Resource";
         ssn:implements  sosa:Procedure .
 
-rdf:Class  rdf:type  "rdfs:Resource";
-        rdfs:label  "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" .
-
-rdf:Property  rdf:type      "rdfs:Resource";
-        rdfs:range          rdf:Class;
-        rdfs:subPropertyOf  "rdfs:Resource" .
-
-grondboringbeno:Diepte
-        rdf:type                    rdf:Class;
-        rdf:value                   "http://www.w3.org/2001/XMLSchema#decimal" , "http://www.w3.org/2001/XMLSchema#integer";
-        sdmx-attribute:unitMeasure  "rdfs:Resource" .
-
-prov:Plan  rdf:type  "rdfs:Resource" .
-
-grondboringen:WettelijkKaderBoring
-        rdf:type  "rdfs:Resource" .
-
-rdf:List  rdf:type  "rdfs:Resource";
-        rdf:first  sosa:Actuation , sosa:Sampling;
-        rdf:rest   "rdfs:Resource";
-        rdf:rest   rdf:List .
-
-prov:Association  rdf:type  "rdfs:Resource";
-        prov:agent    dcterms:Agent;
-        prov:hadPlan  prov:Plan , grondboringen:WettelijkKaderBoring;
-        prov:hadRole  prov:Role .
+time:Instant  rdf:type      "rdfs:Resource";
+        time:inXSDDateTime  "http://www.w3.org/2001/XMLSchema#dateTime" .
 
 skos:Concept  rdf:type  "rdfs:Resource" .
 
-grondboringen:Grondboring
-        rdf:type                       "rdfs:Resource";
-        adms:identifier                "rdfs:Resource";
-        prov:qualifiedAssociation      prov:Association;
-        prov:wasStartedBy              <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht>;
-        sosa:resultTime                time:Instant;
-        grondboringbeno:actuations     rdf:List;
-        grondboringbeno:opdrachtgever  dcterms:Agent;
-        grondboringbeno:samplings      rdf:List;
-        grondboringen:boorder          dcterms:Agent;
-        grondboringen:boormeester      dcterms:Agent .
+grondboringbeno:Diepte
+        rdf:type                    "rdfs:Resource";
+        rdf:value                   "http://www.w3.org/2001/XMLSchema#decimal";
+        sdmx-attribute:unitMeasure  "rdfs:Resource" .
 
-<https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht>
-        rdf:type              "rdfs:Resource";
-        prov:wasAttributedTo  dcterms:Agent .
+adms:Identifier  rdf:type  "rdfs:Resource";
+        skos:notation  "https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/KBIN-BGD" .
+
+sosa:Procedure  rdf:type  "rdfs:Resource";
+        rdfs:seeAlso     "rdfs:Resource";
+        skos:exactMatch  sosa:Procedure .
+
+sosa:Sampling  rdf:type            "rdfs:Resource";
+        adms:identifier            adms:Identifier;
+        sosa:hasFeatureOfInterest  grondboringbeno:Boorgat;
+        sosa:hasResult             sosa:Sample;
+        sosa:madeByActuator        grondboringen:Boor;
+        sosa:phenomenonTime        time:Instant;
+        sosa:usedProcedure         sosa:Procedure .

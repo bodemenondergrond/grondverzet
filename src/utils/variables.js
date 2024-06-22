@@ -18,6 +18,16 @@ const frame_observation = {
     "@type": ["sosa:Observation"],
 
 }
+const frame_actuation = {
+    "@context": context,
+    "@type": ["sosa:Actuation"],
+
+}
+const frame_sampling = {
+    "@context": context,
+    "@type": ["sosa:Sampling"],
+
+}
 
 const sortLines = str => Array.from(new Set(str.split(/\r?\n/))).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
 
@@ -34,5 +44,7 @@ async function rdf_to_jsonld(nt, frame) {
 export {
     frame_grondboring,
     frame_observation,
+    frame_actuation,
+    frame_sampling,
     rdf_to_jsonld
 };

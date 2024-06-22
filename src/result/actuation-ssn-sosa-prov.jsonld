@@ -1,0 +1,421 @@
+{
+    "@context": {
+        "identifier": {
+            "@id": "adms:identifier",
+            "@type": "@id"
+        },
+        "qualifiedAssociation": {
+            "@id": "prov:qualifiedAssociation",
+            "@type": "@id"
+        },
+        "agent": {
+            "@id": "prov:agent",
+            "@type": "@id"
+        },
+        "actedOnBehalfOf": {
+            "@id": "prov:actedOnBehalfOf",
+            "@type": "@id"
+        },
+        "hadPlan": {
+            "@id": "prov:hadPlan",
+            "@type": "@id"
+        },
+        "hadRole": {
+            "@id": "prov:hadRole",
+            "@type": "@id"
+        },
+        "wasStartedBy": {
+            "@id": "prov:wasStartedBy",
+            "@type": "@id"
+        },
+        "wasAttributedTo": {
+            "@id": "prov:wasAttributedTo",
+            "@type": "@id"
+        },
+        "resultTime": {
+            "@id": "sosa:resultTime",
+            "@type": "xsd:dateTime"
+        },
+        "inXSDDateTime": {
+            "@id": "time:inXSDDateTime",
+            "@type": "xsd:dateTime"
+        },
+        "actuations": {
+            "@id": "grondboringbeno:actuations",
+            "@type": "@id"
+        },
+        "first": {
+            "@id": "rdf:first",
+            "@type": "@id"
+        },
+        "notation": {
+            "@id": "skos:notation"
+        },
+        "hasFeatureOfInterest": {
+            "@id": "sosa:hasFeatureOfInterest",
+            "@type": "@id"
+        },
+        "hasGeometry": {
+            "@id": "geosparql:hasGeometry",
+            "@type": "@id"
+        },
+        "asWKT": {
+            "@id": "geosparql:asWKT",
+            "@type": "geosparql:wktLiteral"
+        },
+        "hasProperty": {
+            "@id": "ssn:hasProperty",
+            "@type": "@id"
+        },
+        "hasResult": {
+            "@id": "sosa:hasResult",
+            "@type": "@id"
+        },
+        "postconditie": {
+            "@id": "grondboringbeno:postconditie",
+            "@type": "@id"
+        },
+        "unitMeasure": {
+            "@id": "sdmx-attribute:unitMeasure",
+            "@type": "@id"
+        },
+        "value": {
+            "@id": "rdf:value",
+            "@type": "xsd:decimal"
+        },
+        "preconditie": {
+            "@id": "grondboringbeno:preconditie",
+            "@type": "@id"
+        },
+        "about": {
+            "@id": "schema:about",
+            "@type": "@id"
+        },
+        "madeByActuator": {
+            "@id": "sosa:madeByActuator",
+            "@type": "@id"
+        },
+        "implements": {
+            "@id": "ssn:implements",
+            "@type": "@id"
+        },
+        "seeAlso": {
+            "@id": "rdfs:seeAlso",
+            "@type": "@id"
+        },
+        "exactMatch": {
+            "@id": "skos:exactMatch",
+            "@type": "@id"
+        },
+        "phenomenonTime": {
+            "@id": "sosa:phenomenonTime",
+            "@type": "@id"
+        },
+        "usedProcedure": {
+            "@id": "sosa:usedProcedure",
+            "@type": "@id"
+        },
+        "opdrachtgever": {
+            "@id": "grondboringbeno:opdrachtgever",
+            "@type": "@id"
+        },
+        "samplings": {
+            "@id": "grondboringbeno:samplings",
+            "@type": "@id"
+        },
+        "isSampleOf": {
+            "@id": "sosa:isSampleOf",
+            "@type": "@id"
+        },
+        "sampleDiepteTot": {
+            "@id": "grondboringbeno:sampleDiepteTot",
+            "@type": "@id"
+        },
+        "sampleDiepteVan": {
+            "@id": "grondboringbeno:sampleDiepteVan",
+            "@type": "@id"
+        },
+        "rest": {
+            "@id": "rdf:rest",
+            "@type": "@id"
+        },
+        "boorder": {
+            "@id": "grondboringen:boorder",
+            "@type": "@id"
+        },
+        "boormeester": {
+            "@id": "grondboringen:boormeester",
+            "@type": "@id"
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@language": "nl"
+        },
+        "subPropertyOf": {
+            "@id": "rdfs:subPropertyOf",
+            "@type": "@id"
+        },
+        "range": {
+            "@id": "rdfs:range",
+            "@type": "@id"
+        },
+        "madeBySensor": {
+            "@id": "sosa:madeBySensor",
+            "@type": "@id"
+        },
+        "observedProperty": {
+            "@id": "sosa:observedProperty",
+            "@type": "@id"
+        },
+        "subject": {
+            "@id": "dcterms:subject",
+            "@type": "@id"
+        },
+        "isPropertyOf": {
+            "@id": "ssn:isPropertyOf",
+            "@type": "@id"
+        },
+        "wasOriginatedBy": {
+            "@id": "ssn:wasOriginatedBy",
+            "@type": "@id"
+        },
+        "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
+        "adms": "http://www.w3.org/ns/adms#",
+        "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",
+        "ass": "https://data.bodemenondergrond.vlaanderen.be/id/association/",
+        "bemprocedure": "https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/",
+        "boe": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#",
+        "bl": "https://data.bodemenondergrond.vlaanderen.be/id/bijlage/",
+        "boorgat": "https://data.bodemenondergrond.vlaanderen.be/id/boorgat/",
+        "boor": "https://data.bodemenondergrond.vlaanderen.be/id/boor/",
+        "boormethodeinterval": "https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/",
+        "boring": "https://data.bodemenondergrond.vlaanderen.be/id/boring/",
+        "cl-bpt": "https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/",
+        "cl-brm": "https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/",
+        "cl-dlb": "https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/",
+        "cl-got": "https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/",
+        "cl-idt": "https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "geometrie": "https://data.bodemenondergrond.vlaanderen.be/id/geometrie/",
+        "geosparql": "http://www.opengis.net/ont/geosparql#",
+        "gmldov": "https://data.bodemenondergrond.vlaanderen.be/id/gml/",
+        "gml": "http://www.opengis.net/ont/gml#",
+        "grondboringbeno": "https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#",
+        "grondboringen": "https://data.vlaanderen.be/ns/grondboringen#",
+        "grondobject": "https://data.bodemenondergrond.vlaanderen.be/id/grondobject/",
+        "hel": "https://data.bodemenondergrond.vlaanderen.be/id/helling/",
+        "id": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
+        "incl": "https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/",
+        "list": "https://data.bodemenondergrond.vlaanderen.be/id/list/",
+        "moment": "https://data.bodemenondergrond.vlaanderen.be/id/moment/",
+        "obs": "https://data.bodemenondergrond.vlaanderen.be/id/observation/",
+        "obs_prop": "https://data.bodemenondergrond.vlaanderen.be/id/property/",
+        "opdracht": "https://data.bodemenondergrond.vlaanderen.be/id/opdracht/",
+        "opm": "https://data.bodemenondergrond.vlaanderen.be/id/opmerking/",
+        "prop": "https://data.bodemenondergrond.vlaanderen.be/id/concept/property/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "qudt-schema": "https://qudt.org/schema/qudt/",
+        "qudt-unit": "https://qudt.org/vocab/unit/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "result": "https://data.bodemenondergrond.vlaanderen.be/id/result/",
+        "richting": "https://data.bodemenondergrond.vlaanderen.be/id/richting/",
+        "rol": "https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/",
+        "sam": "https://data.bodemenondergrond.vlaanderen.be/id/sampling/",
+        "schema": "https://schema.org/",
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+        "seb": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "sosa-om": "http://www.w3.org/ns/sosa/om#",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "time": "http://www.w3.org/2006/time#",
+        "wettelijkkader": "https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "act:1965-068140-1",
+            "@type": "sosa:Actuation",
+            "identifier": {
+                "@id": "id:act1965-068140-1",
+                "@type": "adms:Identifier",
+                "notation": {
+                    "@type": "cl-idt:boornummer",
+                    "@value": "kb14d41w-B165"
+                }
+            },
+            "hasFeatureOfInterest": {
+                "@id": "boorgat:boorgat001",
+                "@type": "grondboringbeno:Boorgat",
+                "hasGeometry": {
+                    "@id": "geometrie:boorgat001",
+                    "@type": "geosparql:Geometry",
+                    "asWKT": "POINT(4.5660602119239 51.219401186425)"
+                },
+                "hasProperty": {
+                    "@id": "prop:diepte",
+                    "@type": "skos:Concept"
+                }
+            },
+            "hasResult": {
+                "@id": "result:boorgat001-act1965-068140-1",
+                "@type": "sosa:Result",
+                "postconditie": {
+                    "@id": "result:boorgat001-act1965-068140-1-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "unitMeasure": "qudt-unit:M",
+                    "value": "10.0"
+                },
+                "preconditie": {
+                    "@id": "result:boorgat001-act1965-068140-1-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "unitMeasure": "qudt-unit:M",
+                    "value": "0.0"
+                },
+                "about": "boorgat:boorgat001"
+            },
+            "madeByActuator": {
+                "@id": "boor:boring1965-068140-a",
+                "@type": "grondboringen:Boor",
+                "implements": {
+                    "@id": "cl-brm:Lepelboring",
+                    "@type": "sosa:Procedure",
+                    "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                    "exactMatch": {
+                        "@id": "cl-bpt:CMA_1_A2_v032022",
+                        "@type": "sosa:Procedure",
+                        "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                        "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+                    }
+                }
+            },
+            "phenomenonTime": {
+                "@id": "moment:boring1965-068140",
+                "@type": "time:Instant",
+                "inXSDDateTime": "1965-01-01T00:00:00.000"
+            },
+            "resultTime": "1965-01-01T00:00:00.000",
+            "usedProcedure": "cl-brm:Lepelboring"
+        },
+        {
+            "@id": "act:1965-068140-2",
+            "@type": "sosa:Actuation",
+            "identifier": {
+                "@id": "id:act1965-068140-2",
+                "@type": "adms:Identifier",
+                "notation": {
+                    "@type": "cl-idt:boornummer",
+                    "@value": "kb14d41w-B168"
+                }
+            },
+            "hasFeatureOfInterest": {
+                "@id": "boorgat:boorgat001",
+                "@type": "grondboringbeno:Boorgat",
+                "hasGeometry": {
+                    "@id": "geometrie:boorgat001",
+                    "@type": "geosparql:Geometry",
+                    "asWKT": "POINT(4.5660602119239 51.219401186425)"
+                },
+                "hasProperty": {
+                    "@id": "prop:diepte",
+                    "@type": "skos:Concept"
+                }
+            },
+            "hasResult": {
+                "@id": "result:boorgat001-act1965-068140-2",
+                "@type": "sosa:Result",
+                "postconditie": {
+                    "@id": "result:boorgat001-act1965-068140-2-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "unitMeasure": "qudt-unit:M",
+                    "value": "15.0"
+                },
+                "preconditie": {
+                    "@id": "result:boorgat001-act1965-068140-2-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "unitMeasure": "qudt-unit:M",
+                    "value": "10.0"
+                },
+                "about": "boorgat:boorgat001"
+            },
+            "madeByActuator": {
+                "@id": "boor:boring1965-068140-b",
+                "@type": "grondboringen:Boor",
+                "implements": {
+                    "@id": "cl-brm:Gutsboring",
+                    "@type": "sosa:Procedure"
+                }
+            },
+            "phenomenonTime": {
+                "@id": "moment:boring1965-068140",
+                "@type": "time:Instant",
+                "inXSDDateTime": "1965-01-01T00:00:00.000"
+            },
+            "usedProcedure": "cl-brm:Gutsboring"
+        },
+        {
+            "@id": "act:1965-068140-3",
+            "@type": "sosa:Actuation",
+            "identifier": {
+                "@id": "id:act1965-068140-3",
+                "@type": "adms:Identifier",
+                "notation": {
+                    "@type": "cl-idt:KBIN-BGD",
+                    "@value": "BGD41w0164"
+                }
+            },
+            "hasFeatureOfInterest": {
+                "@id": "boorgat:boorgat001",
+                "@type": "grondboringbeno:Boorgat",
+                "hasGeometry": {
+                    "@id": "geometrie:boorgat001",
+                    "@type": "geosparql:Geometry",
+                    "asWKT": "POINT(4.5660602119239 51.219401186425)"
+                },
+                "hasProperty": {
+                    "@id": "prop:diepte",
+                    "@type": "skos:Concept"
+                }
+            },
+            "hasResult": {
+                "@id": "result:boorgat001-act1965-068140-3",
+                "@type": "sosa:Result",
+                "postconditie": {
+                    "@id": "result:boorgat001-act1965-068140-3-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "unitMeasure": "qudt-unit:M",
+                    "value": "20.0"
+                },
+                "preconditie": {
+                    "@id": "result:boorgat001-act1965-068140-3-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "unitMeasure": "qudt-unit:M",
+                    "value": "15.0"
+                },
+                "about": "boorgat:boorgat001"
+            },
+            "madeByActuator": {
+                "@id": "boor:boring1965-068140-a",
+                "@type": "grondboringen:Boor",
+                "implements": {
+                    "@id": "cl-brm:Lepelboring",
+                    "@type": "sosa:Procedure",
+                    "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                    "exactMatch": {
+                        "@id": "cl-bpt:CMA_1_A2_v032022",
+                        "@type": "sosa:Procedure",
+                        "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                        "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+                    }
+                }
+            },
+            "phenomenonTime": {
+                "@id": "moment:boring1965-068140",
+                "@type": "time:Instant",
+                "inXSDDateTime": "1965-01-01T00:00:00.000"
+            },
+            "usedProcedure": "cl-brm:Lepelboring"
+        }
+    ]
+}
