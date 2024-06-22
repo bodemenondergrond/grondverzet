@@ -9,5 +9,8 @@
 ## Model observation
 ![Model](src/documentation/model_observation.png)
 
+## Model bijlage
+![Model](src/documentation/model_bijlage.png)
+
 ## Model grondboring
 ![Model](src/documentation/model_grondboring.png)

@@ -179,6 +179,10 @@
             "@id": "ssn:wasOriginatedBy",
             "@type": "@id"
         },
+        "date": {
+            "@id": "dcterms:date",
+            "@type": "xsd:date"
+        },
         "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
         "adms": "http://www.w3.org/ns/adms#",
         "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",
@@ -242,10 +246,10 @@
             "@type": "prov:Association",
             "agent": {
                 "@id": "ag:agent001",
-                "@type": "dcterms:Agent",
+                "@type": "prov:Agent",
                 "actedOnBehalfOf": {
                     "@id": "ag:agent003",
-                    "@type": "dcterms:Agent"
+                    "@type": "prov:Agent"
                 }
             },
             "hadPlan": {
@@ -262,7 +266,7 @@
             "@type": "prov:Association",
             "agent": {
                 "@id": "ag:agent002",
-                "@type": "dcterms:Agent",
+                "@type": "prov:Agent",
                 "actedOnBehalfOf": "ag:agent003"
             },
             "hadRole": {

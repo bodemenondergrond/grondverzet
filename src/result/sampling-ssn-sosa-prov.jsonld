@@ -179,6 +179,10 @@
             "@id": "ssn:wasOriginatedBy",
             "@type": "@id"
         },
+        "date": {
+            "@id": "dcterms:date",
+            "@type": "xsd:date"
+        },
         "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
         "adms": "http://www.w3.org/ns/adms#",
         "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",

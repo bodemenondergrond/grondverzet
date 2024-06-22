@@ -378,13 +378,13 @@ cl-bpt:CMA_1_A2_v032022 a  sosa:Procedure; # skos:Concept ;
 #    gml:srsDimension  1;
 #    gml:srsName       "LS1965-068140" .
 
-agent:agent001  a  dcterms:Agent ;
+agent:agent001  a  prov:Agent ;
                 prov:actedOnBehalfOf agent:agent003 .
 
-agent:agent002  a  dcterms:Agent ;
+agent:agent002  a  prov:Agent ;
                 prov:actedOnBehalfOf agent:agent003 .
 
-agent:agent003  a  dcterms:Agent .
+agent:agent003  a  prov:Agent .
 
 opdracht:2007-005512  a  <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht> ;
                       prov:wasAttributedTo agent:agent003 .

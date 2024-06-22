@@ -29,6 +29,25 @@ const frame_sampling = {
 
 }
 
+const frame_bijlage = {
+    "@context": context,
+    "@type": ["grondboringbeno:Bijlage"],
+
+    "about": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "actuations": {
+            "@embed": "@never",
+            "@omitDefault": true
+        },
+        "samplings":{
+            "@embed": "@never",
+            "@omitDefault": true
+        },
+
+    }
+}
+
 const sortLines = str => Array.from(new Set(str.split(/\r?\n/))).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
 
 async function rdf_to_jsonld(nt, frame) {
@@ -46,5 +65,6 @@ export {
     frame_observation,
     frame_actuation,
     frame_sampling,
+    frame_bijlage,
     rdf_to_jsonld
 };

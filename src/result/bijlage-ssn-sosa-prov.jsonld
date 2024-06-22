@@ -239,29 +239,9 @@
     },
     "@graph": [
         {
-            "@id": "obs:1965-068140-x",
-            "@type": "sosa:Observation",
-            "identifier": "id:1965-068140-x",
-            "hasFeatureOfInterest": {
-                "@id": "boorgat:boorgat001",
-                "@type": "grondboringbeno:Boorgat",
-                "hasGeometry": {
-                    "@id": "geometrie:boorgat001",
-                    "@type": "geosparql:Geometry",
-                    "asWKT": "POINT(4.5660602119239 51.219401186425)"
-                },
-                "hasProperty": {
-                    "@id": "prop:diepte",
-                    "@type": "skos:Concept"
-                }
-            },
-            "hasResult": {
-                "@id": "result:1965-068140-x",
-                "@type": "sosa:Result",
-                "unitMeasure": "qudt-unit:M",
-                "value": "20.0"
-            },
-            "madeBySensor": {
+            "@id": "bl:boring1965-068140_1",
+            "@type": "grondboringbeno:Bijlage",
+            "dcterms:creator": {
                 "@id": "ag:agent001",
                 "@type": "prov:Agent",
                 "actedOnBehalfOf": {
@@ -269,94 +249,209 @@
                     "@type": "prov:Agent"
                 }
             },
-            "observedProperty": {
-                "@id": "obs_prop:diepte_boorgat001",
-                "@type": "sosa:ObservableProperty",
-                "subject": "prop:diepte",
-                "isPropertyOf": "boorgat:boorgat001"
-            },
-            "phenomenonTime": {
-                "@id": "moment:boring1965-068140",
-                "@type": "time:Instant",
-                "inXSDDateTime": "1965-01-01T00:00:00.000"
-            },
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": {
-                "@id": "cl-bpt:meten_van_de_diepte_van_een_gat",
-                "@type": "sosa:Procedure"
-            },
-            "wasOriginatedBy": {
-                "@id": "opdracht:2007-005512",
-                "@type": "boe:Opdracht",
-                "wasAttributedTo": "ag:agent003"
+            "date": "2010-01-05",
+            "seeAlso": "https://www.dov.vlaanderen.be/proeven-ocdov/proxy/bestand/11801/inhoud",
+            "about": {
+                "@id": "boring:1965-068140",
+                "@type": "grondboringen:Grondboring",
+                "identifier": "id:boring1965-068140",
+                "qualifiedAssociation": [
+                    {
+                        "@id": "ass:association001",
+                        "@type": "prov:Association",
+                        "agent": {
+                            "@id": "ag:agent001",
+                            "@type": "prov:Agent",
+                            "actedOnBehalfOf": {
+                                "@id": "ag:agent003",
+                                "@type": "prov:Agent"
+                            }
+                        },
+                        "hadPlan": {
+                            "@id": "wettelijkkader:wettelijkkader001",
+                            "@type": "grondboringen:WettelijkKaderBoring"
+                        },
+                        "hadRole": {
+                            "@id": "rol:boorder",
+                            "@type": "prov:Role"
+                        }
+                    },
+                    {
+                        "@id": "ass:association002",
+                        "@type": "prov:Association",
+                        "agent": {
+                            "@id": "ag:agent002",
+                            "@type": "prov:Agent",
+                            "actedOnBehalfOf": {
+                                "@id": "ag:agent003",
+                                "@type": "prov:Agent"
+                            }
+                        },
+                        "hadRole": {
+                            "@id": "rol:boormeester",
+                            "@type": "prov:Role"
+                        }
+                    },
+                    {
+                        "@id": "ass:association003",
+                        "@type": "prov:Association",
+                        "agent": {
+                            "@id": "ag:agent003",
+                            "@type": "prov:Agent"
+                        },
+                        "hadPlan": {
+                            "@id": "cl-dlb:Grondwaterwinning",
+                            "@type": "prov:Plan"
+                        },
+                        "hadRole": {
+                            "@id": "rol:opdractgever",
+                            "@type": "prov:Role"
+                        }
+                    }
+                ],
+                "wasStartedBy": {
+                    "@id": "opdracht:2007-005512",
+                    "@type": "boe:Opdracht",
+                    "wasAttributedTo": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                },
+                "sosa:resultTime": {
+                    "@id": "moment:boring1965-068140",
+                    "@type": "time:Instant",
+                    "inXSDDateTime": "1965-01-01T00:00:00.000"
+                },
+                "actuations": "list:1965-068140-act1",
+                "opdrachtgever": {
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
+                },
+                "samplings": "list:1965-068140-sam1",
+                "boorder": {
+                    "@id": "ag:agent001",
+                    "@type": "prov:Agent",
+                    "actedOnBehalfOf": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                },
+                "boormeester": {
+                    "@id": "ag:agent002",
+                    "@type": "prov:Agent",
+                    "actedOnBehalfOf": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                }
             }
         },
         {
-            "@id": "obs:1965-068140-y-1",
-            "@type": "sosa:Observation",
-            "identifier": "id:1965-068140-y-1",
-            "hasFeatureOfInterest": {
-                "@id": "result:boorgat001-sam1965-068140-a",
-                "@type": "sosa:Sample",
-                "isSampleOf": {
-                    "@id": "boorgat:boorgat001",
-                    "@type": "grondboringbeno:Boorgat",
-                    "hasGeometry": {
-                        "@id": "geometrie:boorgat001",
-                        "@type": "geosparql:Geometry",
-                        "asWKT": "POINT(4.5660602119239 51.219401186425)"
-                    },
-                    "hasProperty": {
-                        "@id": "prop:diepte",
-                        "@type": "skos:Concept"
-                    }
-                },
-                "sampleDiepteTot": {
-                    "@id": "result:boorgat001-sam1965-068140-a-tot",
-                    "@type": "grondboringbeno:Diepte",
-                    "unitMeasure": "qudt-unit:M",
-                    "value": "0.95"
-                },
-                "sampleDiepteVan": {
-                    "@id": "result:boorgat001-sam1965-068140-a-van",
-                    "@type": "grondboringbeno:Diepte",
-                    "unitMeasure": "qudt-unit:M",
-                    "value": "0.90"
+            "@id": "bl:boring1965-068140_2",
+            "@type": "grondboringbeno:Bijlage",
+            "dcterms:creator": {
+                "@id": "ag:agent001",
+                "@type": "prov:Agent",
+                "actedOnBehalfOf": {
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
                 }
             },
-            "hasResult": {
-                "@id": "result:1965-068140-y-1",
-                "@type": "sosa:Result",
-                "unitMeasure": "qudt-unit:PERCENT",
-                "value": "24.0"
-            },
-            "madeBySensor": {
-                "@id": "ag:agent003",
-                "@type": "prov:Agent"
-            },
-            "observedProperty": {
-                "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
-                "@type": "sosa:ObservableProperty",
-                "subject": {
-                    "@id": "prop:kleigehalte",
-                    "@type": "skos:Concept"
+            "date": "2010-01-07",
+            "seeAlso": "https://www.dov.vlaanderen.be/proeven-ocdov/proxy/bestand/10795/inhoud",
+            "about": {
+                "@id": "boring:1965-068140",
+                "@type": "grondboringen:Grondboring",
+                "identifier": "id:boring1965-068140",
+                "qualifiedAssociation": [
+                    {
+                        "@id": "ass:association001",
+                        "@type": "prov:Association",
+                        "agent": {
+                            "@id": "ag:agent001",
+                            "@type": "prov:Agent",
+                            "actedOnBehalfOf": {
+                                "@id": "ag:agent003",
+                                "@type": "prov:Agent"
+                            }
+                        },
+                        "hadPlan": {
+                            "@id": "wettelijkkader:wettelijkkader001",
+                            "@type": "grondboringen:WettelijkKaderBoring"
+                        },
+                        "hadRole": {
+                            "@id": "rol:boorder",
+                            "@type": "prov:Role"
+                        }
+                    },
+                    {
+                        "@id": "ass:association002",
+                        "@type": "prov:Association",
+                        "agent": {
+                            "@id": "ag:agent002",
+                            "@type": "prov:Agent",
+                            "actedOnBehalfOf": {
+                                "@id": "ag:agent003",
+                                "@type": "prov:Agent"
+                            }
+                        },
+                        "hadRole": {
+                            "@id": "rol:boormeester",
+                            "@type": "prov:Role"
+                        }
+                    },
+                    {
+                        "@id": "ass:association003",
+                        "@type": "prov:Association",
+                        "agent": {
+                            "@id": "ag:agent003",
+                            "@type": "prov:Agent"
+                        },
+                        "hadPlan": {
+                            "@id": "cl-dlb:Grondwaterwinning",
+                            "@type": "prov:Plan"
+                        },
+                        "hadRole": {
+                            "@id": "rol:opdractgever",
+                            "@type": "prov:Role"
+                        }
+                    }
+                ],
+                "wasStartedBy": {
+                    "@id": "opdracht:2007-005512",
+                    "@type": "boe:Opdracht",
+                    "wasAttributedTo": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
                 },
-                "isPropertyOf": "result:boorgat001-sam1965-068140-a"
-            },
-            "phenomenonTime": {
-                "@id": "moment:boring1965-068140",
-                "@type": "time:Instant",
-                "inXSDDateTime": "1965-01-01T00:00:00.000"
-            },
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": {
-                "@id": "cl-bpt:bepaling_kleigehalte",
-                "@type": "sosa:Procedure"
-            },
-            "wasOriginatedBy": {
-                "@id": "opdracht:2007-005512",
-                "@type": "boe:Opdracht",
-                "wasAttributedTo": "ag:agent003"
+                "sosa:resultTime": {
+                    "@id": "moment:boring1965-068140",
+                    "@type": "time:Instant",
+                    "inXSDDateTime": "1965-01-01T00:00:00.000"
+                },
+                "actuations": "list:1965-068140-act1",
+                "opdrachtgever": {
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
+                },
+                "samplings": "list:1965-068140-sam1",
+                "boorder": {
+                    "@id": "ag:agent001",
+                    "@type": "prov:Agent",
+                    "actedOnBehalfOf": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                },
+                "boormeester": {
+                    "@id": "ag:agent002",
+                    "@type": "prov:Agent",
+                    "actedOnBehalfOf": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                }
             }
         }
     ]
