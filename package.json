@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/main/nodejs/01_codelijst_skos_from_csv.js",
-
   "keywords": [
     "milieuinfo",
     "linked data",
@@ -16,6 +15,8 @@
   "author": "Vlaamse Overheid, Departement omgeving",
   "license": "GPL-3.0",
   "dependencies": {
-    "js-yaml": "^4.1.0"
+    "glob": "^10.4.2",
+    "jsonld": "^8.3.2",
+    "roxi-js": "^0.1.3"
   }
 }
