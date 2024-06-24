@@ -241,7 +241,6 @@
         {
             "@id": "obs:1965-068140-x",
             "@type": "sosa:Observation",
-            "identifier": "id:1965-068140-x",
             "hasFeatureOfInterest": {
                 "@id": "boorgat:boorgat001",
                 "@type": "grondboringbeno:Boorgat",
@@ -257,6 +256,112 @@
                         "@id": "prop:diepte",
                         "@type": "skos:Concept"
                     },
+                    "sosa:isActedOnBy": [
+                        {
+                            "@id": "act:1965-068140-1",
+                            "@type": "sosa:Actuation",
+                            "sosa:actsOnProperty": {
+                                "@id": "obs_prop:diepte_boorgat001"
+                            },
+                            "hasFeatureOfInterest": "boorgat:boorgat001",
+                            "hasResult": {
+                                "@id": "result:boorgat001-act1965-068140-1",
+                                "@type": "sosa:Result",
+                                "postconditie": {
+                                    "@id": "result:boorgat001-act1965-068140-1-post",
+                                    "@type": "grondboringbeno:Diepte",
+                                    "unitMeasure": "qudt-unit:M",
+                                    "value": "10.0"
+                                },
+                                "preconditie": {
+                                    "@id": "result:boorgat001-act1965-068140-1-pre",
+                                    "@type": "grondboringbeno:Diepte",
+                                    "unitMeasure": "qudt-unit:M",
+                                    "value": "0.0"
+                                },
+                                "about": "boorgat:boorgat001"
+                            },
+                            "madeByActuator": {
+                                "@id": "boor:boring1965-068140-a",
+                                "@type": "grondboringen:Boor",
+                                "implements": {
+                                    "@id": "cl-brm:Lepelboring",
+                                    "@type": "sosa:Procedure",
+                                    "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                                    "exactMatch": {
+                                        "@id": "cl-bpt:CMA_1_A2_v032022",
+                                        "@type": "sosa:Procedure",
+                                        "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                                        "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+                                    }
+                                }
+                            },
+                            "phenomenonTime": {
+                                "@id": "moment:boring1965-068140",
+                                "@type": "time:Instant",
+                                "inXSDDateTime": "1965-01-01T00:00:00.000"
+                            },
+                            "resultTime": "1965-01-01T00:00:00.000",
+                            "usedProcedure": "cl-brm:Lepelboring"
+                        },
+                        {
+                            "@id": "act:1965-068140-2",
+                            "@type": "sosa:Actuation",
+                            "hasFeatureOfInterest": "boorgat:boorgat001",
+                            "hasResult": {
+                                "@id": "result:boorgat001-act1965-068140-2",
+                                "@type": "sosa:Result",
+                                "postconditie": {
+                                    "@id": "result:boorgat001-act1965-068140-2-post",
+                                    "@type": "grondboringbeno:Diepte",
+                                    "unitMeasure": "qudt-unit:M",
+                                    "value": "15.0"
+                                },
+                                "preconditie": {
+                                    "@id": "result:boorgat001-act1965-068140-2-pre",
+                                    "@type": "grondboringbeno:Diepte",
+                                    "unitMeasure": "qudt-unit:M",
+                                    "value": "10.0"
+                                },
+                                "about": "boorgat:boorgat001"
+                            },
+                            "madeByActuator": {
+                                "@id": "boor:boring1965-068140-b",
+                                "@type": "grondboringen:Boor",
+                                "implements": {
+                                    "@id": "cl-brm:Gutsboring",
+                                    "@type": "sosa:Procedure"
+                                }
+                            },
+                            "phenomenonTime": "moment:boring1965-068140",
+                            "usedProcedure": "cl-brm:Gutsboring"
+                        },
+                        {
+                            "@id": "act:1965-068140-3",
+                            "@type": "sosa:Actuation",
+                            "hasFeatureOfInterest": "boorgat:boorgat001",
+                            "hasResult": {
+                                "@id": "result:boorgat001-act1965-068140-3",
+                                "@type": "sosa:Result",
+                                "postconditie": {
+                                    "@id": "result:boorgat001-act1965-068140-3-post",
+                                    "@type": "grondboringbeno:Diepte",
+                                    "unitMeasure": "qudt-unit:M",
+                                    "value": "20.0"
+                                },
+                                "preconditie": {
+                                    "@id": "result:boorgat001-act1965-068140-3-pre",
+                                    "@type": "grondboringbeno:Diepte",
+                                    "unitMeasure": "qudt-unit:M",
+                                    "value": "15.0"
+                                },
+                                "about": "boorgat:boorgat001"
+                            },
+                            "madeByActuator": "boor:boring1965-068140-a",
+                            "phenomenonTime": "moment:boring1965-068140",
+                            "usedProcedure": "cl-brm:Lepelboring"
+                        }
+                    ],
                     "isPropertyOf": "boorgat:boorgat001"
                 }
             },
@@ -275,11 +380,7 @@
                 }
             },
             "observedProperty": "obs_prop:diepte_boorgat001",
-            "phenomenonTime": {
-                "@id": "moment:boring1965-068140",
-                "@type": "time:Instant",
-                "inXSDDateTime": "1965-01-01T00:00:00.000"
-            },
+            "phenomenonTime": "moment:boring1965-068140",
             "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": {
                 "@id": "cl-bpt:meten_van_de_diepte_van_een_gat",
@@ -294,7 +395,6 @@
         {
             "@id": "obs:1965-068140-y-1",
             "@type": "sosa:Observation",
-            "identifier": "id:1965-068140-y-1",
             "hasFeatureOfInterest": {
                 "@id": "result:boorgat001-sam1965-068140-a",
                 "@type": "sosa:Sample",
@@ -313,6 +413,112 @@
                             "@id": "prop:diepte",
                             "@type": "skos:Concept"
                         },
+                        "sosa:isActedOnBy": [
+                            {
+                                "@id": "act:1965-068140-1",
+                                "@type": "sosa:Actuation",
+                                "sosa:actsOnProperty": {
+                                    "@id": "obs_prop:diepte_boorgat001"
+                                },
+                                "hasFeatureOfInterest": "boorgat:boorgat001",
+                                "hasResult": {
+                                    "@id": "result:boorgat001-act1965-068140-1",
+                                    "@type": "sosa:Result",
+                                    "postconditie": {
+                                        "@id": "result:boorgat001-act1965-068140-1-post",
+                                        "@type": "grondboringbeno:Diepte",
+                                        "unitMeasure": "qudt-unit:M",
+                                        "value": "10.0"
+                                    },
+                                    "preconditie": {
+                                        "@id": "result:boorgat001-act1965-068140-1-pre",
+                                        "@type": "grondboringbeno:Diepte",
+                                        "unitMeasure": "qudt-unit:M",
+                                        "value": "0.0"
+                                    },
+                                    "about": "boorgat:boorgat001"
+                                },
+                                "madeByActuator": {
+                                    "@id": "boor:boring1965-068140-a",
+                                    "@type": "grondboringen:Boor",
+                                    "implements": {
+                                        "@id": "cl-brm:Lepelboring",
+                                        "@type": "sosa:Procedure",
+                                        "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                                        "exactMatch": {
+                                            "@id": "cl-bpt:CMA_1_A2_v032022",
+                                            "@type": "sosa:Procedure",
+                                            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                                            "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+                                        }
+                                    }
+                                },
+                                "phenomenonTime": {
+                                    "@id": "moment:boring1965-068140",
+                                    "@type": "time:Instant",
+                                    "inXSDDateTime": "1965-01-01T00:00:00.000"
+                                },
+                                "resultTime": "1965-01-01T00:00:00.000",
+                                "usedProcedure": "cl-brm:Lepelboring"
+                            },
+                            {
+                                "@id": "act:1965-068140-2",
+                                "@type": "sosa:Actuation",
+                                "hasFeatureOfInterest": "boorgat:boorgat001",
+                                "hasResult": {
+                                    "@id": "result:boorgat001-act1965-068140-2",
+                                    "@type": "sosa:Result",
+                                    "postconditie": {
+                                        "@id": "result:boorgat001-act1965-068140-2-post",
+                                        "@type": "grondboringbeno:Diepte",
+                                        "unitMeasure": "qudt-unit:M",
+                                        "value": "15.0"
+                                    },
+                                    "preconditie": {
+                                        "@id": "result:boorgat001-act1965-068140-2-pre",
+                                        "@type": "grondboringbeno:Diepte",
+                                        "unitMeasure": "qudt-unit:M",
+                                        "value": "10.0"
+                                    },
+                                    "about": "boorgat:boorgat001"
+                                },
+                                "madeByActuator": {
+                                    "@id": "boor:boring1965-068140-b",
+                                    "@type": "grondboringen:Boor",
+                                    "implements": {
+                                        "@id": "cl-brm:Gutsboring",
+                                        "@type": "sosa:Procedure"
+                                    }
+                                },
+                                "phenomenonTime": "moment:boring1965-068140",
+                                "usedProcedure": "cl-brm:Gutsboring"
+                            },
+                            {
+                                "@id": "act:1965-068140-3",
+                                "@type": "sosa:Actuation",
+                                "hasFeatureOfInterest": "boorgat:boorgat001",
+                                "hasResult": {
+                                    "@id": "result:boorgat001-act1965-068140-3",
+                                    "@type": "sosa:Result",
+                                    "postconditie": {
+                                        "@id": "result:boorgat001-act1965-068140-3-post",
+                                        "@type": "grondboringbeno:Diepte",
+                                        "unitMeasure": "qudt-unit:M",
+                                        "value": "20.0"
+                                    },
+                                    "preconditie": {
+                                        "@id": "result:boorgat001-act1965-068140-3-pre",
+                                        "@type": "grondboringbeno:Diepte",
+                                        "unitMeasure": "qudt-unit:M",
+                                        "value": "15.0"
+                                    },
+                                    "about": "boorgat:boorgat001"
+                                },
+                                "madeByActuator": "boor:boring1965-068140-a",
+                                "phenomenonTime": "moment:boring1965-068140",
+                                "usedProcedure": "cl-brm:Lepelboring"
+                            }
+                        ],
                         "isPropertyOf": "boorgat:boorgat001"
                     }
                 },
@@ -349,11 +555,7 @@
                 "@type": "prov:Agent"
             },
             "observedProperty": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
-            "phenomenonTime": {
-                "@id": "moment:boring1965-068140",
-                "@type": "time:Instant",
-                "inXSDDateTime": "1965-01-01T00:00:00.000"
-            },
+            "phenomenonTime": "moment:boring1965-068140",
             "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": {
                 "@id": "cl-bpt:bepaling_kleigehalte",
