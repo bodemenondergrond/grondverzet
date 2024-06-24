@@ -120,9 +120,11 @@ boorgat:boorgat001 geosparql:hasGeometry geometrie:boorgat001;
     sosa:hasSample result:boorgat001-sam1965-068140-a, result:boorgat001-sam1965-068140-b, result:boorgat001-sam1965-068140-c, result:boorgat001-sam1965-068140-d;
     sosa:isFeatureOfInterestOf <https://data.bodemenondergrond.vlaanderen.be/id/actuation/1965-068140-1>, <https://data.bodemenondergrond.vlaanderen.be/id/actuation/1965-068140-2>, <https://data.bodemenondergrond.vlaanderen.be/id/actuation/1965-068140-3>, <https://data.bodemenondergrond.vlaanderen.be/id/observation/1965-068140-x>, <https://data.bodemenondergrond.vlaanderen.be/id/sampling/1965-068140-a>, <https://data.bodemenondergrond.vlaanderen.be/id/sampling/1965-068140-b>, <https://data.bodemenondergrond.vlaanderen.be/id/sampling/1965-068140-c>, <https://data.bodemenondergrond.vlaanderen.be/id/sampling/1965-068140-d>;
     ssn:hasProperty obs_prop:diepte_boorgat001.
-<https://data.bodemenondergrond.vlaanderen.be/id/boring/1965-068140> a grondboringen:Grondboring;
+<https://data.bodemenondergrond.vlaanderen.be/id/boring/1965-068140> a prov:Activity, grondboringen:Grondboring;
     adms:identifier id:boring1965-068140;
     prov:qualifiedAssociation ass:association001, ass:association002, ass:association003;
+    prov:wasAssociatedWith ag:agent001, ag:agent002, ag:agent003;
+    prov:wasInfluencedBy ag:agent001, ag:agent002, ag:agent003;
     prov:wasStartedBy <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/2007-005512>;
     sosa:phenomenonTime moment:boring1965-068140;
     grondboringbeno:actuations <https://data.bodemenondergrond.vlaanderen.be/id/list/1965-068140-act1>;

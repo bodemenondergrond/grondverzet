@@ -1,0 +1,16 @@
+@prefix grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#> .
+@prefix grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#> .
+@prefix prov: <http://www.w3.org/ns/prov#>.
+
+
+    {?x grondboringen:boorder ?y} => {?x prov:wasAssociatedWith ?y}
+    {?x grondboringen:boormeester ?y} => {?x prov:wasAssociatedWith ?y}
+    {?x grondboringbeno:opdrachtgever ?y} => {?x prov:wasAssociatedWith ?y}
+    {?x prov:wasAssociatedWith ?y} => {?x a prov:Activity}
+    {?x prov:wasAssociatedWith ?y} => {?x prov:wasInfluencedBy ?y}
+    {?x prov:wasAssociatedWith ?y} => {?y a prov:Agent}
+
+    {?x grondboringbeno:sampleDiepteVan ?y} => {?y a grondboringbeno:Diepte}
+    {?x grondboringbeno:sampleDiepteTot ?y} => {?y a grondboringbeno:Diepte}
+
+
