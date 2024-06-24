@@ -13,3 +13,6 @@
 
   sparql --results=TTL --data=../result/bijlage-ssn-sosa-prov.jsonld --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > model_bijlage.png
+
+  sparql --results=TTL --data=../result/boorgat-ssn-sosa-prov.jsonld --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > model_boorgat.png

@@ -12,5 +12,8 @@
 ## Model bijlage
 ![Model](src/documentation/model_bijlage.png)
 
+## Model boorgat
+![Model](src/documentation/model_boorgat.png)
+
 ## Model grondboring
 ![Model](src/documentation/model_grondboring.png)
