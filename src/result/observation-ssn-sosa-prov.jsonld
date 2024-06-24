@@ -44,6 +44,18 @@
             "@id": "grondboringbeno:actuations",
             "@type": "@id"
         },
+        "madeActuation": {
+            "@id": "sosa:madeActuation",
+            "@type": "@id"
+        },
+        "madeBySampler": {
+            "@id": "sosa:madeBySampler",
+            "@type": "@id"
+        },
+        "isActedOnBy": {
+            "@id": "sosa:isActedOnBy",
+            "@type": "@id"
+        },
         "first": {
             "@id": "rdf:first",
             "@type": "@id"
@@ -256,7 +268,7 @@
                         "@id": "prop:diepte",
                         "@type": "skos:Concept"
                     },
-                    "sosa:isActedOnBy": [
+                    "isActedOnBy": [
                         {
                             "@id": "act:1965-068140-1",
                             "@type": "sosa:Actuation",
@@ -413,7 +425,7 @@
                             "@id": "prop:diepte",
                             "@type": "skos:Concept"
                         },
-                        "sosa:isActedOnBy": [
+                        "isActedOnBy": [
                             {
                                 "@id": "act:1965-068140-1",
                                 "@type": "sosa:Actuation",

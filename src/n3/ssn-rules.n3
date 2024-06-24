@@ -1,0 +1,13 @@
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+    {?x ssn:hasProperty ?y} => {?y ssn:isPropertyOf ?x}
+    {?x ssn:isPropertyOf ?y} => {?y ssn:hasProperty ?x}
+
+    {?x ssn:implements ?y} => {?y ssn:implementedBy ?x}
+    {?x ssn:implementedBy ?y} => {?y ssn:implements ?x}
+
+    {?x ssn:deployedSystem ?y} => {?y ssn:hasDeployment ?x}
+    {?x ssn:hasDeployment ?y} => {?y ssn:deployedSystem ?x}
+
+    {?x ssn:deployedOnPlatform ?y} => {?y ssn:inDeployment ?x}
+    {?x ssn:inDeployment ?y} => {?y ssn:deployedOnPlatform ?x}

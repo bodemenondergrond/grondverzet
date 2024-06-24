@@ -44,6 +44,18 @@
             "@id": "grondboringbeno:actuations",
             "@type": "@id"
         },
+        "madeActuation": {
+            "@id": "sosa:madeActuation",
+            "@type": "@id"
+        },
+        "madeBySampler": {
+            "@id": "sosa:madeBySampler",
+            "@type": "@id"
+        },
+        "isActedOnBy": {
+            "@id": "sosa:isActedOnBy",
+            "@type": "@id"
+        },
         "first": {
             "@id": "rdf:first",
             "@type": "@id"
@@ -311,10 +323,8 @@
                     "@id": "prop:diepte",
                     "@type": "skos:Concept"
                 },
-                "sosa:isActedOnBy": [
-                    {
-                        "@id": "act:1965-068140-1"
-                    },
+                "isActedOnBy": [
+                    "act:1965-068140-1",
                     {
                         "@id": "act:1965-068140-2",
                         "@type": "sosa:Actuation",
@@ -466,7 +476,7 @@
                     "value": "0.90"
                 }
             },
-            "madeByActuator": "boor:boring1965-068140-a",
+            "madeBySampler": "boor:boring1965-068140-a",
             "phenomenonTime": "moment:boring1965-068140",
             "usedProcedure": "cl-brm:Lepelboring"
         },
@@ -494,7 +504,7 @@
                         "value": "3.35"
                     }
                 },
-                "madeByActuator": "boor:boring1965-068140-a",
+                "madeBySampler": "boor:boring1965-068140-a",
                 "phenomenonTime": "moment:boring1965-068140",
                 "usedProcedure": "cl-brm:Lepelboring"
             },
@@ -522,7 +532,7 @@
                             "value": "11.10"
                         }
                     },
-                    "madeByActuator": "boor:boring1965-068140-b",
+                    "madeBySampler": "boor:boring1965-068140-b",
                     "phenomenonTime": "moment:boring1965-068140",
                     "usedProcedure": "cl-brm:Gutsboring"
                 },
@@ -549,7 +559,7 @@
                                     "value": "0.90"
                                 }
                             },
-                            "madeByActuator": "boor:boring1965-068140-a",
+                            "madeBySampler": "boor:boring1965-068140-a",
                             "phenomenonTime": "moment:boring1965-068140",
                             "usedProcedure": "cl-brm:Lepelboring"
                         }

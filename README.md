@@ -17,3 +17,6 @@
 
 ## Model grondboring
 ![Model](src/documentation/model_grondboring.png)
+
+## Model grondboring + inferred
+![Model](src/documentation/model_grondboring_inferred.png)

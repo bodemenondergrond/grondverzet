@@ -16,3 +16,6 @@
 
   sparql --results=TTL --data=../result/boorgat-ssn-sosa-prov.jsonld --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > model_boorgat.png
+
+  sparql --results=TTL --data=../result/inferred/grondboring-ssn-sosa-prov.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > model_grondboring_inferred.png

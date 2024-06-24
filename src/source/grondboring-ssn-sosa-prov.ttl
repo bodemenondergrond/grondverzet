@@ -206,7 +206,7 @@ act:1965-068140-3  a   sosa:Actuation; #grondboringen:Grondboring;
 
 sam:1965-068140-a  a   sosa:Sampling ; #grondboringen:Grondboring;
                    #rdfs:label       "Grondboring-sampling 1965-068140-a";
-                   sosa:madeByActuator boor:boring1965-068140-a ;
+                   sosa:madeBySampler boor:boring1965-068140-a ;
                    sosa:usedProcedure cl-brm:Lepelboring ;
                    sosa:hasResult                 result:boorgat001-sam1965-068140-a;
                    #adms:identifier                id:act1965-068140-3;
@@ -229,7 +229,7 @@ result:boorgat001-sam1965-068140-a-tot 	a grondboringbeno:Diepte ;
 
 sam:1965-068140-b  a   sosa:Sampling ; #grondboringen:Grondboring;
                    #rdfs:label       "Grondboring-sampling 1965-068140-a";
-                   sosa:madeByActuator boor:boring1965-068140-a ;
+                   sosa:madeBySampler boor:boring1965-068140-a ;
                    sosa:usedProcedure cl-brm:Lepelboring ;
                    sosa:hasResult                 result:boorgat001-sam1965-068140-b;
                    #adms:identifier                id:act1965-068140-3;
@@ -251,7 +251,7 @@ result:boorgat001-sam1965-068140-b-tot 	a grondboringbeno:Diepte ;
 
 sam:1965-068140-c  a   sosa:Sampling ; #grondboringen:Grondboring;
                    #rdfs:label       "Grondboring-sampling 1965-068140-a";
-                   sosa:madeByActuator boor:boring1965-068140-b ;
+                   sosa:madeBySampler boor:boring1965-068140-b ;
                    sosa:usedProcedure cl-brm:Gutsboring  ;
                    sosa:hasResult                 result:boorgat001-sam1965-068140-c;
                    #adms:identifier                id:act1965-068140-3;
@@ -275,7 +275,7 @@ result:boorgat001-sam1965-068140-c-tot 	a grondboringbeno:Diepte ;
 
 sam:1965-068140-d  a   sosa:Sampling ; #grondboringen:Grondboring;
                    #rdfs:label       "Grondboring-sampling 1965-068140-a";
-                   sosa:madeByActuator boor:boring1965-068140-a ;
+                   sosa:madeBySampler boor:boring1965-068140-a ;
                    sosa:usedProcedure cl-brm:Lepelboring ;
                    sosa:hasResult                 result:boorgat001-sam1965-068140-d;
                    #adms:identifier                id:act1965-068140-3;
@@ -361,10 +361,13 @@ id:act1965-068140-3
 
 boor:boring1965-068140-a
     a               grondboringen:Boor; #,sosa:Actuator, sosa:Sampler;
+        #sosa:madeActuation act:1965-068140-1 ;
+        #sosa:madeActuation act:1965-068140-3 ;
     ssn:implements  cl-brm:Lepelboring .
 
 boor:boring1965-068140-b
     a               grondboringen:Boor; #,sosa:Actuator, sosa:Sampler;
+        #sosa:madeActuation act:1965-068140-2 ;
     ssn:implements  cl-brm:Gutsboring .
 
 cl-brm:Lepelboring  a  sosa:Procedure; # skos:Concept ;

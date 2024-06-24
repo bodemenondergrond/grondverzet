@@ -44,6 +44,18 @@
             "@id": "grondboringbeno:actuations",
             "@type": "@id"
         },
+        "madeActuation": {
+            "@id": "sosa:madeActuation",
+            "@type": "@id"
+        },
+        "madeBySampler": {
+            "@id": "sosa:madeBySampler",
+            "@type": "@id"
+        },
+        "isActedOnBy": {
+            "@id": "sosa:isActedOnBy",
+            "@type": "@id"
+        },
         "first": {
             "@id": "rdf:first",
             "@type": "@id"
@@ -248,10 +260,8 @@
                     "@id": "prop:diepte",
                     "@type": "skos:Concept"
                 },
-                "sosa:isActedOnBy": [
-                    {
-                        "@id": "act:1965-068140-1"
-                    },
+                "isActedOnBy": [
+                    "act:1965-068140-1",
                     {
                         "@id": "act:1965-068140-2",
                         "@type": "sosa:Actuation",
@@ -380,7 +390,7 @@
                         "@id": "prop:diepte",
                         "@type": "skos:Concept"
                     },
-                    "sosa:isActedOnBy": [
+                    "isActedOnBy": [
                         {
                             "@id": "act:1965-068140-1",
                             "@type": "sosa:Actuation",
@@ -428,9 +438,7 @@
                             "resultTime": "1965-01-01T00:00:00.000",
                             "usedProcedure": "cl-brm:Lepelboring"
                         },
-                        {
-                            "@id": "act:1965-068140-2"
-                        },
+                        "act:1965-068140-2",
                         {
                             "@id": "act:1965-068140-3",
                             "@type": "sosa:Actuation",
@@ -506,7 +514,7 @@
                         "@id": "prop:diepte",
                         "@type": "skos:Concept"
                     },
-                    "sosa:isActedOnBy": [
+                    "isActedOnBy": [
                         {
                             "@id": "act:1965-068140-1",
                             "@type": "sosa:Actuation",
@@ -586,9 +594,7 @@
                             "phenomenonTime": "moment:boring1965-068140",
                             "usedProcedure": "cl-brm:Gutsboring"
                         },
-                        {
-                            "@id": "act:1965-068140-3"
-                        }
+                        "act:1965-068140-3"
                     ],
                     "isPropertyOf": "boorgat:boorgat001"
                 }

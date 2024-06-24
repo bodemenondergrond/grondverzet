@@ -44,6 +44,18 @@
             "@id": "grondboringbeno:actuations",
             "@type": "@id"
         },
+        "madeActuation": {
+            "@id": "sosa:madeActuation",
+            "@type": "@id"
+        },
+        "madeBySampler": {
+            "@id": "sosa:madeBySampler",
+            "@type": "@id"
+        },
+        "isActedOnBy": {
+            "@id": "sosa:isActedOnBy",
+            "@type": "@id"
+        },
         "first": {
             "@id": "rdf:first",
             "@type": "@id"
