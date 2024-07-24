@@ -139,6 +139,14 @@
             "@id": "sosa:isSampleOf",
             "@type": "@id"
         },
+        "hasSample": {
+            "@id": "sosa:hasSample",
+            "@type": "@id"
+        },
+        "actsOnProperty": {
+            "@id": "sosa:actsOnProperty",
+            "@type": "@id"
+        },
         "sampleDiepteTot": {
             "@id": "grondboringbeno:sampleDiepteTot",
             "@type": "@id"

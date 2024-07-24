@@ -21,11 +21,57 @@ const frame_observation = {
 const frame_actuation = {
     "@context": context,
     "@type": ["sosa:Actuation"],
+    "hasFeatureOfInterest": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "hasProperty": {
+            "@embed": "@always",
+            "@omitDefault": true,
+            "isActedOnBy": {
+                "@embed": "@never",
+                "@omitDefault": true
+            }
+        },
+        "hasSample": {
+            "@embed": "@never",
+            "@omitDefault": true
+        },
+    },
+    "actsOnProperty": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "isActedOnBy": {
+            "@embed": "@never",
+            "@omitDefault": true
+        },
+        "isPropertyOf": {
+            "@embed": "@always",
+            "@omitDefault": true,
+            "hasSample": {
+                "@embed": "@never",
+                "@omitDefault": true
+            }
+        }
+    },
 
 }
+
 const frame_boorgat = {
     "@context": context,
     "@type": ["grondboringbeno:Boorgat"],
+    "hasProperty": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "isActedOnBy": {
+            "@embed": "@always",
+            "@omitDefault": true,
+        },
+
+    },
+    "hasSample": {
+        "@embed": "@always",
+        "@omitDefault": true
+    },
 
 }
 
@@ -51,6 +97,22 @@ const frame_bijlage = {
 const frame_sampling = {
     "@context": context,
     "@type": ["sosa:Sampling"],
+    "hasFeatureOfInterest": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "hasProperty": {
+            "@embed": "@always",
+            "@omitDefault": true,
+            "isActedOnBy": {
+                "@embed": "@never",
+                "@omitDefault": true
+            }
+        },
+        "hasSample": {
+            "@embed": "@never",
+            "@omitDefault": true
+        },
+    }
 
 }
 
