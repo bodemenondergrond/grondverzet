@@ -57,7 +57,7 @@
 @prefix time:                <http://www.w3.org/2006/time#> .
 @prefix wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
 @prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
-
+@prefix refnis2019: <http://vocab.belgif.be/auth/refnis2019/> .
 
 
 ### Classes
@@ -127,7 +127,7 @@ boring:1956-117549  a  grondboringen:Grondboring;
                     prov:qualifiedAssociation association:association001 ;
                     prov:qualifiedAssociation association:association003 ;
                     prov:qualifiedAssociation association:association004 ; #toegevoegd Linton
-                    grondboringbeno:actuations list:1956-117549-act1 .
+                    grondboringbeno:actuations list:1956-117549-act-1 . # foute uri
 
 list:1956-117549-act-1 a rdf:List ;
                       rdf:first act:1956-117549-1 ;
@@ -180,11 +180,11 @@ result:boorgat1956-117549-act1956-117549-1 a sosa:Result ;
                                    schema:about boorgat:boorgat1956-117549 .
 
 boorgat:boorgat1956-117549 a grondboringbeno:Boorgat ; # sosa:Result, geosparql:Feature  ;
-                   adms:identifier  id:boorgat1956-117549; #toegevoegd Linton
+                   adms:identifier  id:boorgat1956-117549; #toegevoegd Linton # identifier zelf aanmaken
                    ssn:hasProperty obs_prop:diepte_boorgat1956-117549 ;
 				   ssn:hasProperty obs_prop:maaiveld_boorgat1956-117549 ; #toegevoegd Linton
                    geosparql:hasGeometry geometrie:boorgat1956-117549 ;
-				   dcterms:spatial gemeente:boorgat1956-117549 . #toegevoegd Linton
+				   dcterms:spatial refnis2019:35013 . #toegevoegd Linton ## gemeente:boorgat1956-117549 is geen id van een gemeente
 
 
 geometrie:boorgat1956-117549 a geosparql:Geometry ;
@@ -194,11 +194,14 @@ geometrie:boorgat1956-117549 a geosparql:Geometry ;
 #toegevoegd Linton
 opmeting:boorgat1956-117549 a prov:Activity ;
                     sosa:usedProcedure cl-mmt:xy-gedigitaliseerdoptopokaart ;
-					prov:wasAssociatedWith agent:agentxxx .
+					prov:wasAssociatedWith agent:agentxxx . # agentxxx bestaat niet
 
 #toegevoegd Linton
-gemeente:boorgat1956-117549 a schema:City ;
+gemeente:boorgat1956-117549 a schema:City ;  ## gemeente:boorgat1956-117549 is geen id van een gemeente => refnis https://vocab.belgif.be/dataset/refnis2019.ttl
                     schema:name "Oostende" .
+
+refnis2019:35013 a skos:Concept;
+  skos:prefLabel "Oostende"@nl; .
 
 #toegevoegd Linton
 obs_prop:maaiveld_boorgat1956-117549 a sosa:ObservableProperty ;
