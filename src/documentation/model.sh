@@ -19,3 +19,9 @@
 
   sparql --results=TTL --data=../result/inferred/grondboring-ssn-sosa-prov.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > model_grondboring_inferred.png
+
+  sparql --results=TTL --data=../source/20240729/boring1956-117549.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > ../source/20240729/boring1956-117549.png
+
+  sparql --results=TTL --data=../source/20240729/boring2005-011108.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > ../source/20240729/boring2005-011108.png
