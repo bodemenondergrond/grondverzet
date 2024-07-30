@@ -1,0 +1,316 @@
+@prefix act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/> .
+@prefix adms:                <http://www.w3.org/ns/adms#> .
+@prefix agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
+@prefix association:         <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
+@prefix bekistingsdikte:     <https://data.bodemenondergrond.vlaanderen.be/id/bekistingsdikte/> .
+@prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
+@prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
+@prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
+@prefix boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
+@prefix boordiameter:        <https://data.bodemenondergrond.vlaanderen.be/id/boordiameter/> .
+@prefix boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/> .
+@prefix cl-bekmat:           <https://data.bodemenondergrond.vlaanderen.be/id/concept/bekistingsmateriaal/> .
+@prefix cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/> .
+@prefix cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/> .
+@prefix cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/> .
+@prefix cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/> .
+@prefix cl-mmt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/meetmethode/> .
+@prefix cl-mvt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/maaiveldtype/> .
+@prefix dcterms:             <http://purl.org/dc/terms/> .
+@prefix gemeente:            <https://data.bodemenondergrond.vlaanderen.be/id/gemeente/> .
+@prefix geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
+@prefix geosparql:           <http://www.opengis.net/ont/geosparql#> .
+@prefix gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/> .
+@prefix gml:                 <http://www.opengis.net/ont/gml#> .
+@prefix grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#> .
+@prefix grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#> .
+@prefix grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/> .
+@prefix helling:             <https://data.bodemenondergrond.vlaanderen.be/id/helling/> .
+@prefix hellingswaarde:      <https://data.bodemenondergrond.vlaanderen.be/id/hellingswaarde/> .
+@prefix id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/> .
+@prefix incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/> .
+@prefix list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/> .
+@prefix moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
+@prefix obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
+@prefix obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
+@prefix opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
+@prefix opmeting:            <https://data.bodemenondergrond.vlaanderen.be/id/opmeting/> .
+@prefix opm:                 <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/> .
+@prefix prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/> .
+@prefix prov:                <http://www.w3.org/ns/prov#> .
+@prefix qudt-schema:         <https://qudt.org/schema/qudt/> .
+@prefix qudt-unit:           <https://qudt.org/vocab/unit/> .
+@prefix rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:                <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix result:              <https://data.bodemenondergrond.vlaanderen.be/id/result/> .
+@prefix richting:            <https://data.bodemenondergrond.vlaanderen.be/id/richting/> .
+@prefix richtingswaarde:     <https://data.bodemenondergrond.vlaanderen.be/id/richtingswaarde/> .
+@prefix rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/> .
+@prefix sam:                 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/> .
+@prefix schema:              <https://schema.org/> .
+@prefix sdmx-attribute:      <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix seb:                 <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#> .
+@prefix skos:                <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa:                <http://www.w3.org/ns/sosa/> .
+@prefix sosa-om:             <http://www.w3.org/ns/sosa/om#> .
+@prefix ssn:                 <http://www.w3.org/ns/ssn/> .
+@prefix time:                <http://www.w3.org/2006/time#> .
+@prefix wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
+@prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+### Classes
+grondboringbeno:Diepte a rdf:Class ;
+                       rdfs:label "Een maat voor de diepte van een boorgat, of diepte waar een monster uit een boorgat is genomen, uitgedrukt in meter."@nl .
+
+### Properties
+
+grondboringen:boorder a rdf:Property ;
+                      rdfs:subPropertyOf prov:wasAssociatedWith .
+
+grondboringen:boormeester a rdf:Property ;
+                          rdfs:subPropertyOf prov:wasAssociatedWith .
+
+grondboringbeno:opdrachtgever a rdf:Property ;
+                              rdfs:subPropertyOf prov:wasAssociatedWith .
+
+#toegevoegd Linton
+grondboringbeno:dataleverancier a rdf:Property ;
+                              rdfs:subPropertyOf prov:wasAssociatedWith .
+							  
+grondboringbeno:preconditie a rdf:Property .
+
+grondboringbeno:postconditie a rdf:Property .
+
+grondboringbeno:sampleDiepteVan  a rdf:Property ;
+                                 rdfs:range grondboringbeno:Diepte .
+
+grondboringbeno:sampleDiepteTot  a rdf:Property ;
+                                 rdfs:range grondboringbeno:Diepte .
+### Individuals
+
+prop:diepte a skos:Concept .
+
+prop:aangenomengrondwaterstand a skos:Concept . #toegevoegd Linton
+
+prop:maaiveld a skos:Concept . #toegevoegd Linton
+
+cl-bpt:meten_van_de_diepte_van_een_gat a sosa:Procedure; # skos:Concept .
+.
+
+cl-mmt:XY_TopografischIngemeten a sosa:Procedure; # skos:Concept .
+. #toegevoegd Linton
+
+
+cl-idt:KBIN-BGD a skos:Concept . #toegevoegd Linton
+
+cl-idt:boornummer a skos:Concept . #toegevoegd Linton
+
+cl-mmt:Z_TopografischIngemeten a skos:Concept . #toegevoegd Linton
+
+cl-mvt:huidig a skos:Concept . #toegevoegd Linton
+
+
+boring:2005-011108  a  grondboringen:Grondboring;
+                    #rdfs:label       "Grondboring 2005-011108";
+                    adms:identifier                id:boring2005-011108;
+                    sosa:resultTime                moment:boring2005-011108;
+                    grondboringbeno:opdrachtgever  agent:agent003;
+                    grondboringbeno:dataleverancier  agent:agent004; #toegevoegd Linton
+                    grondboringen:boorder          agent:agent001;
+                    grondboringen:boormeester      agent:agent002;
+                    prov:wasStartedBy      opdracht:2005-001674 ;
+                    prov:qualifiedAssociation association:association001 ;
+                    prov:qualifiedAssociation association:association002 ;
+                    prov:qualifiedAssociation association:association003 ;
+                    prov:qualifiedAssociation association:association004 ; #toegevoegd Linton
+                    grondboringbeno:actuations list:2005-011108-act1 .
+
+list:2005-011108-act1 a rdf:List ;
+                      rdf:first act:2005-011108-1 ;
+                      rdf:rest rdf:nil  . 
+
+obs:2005-011108-x  a   sosa:Observation;
+                   sosa:hasResult                result:2005-011108-x;
+                   adms:identifier                id:2005-011108-x;
+                   sosa:resultTime "2005-07-08T00:00:00.000"^^xsd:dateTime ;
+                   sosa:phenomenonTime                moment:boring2005-011108 ;
+                   sosa:observedProperty obs_prop:diepte_boorgat2005-011108 ;
+                   sosa:madeBySensor                agent:agent001;
+                   sosa:usedProcedure  cl-bpt:meten_van_de_diepte_van_een_gat ;
+                   ssn:wasOriginatedBy    opdracht:2005-001674 ;
+                   sosa:hasFeatureOfInterest      boorgat:boorgat2005-011108 .
+
+obs_prop:diepte_boorgat2005-011108 a sosa:ObservableProperty ;
+                           dcterms:subject prop:diepte ;
+                           ssn:isPropertyOf boorgat:boorgat2005-011108 .
+
+#toegevoegd Linton
+obs:2005-011108-agw  a   sosa:Observation;
+                   sosa:hasResult                result:2005-011108-agw;
+                   adms:identifier                id:2005-011108-agw;
+                   sosa:resultTime "2005-07-08T00:00:00.000"^^xsd:dateTime ;
+                   sosa:phenomenonTime                moment:boring2005-011108 ;
+                   sosa:observedProperty obs_prop:aangenomengrondwaterstand_boorgat2005-011108 ;
+                   sosa:madeBySensor                agent:agent001;
+                   sosa:usedProcedure  cl-bpt:bepaling_grondwaterstand ;
+                   ssn:wasOriginatedBy    opdracht:2005-001674 ;
+                   sosa:hasFeatureOfInterest      boorgat:boorgat2005-011108 .
+
+# toegevoegd Linton
+obs_prop:aangenomengrondwaterstand_boorgat2005-011108 a sosa:ObservableProperty ;
+                           dcterms:subject prop:aangenomengrondwaterstand ;
+                           ssn:isPropertyOf boorgat:boorgat2005-011108 .
+
+#toegevoegd Linton
+result:2005-011108-agw a sosa:Result ;
+                     rdf:value 4.43 ;
+                     sdmx-attribute:unitMeasure qudt-unit:M .
+					 
+result:2005-011108-x a sosa:Result ; #a grondboringbeno:Diepte ;
+                     rdf:value 8.0 ;
+                     sdmx-attribute:unitMeasure qudt-unit:M .
+
+
+act:2005-011108-1  a   sosa:Actuation; #grondboringen:Grondboring;
+                   #rdfs:label       "Grondboring-actuatie 2005-011108-1";
+                   sosa:madeByActuator boor:boring2005-011108-a ;
+                   sosa:usedProcedure cl-brm:Lepelboring ;
+                   sosa:hasResult                result:boorgat2005-011108-act2005-011108-1;
+                   adms:identifier                id:act2005-011108-1;
+                   sosa:resultTime "2005-07-08T00:00:00.000"^^xsd:dateTime ;
+                   sosa:phenomenonTime                moment:boring2005-011108 ;
+                   sosa:hasFeatureOfInterest boorgat:boorgat2005-011108.
+
+result:boorgat2005-011108-act2005-011108-1-pre 	a grondboringbeno:Diepte ;
+                                          rdf:value 0.0 ;
+                                          sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:boorgat2005-011108-act2005-011108-1-post a grondboringbeno:Diepte ;
+                                        rdf:value 8.0 ;
+                                        sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:boorgat2005-011108-act2005-011108-1 a sosa:Result ;
+                                   ### het resultaat van een actuatie is een wijziging van de status van de werkelijkheid
+                                   ### hier uitgedrukt door een preconditie, de status voor de actuatie, en een postconditie, de status na de actuatie
+                                   grondboringbeno:preconditie result:boorgat2005-011108-act2005-011108-1-pre ;
+                                   grondboringbeno:postconditie result:boorgat2005-011108-act2005-011108-1-post ;
+                                   schema:about boorgat:boorgat2005-011108 .
+
+boorgat:boorgat2005-011108 a grondboringbeno:Boorgat ; # sosa:Result, geosparql:Feature  ;
+                   adms:identifier  id:boorgat2005-011108; #toegevoegd Linton
+                   ssn:hasProperty obs_prop:diepte_boorgat2005-011108 ;
+				   ssn:hasProperty obs_prop:aangenomengrondwaterstand_boorgat2005-011108 ; #toegevoegd Linton
+				   ssn:hasProperty obs_prop:maaiveld_boorgat2005-011108 ; #toegevoegd Linton
+                   geosparql:hasGeometry geometrie:boorgat2005-011108 ;
+				   dcterms:spatial gemeente:boorgat2005-011108 . #toegevoegd Linton
+
+
+geometrie:boorgat2005-011108 a geosparql:Geometry ;
+                     geosparql:asWKT "POINT(5.3220476 51.538901)"^^geosparql:wktLiteral ;
+					 prov:wasGeneratedBy opmeting:boorgat2005-011108 . #toegevoegd Linton
+
+#toegevoegd Linton
+opmeting:boorgat2005-011108 a prov:Activity ;
+                    sosa:usedProcedure cl-mmt:XY_TopografischIngemeten ;
+					prov:wasAssociatedWith agent:agent005 .
+
+#toegevoegd Linton
+obs_prop:maaiveld_boorgat2005-011108 a sosa:ObservableProperty ;
+                             sosa:hasFeatureOfInterest boorgat:boorgat2005-011108 ;
+                             dcterms:subject prop:maaiveld .
+
+#toegevoegd Linton
+obs:2005-011108-maaiv_1  a sosa:Observation;
+                         sosa:hasResult                result:2005-011108-maaiv_1;
+                         adms:identifier                id:2005-011108-maaiv_1;
+                         sosa:resultTime "2005-07-08T00:00:00.000"^^xsd:dateTime ;
+                         sosa:phenomenonTime                moment:boring2005-011108 ;
+                         sosa:observedProperty obs_prop:maaiveld_boorgat2005-011108 ;
+                         sosa:madeBySensor                agent:agent004;
+                         sosa:usedProcedure  cl-mmt:z-digitaalhoogtemodel ;
+                         ssn:wasOriginatedBy    opdracht:2005-001674 ;
+						 grondboringbeno:maaiveldtype cl-mvt:huidig ;
+                         sosa:hasFeatureOfInterest      boorgat:boorgat2005-011108 .
+
+#toegevoegd Linton ? Wat met epsg?
+result:2005-011108-maaiv_1 a sosa:Result ; #a grondboringbeno:maaiveld ;
+                           rdf:value 70.12 ;
+                           sdmx-attribute:unitMeasure qudt-unit:M .				   
+
+id:act2005-011108-1
+    a              adms:Identifier;
+    skos:notation  "GEO-05/033-B6bis"^^cl-idt:boornummer .
+
+boor:boring2005-011108-a
+    a               grondboringen:Boor; #,sosa:Actuator, sosa:Sampler;
+    ssn:implements  cl-brm:Lepelboring .
+
+cl-brm:Lepelboring  a  sosa:Procedure . # skos:Concept .
+
+agent:agent001  a  prov:Agent ;
+                rdfs:label       "MVG - Afdeling Geotechniek";
+                prov:actedOnBehalfOf agent:agent003 .
+
+agent:agent002  a  prov:Agent ;
+                rdfs:label       "De Groote, Rufin";
+                prov:actedOnBehalfOf agent:agent003 .
+
+agent:agent003  a  prov:Agent ;
+                rdfs:label       "AWV - Afdeling Wegen en Verkeer Limburg" .
+
+agent:agent004  a  prov:Agent ;
+                rdfs:label       "VO - Afdeling Geotechniek" .
+
+agent:agent005  a  prov:Agent ;
+                rdfs:label       "MVG - Afdeling Wegen Limburg" .
+
+
+opdracht:2005-001674  a  <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht> ;
+                      prov:wasAttributedTo agent:agent003 .
+
+association:association001 a prov:Association ;
+                           prov:agent   agent:agent001;
+                           prov:hadPlan wettelijkkader:wettelijkkader001;
+                           prov:hadRole rol:boorder .
+
+association:association002 a prov:Association ;
+                           prov:agent   agent:agent002;
+                           prov:hadRole rol:boormeester .
+
+association:association003 a prov:Association ;
+                           prov:agent   agent:agent003;
+                           prov:hadPlan cl-dlb:GeotechnischOnderzoek;
+                           prov:hadRole rol:opdrachtgever .
+
+#toegevoegd Linton
+association:association004 a prov:Association ;
+                           prov:agent   agent:agent004;
+                           prov:hadRole rol:dataleverancier .
+						   
+#toegevoegd Linton
+association:association005 a prov:Association ;
+                           prov:agent   agent:agent005;
+                           prov:hadRole rol:opmeter .
+						   
+rol:opdrachtgever a prov:Role .
+
+rol:boormeester  a prov:Role .
+
+rol:boorder  a prov:Role .
+
+#toegevoegd Linton
+rol:dataleverancier  a prov:Role .
+
+cl-dlb:Grondwaterwinning
+    a       prov:Plan . #skos:Concept .
+
+wettelijkkader:wettelijkkader001
+    a       grondboringen:WettelijkKaderBoring .
+
+moment:boring2005-011108
+    a                   time:Instant;
+    time:inXSDDateTime  "2005-07-08T00:00:00.000"^^xsd:dateTime .
+
+
