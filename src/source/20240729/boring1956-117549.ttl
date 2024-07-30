@@ -274,7 +274,7 @@ agent:agent002  a  prov:Agent ;
                 prov:actedOnBehalfOf agent:agentxxx .
 
 agent:agent003  a  prov:Agent ;
-                rdfs:label       "onbekend";
+                rdfs:label       "onbekend"; .
 
 
 opdracht:1986-005259  a  <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht> ;
