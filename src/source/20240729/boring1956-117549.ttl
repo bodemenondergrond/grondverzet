@@ -30,7 +30,6 @@
 @prefix id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/> .
 @prefix incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/> .
 @prefix list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/> .
-@prefix moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
 @prefix obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
 @prefix obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
 @prefix opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
@@ -117,7 +116,7 @@ cl-mmt:z-digitaalhoogtemodel a skos:Concept . #toegevoegd Linton
 boring:1956-117549  a  grondboringen:Grondboring;
                     #rdfs:label       "Grondboring 1956-117549";
                     adms:identifier                id:boring1956-117549;
-                    sosa:resultTime                moment:boring1956-117549;
+                    sosa:resultTime                "1956-03-01T00:00:00.000"^^xsd:dateTime ;
                     grondboringbeno:opdrachtgever  agent:agentxxx;
                     grondboringbeno:dataleverancier  agent:agentxxx; #toegevoegd Linton
                     grondboringen:boorder          agent:agent001;
@@ -137,7 +136,6 @@ obs:1956-117549-x  a   sosa:Observation;
                    sosa:hasResult                result:1956-117549-x;
                    adms:identifier                id:1956-117549-x;
                    sosa:resultTime "1956-03-01T00:00:00.000"^^xsd:dateTime ;
-                   sosa:phenomenonTime                moment:boring1956-117549 ;
                    sosa:observedProperty obs_prop:diepte_boorgat1956-117549 ;
                    sosa:madeBySensor                agent:agent001;
                    sosa:usedProcedure  cl-bpt:meten_van_de_diepte_van_een_gat ;
@@ -161,7 +159,6 @@ act:1956-117549-1  a   sosa:Actuation; #grondboringen:Grondboring;
                    sosa:hasResult                result:boorgat1956-117549-act1956-117549-1;
                    adms:identifier                id:act1956-117549-1;
                    sosa:resultTime "1956-03-01T00:00:00.000"^^xsd:dateTime ;
-                   sosa:phenomenonTime                moment:boring1956-117549 ;
                    sosa:hasFeatureOfInterest boorgat:boorgat1956-117549.
 
 result:boorgat1956-117549-act1956-117549-1-pre 	a grondboringbeno:Diepte ;
@@ -197,11 +194,10 @@ opmeting:boorgat1956-117549 a sosa:Observation ;#prov:Activity ;
         sosa:result geometrie:boorgat1956-117549 ;
         sosa:hasFeatureOfInterest boorgat:boorgat1956-117549;
         sosa:madeBySensor agent:agentxxx ;
+        sosa:observedProperty geosparql:asWKT ;
 					prov:wasAssociatedWith agent:agentxxx . # agentxxx bestaat niet
 
 #toegevoegd Linton
-gemeente:boorgat1956-117549 a schema:City ;  ## gemeente:boorgat1956-117549 is geen id van een gemeente => refnis https://vocab.belgif.be/dataset/refnis2019.ttl
-                    schema:name "Oostende" .
 
 refnis2019:35013 a skos:Concept;
   skos:prefLabel "Oostende"@nl; .
@@ -216,7 +212,6 @@ obs:1956-117549-maaiv_1  a sosa:Observation;
                          sosa:hasResult                result:1956-117549-maaiv_1;
                          adms:identifier                id:1956-117549-maaiv_1;
                          sosa:resultTime "1956-03-01T00:00:00.000"^^xsd:dateTime ;
-                         sosa:phenomenonTime                moment:boring1956-117549 ;
                          sosa:observedProperty obs_prop:maaiveld_boorgat1956-117549 ;
                          sosa:madeBySensor                agent:agent001;
                          sosa:usedProcedure  cl-mmt:z-uit_dossier ;
@@ -236,7 +231,6 @@ obs:1956-117549-maaiv_2  a sosa:Observation;
                          sosa:hasResult                result:1956-117549-maaiv_2;
                          adms:identifier                id:1956-117549-maaiv_2;
                          sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
-                         sosa:phenomenonTime                moment:boring1956-117549 ;
                          sosa:observedProperty obs_prop:maaiveld_boorgat1956-117549 ;
                          sosa:madeBySensor                agent:agentxxx;
                          sosa:usedProcedure  cl-mmt:z-digitaalhoogtemodel ;
@@ -324,6 +318,3 @@ cl-dlb:Geologischonderzoek
 wettelijkkader:wettelijkkader001
     a       grondboringen:WettelijkKaderBoring .
 
-moment:boring1956-117549
-    a                   time:Instant;
-    time:inXSDDateTime  "1956-03-01T00:00:00.000"^^xsd:dateTime .
