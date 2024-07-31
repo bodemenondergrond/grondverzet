@@ -2,6 +2,7 @@
 @prefix adms:                <http://www.w3.org/ns/adms#> .
 @prefix agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
 @prefix association:               <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
+
 @prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
 @prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
 @prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
