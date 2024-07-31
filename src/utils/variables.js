@@ -12,6 +12,23 @@ const frame_grondboring = {
         "@embed": "@never",
         "@omitDefault": true
     },
+    "qualifiedAssociation":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "wasStartedBy":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "boorder":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "boormeester":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+
 }
 const frame_observation = {
     "@context": context,
@@ -90,6 +107,10 @@ const frame_bijlage = {
             "@embed": "@never",
             "@omitDefault": true
         },
+        "qualifiedAssociation":{
+            "@embed": "@never",
+            "@omitDefault": true
+        }
 
     }
 }
