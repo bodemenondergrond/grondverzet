@@ -334,11 +334,7 @@
                     }
                 }
             },
-            "phenomenonTime": {
-                "@id": "moment:boring1965-068140",
-                "@type": "time:Instant",
-                "inXSDDateTime": "1965-01-01T00:00:00.000"
-            },
+            "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": "cl-brm:Lepelboring"
         },
         {
@@ -408,11 +404,7 @@
                     }
                 }
             },
-            "phenomenonTime": {
-                "@id": "moment:boring1965-068140",
-                "@type": "time:Instant",
-                "inXSDDateTime": "1965-01-01T00:00:00.000"
-            },
+            "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": "cl-brm:Lepelboring"
         },
         {
@@ -475,11 +467,7 @@
                     "@type": "sosa:Procedure"
                 }
             },
-            "phenomenonTime": {
-                "@id": "moment:boring1965-068140",
-                "@type": "time:Instant",
-                "inXSDDateTime": "1965-01-01T00:00:00.000"
-            },
+            "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": "cl-brm:Gutsboring"
         },
         {
@@ -546,11 +534,7 @@
                     }
                 }
             },
-            "phenomenonTime": {
-                "@id": "moment:boring1965-068140",
-                "@type": "time:Instant",
-                "inXSDDateTime": "1965-01-01T00:00:00.000"
-            },
+            "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": "cl-brm:Lepelboring"
         }
     ]

@@ -2,6 +2,7 @@
 @prefix adms:                <http://www.w3.org/ns/adms#> .
 @prefix agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
 @prefix association:               <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
+
 @prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
 @prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
 @prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
@@ -92,7 +93,8 @@ cl-bpt:bepaling_kleigehalte a sosa:Procedure; # skos:Concept .
 boring:1965-068140  a  grondboringen:Grondboring;
                     #rdfs:label       "Grondboring 1965-068140";
                     adms:identifier                id:boring1965-068140;
-                    sosa:phenomenonTime                moment:boring1965-068140;
+                        sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                        #sosa:phenomenonTime                moment:boring1965-068140;
                     grondboringbeno:opdrachtgever  agent:agent003;
                     grondboringen:boorder          agent:agent001;
                     grondboringen:boormeester      agent:agent002;
@@ -135,7 +137,7 @@ obs:1965-068140-x  a   sosa:Observation;
                    sosa:hasResult                result:1965-068140-x;
                    #adms:identifier                id:1965-068140-x;
                    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
-                   sosa:phenomenonTime                moment:boring1965-068140 ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
                    sosa:observedProperty obs_prop:diepte_boorgat001 ;
                    sosa:madeBySensor                agent:agent001;
                    sosa:usedProcedure  cl-bpt:meten_van_de_diepte_van_een_gat ;
@@ -158,7 +160,7 @@ obs:1965-068140-y-1  a   sosa:Observation;
                      sosa:hasResult                result:1965-068140-y-1;
                      #adms:identifier                id:1965-068140-y-1;
                      sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
-                     sosa:phenomenonTime                moment:boring1965-068140 ;
+                     #sosa:phenomenonTime                moment:boring1965-068140 ;
                      sosa:observedProperty obs_prop:kleigehalte_boorgat001-sam1965-068140-a ;
                      sosa:madeBySensor                agent:agent003;
                      sosa:usedProcedure  cl-bpt:bepaling_kleigehalte ;
@@ -183,7 +185,7 @@ act:1965-068140-1  a   sosa:Actuation; #grondboringen:Grondboring;
                    #adms:identifier                id:act1965-068140-1;
                    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
                    sosa:actsOnProperty obs_prop:diepte_boorgat001 ;
-                   sosa:phenomenonTime                moment:boring1965-068140 ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
                    sosa:hasFeatureOfInterest boorgat:boorgat001.
 
 act:1965-068140-2  a   sosa:Actuation; #grondboringen:Grondboring;
@@ -192,7 +194,8 @@ act:1965-068140-2  a   sosa:Actuation; #grondboringen:Grondboring;
                    sosa:usedProcedure cl-brm:Gutsboring  ;
                    sosa:hasResult                 result:boorgat001-act1965-068140-2;
                    #adms:identifier                id:act1965-068140-2;
-                   sosa:phenomenonTime                moment:boring1965-068140 ;
+                       sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
                    sosa:hasFeatureOfInterest boorgat:boorgat001.
 
 act:1965-068140-3  a   sosa:Actuation; #grondboringen:Grondboring;
@@ -201,7 +204,8 @@ act:1965-068140-3  a   sosa:Actuation; #grondboringen:Grondboring;
                    sosa:usedProcedure cl-brm:Lepelboring ;
                    sosa:hasResult                 result:boorgat001-act1965-068140-3;
                    #adms:identifier                id:act1965-068140-3;
-                   sosa:phenomenonTime                moment:boring1965-068140 ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
+                       sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
                    sosa:hasFeatureOfInterest boorgat:boorgat001.
 
 sam:1965-068140-a  a   sosa:Sampling ; #grondboringen:Grondboring;
@@ -210,7 +214,8 @@ sam:1965-068140-a  a   sosa:Sampling ; #grondboringen:Grondboring;
                    sosa:usedProcedure cl-brm:Lepelboring ;
                    sosa:hasResult                 result:boorgat001-sam1965-068140-a;
                    #adms:identifier                id:act1965-068140-3;
-                   sosa:phenomenonTime                moment:boring1965-068140 ;
+                       sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
                    sosa:hasFeatureOfInterest boorgat:boorgat001.
 
 result:boorgat001-sam1965-068140-a a sosa:Sample ;
@@ -234,7 +239,8 @@ sam:1965-068140-b  a   sosa:Sampling ; #grondboringen:Grondboring;
                    sosa:usedProcedure cl-brm:Lepelboring ;
                    sosa:hasResult                 result:boorgat001-sam1965-068140-b;
                    #adms:identifier                id:act1965-068140-3;
-                   sosa:phenomenonTime                moment:boring1965-068140 ;
+                       sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                       #sosa:phenomenonTime                moment:boring1965-068140 ;
                    sosa:hasFeatureOfInterest boorgat:boorgat001.
 
 result:boorgat001-sam1965-068140-b a sosa:Sample ;
@@ -257,7 +263,8 @@ sam:1965-068140-c  a   sosa:Sampling ; #grondboringen:Grondboring;
                    sosa:usedProcedure cl-brm:Gutsboring  ;
                    sosa:hasResult                 result:boorgat001-sam1965-068140-c;
                    #adms:identifier                id:act1965-068140-3;
-                   sosa:phenomenonTime                moment:boring1965-068140 ;
+                       sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
                    sosa:hasFeatureOfInterest boorgat:boorgat001.
 
 
@@ -282,7 +289,8 @@ sam:1965-068140-d  a   sosa:Sampling ; #grondboringen:Grondboring;
                    sosa:usedProcedure cl-brm:Lepelboring ;
                    sosa:hasResult                 result:boorgat001-sam1965-068140-d;
                    #adms:identifier                id:act1965-068140-3;
-                   sosa:phenomenonTime                moment:boring1965-068140 ;
+                       sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
                    sosa:hasFeatureOfInterest boorgat:boorgat001 .
 
 result:boorgat001-sam1965-068140-d a sosa:Sample ;
