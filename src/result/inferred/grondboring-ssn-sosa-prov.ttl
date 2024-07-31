@@ -57,7 +57,6 @@
     sosa:hasFeatureOfInterest boorgat:boorgat001;
     sosa:hasResult result:boorgat001-act1965-068140-1;
     sosa:madeByActuator boor:boring1965-068140-a;
-    sosa:phenomenonTime moment:boring1965-068140;
     sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-brm:Lepelboring.
 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/1965-068140-2> a sosa:Actuation;
@@ -65,14 +64,14 @@
     sosa:hasFeatureOfInterest boorgat:boorgat001;
     sosa:hasResult result:boorgat001-act1965-068140-2;
     sosa:madeByActuator boor:boring1965-068140-b;
-    sosa:phenomenonTime moment:boring1965-068140;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-brm:Gutsboring.
 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/1965-068140-3> a sosa:Actuation;
     sosa:actsOnProperty obs_prop:diepte_boorgat001;
     sosa:hasFeatureOfInterest boorgat:boorgat001;
     sosa:hasResult result:boorgat001-act1965-068140-3;
     sosa:madeByActuator boor:boring1965-068140-a;
-    sosa:phenomenonTime moment:boring1965-068140;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-brm:Lepelboring.
 ag:agent001 a prov:Agent;
     prov:actedOnBehalfOf ag:agent003;
@@ -126,7 +125,7 @@ boorgat:boorgat001 geosparql:hasGeometry geometrie:boorgat001;
     prov:wasAssociatedWith ag:agent001, ag:agent002, ag:agent003;
     prov:wasInfluencedBy ag:agent001, ag:agent002, ag:agent003;
     prov:wasStartedBy <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/2007-005512>;
-    sosa:phenomenonTime moment:boring1965-068140;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     grondboringbeno:actuations <https://data.bodemenondergrond.vlaanderen.be/id/list/1965-068140-act1>;
     grondboringbeno:opdrachtgever ag:agent003;
     grondboringbeno:samplings <https://data.bodemenondergrond.vlaanderen.be/id/list/1965-068140-sam1>;
@@ -185,7 +184,6 @@ moment:boring1965-068140 a time:Instant;
     sosa:hasResult <https://data.bodemenondergrond.vlaanderen.be/id/result/1965-068140-x>;
     sosa:madeBySensor ag:agent001;
     sosa:observedProperty obs_prop:diepte_boorgat001;
-    sosa:phenomenonTime moment:boring1965-068140;
     sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-bpt:meten_van_de_diepte_van_een_gat;
     ssn:wasOriginatedBy <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/2007-005512>.
@@ -194,7 +192,6 @@ moment:boring1965-068140 a time:Instant;
     sosa:hasResult <https://data.bodemenondergrond.vlaanderen.be/id/result/1965-068140-y-1>;
     sosa:madeBySensor ag:agent003;
     sosa:observedProperty obs_prop:kleigehalte_boorgat001-sam1965-068140-a;
-    sosa:phenomenonTime moment:boring1965-068140;
     sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-bpt:bepaling_kleigehalte;
     ssn:wasOriginatedBy <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/2007-005512>.
@@ -298,25 +295,25 @@ result:boorgat001-sam1965-068140-d a sosa:Sample;
     sosa:hasFeatureOfInterest boorgat:boorgat001;
     sosa:hasResult result:boorgat001-sam1965-068140-a;
     sosa:madeBySampler boor:boring1965-068140-a;
-    sosa:phenomenonTime moment:boring1965-068140;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-brm:Lepelboring.
 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/1965-068140-b> a sosa:Sampling;
     sosa:hasFeatureOfInterest boorgat:boorgat001;
     sosa:hasResult result:boorgat001-sam1965-068140-b;
     sosa:madeBySampler boor:boring1965-068140-a;
-    sosa:phenomenonTime moment:boring1965-068140;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-brm:Lepelboring.
 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/1965-068140-c> a sosa:Sampling;
     sosa:hasFeatureOfInterest boorgat:boorgat001;
     sosa:hasResult result:boorgat001-sam1965-068140-c;
     sosa:madeBySampler boor:boring1965-068140-b;
-    sosa:phenomenonTime moment:boring1965-068140;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-brm:Gutsboring.
 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/1965-068140-d> a sosa:Sampling;
     sosa:hasFeatureOfInterest boorgat:boorgat001;
     sosa:hasResult result:boorgat001-sam1965-068140-d;
     sosa:madeBySampler boor:boring1965-068140-a;
-    sosa:phenomenonTime moment:boring1965-068140;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-brm:Lepelboring.
 wettelijkkader:wettelijkkader001 a grondboringen:WettelijkKaderBoring.
 grondboringbeno:Diepte a rdf:Class;

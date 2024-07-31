@@ -313,11 +313,7 @@
         "@type": "boe:Opdracht",
         "wasAttributedTo": "ag:agent003"
     },
-    "phenomenonTime": {
-        "@id": "moment:boring1965-068140",
-        "@type": "time:Instant",
-        "inXSDDateTime": "1965-01-01T00:00:00.000"
-    },
+    "resultTime": "1965-01-01T00:00:00.000",
     "actuations": {
         "@id": "list:1965-068140-act1",
         "@type": "rdf:List",
@@ -368,7 +364,7 @@
                                                 }
                                             }
                                         },
-                                        "phenomenonTime": "moment:boring1965-068140",
+                                        "resultTime": "1965-01-01T00:00:00.000",
                                         "usedProcedure": "cl-brm:Lepelboring"
                                     },
                                     "isSampleOf": "boorgat:boorgat001",
@@ -403,7 +399,7 @@
                                         "hasFeatureOfInterest": "boorgat:boorgat001",
                                         "hasResult": "result:boorgat001-sam1965-068140-b",
                                         "madeBySampler": "boor:boring1965-068140-a",
-                                        "phenomenonTime": "moment:boring1965-068140",
+                                        "resultTime": "1965-01-01T00:00:00.000",
                                         "usedProcedure": "cl-brm:Lepelboring"
                                     },
                                     "isSampleOf": "boorgat:boorgat001",
@@ -436,7 +432,7 @@
                                                 "@type": "sosa:Procedure"
                                             }
                                         },
-                                        "phenomenonTime": "moment:boring1965-068140",
+                                        "resultTime": "1965-01-01T00:00:00.000",
                                         "usedProcedure": "cl-brm:Gutsboring"
                                     },
                                     "isSampleOf": "boorgat:boorgat001",
@@ -491,7 +487,7 @@
                             "about": "boorgat:boorgat001"
                         },
                         "madeByActuator": "boor:boring1965-068140-b",
-                        "phenomenonTime": "moment:boring1965-068140",
+                        "resultTime": "1965-01-01T00:00:00.000",
                         "usedProcedure": "cl-brm:Gutsboring"
                     },
                     {
@@ -516,7 +512,7 @@
                             "about": "boorgat:boorgat001"
                         },
                         "madeByActuator": "boor:boring1965-068140-a",
-                        "phenomenonTime": "moment:boring1965-068140",
+                        "resultTime": "1965-01-01T00:00:00.000",
                         "usedProcedure": "cl-brm:Lepelboring"
                     }
                 ],
@@ -541,7 +537,6 @@
                 "about": "boorgat:boorgat001"
             },
             "madeByActuator": "boor:boring1965-068140-a",
-            "phenomenonTime": "moment:boring1965-068140",
             "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": "cl-brm:Lepelboring"
         },
@@ -577,7 +572,7 @@
                             "hasFeatureOfInterest": "boorgat:boorgat001",
                             "hasResult": "result:boorgat001-sam1965-068140-d",
                             "madeBySampler": "boor:boring1965-068140-a",
-                            "phenomenonTime": "moment:boring1965-068140",
+                            "resultTime": "1965-01-01T00:00:00.000",
                             "usedProcedure": "cl-brm:Lepelboring"
                         }
                     ]
