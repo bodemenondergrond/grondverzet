@@ -188,12 +188,15 @@ boorgat:boorgat1956-117549 a grondboringbeno:Boorgat ; # sosa:Result, geosparql:
 
 
 geometrie:boorgat1956-117549 a geosparql:Geometry ;
-                     geosparql:asWKT "POINT(2.93275149 51.23279033)"^^geosparql:wktLiteral ;
-					 prov:wasGeneratedBy opmeting:boorgat1956-117549 . #toegevoegd Linton
+                     geosparql:asWKT "POINT(2.93275149 51.23279033)"^^geosparql:wktLiteral ;.
+					 #prov:wasGeneratedBy opmeting:boorgat1956-117549 . #toegevoegd Linton
 
 #toegevoegd Linton
-opmeting:boorgat1956-117549 a prov:Activity ;
+opmeting:boorgat1956-117549 a sosa:Observation ;#prov:Activity ;
                     sosa:usedProcedure cl-mmt:xy-gedigitaliseerdoptopokaart ;
+        sosa:result geometrie:boorgat1956-117549 ;
+        sosa:hasFeatureOfInterest boorgat:boorgat1956-117549;
+        sosa:madeBySensor agent:agentxxx ;
 					prov:wasAssociatedWith agent:agentxxx . # agentxxx bestaat niet
 
 #toegevoegd Linton
@@ -205,7 +208,7 @@ refnis2019:35013 a skos:Concept;
 
 #toegevoegd Linton
 obs_prop:maaiveld_boorgat1956-117549 a sosa:ObservableProperty ;
-                             sosa:hasFeatureOfInterest boorgat:boorgat1956-117549 ;
+                             #sosa:hasFeatureOfInterest boorgat:boorgat1956-117549 ;
                              dcterms:subject prop:maaiveld .
 
 #toegevoegd Linton
