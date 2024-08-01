@@ -12,6 +12,7 @@ import {
     frame_sampling,
     frame_bijlage,
     frame_boorgat,
+    frame_association,
     rdf_to_jsonld,
     sortLines
 } from './utils/variables.js';
@@ -33,6 +34,8 @@ fs.writeFileSync('result/actuation-ssn-sosa-prov.jsonld', JSON.stringify(await r
 fs.writeFileSync('result/sampling-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_sampling), null, 4));
 fs.writeFileSync('result/bijlage-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_bijlage), null, 4));
 fs.writeFileSync('result/boorgat-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_boorgat), null, 4));
+fs.writeFileSync('result/association-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_association), null, 4));
+
 
 const n3_files = await glob('*.n3', {
     cwd: rules
