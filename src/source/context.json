@@ -3,6 +3,14 @@
     "@id": "adms:identifier",
     "@type": "@id"
   },
+  "id": {
+    "@id": "@id",
+    "@type": "@id"
+  },
+  "type": {
+    "@id": "@type",
+    "@type": "@id"
+  },
   "qualifiedAssociation": {
     "@id": "prov:qualifiedAssociation",
     "@type": "@id"
@@ -23,7 +31,6 @@
     "@id": "prov:hadRole",
     "@type": "@id"
   },
-
   "wasStartedBy": {
     "@id": "prov:wasStartedBy",
     "@type": "@id"
@@ -52,7 +59,6 @@
     "@id": "sosa:madeBySampler",
     "@type": "@id"
   },
-
   "isActedOnBy": {
     "@id": "sosa:isActedOnBy",
     "@type": "@id"
@@ -204,7 +210,6 @@
     "@id": "dcterms:date",
     "@type": "xsd:date"
   },
-
   "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
   "adms": "http://www.w3.org/ns/adms#",
   "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",
@@ -230,7 +235,7 @@
   "grondboringen": "https://data.vlaanderen.be/ns/grondboringen#",
   "grondobject": "https://data.bodemenondergrond.vlaanderen.be/id/grondobject/",
   "hel": "https://data.bodemenondergrond.vlaanderen.be/id/helling/",
-  "id": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
+  "_id": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
   "incl": "https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/",
   "list": "https://data.bodemenondergrond.vlaanderen.be/id/list/",
   "moment": "https://data.bodemenondergrond.vlaanderen.be/id/moment/",
