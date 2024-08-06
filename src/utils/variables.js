@@ -7,17 +7,48 @@ const context = JSON.parse(fs.readFileSync('source/context.json', 'utf8'));
 const frame_grondboring = {
     "@context": context,
     "@type": ["grondboringen:Grondboring"],
-    "member": {
-        "@type": "skos:Concept",
+    "qualifiedAssociation":{
         "@embed": "@never",
         "@omitDefault": true
     },
+    "wasStartedBy":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "boorder":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "boormeester":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "actuations":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "opdrachtgever":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "samplings":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+
+
 }
 const frame_observation = {
     "@context": context,
     "@type": ["sosa:Observation"],
 
 }
+const frame_association = {
+    "@context": context,
+    "@type": ["prov:Association"],
+
+}
+
 const frame_actuation = {
     "@context": context,
     "@type": ["sosa:Actuation"],
@@ -90,6 +121,10 @@ const frame_bijlage = {
             "@embed": "@never",
             "@omitDefault": true
         },
+        "qualifiedAssociation":{
+            "@embed": "@never",
+            "@omitDefault": true
+        }
 
     }
 }
@@ -189,6 +224,7 @@ export {
     frame_sampling,
     frame_bijlage,
     frame_boorgat,
+    frame_association,
     rdf_to_jsonld,
     sortLines
 };

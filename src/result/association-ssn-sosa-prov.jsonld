@@ -259,9 +259,9 @@
     },
     "@graph": [
         {
-            "@id": "bl:boring1965-068140_1",
-            "@type": "grondboringbeno:Bijlage",
-            "dcterms:creator": {
+            "@id": "ass:association001",
+            "@type": "prov:Association",
+            "agent": {
                 "@id": "ag:agent001",
                 "@type": "prov:Agent",
                 "actedOnBehalfOf": {
@@ -269,103 +269,45 @@
                     "@type": "prov:Agent"
                 }
             },
-            "date": "2010-01-05",
-            "seeAlso": "https://www.dov.vlaanderen.be/proeven-ocdov/proxy/bestand/11801/inhoud",
-            "about": {
-                "@id": "boring:1965-068140",
-                "@type": "grondboringen:Grondboring",
-                "identifier": "id:boring1965-068140",
-                "qualifiedAssociation": [
-                    "ass:association001",
-                    "ass:association002",
-                    "ass:association003"
-                ],
-                "wasStartedBy": {
-                    "@id": "opdracht:2007-005512",
-                    "@type": "boe:Opdracht",
-                    "wasAttributedTo": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
-                    }
-                },
-                "resultTime": "1965-01-01T00:00:00.000",
-                "actuations": "list:1965-068140-act1",
-                "opdrachtgever": {
-                    "@id": "ag:agent003",
-                    "@type": "prov:Agent"
-                },
-                "samplings": "list:1965-068140-sam1",
-                "boorder": {
-                    "@id": "ag:agent001",
-                    "@type": "prov:Agent",
-                    "actedOnBehalfOf": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
-                    }
-                },
-                "boormeester": {
-                    "@id": "ag:agent002",
-                    "@type": "prov:Agent",
-                    "actedOnBehalfOf": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
-                    }
-                }
+            "hadPlan": {
+                "@id": "wettelijkkader:wettelijkkader001",
+                "@type": "grondboringen:WettelijkKaderBoring"
+            },
+            "hadRole": {
+                "@id": "rol:boorder",
+                "@type": "prov:Role"
             }
         },
         {
-            "@id": "bl:boring1965-068140_2",
-            "@type": "grondboringbeno:Bijlage",
-            "dcterms:creator": {
-                "@id": "ag:agent001",
+            "@id": "ass:association002",
+            "@type": "prov:Association",
+            "agent": {
+                "@id": "ag:agent002",
                 "@type": "prov:Agent",
                 "actedOnBehalfOf": {
                     "@id": "ag:agent003",
                     "@type": "prov:Agent"
                 }
             },
-            "date": "2010-01-07",
-            "seeAlso": "https://www.dov.vlaanderen.be/proeven-ocdov/proxy/bestand/10795/inhoud",
-            "about": {
-                "@id": "boring:1965-068140",
-                "@type": "grondboringen:Grondboring",
-                "identifier": "id:boring1965-068140",
-                "qualifiedAssociation": [
-                    "ass:association001",
-                    "ass:association002",
-                    "ass:association003"
-                ],
-                "wasStartedBy": {
-                    "@id": "opdracht:2007-005512",
-                    "@type": "boe:Opdracht",
-                    "wasAttributedTo": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
-                    }
-                },
-                "resultTime": "1965-01-01T00:00:00.000",
-                "actuations": "list:1965-068140-act1",
-                "opdrachtgever": {
-                    "@id": "ag:agent003",
-                    "@type": "prov:Agent"
-                },
-                "samplings": "list:1965-068140-sam1",
-                "boorder": {
-                    "@id": "ag:agent001",
-                    "@type": "prov:Agent",
-                    "actedOnBehalfOf": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
-                    }
-                },
-                "boormeester": {
-                    "@id": "ag:agent002",
-                    "@type": "prov:Agent",
-                    "actedOnBehalfOf": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
-                    }
-                }
+            "hadRole": {
+                "@id": "rol:boormeester",
+                "@type": "prov:Role"
+            }
+        },
+        {
+            "@id": "ass:association003",
+            "@type": "prov:Association",
+            "agent": {
+                "@id": "ag:agent003",
+                "@type": "prov:Agent"
+            },
+            "hadPlan": {
+                "@id": "cl-dlb:Grondwaterwinning",
+                "@type": "prov:Plan"
+            },
+            "hadRole": {
+                "@id": "rol:opdractgever",
+                "@type": "prov:Role"
             }
         }
     ]
