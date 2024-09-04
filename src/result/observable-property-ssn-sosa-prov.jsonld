@@ -257,14 +257,29 @@
         "wettelijkkader": "https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": "boorgat:boorgat001",
-    "@type": "grondboringbeno:Boorgat",
-    "hasGeometry": "geometrie:boorgat001",
-    "hasSample": [
-        "result:boorgat001-sam1965-068140-a",
-        "result:boorgat001-sam1965-068140-b",
-        "result:boorgat001-sam1965-068140-c",
-        "result:boorgat001-sam1965-068140-d"
-    ],
-    "hasProperty": "obs_prop:diepte_boorgat001"
+    "@graph": [
+        {
+            "@id": "obs_prop:diepte_boorgat001",
+            "@type": "sosa:ObservableProperty",
+            "subject": {
+                "@id": "prop:diepte",
+                "@type": "skos:Concept"
+            },
+            "isActedOnBy": [
+                "act:1965-068140-1",
+                "act:1965-068140-2",
+                "act:1965-068140-3"
+            ],
+            "isPropertyOf": "boorgat:boorgat001"
+        },
+        {
+            "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
+            "@type": "sosa:ObservableProperty",
+            "subject": {
+                "@id": "prop:kleigehalte",
+                "@type": "skos:Concept"
+            },
+            "isPropertyOf": "result:boorgat001-sam1965-068140-a"
+        }
+    ]
 }

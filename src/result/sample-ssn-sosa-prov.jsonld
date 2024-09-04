@@ -257,14 +257,92 @@
         "wettelijkkader": "https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": "boorgat:boorgat001",
-    "@type": "grondboringbeno:Boorgat",
-    "hasGeometry": "geometrie:boorgat001",
-    "hasSample": [
-        "result:boorgat001-sam1965-068140-a",
-        "result:boorgat001-sam1965-068140-b",
-        "result:boorgat001-sam1965-068140-c",
-        "result:boorgat001-sam1965-068140-d"
-    ],
-    "hasProperty": "obs_prop:diepte_boorgat001"
+    "@graph": [
+        {
+            "@id": "result:boorgat001-sam1965-068140-a",
+            "@type": "sosa:Sample",
+            "sosa:isResultOf": {
+                "@id": "sam:1965-068140-a"
+            },
+            "isSampleOf": "boorgat:boorgat001",
+            "hasProperty": {
+                "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
+                "@type": "sosa:ObservableProperty",
+                "subject": {
+                    "@id": "prop:kleigehalte",
+                    "@type": "skos:Concept"
+                },
+                "isPropertyOf": "result:boorgat001-sam1965-068140-a"
+            },
+            "sampleDiepteTot": {
+                "@id": "result:boorgat001-sam1965-068140-a-tot",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "0.95"
+            },
+            "sampleDiepteVan": {
+                "@id": "result:boorgat001-sam1965-068140-a-van",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "0.90"
+            }
+        },
+        {
+            "@id": "result:boorgat001-sam1965-068140-b",
+            "@type": "sosa:Sample",
+            "sosa:isResultOf": {
+                "@id": "sam:1965-068140-b"
+            },
+            "isSampleOf": "boorgat:boorgat001",
+            "sampleDiepteTot": {
+                "@id": "result:boorgat001-sam1965-068140-b-tot",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "3.40"
+            },
+            "sampleDiepteVan": {
+                "@id": "result:boorgat001-sam1965-068140-b-van",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "3.35"
+            }
+        },
+        {
+            "@id": "result:boorgat001-sam1965-068140-c",
+            "@type": "sosa:Sample",
+            "sosa:isResultOf": {
+                "@id": "sam:1965-068140-c"
+            },
+            "isSampleOf": "boorgat:boorgat001",
+            "sampleDiepteTot": {
+                "@id": "result:boorgat001-sam1965-068140-c-tot",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "11.15"
+            },
+            "sampleDiepteVan": {
+                "@id": "result:boorgat001-sam1965-068140-c-van",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "11.10"
+            }
+        },
+        {
+            "@id": "result:boorgat001-sam1965-068140-d",
+            "@type": "sosa:Sample",
+            "isSampleOf": "boorgat:boorgat001",
+            "sampleDiepteTot": {
+                "@id": "result:boorgat001-sam1965-068140-d-tot",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "0.95"
+            },
+            "sampleDiepteVan": {
+                "@id": "result:boorgat001-sam1965-068140-d-van",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "0.90"
+            }
+        }
+    ]
 }

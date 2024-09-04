@@ -269,14 +269,8 @@
                     "@type": "prov:Agent"
                 }
             },
-            "hadPlan": {
-                "@id": "wettelijkkader:wettelijkkader001",
-                "@type": "grondboringen:WettelijkKaderBoring"
-            },
-            "hadRole": {
-                "@id": "rol:boorder",
-                "@type": "prov:Role"
-            }
+            "hadPlan": "wettelijkkader:wettelijkkader001",
+            "hadRole": "rol:boorder"
         },
         {
             "@id": "ass:association002",
@@ -289,10 +283,7 @@
                     "@type": "prov:Agent"
                 }
             },
-            "hadRole": {
-                "@id": "rol:boormeester",
-                "@type": "prov:Role"
-            }
+            "hadRole": "rol:boormeester"
         },
         {
             "@id": "ass:association003",
@@ -301,14 +292,8 @@
                 "@id": "ag:agent003",
                 "@type": "prov:Agent"
             },
-            "hadPlan": {
-                "@id": "cl-dlb:Grondwaterwinning",
-                "@type": "prov:Plan"
-            },
-            "hadRole": {
-                "@id": "rol:opdractgever",
-                "@type": "prov:Role"
-            }
+            "hadPlan": "cl-dlb:Grondwaterwinning",
+            "hadRole": "rol:opdractgever"
         }
     ]
 }

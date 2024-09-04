@@ -257,14 +257,35 @@
         "wettelijkkader": "https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": "boorgat:boorgat001",
-    "@type": "grondboringbeno:Boorgat",
-    "hasGeometry": "geometrie:boorgat001",
-    "hasSample": [
-        "result:boorgat001-sam1965-068140-a",
-        "result:boorgat001-sam1965-068140-b",
-        "result:boorgat001-sam1965-068140-c",
-        "result:boorgat001-sam1965-068140-d"
-    ],
-    "hasProperty": "obs_prop:diepte_boorgat001"
+    "@graph": [
+        {
+            "@id": "cl-bpt:CMA_1_A2_v032022",
+            "@type": "sosa:Procedure",
+            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+            "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+        },
+        {
+            "@id": "cl-bpt:bepaling_kleigehalte",
+            "@type": "sosa:Procedure"
+        },
+        {
+            "@id": "cl-bpt:meten_van_de_diepte_van_een_gat",
+            "@type": "sosa:Procedure"
+        },
+        {
+            "@id": "cl-brm:Gutsboring",
+            "@type": "sosa:Procedure"
+        },
+        {
+            "@id": "cl-brm:Lepelboring",
+            "@type": "sosa:Procedure",
+            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+            "exactMatch": {
+                "@id": "cl-bpt:CMA_1_A2_v032022",
+                "@type": "sosa:Procedure",
+                "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+            }
+        }
+    ]
 }
