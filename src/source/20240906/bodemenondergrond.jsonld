@@ -1,0 +1,1166 @@
+{
+    "@context": {
+        "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",
+        "bl": "https://data.bodemenondergrond.vlaanderen.be/id/bijlage/",
+        "id": {
+            "@id": "@id",
+            "@type": "@id"
+        },
+        "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
+        "ass": "https://data.bodemenondergrond.vlaanderen.be/id/association/",
+        "boe": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#",
+        "gml": "http://www.opengis.net/ont/gml#",
+        "hel": "https://data.bodemenondergrond.vlaanderen.be/id/helling/",
+        "id1": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
+        "obs": "https://data.bodemenondergrond.vlaanderen.be/id/observation/",
+        "opm": "https://data.bodemenondergrond.vlaanderen.be/id/opmerking/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rol": "https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/",
+        "sam": "https://data.bodemenondergrond.vlaanderen.be/id/sampling/",
+        "seb": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#",
+        "ssn": "http://www.w3.org/ns/ssn/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "adms": "http://www.w3.org/ns/adms#",
+        "boor": "https://data.bodemenondergrond.vlaanderen.be/id/boor/",
+        "date": {
+            "@id": "dcterms:date",
+            "@type": "xsd:date"
+        },
+        "incl": "https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/",
+        "list": "https://data.bodemenondergrond.vlaanderen.be/id/list/",
+        "prop": "https://data.bodemenondergrond.vlaanderen.be/id/concept/property/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "rest": {
+            "@id": "rdf:rest",
+            "@type": "@id"
+        },
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "time": "http://www.w3.org/2006/time#",
+        "type": {
+            "@id": "@type",
+            "@type": "@id"
+        },
+        "about": {
+            "@id": "schema:about",
+            "@type": "@id"
+        },
+        "agent": {
+            "@id": "prov:agent",
+            "@type": "@id"
+        },
+        "asWKT": {
+            "@id": "geosparql:asWKT",
+            "@type": "geosparql:wktLiteral"
+        },
+        "first": {
+            "@id": "rdf:first",
+            "@type": "@id"
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@language": "nl"
+        },
+        "range": {
+            "@id": "rdfs:range",
+            "@type": "@id"
+        },
+        "value": {
+            "@id": "rdf:value",
+            "@type": "xsd:decimal"
+        },
+        "boring": "https://data.bodemenondergrond.vlaanderen.be/id/boring/",
+        "cl-bpt": "https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/",
+        "cl-brm": "https://data.bodemenondergrond.vlaanderen.be/id/concept/boortype/",
+        "cl-dlb": "https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/",
+        "cl-got": "https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/",
+        "cl-idt": "https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/",
+        "gmldov": "https://data.bodemenondergrond.vlaanderen.be/id/gml/",
+        "moment": "https://data.bodemenondergrond.vlaanderen.be/id/moment/",
+        "result": "https://data.bodemenondergrond.vlaanderen.be/id/result/",
+        "schema": "https://schema.org/",
+        "boorder": {
+            "@id": "grondboringen:boorder",
+            "@type": "@id"
+        },
+        "boorgat": "https://data.bodemenondergrond.vlaanderen.be/id/boorgat/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "hadPlan": {
+            "@id": "prov:hadPlan",
+            "@type": "@id"
+        },
+        "hadRole": {
+            "@id": "prov:hadRole",
+            "@type": "@id"
+        },
+        "seeAlso": {
+            "@id": "rdfs:seeAlso",
+            "@type": "@id"
+        },
+        "sosa-om": "http://www.w3.org/ns/sosa/om#",
+        "subject": {
+            "@id": "dcterms:subject",
+            "@type": "@id"
+        },
+        "notation": {
+            "@id": "skos:notation"
+        },
+        "obs_prop": "https://data.bodemenondergrond.vlaanderen.be/id/property/",
+        "opdracht": "https://data.bodemenondergrond.vlaanderen.be/id/opdracht/",
+        "richting": "https://data.bodemenondergrond.vlaanderen.be/id/richting/",
+        "geometrie": "https://data.bodemenondergrond.vlaanderen.be/id/geometrie/",
+        "geosparql": "http://www.opengis.net/ont/geosparql#",
+        "hasResult": {
+            "@id": "sosa:hasResult",
+            "@type": "@id"
+        },
+        "hasSample": {
+            "@id": "sosa:hasSample",
+            "@type": "@id"
+        },
+        "qudt-unit": "https://qudt.org/vocab/unit/",
+        "samplings": {
+            "@id": "grondboringbeno:samplings",
+            "@type": "@id"
+        },
+        "actuations": {
+            "@id": "grondboringbeno:actuations",
+            "@type": "@id"
+        },
+        "exactMatch": {
+            "@id": "skos:exactMatch",
+            "@type": "@id"
+        },
+        "identifier": {
+            "@id": "adms:identifier",
+            "@type": "@id"
+        },
+        "implements": {
+            "@id": "ssn:implements",
+            "@type": "@id"
+        },
+        "isSampleOf": {
+            "@id": "sosa:isSampleOf",
+            "@type": "@id"
+        },
+        "resultTime": {
+            "@id": "sosa:resultTime",
+            "@type": "xsd:dateTime"
+        },
+        "boormeester": {
+            "@id": "grondboringen:boormeester",
+            "@type": "@id"
+        },
+        "grondobject": "https://data.bodemenondergrond.vlaanderen.be/id/grondobject/",
+        "hasGeometry": {
+            "@id": "geosparql:hasGeometry",
+            "@type": "@id"
+        },
+        "hasProperty": {
+            "@id": "ssn:hasProperty",
+            "@type": "@id"
+        },
+        "isActedOnBy": {
+            "@id": "sosa:isActedOnBy",
+            "@type": "@id"
+        },
+        "preconditie": {
+            "@id": "grondboringbeno:preconditie",
+            "@type": "@id"
+        },
+        "qudt-schema": "https://qudt.org/schema/qudt/",
+        "unitMeasure": {
+            "@id": "sdmx-attribute:unitMeasure",
+            "@type": "@id"
+        },
+        "bemprocedure": "https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/",
+        "isPropertyOf": {
+            "@id": "ssn:isPropertyOf",
+            "@type": "@id"
+        },
+        "madeBySensor": {
+            "@id": "sosa:madeBySensor",
+            "@type": "@id"
+        },
+        "postconditie": {
+            "@id": "grondboringbeno:postconditie",
+            "@type": "@id"
+        },
+        "wasStartedBy": {
+            "@id": "prov:wasStartedBy",
+            "@type": "@id"
+        },
+        "grondboringen": "https://data.vlaanderen.be/ns/grondboringen#",
+        "inXSDDateTime": {
+            "@id": "time:inXSDDateTime",
+            "@type": "xsd:dateTime"
+        },
+        "madeActuation": {
+            "@id": "sosa:madeActuation",
+            "@type": "@id"
+        },
+        "madeBySampler": {
+            "@id": "sosa:madeBySampler",
+            "@type": "@id"
+        },
+        "opdrachtgever": {
+            "@id": "grondboringbeno:opdrachtgever",
+            "@type": "@id"
+        },
+        "subPropertyOf": {
+            "@id": "rdfs:subPropertyOf",
+            "@type": "@id"
+        },
+        "usedProcedure": {
+            "@id": "sosa:usedProcedure",
+            "@type": "@id"
+        },
+        "actsOnProperty": {
+            "@id": "sosa:actsOnProperty",
+            "@type": "@id"
+        },
+        "madeByActuator": {
+            "@id": "sosa:madeByActuator",
+            "@type": "@id"
+        },
+        "phenomenonTime": {
+            "@id": "sosa:phenomenonTime",
+            "@type": "@id"
+        },
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+        "wettelijkkader": "https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/",
+        "actedOnBehalfOf": {
+            "@id": "prov:actedOnBehalfOf",
+            "@type": "@id"
+        },
+        "grondboringbeno": "https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#",
+        "sampleDiepteTot": {
+            "@id": "grondboringbeno:sampleDiepteTot",
+            "@type": "@id"
+        },
+        "sampleDiepteVan": {
+            "@id": "grondboringbeno:sampleDiepteVan",
+            "@type": "@id"
+        },
+        "wasAttributedTo": {
+            "@id": "prov:wasAttributedTo",
+            "@type": "@id"
+        },
+        "wasOriginatedBy": {
+            "@id": "ssn:wasOriginatedBy",
+            "@type": "@id"
+        },
+        "observedProperty": {
+            "@id": "sosa:observedProperty",
+            "@type": "@id"
+        },
+        "boormethodeinterval": "https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/",
+        "hasFeatureOfInterest": {
+            "@id": "sosa:hasFeatureOfInterest",
+            "@type": "@id"
+        },
+        "qualifiedAssociation": {
+            "@id": "prov:qualifiedAssociation",
+            "@type": "@id"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "geometrie:boorgat2017-153492",
+            "@type": "geosparql:Geometry",
+            "asWKT": "POINT(4.466584890697014 50.87301722637583)"
+        },
+        {
+            "@id": "boorgat:boorgat2017-153492",
+            "@type": "grondboringbeno:Boorgat",
+            "array_agg": [
+                "result:boorgat2017-153492-sam2017-153492-1",
+                "result:boorgat2017-153492-sam2017-153492-2",
+                "result:boorgat2017-153492-sam2017-153492-3",
+                "result:boorgat2017-153492-sam2017-153492-4"
+            ],
+            "hasGeometry": "geometrie:boorgat2017-153492",
+            "hasProperty": "obs_prop:diepte_boorgat2017-153492"
+        },
+        {
+            "id": "boring:2017-153492",
+            "type": "grondboringen:Grondboring",
+            "boorder": "ag:3537",
+            "samplings": "list:2017-153492-sam1",
+            "actuations": "list:2017-153492-act1",
+            "identifier": "id1:boring2017-153492",
+            "resultTime": "2017-11-14T00:00:00",
+            "boormeester": "ag:a4146",
+            "wasStartedBy": [
+                "opdracht:2019-020026"
+            ],
+            "opdrachtgever": "ag:14124",
+            "dataleverancier": "ag:3018",
+            "qualifiedAssociation": [
+                "ass:14124-2017-153492",
+                "ass:3018-2017-153492",
+                "ass:3537-2017-153492",
+                "ass:a4146-2017-153492"
+            ]
+        },
+        {
+            "@id": "ass:14124-2017-153492",
+            "@type": "prov:Association",
+            "agent": "ag:14124",
+            "hadPlan": "cl-dlb:Geotechnisch_onderzoek",
+            "hadRole": "rol:opdrachtgever"
+        },
+        {
+            "@id": "ass:3018-2017-153492",
+            "@type": "prov:Association",
+            "agent": "ag:3018",
+            "hadPlan": null,
+            "hadRole": "rol:dataleverancier"
+        },
+        {
+            "@id": "ass:a4146-2017-153492",
+            "@type": "prov:Association",
+            "agent": "ag:a4146",
+            "hadPlan": null,
+            "hadRole": "rol:boormeester"
+        },
+        {
+            "@id": "list:2017-153492-act1",
+            "rest": "list:2017-153492-act2",
+            "@type": "rdf:List",
+            "first": "act:2017-153492-1"
+        },
+        {
+            "@id": "list:2017-153492-act2",
+            "rest": "list:2017-153492-act3",
+            "@type": "rdf:List",
+            "first": "act:2017-153492-2"
+        },
+        {
+            "@id": "list:2017-153492-act3",
+            "rest": "list:2017-153492-act4",
+            "@type": "rdf:List",
+            "first": "act:2017-153492-3"
+        },
+        {
+            "@id": "list:2017-153492-act4",
+            "rest": "list:2017-153492-act5",
+            "@type": "rdf:List",
+            "first": "act:2017-153492-4"
+        },
+        {
+            "@id": "list:2017-153492-act5",
+            "rest": "list:2017-153492-act6",
+            "@type": "rdf:List",
+            "first": "act:2017-153492-5"
+        },
+        {
+            "@id": "list:2017-153492-act6",
+            "rest": null,
+            "@type": "rdf:List",
+            "first": "act:2017-153492-6"
+        },
+        {
+            "@id": "list:2017-153492-sam1",
+            "rest": "list:2017-153492-sam2",
+            "@type": "rdf:List",
+            "first": "sam:2017-153492-1"
+        },
+        {
+            "@id": "list:2017-153492-sam2",
+            "rest": "list:2017-153492-sam3",
+            "@type": "rdf:List",
+            "first": "sam:2017-153492-2"
+        },
+        {
+            "@id": "list:2017-153492-sam3",
+            "rest": "list:2017-153492-sam4",
+            "@type": "rdf:List",
+            "first": "sam:2017-153492-3"
+        },
+        {
+            "@id": "list:2017-153492-sam4",
+            "rest": null,
+            "@type": "rdf:List",
+            "first": "sam:2017-153492-4"
+        },
+        {
+            "@id": "sam:2017-153492-1",
+            "@type": "sosa:Sampling",
+            "hasResult": "result:boorgat2017-153492-sam2017-153492-1",
+            "resultTime": null,
+            "madeBySampler": "boor:boring2017-153492-1",
+            "usedProcedure": null,
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "sam:2017-153492-2",
+            "@type": "sosa:Sampling",
+            "hasResult": "result:boorgat2017-153492-sam2017-153492-2",
+            "resultTime": null,
+            "madeBySampler": "boor:boring2017-153492-2",
+            "usedProcedure": null,
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "sam:2017-153492-3",
+            "@type": "sosa:Sampling",
+            "hasResult": "result:boorgat2017-153492-sam2017-153492-3",
+            "resultTime": null,
+            "madeBySampler": "boor:boring2017-153492-3",
+            "usedProcedure": null,
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "sam:2017-153492-4",
+            "@type": "sosa:Sampling",
+            "hasResult": "result:boorgat2017-153492-sam2017-153492-4",
+            "resultTime": null,
+            "madeBySampler": "boor:boring2017-153492-4",
+            "usedProcedure": null,
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "act:2017-153492-1",
+            "@type": "sosa:Actuation",
+            "hasResult": {
+                "@id": "result:boorgat2017-153492-act2017-153492-1",
+                "@type": "sosa:Result",
+                "about": "boorgat:boorgat2017-153492",
+                "preconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-1-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "0.00",
+                    "unitMeasure": "qudt-unit:M"
+                },
+                "postconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-1-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "1.00",
+                    "unitMeasure": "qudt-unit:M"
+                }
+            },
+            "resultTime": "2017-11-14T00:00:00",
+            "usedProcedure": "cl-brm:spade",
+            "actsOnProperty": "obs_prop:diepte_boorgat2017-153492",
+            "madeByActuator": {
+                "@id": "boor:boring2017-153492-1",
+                "@type": "grondboringen:Boor",
+                "implements": "cl-brm:spade"
+            },
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "act:2017-153492-2",
+            "@type": "sosa:Actuation",
+            "hasResult": {
+                "@id": "result:boorgat2017-153492-act2017-153492-2",
+                "@type": "sosa:Result",
+                "about": "boorgat:boorgat2017-153492",
+                "preconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-2-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "1.00",
+                    "unitMeasure": "qudt-unit:M"
+                },
+                "postconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-2-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "2.00",
+                    "unitMeasure": "qudt-unit:M"
+                }
+            },
+            "resultTime": "2017-11-14T00:00:00",
+            "usedProcedure": "cl-brm:handboring",
+            "actsOnProperty": "obs_prop:diepte_boorgat2017-153492",
+            "madeByActuator": {
+                "@id": "boor:boring2017-153492-2",
+                "@type": "grondboringen:Boor",
+                "implements": "cl-brm:handboring"
+            },
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "act:2017-153492-3",
+            "@type": "sosa:Actuation",
+            "hasResult": {
+                "@id": "result:boorgat2017-153492-act2017-153492-3",
+                "@type": "sosa:Result",
+                "about": "boorgat:boorgat2017-153492",
+                "preconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-3-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "2.00",
+                    "unitMeasure": "qudt-unit:M"
+                },
+                "postconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-3-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "17.50",
+                    "unitMeasure": "qudt-unit:M"
+                }
+            },
+            "resultTime": "2017-11-14T00:00:00",
+            "usedProcedure": "cl-brm:avegaarboring",
+            "actsOnProperty": "obs_prop:diepte_boorgat2017-153492",
+            "madeByActuator": {
+                "@id": "boor:boring2017-153492-3",
+                "@type": "grondboringen:Boor",
+                "implements": "cl-brm:avegaarboring"
+            },
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "act:2017-153492-4",
+            "@type": "sosa:Actuation",
+            "hasResult": {
+                "@id": "result:boorgat2017-153492-act2017-153492-4",
+                "@type": "sosa:Result",
+                "about": "boorgat:boorgat2017-153492",
+                "preconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-4-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "17.50",
+                    "unitMeasure": "qudt-unit:M"
+                },
+                "postconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-4-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "27.25",
+                    "unitMeasure": "qudt-unit:M"
+                }
+            },
+            "resultTime": "2017-11-14T00:00:00",
+            "usedProcedure": "cl-brm:12",
+            "actsOnProperty": "obs_prop:diepte_boorgat2017-153492",
+            "madeByActuator": {
+                "@id": "boor:boring2017-153492-4",
+                "@type": "grondboringen:Boor",
+                "implements": "cl-brm:12"
+            },
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "act:2017-153492-5",
+            "@type": "sosa:Actuation",
+            "hasResult": {
+                "@id": "result:boorgat2017-153492-act2017-153492-5",
+                "@type": "sosa:Result",
+                "about": "boorgat:boorgat2017-153492",
+                "preconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-5-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "27.25",
+                    "unitMeasure": "qudt-unit:M"
+                },
+                "postconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-5-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "27.50",
+                    "unitMeasure": "qudt-unit:M"
+                }
+            },
+            "resultTime": "2017-11-14T00:00:00",
+            "usedProcedure": "cl-brm:avegaarboring",
+            "actsOnProperty": "obs_prop:diepte_boorgat2017-153492",
+            "madeByActuator": {
+                "@id": "boor:boring2017-153492-5",
+                "@type": "grondboringen:Boor",
+                "implements": "cl-brm:avegaarboring"
+            },
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "act:2017-153492-6",
+            "@type": "sosa:Actuation",
+            "hasResult": {
+                "@id": "result:boorgat2017-153492-act2017-153492-6",
+                "@type": "sosa:Result",
+                "about": "boorgat:boorgat2017-153492",
+                "preconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-6-pre",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "27.50",
+                    "unitMeasure": "qudt-unit:M"
+                },
+                "postconditie": {
+                    "@id": "result:boorgat2017-153492-act2017-153492-6-post",
+                    "@type": "grondboringbeno:Diepte",
+                    "value": "30.00",
+                    "unitMeasure": "qudt-unit:M"
+                }
+            },
+            "resultTime": "2017-11-14T00:00:00",
+            "usedProcedure": "cl-brm:12",
+            "actsOnProperty": "obs_prop:diepte_boorgat2017-153492",
+            "madeByActuator": {
+                "@id": "boor:boring2017-153492-6",
+                "@type": "grondboringen:Boor",
+                "implements": "cl-brm:12"
+            },
+            "hasFeatureOfInterest": "boorgat:boorgat2017-153492"
+        },
+        {
+            "@id": "ag:3537",
+            "@type": "prov:Agent",
+            "actedOnBehalfOf": [
+                "ag:15022",
+                "ag:19239",
+                "ag:22425",
+                "ag:26620",
+                "ag:14991",
+                "ag:15418",
+                "ag:19717",
+                "ag:21302",
+                "ag:19230",
+                "ag:6146",
+                "ag:24643",
+                "ag:22589",
+                "ag:21293",
+                "ag:17878",
+                "ag:17677",
+                "ag:3709",
+                "ag:24240",
+                "ag:5379",
+                "ag:14715",
+                "ag:5290",
+                "ag:5599",
+                "ag:22430",
+                "ag:13997",
+                "ag:13701",
+                "ag:19463",
+                "ag:26621",
+                "ag:26619",
+                "ag:22422",
+                "ag:5547",
+                "ag:4801",
+                "ag:3868",
+                "ag:21314",
+                "ag:13799",
+                "ag:24476",
+                "ag:18891",
+                "ag:27162",
+                "ag:22428",
+                "ag:17675",
+                "ag:24645",
+                "ag:25651",
+                "ag:26076",
+                "ag:3561",
+                "ag:21307",
+                "ag:4986",
+                "ag:4377",
+                "ag:5097",
+                "ag:18064",
+                "ag:16028",
+                "ag:6222",
+                "ag:14000",
+                "ag:5427",
+                "ag:17676",
+                "ag:18941",
+                "ag:21294",
+                "ag:15538",
+                "ag:3805",
+                "ag:21810",
+                "ag:15370",
+                "ag:18553",
+                "ag:23122",
+                "ag:23252",
+                "ag:22429",
+                "ag:22426",
+                "ag:4112",
+                "ag:4877",
+                "ag:14989",
+                "ag:16103",
+                "ag:13127",
+                "ag:5096",
+                "ag:3426",
+                "ag:19663",
+                "ag:4943",
+                "ag:13987",
+                "ag:24194",
+                "ag:14716",
+                "ag:20893",
+                "ag:22423",
+                "ag:25649",
+                "ag:12913",
+                "ag:24883",
+                "ag:13224",
+                "ag:13610",
+                "ag:15050",
+                "ag:3537",
+                null,
+                "ag:19021",
+                "ag:BA1",
+                "ag:15772",
+                "ag:14862",
+                "ag:18249",
+                "ag:14302",
+                "ag:22255",
+                "ag:14993",
+                "ag:19307",
+                "ag:26618",
+                "ag:4757",
+                "ag:5634",
+                "ag:22431",
+                "ag:24644",
+                "ag:19464",
+                "ag:14990",
+                "ag:5630",
+                "ag:24242",
+                "ag:15368",
+                "ag:22427",
+                "ag:13702"
+            ]
+        },
+        {
+            "@id": "ag:14124",
+            "@type": "prov:Agent",
+            "actedOnBehalfOf": [
+                null
+            ]
+        },
+        {
+            "@id": "ag:a4146",
+            "@type": "prov:Agent",
+            "actedOnBehalfOf": [
+                "ag:15885",
+                "ag:5288",
+                "ag:27236",
+                "ag:21304",
+                "ag:5287",
+                "ag:15472",
+                "ag:14124",
+                "ag:5056",
+                "ag:21549",
+                "ag:4359",
+                "ag:0",
+                "ag:13083",
+                "ag:5274",
+                "ag:5777"
+            ]
+        },
+        {
+            "@id": "ag:3018",
+            "@type": "prov:Agent",
+            "actedOnBehalfOf": [
+                "ag:3145",
+                "ag:3148",
+                "ag:3395",
+                "ag:3192",
+                "ag:3561",
+                "ag:5241",
+                "ag:5236",
+                "ag:4087",
+                "ag:5065",
+                "ag:5366",
+                "ag:4740",
+                "ag:5396",
+                "ag:3733",
+                "ag:4265",
+                "ag:3079",
+                "ag:5093",
+                "ag:5373",
+                "ag:15639",
+                "ag:12945",
+                "ag:14718",
+                "ag:3696",
+                "ag:5066",
+                "ag:5125",
+                "ag:4267",
+                "ag:3141",
+                "ag:4113",
+                "ag:4931",
+                "ag:5643",
+                "ag:5272",
+                "ag:5547",
+                "ag:3094",
+                "ag:6123",
+                "ag:3863",
+                "ag:3426",
+                "ag:3452",
+                "ag:27129",
+                "ag:3664",
+                "ag:13064",
+                "ag:3055",
+                "ag:3718",
+                "ag:4324",
+                "ag:3481",
+                "ag:12781",
+                "ag:3560",
+                "ag:5267",
+                "ag:4323",
+                "ag:3749",
+                "ag:3725",
+                "ag:4076",
+                "ag:4058",
+                "ag:3782",
+                "ag:5051",
+                "ag:3415",
+                "ag:3517",
+                "ag:5393",
+                "ag:3216",
+                "ag:3056",
+                "ag:4133",
+                "ag:3446",
+                "ag:3043",
+                "ag:3762",
+                "ag:5364",
+                "ag:3888",
+                "ag:3369",
+                "ag:27228",
+                "ag:3125",
+                "ag:4276",
+                "ag:3045",
+                "ag:14657",
+                "ag:4688",
+                "ag:4050",
+                "ag:3311",
+                "ag:3899",
+                "ag:3728",
+                "ag:4092",
+                "ag:3735",
+                "ag:26304",
+                "ag:3400",
+                "ag:3870",
+                "ag:3223",
+                "ag:3323",
+                "ag:4083",
+                "ag:3992",
+                "ag:3114",
+                "ag:3918",
+                "ag:3427",
+                "ag:3029",
+                "ag:3699",
+                "ag:3845",
+                "ag:4127",
+                "ag:3781",
+                "ag:3787",
+                "ag:4052",
+                "ag:14579",
+                "ag:4571",
+                "ag:14392",
+                "ag:14393",
+                "ag:21549",
+                "ag:13063",
+                "ag:14302",
+                "ag:5372",
+                "ag:3221",
+                "ag:6165",
+                "ag:4063",
+                "ag:4281",
+                "ag:5269",
+                "ag:5252",
+                "ag:3703",
+                "ag:3777",
+                "ag:3761",
+                "ag:3090",
+                "ag:19492",
+                "ag:5777",
+                "ag:5050",
+                "ag:15885",
+                "ag:4153",
+                "ag:14858",
+                "ag:15208",
+                "ag:3900",
+                "ag:3133",
+                "ag:3612",
+                "ag:4120",
+                "ag:3753",
+                "ag:5088",
+                "ag:3877",
+                "ag:5388",
+                "ag:4112",
+                "ag:17811",
+                "ag:4143",
+                "ag:3697",
+                "ag:3878",
+                "ag:4157",
+                "ag:5058",
+                "ag:5375",
+                "ag:3417",
+                "ag:4513",
+                "ag:3797",
+                "ag:3610",
+                "ag:12740",
+                "ag:22780",
+                "ag:4359",
+                "ag:4541",
+                "ag:4030",
+                "ag:3704",
+                "ag:3692",
+                "ag:4241",
+                "ag:4123",
+                "ag:3537",
+                "ag:15884",
+                "ag:3149",
+                "ag:4062",
+                "ag:27236",
+                "ag:4198",
+                "ag:14730",
+                "ag:3829",
+                "ag:5290",
+                "ag:23316",
+                "ag:4340",
+                "ag:4099",
+                "ag:26207",
+                "ag:3789",
+                "ag:3720",
+                "ag:5080",
+                "ag:5287",
+                "ag:3977",
+                "ag:3052",
+                "ag:3907",
+                "ag:0",
+                "ag:3211",
+                "ag:3868",
+                "ag:3913",
+                "ag:3135",
+                "ag:3138",
+                "ag:3173",
+                "ag:3127",
+                "ag:3714",
+                "ag:4151",
+                "ag:3760",
+                "ag:3608",
+                "ag:5056",
+                "ag:21304",
+                "ag:5053",
+                "ag:4379",
+                "ag:3136",
+                "ag:3273",
+                "ag:3961",
+                "ag:13065",
+                "ag:3051",
+                "ag:3967",
+                "ag:3414",
+                "ag:3036",
+                "ag:4170",
+                "ag:4751",
+                "ag:4051",
+                "ag:5575",
+                "ag:4001",
+                "ag:5274",
+                "ag:3007",
+                "ag:3736",
+                "ag:3038",
+                "ag:5367",
+                "ag:4252",
+                "ag:3365",
+                "ag:5776",
+                "ag:14664",
+                "ag:4716",
+                "ag:3530",
+                "ag:14124",
+                "ag:3865",
+                "ag:3813",
+                "ag:3018",
+                "ag:3529",
+                "ag:3431",
+                "ag:5348",
+                "ag:13213",
+                "ag:3618",
+                "ag:4054",
+                "ag:3605",
+                "ag:3831",
+                "ag:3476",
+                "ag:3814",
+                "ag:3600",
+                "ag:3994",
+                "ag:3447",
+                "ag:3382",
+                "ag:3184",
+                "ag:4131",
+                "ag:5288",
+                "ag:3689",
+                "ag:4734",
+                "ag:3522",
+                "ag:4349",
+                "ag:3780",
+                "ag:4320",
+                "ag:3316",
+                "ag:3272",
+                "ag:13875",
+                "ag:3693",
+                "ag:3343",
+                "ag:5346",
+                "ag:3856",
+                "ag:3189",
+                "ag:3546",
+                "ag:4048",
+                "ag:3700",
+                "ag:4010",
+                "ag:5587",
+                "ag:3866",
+                "ag:4091",
+                "ag:5273",
+                "ag:3271",
+                "ag:3393",
+                "ag:4122",
+                "ag:3702",
+                "ag:4086",
+                "ag:5407",
+                "ag:5059",
+                "ag:3879",
+                "ag:4263",
+                "ag:5432",
+                "ag:4187",
+                "ag:4096",
+                "ag:3707",
+                "ag:3987",
+                "ag:3357",
+                "ag:4064",
+                "ag:3034",
+                "ag:15882",
+                "ag:3582",
+                "ag:4056",
+                "ag:3128",
+                null,
+                "ag:3956",
+                "ag:3611",
+                "ag:3855",
+                "ag:3613",
+                "ag:3793",
+                "ag:3734",
+                "ag:15472",
+                "ag:19231",
+                "ag:3474",
+                "ag:3350",
+                "ag:3033",
+                "ag:3721",
+                "ag:3655",
+                "ag:13900",
+                "ag:3392",
+                "ag:3935",
+                "ag:13945",
+                "ag:4077",
+                "ag:4733",
+                "ag:4152",
+                "ag:3269",
+                "ag:4752",
+                "ag:15883",
+                "ag:3971",
+                "ag:4116",
+                "ag:3657",
+                "ag:4132",
+                "ag:4287",
+                "ag:3304",
+                "ag:3786",
+                "ag:3715",
+                "ag:4098",
+                "ag:5057",
+                "ag:5342",
+                "ag:4160",
+                "ag:4000",
+                "ag:3796",
+                "ag:4093",
+                "ag:19674",
+                "ag:13644",
+                "ag:5673",
+                "ag:4089",
+                "ag:3924",
+                "ag:3119",
+                "ag:3784",
+                "ag:3609",
+                "ag:3468",
+                "ag:3980",
+                "ag:4493",
+                "ag:4155",
+                "ag:4370",
+                "ag:3978",
+                "ag:3527",
+                "ag:3975",
+                "ag:4019",
+                "ag:3701",
+                "ag:3708",
+                "ag:4081",
+                "ag:4264",
+                "ag:5332",
+                "ag:3659",
+                "ag:3719",
+                "ag:3087",
+                "ag:3685",
+                "ag:4602",
+                "ag:3489",
+                "ag:3389",
+                "ag:4088",
+                "ag:3807",
+                "ag:3373",
+                "ag:4078",
+                "ag:5242",
+                "ag:3706",
+                "ag:3366",
+                "ag:4085",
+                "ag:5043",
+                "ag:3555",
+                "ag:4069",
+                "ag:3869",
+                "ag:4082",
+                "ag:4105",
+                "ag:3553",
+                "ag:4325",
+                "ag:3950",
+                "ag:4305",
+                "ag:3694",
+                "ag:18675",
+                "ag:4090",
+                "ag:3593",
+                "ag:4075",
+                "ag:3180",
+                "ag:4154",
+                "ag:3844",
+                "ag:3895",
+                "ag:3124",
+                "ag:3478",
+                "ag:4682",
+                "ag:3921",
+                "ag:3078",
+                "ag:13083",
+                "ag:4322",
+                "ag:3698",
+                "ag:4137",
+                "ag:3599",
+                "ag:3046",
+                "ag:6169",
+                "ag:4207",
+                "ag:4767",
+                "ag:3074",
+                "ag:3620",
+                "ag:3846",
+                "ag:3684",
+                "ag:3378",
+                "ag:5984",
+                "ag:3969",
+                "ag:3534",
+                "ag:4327",
+                "ag:3198",
+                "ag:4021",
+                "ag:3143",
+                "ag:5333",
+                "ag:3912",
+                "ag:3790",
+                "ag:3905",
+                "ag:4020",
+                "ag:3648",
+                "ag:3411",
+                "ag:3224",
+                "ag:3847",
+                "ag:4003",
+                "ag:4158",
+                "ag:3820",
+                "ag:3037",
+                "ag:4261",
+                "ag:4298",
+                "ag:3716",
+                "ag:5330",
+                "ag:20959",
+                "ag:3709",
+                "ag:6168",
+                "ag:19232",
+                "ag:4367",
+                "ag:20483",
+                "ag:4712"
+            ]
+        }
+    ]
+}

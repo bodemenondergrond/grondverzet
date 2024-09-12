@@ -15,17 +15,14 @@
     {?x prov:aq ?y} => {?x rdfs:seeAlso ?y}
     {?x prov:atLocation ?y} => {?y a prov:Location}
     {?x prov:atTime ?y} => {?x a prov:InstantaneousEvent}
-    {?x prov:atTime ?y} => {?y a http://www.w3.org/2001/XMLSchema#dateTime}
     {?x prov:constraints ?y} => {?x rdfs:seeAlso ?y}
     {?x prov:dm ?y} => {?x rdfs:seeAlso ?y}
     {?x prov:editorsDefinition ?y} => {?x prov:definition ?y}
     {?x prov:endedAtTime ?y} => {?x a prov:Activity}
-    {?x prov:endedAtTime ?y} => {?y a http://www.w3.org/2001/XMLSchema#dateTime}
     {?x prov:entity ?y} => {?x a prov:EntityInfluence}
     {?x prov:entity ?y} => {?x prov:influencer ?y}
     {?x prov:entity ?y} => {?y a prov:Entity}
     {?x prov:generatedAtTime ?y} => {?x a prov:Entity}
-    {?x prov:generatedAtTime ?y} => {?y a http://www.w3.org/2001/XMLSchema#dateTime}
     {?x prov:generated ?y} => {?x a prov:Activity}
     {?x prov:generated ?y} => {?x prov:influenced ?y}
     {?x prov:generated ?y} => {?y a prov:Entity}
@@ -50,7 +47,6 @@
     {?x prov:influencer ?y} => {?x a prov:Influence}
     {?x prov:influencer ?y} => {?y a http://www.w3.org/2002/07/owl#Thing}
     {?x prov:invalidatedAtTime ?y} => {?x a prov:Entity}
-    {?x prov:invalidatedAtTime ?y} => {?y a http://www.w3.org/2001/XMLSchema#dateTime}
     {?x prov:invalidated ?y} => {?x a prov:Activity}
     {?x prov:invalidated ?y} => {?x prov:influenced ?y}
     {?x prov:invalidated ?y} => {?y a prov:Entity}
@@ -102,7 +98,6 @@
     {?x prov:specializationOf ?y} => {?x prov:alternateOf ?y}
     {?x prov:specializationOf ?y} => {?y a prov:Entity}
     {?x prov:startedAtTime ?y} => {?x a prov:Activity}
-    {?x prov:startedAtTime ?y} => {?y a http://www.w3.org/2001/XMLSchema#dateTime}
     {?x prov:unqualifiedForm ?y} => {?x rdfs:seeAlso ?y}
     {?x prov:used ?y} => {?x a prov:Activity}
     {?x prov:used ?y} => {?x prov:wasInfluencedBy ?y}

@@ -4,7 +4,7 @@ import fs from "fs";
 import jsonld from "jsonld";
 
 const context = JSON.parse(fs.readFileSync('source/context.json', 'utf8'));
-const frame_grondboring = {
+const frame_grondboring2 = {
     "@context": context,
     "@type": ["grondboringen:Grondboring"],
     "qualifiedAssociation":{
@@ -38,6 +38,11 @@ const frame_grondboring = {
 
 
 }
+const frame_grondboring = {
+    "@context": context,
+    "@type": ["grondboringen:Grondboring"],
+}
+
 const frame_observation = {
     "@context": context,
     "@type": ["sosa:Observation"],

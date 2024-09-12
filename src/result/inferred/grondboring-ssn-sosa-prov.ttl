@@ -82,16 +82,16 @@ ag:agent002 a prov:Agent;
     prov:wasInfluencedBy ag:agent003.
 ag:agent003 a prov:Agent;
     sosa:madeObservation <https://data.bodemenondergrond.vlaanderen.be/id/observation/1965-068140-y-1>.
-ass:association001 a prov:AgentInfluence, prov:Association;
+ass:association001 a prov:AgentInfluence, prov:Association, prov:Influence;
     prov:agent ag:agent001;
     prov:hadPlan wettelijkkader:wettelijkkader001;
     prov:hadRole rol:boorder;
     prov:influencer ag:agent001.
-ass:association002 a prov:AgentInfluence, prov:Association;
+ass:association002 a prov:AgentInfluence, prov:Association, prov:Influence;
     prov:agent ag:agent002;
     prov:hadRole rol:boormeester;
     prov:influencer ag:agent002.
-ass:association003 a prov:AgentInfluence, prov:Association;
+ass:association003 a prov:AgentInfluence, prov:Association, prov:Influence;
     prov:agent ag:agent003;
     prov:hadPlan cl-dlb:Grondwaterwinning;
     prov:hadRole rol:opdractgever;
@@ -315,7 +315,7 @@ result:boorgat001-sam1965-068140-d a sosa:Sample;
     sosa:madeBySampler boor:boring1965-068140-a;
     sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime;
     sosa:usedProcedure cl-brm:Lepelboring.
-wettelijkkader:wettelijkkader001 a grondboringen:WettelijkKaderBoring.
+wettelijkkader:wettelijkkader001 a prov:Plan, grondboringen:WettelijkKaderBoring.
 grondboringbeno:Diepte a rdf:Class;
     rdfs:label "Een maat voor de diepte van een boorgat, of diepte waar een monster uit een boorgat is genomen, uitgedrukt in meter."@nl.
 grondboringbeno:opdrachtgever a rdf:Property;
