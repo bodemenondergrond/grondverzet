@@ -17,12 +17,13 @@ import {
     sortLines
 } from './utils/variables.js';
 
-const dir = path.join(process.cwd(), 'source/')
+const dir = path.join(process.cwd(), 'source')
 const rules = path.join(process.cwd(), 'n3/')
 const reasoner = RoxiReasoner.new();
 const ttl_files = await glob('*.ttl', {
     cwd: dir
 })
+
 ttl_files.forEach(file => {
     reasoner.add_abox(fs.readFileSync(path.join(dir, file), 'utf8').toString());
 })

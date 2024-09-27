@@ -288,6 +288,10 @@
                         "result:boorgat001-sam1965-068140-d"
                     ],
                     "hasProperty": "obs_prop:diepte_boorgat001"
+                },
+                "grondboringbeno:maaiveld": {
+                    "@id": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+                    "@type": "boe:Maaiveld"
                 }
             },
             "hasFeatureOfInterest": {
@@ -316,7 +320,11 @@
                         "act:1965-068140-2",
                         "act:1965-068140-3"
                     ],
-                    "isPropertyOf": "boorgat:boorgat001"
+                    "isPropertyOf": "boorgat:boorgat001",
+                    "grondboringbeno:maaiveld": {
+                        "@id": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+                        "@type": "boe:Maaiveld"
+                    }
                 }
             },
             "hasResult": {
@@ -383,7 +391,11 @@
                         "act:1965-068140-2",
                         "act:1965-068140-3"
                     ],
-                    "isPropertyOf": "boorgat:boorgat001"
+                    "isPropertyOf": "boorgat:boorgat001",
+                    "grondboringbeno:maaiveld": {
+                        "@id": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+                        "@type": "boe:Maaiveld"
+                    }
                 }
             },
             "hasResult": {
@@ -443,7 +455,11 @@
                         "act:1965-068140-2",
                         "act:1965-068140-3"
                     ],
-                    "isPropertyOf": "boorgat:boorgat001"
+                    "isPropertyOf": "boorgat:boorgat001",
+                    "grondboringbeno:maaiveld": {
+                        "@id": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+                        "@type": "boe:Maaiveld"
+                    }
                 }
             },
             "hasResult": {

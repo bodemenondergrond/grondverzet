@@ -1,0 +1,641 @@
+PREFIX act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/>
+PREFIX adms:                <http://www.w3.org/ns/adms#>
+PREFIX ag:                  <https://data.bodemenondergrond.vlaanderen.be/id/agent/>
+PREFIX ass:                 <https://data.bodemenondergrond.vlaanderen.be/id/association/>
+PREFIX bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/>
+PREFIX bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/>
+PREFIX boe:                 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#>
+PREFIX boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/>
+PREFIX boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/>
+PREFIX boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/>
+PREFIX boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/>
+PREFIX cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/>
+PREFIX cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/>
+PREFIX cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/>
+PREFIX cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/>
+PREFIX cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/>
+PREFIX dcterms:             <http://purl.org/dc/terms/>
+PREFIX geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/>
+PREFIX geosparql:           <http://www.opengis.net/ont/geosparql#>
+PREFIX gml:                 <http://www.opengis.net/ont/gml#>
+PREFIX gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/>
+PREFIX grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#>
+PREFIX grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#>
+PREFIX grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/>
+PREFIX hel:                 <https://data.bodemenondergrond.vlaanderen.be/id/helling/>
+PREFIX id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/>
+PREFIX incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/>
+PREFIX list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/>
+PREFIX moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/>
+PREFIX nodeshape:           <https://data.bodemenondergrond.vlaanderen.be/id/nodeshape/>
+PREFIX obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/>
+PREFIX obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/>
+PREFIX ons:                 <https://data.omgeving.vlaanderen.be/id/nodeshape/>
+PREFIX opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/>
+PREFIX opm:                 <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/>
+PREFIX prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/>
+PREFIX propertyshape:       <https://data.bodemenondergrond.vlaanderen.be/id/propertyshape/>
+PREFIX prov:                <http://www.w3.org/ns/prov#>
+PREFIX qudt-schema:         <https://qudt.org/schema/qudt/>
+PREFIX qudt-unit:           <https://qudt.org/vocab/unit/>
+PREFIX rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:                <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX result:              <https://data.bodemenondergrond.vlaanderen.be/id/result/>
+PREFIX richting:            <https://data.bodemenondergrond.vlaanderen.be/id/richting/>
+PREFIX rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/>
+PREFIX sam:                 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/>
+PREFIX schema:              <https://schema.org/>
+PREFIX sdmx-attribute:      <http://purl.org/linked-data/sdmx/2009/attribute#>
+PREFIX seb:                 <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#>
+PREFIX sh:                  <http://www.w3.org/ns/shacl#>
+PREFIX skos:                <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa:                <http://www.w3.org/ns/sosa/>
+PREFIX sosa-om:             <http://www.w3.org/ns/sosa/om#>
+PREFIX ssn:                 <http://www.w3.org/ns/ssn/>
+PREFIX time:                <http://www.w3.org/2006/time#>
+PREFIX wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/>
+PREFIX xsd:                 <http://www.w3.org/2001/XMLSchema#>
+
+nodeshape:grondboringen_Boorgat
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:hasSample , propertyshape:isFeatureOfInterestOf , propertyshape:22-rdf-syntax-ns_type , propertyshape:hasProperty , propertyshape:geosparql_hasGeometry;
+        sh:targetClass  grondboringbeno:Boorgat .
+
+nodeshape:Sample  rdf:type  sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:isFeatureOfInterestOf , propertyshape:hasProperty , propertyshape:grondboringen_sampleDiepteTot , propertyshape:grondboringen_sampleDiepteVan , propertyshape:isResultOf , propertyshape:22-rdf-syntax-ns_type , propertyshape:isSampleOf;
+        sh:targetClass  sosa:Sample .
+
+nodeshape:prov_Influence
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:prov_hadPlan , propertyshape:prov_influencer , propertyshape:prov_agent , propertyshape:prov_hadRole , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  prov:Influence .
+
+nodeshape:prov_Plan  rdf:type  sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  prov:Plan .
+
+nodeshape:prov_AgentInfluence
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:prov_hadPlan , propertyshape:prov_influencer , propertyshape:prov_agent , propertyshape:prov_hadRole , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  prov:AgentInfluence .
+
+nodeshape:22-rdf-syntax-ns_List
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:22-rdf-syntax-ns_first , propertyshape:22-rdf-syntax-ns_type , propertyshape:22-rdf-syntax-ns_rest;
+        sh:targetClass  rdf:List .
+
+nodeshape:ObservableProperty
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:isActedOnBy , propertyshape:isPropertyOf , propertyshape:subject , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  sosa:ObservableProperty .
+
+nodeshape:22-rdf-syntax-ns_Class
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:rdf-schema_label , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  rdf:Class .
+
+nodeshape:adms_Identifier
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:core_notation , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  adms:Identifier .
+
+nodeshape:Observation
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:resultTime , propertyshape:madeBySensor , propertyshape:usedProcedure , propertyshape:hasFeatureOfInterest , propertyshape:wasOriginatedBy , propertyshape:22-rdf-syntax-ns_type , propertyshape:observedProperty , propertyshape:hasResult;
+        sh:targetClass  sosa:Observation .
+
+nodeshape:prov_Activity
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:resultTime , propertyshape:prov_wasInfluencedBy , propertyshape:grondboringen_opdrachtgever , propertyshape:prov_wasStartedBy , propertyshape:adms_identifier , propertyshape:grondboringen_boorder , propertyshape:grondboringen_samplings , propertyshape:prov_wasAssociatedWith , propertyshape:grondboringen_actuations , propertyshape:22-rdf-syntax-ns_type , propertyshape:prov_qualifiedAssociation , propertyshape:grondboringen_boormeester;
+        sh:targetClass  prov:Activity .
+
+nodeshape:core_Concept
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  skos:Concept .
+
+nodeshape:geosparql_Feature
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:hasSample , propertyshape:isFeatureOfInterestOf , propertyshape:22-rdf-syntax-ns_type , propertyshape:hasProperty , propertyshape:geosparql_hasGeometry;
+        sh:targetClass  geosparql:Feature .
+
+nodeshape:Result  rdf:type  sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:attribute_unitMeasure , propertyshape:22-rdf-syntax-ns_value , propertyshape:grondboringen_postconditie , propertyshape:isResultOf , propertyshape:22-rdf-syntax-ns_type , propertyshape:grondboringen_preconditie , propertyshape:about;
+        sh:targetClass  sosa:Result .
+
+nodeshape:geosparql_Geometry
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:geosparql_asWKT , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  geosparql:Geometry .
+
+nodeshape:grondboringen_WettelijkKaderBoring
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  grondboringen:WettelijkKaderBoring .
+
+nodeshape:time_Instant
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:time_inXSDDateTime , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  time:Instant .
+
+nodeshape:grondboringen_Grondboring
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:resultTime , propertyshape:prov_wasInfluencedBy , propertyshape:grondboringen_opdrachtgever , propertyshape:prov_wasStartedBy , propertyshape:adms_identifier , propertyshape:grondboringen_boorder , propertyshape:grondboringen_samplings , propertyshape:prov_wasAssociatedWith , propertyshape:grondboringen_actuations , propertyshape:22-rdf-syntax-ns_type , propertyshape:prov_qualifiedAssociation , propertyshape:grondboringen_boormeester;
+        sh:targetClass  grondboringen:Grondboring .
+
+nodeshape:grondboringen_Boor
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:madeSampling , propertyshape:madeActuation , propertyshape:22-rdf-syntax-ns_type , propertyshape:implements;
+        sh:targetClass  grondboringen:Boor .
+
+nodeshape:prov_Agent  rdf:type  sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:prov_wasInfluencedBy , propertyshape:prov_actedOnBehalfOf , propertyshape:madeObservation , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  prov:Agent .
+
+nodeshape:prov_Role  rdf:type  sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  prov:Role .
+
+nodeshape:Procedure  rdf:type  sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:core_exactMatch , propertyshape:rdf-schema_seeAlso , propertyshape:implementedBy , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  sosa:Procedure .
+
+nodeshape:22-rdf-syntax-ns_Property
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:rdf-schema_range , propertyshape:rdf-schema_subPropertyOf , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  rdf:Property .
+
+nodeshape:grondboringen_Diepte
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:attribute_unitMeasure , propertyshape:22-rdf-syntax-ns_value , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  grondboringbeno:Diepte .
+
+nodeshape:prov_Association
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:prov_hadPlan , propertyshape:prov_influencer , propertyshape:prov_agent , propertyshape:prov_hadRole , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  prov:Association .
+
+nodeshape:grondboringen_Bijlage
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:date , propertyshape:creator , propertyshape:rdf-schema_seeAlso , propertyshape:22-rdf-syntax-ns_type , propertyshape:about;
+        sh:targetClass  grondboringbeno:Bijlage .
+
+nodeshape:Actuation  rdf:type  sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:resultTime , propertyshape:usedProcedure , propertyshape:actsOnProperty , propertyshape:hasFeatureOfInterest , propertyshape:madeByActuator , propertyshape:22-rdf-syntax-ns_type , propertyshape:hasResult;
+        sh:targetClass  sosa:Actuation .
+
+nodeshape:Sampling  rdf:type  sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:resultTime , propertyshape:usedProcedure , propertyshape:madeBySampler , propertyshape:hasFeatureOfInterest , propertyshape:22-rdf-syntax-ns_type , propertyshape:hasResult;
+        sh:targetClass  sosa:Sampling .
+
+nodeshape:bodem-en-ondergrond_Opdracht
+        rdf:type        sh:NodeShape;
+        sh:closed       true;
+        sh:property     propertyshape:prov_wasAttributedTo , propertyshape:22-rdf-syntax-ns_type;
+        sh:targetClass  boe:Opdracht .
+
+propertyshape:prov_hadPlan
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:hadPlan .
+
+propertyshape:rdf-schema_range
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      rdfs:range .
+
+propertyshape:madeActuation
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:madeActuation .
+
+propertyshape:attribute_unitMeasure
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  14;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      sdmx-attribute:unitMeasure .
+
+propertyshape:madeObservation
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:madeObservation .
+
+propertyshape:implements
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      ssn:implements .
+
+propertyshape:madeSampling
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  4;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:madeSampling .
+
+propertyshape:prov_wasStartedBy
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:wasStartedBy .
+
+propertyshape:rdf-schema_seeAlso
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      rdfs:seeAlso .
+
+propertyshape:implementedBy
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      ssn:implementedBy .
+
+propertyshape:grondboringen_actuations
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringbeno:actuations .
+
+propertyshape:wasOriginatedBy
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      ssn:wasOriginatedBy .
+
+propertyshape:prov_hadRole
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:hadRole .
+
+propertyshape:22-rdf-syntax-ns_first
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  7;
+        sh:minCount  7;
+        sh:nodeKind  sh:IRI;
+        sh:path      rdf:first .
+
+propertyshape:prov_qualifiedAssociation
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:qualifiedAssociation .
+
+propertyshape:grondboringen_postconditie
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringbeno:postconditie .
+
+propertyshape:creator
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      dcterms:creator .
+
+propertyshape:hasProperty
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      ssn:hasProperty .
+
+propertyshape:22-rdf-syntax-ns_rest
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  7;
+        sh:minCount  7;
+        sh:nodeKind  sh:IRI;
+        sh:path      rdf:rest .
+
+propertyshape:observedProperty
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:observedProperty .
+
+propertyshape:22-rdf-syntax-ns_type
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  14;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      rdf:type .
+
+propertyshape:subject
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      dcterms:subject .
+
+propertyshape:hasResult
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:hasResult .
+
+propertyshape:about  rdf:type  sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      schema:about .
+
+propertyshape:prov_influencer
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:influencer .
+
+propertyshape:prov_wasAssociatedWith
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:wasAssociatedWith .
+
+propertyshape:actsOnProperty
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:actsOnProperty .
+
+propertyshape:isPropertyOf
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      ssn:isPropertyOf .
+
+propertyshape:resultTime
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  1;
+        sh:nodeKind  sh:Literal;
+        sh:path      sosa:resultTime .
+
+propertyshape:time_inXSDDateTime
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:Literal;
+        sh:path      time:inXSDDateTime .
+
+propertyshape:prov_wasInfluencedBy
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:wasInfluencedBy .
+
+propertyshape:date  rdf:type  sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:Literal;
+        sh:path      dcterms:date .
+
+propertyshape:grondboringen_opdrachtgever
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringbeno:opdrachtgever .
+
+propertyshape:core_exactMatch
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      skos:exactMatch .
+
+propertyshape:prov_wasAttributedTo
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:wasAttributedTo .
+
+propertyshape:usedProcedure
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:usedProcedure .
+
+propertyshape:hasSample
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  4;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:hasSample .
+
+propertyshape:prov_actedOnBehalfOf
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:actedOnBehalfOf .
+
+propertyshape:grondboringen_preconditie
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringbeno:preconditie .
+
+propertyshape:isResultOf
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  5;
+        sh:minCount  4;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:isResultOf .
+
+propertyshape:grondboringen_sampleDiepteVan
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  4;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringbeno:sampleDiepteVan .
+
+propertyshape:isActedOnBy
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:isActedOnBy .
+
+propertyshape:adms_identifier
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      adms:identifier .
+
+propertyshape:rdf-schema_subPropertyOf
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      rdfs:subPropertyOf .
+
+propertyshape:grondboringen_sampleDiepteTot
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  4;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringbeno:sampleDiepteTot .
+
+propertyshape:isFeatureOfInterestOf
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  8;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:isFeatureOfInterestOf .
+
+propertyshape:core_notation
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:Literal;
+        sh:path      skos:notation .
+
+propertyshape:madeBySensor
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  2;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:madeBySensor .
+
+propertyshape:isSampleOf
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  4;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:isSampleOf .
+
+propertyshape:geosparql_asWKT
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:Literal;
+        sh:path      geosparql:asWKT .
+
+propertyshape:geosparql_hasGeometry
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      geosparql:hasGeometry .
+
+propertyshape:rdf-schema_label
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:Literal;
+        sh:path      rdfs:label .
+
+propertyshape:grondboringen_boorder
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringen:boorder .
+
+propertyshape:grondboringen_samplings
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringbeno:samplings .
+
+propertyshape:grondboringen_boormeester
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:IRI;
+        sh:path      grondboringen:boormeester .
+
+propertyshape:madeBySampler
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  4;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:madeBySampler .
+
+propertyshape:22-rdf-syntax-ns_value
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  14;
+        sh:minCount  2;
+        sh:nodeKind  sh:Literal;
+        sh:path      rdf:value .
+
+propertyshape:madeByActuator
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:madeByActuator .
+
+propertyshape:hasFeatureOfInterest
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  4;
+        sh:minCount  2;
+        sh:nodeKind  sh:IRI;
+        sh:path      sosa:hasFeatureOfInterest .
+
+propertyshape:prov_agent
+        rdf:type     sh:PropertyShape;
+        sh:maxCount  3;
+        sh:minCount  3;
+        sh:nodeKind  sh:IRI;
+        sh:path      prov:agent .

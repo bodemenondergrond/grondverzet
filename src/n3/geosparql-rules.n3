@@ -2,7 +2,7 @@
 
 
 
-        {?x geosparql:asDGGS ?y} => {?x a geosparql:Geometry}
+{?x geosparql:asDGGS ?y} => {?x a geosparql:Geometry}
 {?x geosparql:asGeoJSON ?y} => {?x a geosparql:Geometry}
 {?x geosparql:asGML ?y} => {?x a geosparql:Geometry}
 {?x geosparql:asKML ?y} => {?x a geosparql:Geometry}

@@ -571,6 +571,10 @@
                 }
             }
         ],
-        "isPropertyOf": "boorgat:boorgat001"
+        "isPropertyOf": "boorgat:boorgat001",
+        "grondboringbeno:maaiveld": {
+            "@id": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+            "@type": "boe:Maaiveld"
+        }
     }
 }

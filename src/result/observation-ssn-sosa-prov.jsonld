@@ -259,6 +259,44 @@
     },
     "@graph": [
         {
+            "@id": "obs:1965-068140-maaiveld",
+            "@type": "sosa:Observation",
+            "hasFeatureOfInterest": {
+                "@id": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+                "@type": "boe:Maaiveld"
+            },
+            "hasResult": {
+                "@id": "result:1965-068140-maaiveld",
+                "@type": "sosa:Result",
+                "unitMeasure": "qudt-unit:M",
+                "value": "202.0"
+            },
+            "madeBySensor": {
+                "@id": "ag:agent001",
+                "@type": "prov:Agent",
+                "actedOnBehalfOf": {
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
+                }
+            },
+            "observedProperty": {
+                "@id": "obs_prop:niveau_1965-068140-maaiveld",
+                "@type": "sosa:ObservableProperty",
+                "subject": "prop:hoogte",
+                "isPropertyOf": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+                "grondboringbeno:tov": {
+                    "@id": "https://data.bodemenondergrond.vlaanderen.be/id/concept/TAW"
+                }
+            },
+            "resultTime": "1965-01-01T00:00:00.000",
+            "usedProcedure": "cl-bpt:bepalen_van_de_hoogte_van_het_maaiveld",
+            "wasOriginatedBy": {
+                "@id": "opdracht:2007-005512",
+                "@type": "boe:Opdracht",
+                "wasAttributedTo": "ag:agent003"
+            }
+        },
+        {
             "@id": "obs:1965-068140-x",
             "@type": "sosa:Observation",
             "hasFeatureOfInterest": {
@@ -481,7 +519,11 @@
                             "usedProcedure": "cl-brm:Lepelboring"
                         }
                     ],
-                    "isPropertyOf": "boorgat:boorgat001"
+                    "isPropertyOf": "boorgat:boorgat001",
+                    "grondboringbeno:maaiveld": {
+                        "@id": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+                        "@type": "boe:Maaiveld"
+                    }
                 }
             },
             "hasResult": {
@@ -705,7 +747,11 @@
                                     "usedProcedure": "cl-brm:Lepelboring"
                                 }
                             ],
-                            "isPropertyOf": "boorgat:boorgat001"
+                            "isPropertyOf": "boorgat:boorgat001",
+                            "grondboringbeno:maaiveld": {
+                                "@id": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+                                "@type": "boe:Maaiveld"
+                            }
                         }
                     },
                     "hasResult": "result:boorgat001-sam1965-068140-a",
