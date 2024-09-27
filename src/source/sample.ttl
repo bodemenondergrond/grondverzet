@@ -1,0 +1,186 @@
+@prefix act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/> .
+@prefix adms:                <http://www.w3.org/ns/adms#> .
+@prefix agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
+@prefix association:         <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
+@prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
+@prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
+@prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
+@prefix boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
+@prefix boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/> .
+@prefix boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/> .
+@prefix cl-beh:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandeling/> .
+@prefix cl-behwaarde:        <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandelingswaarde/> .
+@prefix cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/> .
+@prefix cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/> .
+@prefix cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/> .
+@prefix cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/> .
+@prefix cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/> .
+@prefix cl-loc:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/> .
+@prefix cl-mat:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/> .
+@prefix cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
+@prefix datum:               <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
+@prefix dcterms:             <http://purl.org/dc/terms/> .
+@prefix geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
+@prefix geosparql:           <http://www.opengis.net/ont/geosparql#> .
+@prefix gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/> .
+@prefix gml:                 <http://www.opengis.net/ont/gml#> .
+@prefix grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#> .
+@prefix grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#> .
+@prefix grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/> .
+@prefix hel:                 <https://data.bodemenondergrond.vlaanderen.be/id/helling/> .
+@prefix id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/> .
+@prefix incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/> .
+@prefix list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/> .
+@prefix moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
+@prefix obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
+@prefix obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
+@prefix opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
+@prefix opm:                 <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/> .
+@prefix prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/> .
+@prefix prov:                <http://www.w3.org/ns/prov#> .
+@prefix qudt-schema:         <https://qudt.org/schema/qudt/> .
+@prefix qudt-unit:           <https://qudt.org/vocab/unit/> .
+@prefix rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:                <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix result:              <https://data.bodemenondergrond.vlaanderen.be/id/result/> .
+@prefix richting:            <https://data.bodemenondergrond.vlaanderen.be/id/richting/> .
+@prefix rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/> .
+@prefix sam:                 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/> .
+@prefix sample:              <https://data.bodemenondergrond.vlaanderen.be/id/sample/> .
+@prefix schema:              <https://schema.org/> .
+@prefix sdmx-attribute:      <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix seb:                 <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#> .
+@prefix skos:                <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa:                <http://www.w3.org/ns/sosa/> .
+@prefix sosa-om:             <http://www.w3.org/ns/sosa/om#> .
+@prefix ssn:                 <http://www.w3.org/ns/ssn/> .
+@prefix time:                <http://www.w3.org/2006/time#> .
+@prefix wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
+@prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
+
+# bemonstering
+sam:2024-325560-a  a   sosa:Sampling ;
+                   sosa:madeBySampler boor:boring2006-002527-a ;
+                   sosa:usedProcedure cl-brm:Lepelboring ;
+                   sosa:hasResult  result:sam2024-325560-a;
+                   sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
+                   sosa:hasFeatureOfInterest boorgat:boorgat2006-002527.
+
+# monster
+result:sam2024-325560-a a sosa:Sample ;
+                    sosa:isResultOf sam:2024-325560-a ;
+                    sosa:isSampleOf boorgat:boorgat2006-002527 ;
+                    grondboringbeno:sampleDiepteVan result:boorgat2006-002527-sam2024-325560-a-van ;
+                    grondboringbeno:sampleDiepteTot result:boorgat2006-002527-sam2024-325560-a-tot ;
+                    adms:identifier id:sam2024-325560-a-1,  id:sam2024-325560-a-2; 
+                    prov:wasStartedBy  opdracht:2007-005512 .
+
+result:sam2024-325560-a-van a grondboringbeno:Diepte ;
+    rdf:value 3.00 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:sam2024-325560-a-tot a grondboringbeno:Diepte ;
+    rdf:value 3.34 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+# namen monster
+id:sam2024-325560-a-1 a adms:Identifier;
+    skos:notation  "Dit is de default naam" ;
+    dcterms:source agent:agent004 .
+
+id:sam2024-325560-a-2 a adms:Identifier;
+    skos:notation  "Dit is een alternatieve naam" ;    
+    dcterms:source agent:agent005 .
+
+# monsterbehandeling
+act:sam2024-325560-a a sosa:Actuation ;
+    sosa:madeByActuator agent:agent004 ;
+    sosa:usedProcedure cl-beh:drogingvooraf ;
+    sosa:hasResult  cl-behwaarde:luchtgedroogd ;
+    sosa:resultTime "2020-01-05T00:00:00.000"^^xsd:dateTime ;
+    sosa:actsOnProperty obs_prop:monsterbehandeling ;
+    sosa:hasFeatureOfInterest result:sam2024-325560-a .   
+
+obs_prop:monsterbehandeling a sosa:ObservableProperty ;
+    dcterms:subject prop:behandeling ;
+    ssn:isPropertyOf act:sam2024-325560-a .
+
+# materiaalklasse
+obs:sam2024-325560-a-1  a   sosa:Observation;
+                     sosa:hasResult  cl-mat:plantaardigmateriaal;
+                     sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:materiaalklasse-sam2024-325560-a ;
+                     sosa:madeBySensor   agent:agent003;
+                     sosa:usedProcedure  cl-bpt:bepaling_materiaalklasse ;
+                     ssn:wasOriginatedBy   opdracht:2007-005512 ;
+                     sosa:hasFeatureOfInterest  result:sam2024-325560-a .
+
+cl-bpt:bepaling_materiaalklasse  a  sosa:Procedure. # skos:Concept .
+
+# monstertype
+obs:sam2024-325560-a-2  a   sosa:Observation;
+                     sosa:hasResult  cl-mtype:ongeroerd;
+                     sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:monstertype-sam2024-325560-a ;
+                     sosa:madeBySensor    agent:agent003;
+                     sosa:usedProcedure  cl-bpt:bepaling_monstertype ;
+                     ssn:wasOriginatedBy    opdracht:2007-005512 ;
+                     sosa:hasFeatureOfInterest  result:sam2024-325560-a .
+
+obs_prop:monstertype-sam2024-325560-a a sosa:ObservableProperty ;
+        dcterms:subject prop:monstertype ;
+        ssn:isPropertyOf result:sam2024-325560-a .
+
+# monstersamenstelling
+obs:sam2006-002527-a-3  a   sosa:Observation;
+                     sosa:hasSimpleResult  "enkelvoudig monster";
+                     sosa:observedProperty obs_prop:monstersamenstelling-sam2024-325560-a ;
+                     sosa:madeBySensor      agent:agent003;
+                     sosa:hasFeatureOfInterest  result:sam2024-325560-a .
+
+obs_prop:monstersamenstelling-sam2024-325560-a a sosa:ObservableProperty ;
+        dcterms:subject prop:monstersamenstelling ;
+        ssn:isPropertyOf result:sam2024-325560-a .
+
+# opslag monster (locatie en periode)
+obs:sam2006-002527-a-4  a   sosa:Observation;
+                     sosa:hasResult  cl-loc:geotheekvilvoorde;
+                     sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
+                     sosa:phenomenonTime  moment:sam2024-325560-a ;
+                     sosa:observedProperty obs_prop:opslag-sam2024-325560-a ;
+                     sosa:madeBySensor  agent:agent003;
+                     sosa:hasFeatureOfInterest result:sam2024-325560-a .
+
+moment:sam2024-325560-a a time:Interval ;
+      time:hasBeginning datum:start-sam2024-325560-a-4 ;
+      time:hasEnd datum:end-sam2024-325560-a-4 .
+
+datum:start-sam2024-325560-a-4 a time:Instant ;
+      time:inXSDDateTimeStamp "2020-01-01T00:00:00+00:00"^^xsd:dateTimeStamp .
+      
+datum:end-sam2024-325560-a-4 a time:Instant ;
+      time:inXSDDateTimeStamp "2024-04-16T00:00:00+00:00"^^xsd:dateTimeStamp .
+
+obs_prop:opslag-sam2024-325560-a a sosa:ObservableProperty ;
+        dcterms:subject prop:opslag ;
+        ssn:isPropertyOf result:sam2024-325560-a .
+
+# opmerking bij monster
+opm:sam2024-325560-a-1  a  grondboringbeno:Opmerking ;
+    dcterms:description "Dit is een opmerking" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     result:sam2024-325560-a ;
+    dcterms:date     "2020-01-02"^^xsd:date .
+
+# bijlagen bij monster
+bl:sam2024-325560-a-1  a  grondboringbeno:Bijlage ;
+    rdfs:label       "GEO-06/075 Schuifweerstandskarakteristieken" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     result:sam2024-325560-a ;
+    dcterms:date     "2020-01-02"^^xsd:date .
+
+bl:sam2024-325560-a-2   a  grondboringbeno:Bijlage;
+    rdfs:label       "GEO-06/075 Samendrukkingsproef";
+    dcterms:creator  agent:agent001 ;
+    schema:about     result:sam2024-325560-a ;
+    dcterms:date     "2020-01-02"^^xsd:date .
