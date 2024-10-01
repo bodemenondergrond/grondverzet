@@ -283,6 +283,7 @@
             "madeByActuator": {
                 "@id": "boor:boring1965-068140-a",
                 "@type": "grondboringen:Boor",
+                "hasProperty": "https://data.bodemenondergrond.vlaanderen.be/id/boordiameter/boring1965-068140-a",
                 "implements": "cl-brm:Lepelboring"
             },
             "resultTime": "1965-01-01T00:00:00.000",
@@ -341,10 +342,17 @@
             "madeByActuator": {
                 "@id": "boor:boring1965-068140-a",
                 "@type": "grondboringen:Boor",
+                "hasProperty": "https://data.bodemenondergrond.vlaanderen.be/id/boordiameter/boring1965-068140-a",
                 "implements": "cl-brm:Lepelboring"
             },
             "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": "cl-brm:Lepelboring"
+        },
+        {
+            "@id": "act:bekisting-1965-068140-1",
+            "@type": "sosa:Actuation",
+            "actsOnProperty": "obs_prop:bekistingdikte_boorgat1965-068140-1",
+            "usedProcedure": "https://data.bodemenondergrond.vlaanderen.be/id/concept/bekistingsmateriaal/metselwerk"
         }
     ]
 }

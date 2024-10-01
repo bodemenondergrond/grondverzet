@@ -259,6 +259,10 @@
     },
     "@graph": [
         {
+            "@id": "https://data.bodemenondergrond.vlaanderen.be/id/concept/bekistingsmateriaal/metselwerk",
+            "@type": "sosa:Procedure"
+        },
+        {
             "@id": "cl-bpt:CMA_1_A2_v032022",
             "@type": "sosa:Procedure",
             "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
@@ -286,6 +290,11 @@
                 "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
                 "exactMatch": "cl-bpt:CMA_1_A2_v032022"
             }
+        },
+        {
+            "@id": "https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/G",
+            "@type": "sosa:Procedure",
+            "rdfs:label": "XY_gedigitaliseerd op topokaart"
         }
     ]
 }

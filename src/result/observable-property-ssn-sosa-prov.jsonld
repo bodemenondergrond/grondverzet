@@ -259,6 +259,12 @@
     },
     "@graph": [
         {
+            "@id": "obs_prop:boordiameter1965-068140-a",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:diameter",
+            "isPropertyOf": "boor:boring1965-068140-a"
+        },
+        {
             "@id": "obs_prop:diepte_boorgat001",
             "@type": "sosa:ObservableProperty",
             "subject": {
@@ -273,6 +279,12 @@
             "isPropertyOf": "boorgat:boorgat001"
         },
         {
+            "@id": "obs_prop:geometrie_boorgat001",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:geometrie",
+            "isPropertyOf": "boorgat:boorgat001"
+        },
+        {
             "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
             "@type": "sosa:ObservableProperty",
             "subject": {
@@ -280,6 +292,15 @@
                 "@type": "skos:Concept"
             },
             "isPropertyOf": "result:boorgat001-sam1965-068140-a"
+        },
+        {
+            "@id": "obs_prop:niveau_1965-068140-maaiveld",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:hoogte",
+            "isPropertyOf": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+            "grondboringbeno:tov": {
+                "@id": "https://data.bodemenondergrond.vlaanderen.be/id/concept/TAW"
+            }
         }
     ]
 }

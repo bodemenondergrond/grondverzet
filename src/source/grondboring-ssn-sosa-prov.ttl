@@ -2,11 +2,13 @@
 @prefix adms:                <http://www.w3.org/ns/adms#> .
 @prefix agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
 @prefix association:               <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
-
+@prefix mv:              <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/> .
+@prefix concept:         <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
 @prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
 @prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
 @prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
 @prefix boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
+@prefix boordiameter:                <https://data.bodemenondergrond.vlaanderen.be/id/boordiameter/> .
 @prefix boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/> .
 @prefix boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/> .
 @prefix cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/> .
@@ -51,7 +53,8 @@
 @prefix time:                <http://www.w3.org/2006/time#> .
 @prefix wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
 @prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
-
+@prefix cl-mmt: <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/> .
+@prefix cl-bekm:  <https://data.bodemenondergrond.vlaanderen.be/id/concept/bekistingsmateriaal/> .
 
 
 ### Classes
@@ -354,12 +357,30 @@ boorgat:boorgat001 a grondboringbeno:Boorgat ; # sosa:Result, geosparql:Feature 
                    sosa:hasSample    result:boorgat001-sam1965-068140-a ;
                    sosa:hasSample    result:boorgat001-sam1965-068140-b ;
                    sosa:hasSample    result:boorgat001-sam1965-068140-c ;
-                   sosa:hasSample    result:boorgat001-sam1965-068140-d ;
-                   geosparql:hasGeometry geometrie:boorgat001 .
+                   sosa:hasSample    result:boorgat001-sam1965-068140-d .
+
+cl-mmt:G a sosa:Procedure ; # skos:Concept 
+        rdfs:label  "XY_gedigitaliseerd op topokaart" .
 
 
-geometrie:boorgat001 a  geosparql:Geometry ;
-                     geosparql:asWKT "POINT(4.5660602119239 51.219401186425)"^^geosparql:wktLiteral .
+obs:geometrie1965-068140  a   sosa:Observation;
+                   sosa:hasResult                result:geometrie1965-068140;
+                   sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   sosa:observedProperty obs_prop:geometrie_boorgat001 ;
+                   sosa:madeBySensor                agent:agent001;
+                   sosa:usedProcedure  cl-mmt:G ;
+                   ssn:wasOriginatedBy    opdracht:2007-005512 ;
+                   sosa:hasFeatureOfInterest      boorgat:boorgat001 .
+
+obs_prop:geometrie_boorgat001 a sosa:ObservableProperty ;
+                           dcterms:subject prop:geometrie ;
+                           ssn:isPropertyOf boorgat:boorgat001 .
+
+result:geometrie1965-068140 
+            a geosparql:Geometry ;    # sosa:Result ;
+            geosparql:asWKT "POINT(4.5660602119239 51.219401186425)"^^geosparql:wktLiteral .
+
+
 
 
 id:act1965-068140-1
@@ -375,10 +396,26 @@ id:act1965-068140-3
     skos:notation  "BGD41w0164"^^cl-idt:KBIN-BGD .
 
 boor:boring1965-068140-a
-    a               grondboringen:Boor; #,sosa:Actuator, sosa:Sampler;
-        #sosa:madeActuation act:1965-068140-1 ;
-        #sosa:madeActuation act:1965-068140-3 ;
+    a grondboringen:Boor;
+    ssn:hasProperty boordiameter:boring1965-068140-a;
     ssn:implements  cl-brm:Lepelboring .
+
+obs:boordiameter1965-068140-a
+            a   sosa:Observation;
+            sosa:hasResult   result:boordiameter1965-068140-a ;
+            sosa:observedProperty     obs_prop:boordiameter1965-068140-a ;
+            sosa:hasFeatureOfInterest      boor:boring1965-068140-a .
+            
+obs_prop:boordiameter1965-068140-a a sosa:ObservableProperty ;
+                           dcterms:subject prop:diameter ;
+                           ssn:isPropertyOf boor:boring1965-068140-a .
+
+result:boordiameter1965-068140-a
+            a sosa:Result ;
+            rdf:value 250.0 ;
+            sdmx-attribute:unitMeasure qudt-unit:MilliM .
+
+
 
 boor:boring1965-068140-b
     a               grondboringen:Boor; #,sosa:Actuator, sosa:Sampler;
@@ -457,6 +494,66 @@ bl:boring1965-068140_2
     dcterms:creator  agent:agent001 ;
     schema:about     boring:1965-068140 ;
     dcterms:date     "2010-01-07"^^xsd:date .
+
+
+opm:boring1965-068140_1
+    a                grondboringbeno:Opmerking;
+    dcterms:description "Dit is een opmerking" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     boring:1965-068140 ;
+    dcterms:date     "2007-01-02"^^xsd:date .
+
+
+obs_prop:niveau_1965-068140-maaiveld a sosa:ObservableProperty ;
+           dcterms:subject prop:hoogte ;
+           grondboringbeno:tov concept:TAW ;
+           ssn:isPropertyOf mv:maaiveld_op_de_plaats_van_boorgat001 .
+
+
+
+obs:1965-068140-maaiveld  a   sosa:Observation;
+                   sosa:hasResult                result:1965-068140-maaiveld;
+                   #adms:identifier                id:1965-068140-x;
+                   sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
+                   sosa:observedProperty obs_prop:niveau_1965-068140-maaiveld ;
+                   sosa:madeBySensor                agent:agent001;
+                   sosa:usedProcedure  cl-bpt:bepalen_van_de_hoogte_van_het_maaiveld ;
+                   ssn:wasOriginatedBy    opdracht:2007-005512 ;
+                   sosa:hasFeatureOfInterest      mv:maaiveld_op_de_plaats_van_boorgat001 .
+
+result:1965-068140-maaiveld a sosa:Result;
+        rdf:value 202.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+
+
+cl-bekm:metselwerk  a  sosa:Procedure. # skos:Concept .
+
+act:bekisting-1965-068140-1 a sosa:Actuation ;
+    sosa:madeByActuator agent:agent001 ; # Wie of wat plaatst de bekisting? Een agent?
+    sosa:usedProcedure cl-bekm:metselwerk ; 
+    sosa:actsOnProperty obs_prop:bekistingdikte_boorgat1965-068140-1 ;
+    sosa:hasFeatureOfInterest boorgat:boorgat1965-068140 ;
+    sosa:hasResult result:bekisting-1965-068140-1 .
+ 
+obs_prop:bekistingdikte_boorgat1965-068140-1 a sosa:ActuatableProperty ;
+    sosa:isActedOnBy act:bekisting-1965-068140-1;
+    ssn:isPropertyOf boorgat:boorgat1965-068140 .
+
+obs:bekistingdikte_boorgat1965-068140-1  a   sosa:Observation;
+    sosa:hasResult   result:bekistingdikte_boorgat1965-068140-1;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+    sosa:observedProperty obs_prop:bekistingdikte_boorgat1965-068140-11 ;
+    sosa:madeBySensor   agent:agent001;
+    ssn:wasOriginatedBy    opdracht:2007-005512 ;
+    sosa:hasFeatureOfInterest boorgat:boorgat1965-068140 .
+ 
+result:bekistingdikte_boorgat1965-068140-1  a sosa:Result ;
+    rdf:value 12.5 ;
+    sdmx-attribute:unitMeasure qudt-unit:CentiM .
+
+
 
 
 

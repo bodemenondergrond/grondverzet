@@ -276,11 +276,6 @@
                         "hasFeatureOfInterest": {
                             "@id": "boorgat:boorgat001",
                             "@type": "grondboringbeno:Boorgat",
-                            "hasGeometry": {
-                                "@id": "geometrie:boorgat001",
-                                "@type": "geosparql:Geometry",
-                                "asWKT": "POINT(4.5660602119239 51.219401186425)"
-                            },
                             "hasSample": [
                                 {
                                     "@id": "result:boorgat001-sam1965-068140-a",
@@ -293,6 +288,7 @@
                                         "madeBySampler": {
                                             "@id": "boor:boring1965-068140-a",
                                             "@type": "grondboringen:Boor",
+                                            "hasProperty": "https://data.bodemenondergrond.vlaanderen.be/id/boordiameter/boring1965-068140-a",
                                             "implements": {
                                                 "@id": "cl-brm:Lepelboring",
                                                 "@type": "sosa:Procedure",
@@ -520,11 +516,6 @@
                         "hasFeatureOfInterest": {
                             "@id": "boorgat:boorgat001",
                             "@type": "grondboringbeno:Boorgat",
-                            "hasGeometry": {
-                                "@id": "geometrie:boorgat001",
-                                "@type": "geosparql:Geometry",
-                                "asWKT": "POINT(4.5660602119239 51.219401186425)"
-                            },
                             "hasSample": [
                                 {
                                     "@id": "result:boorgat001-sam1965-068140-a",
@@ -537,6 +528,7 @@
                                         "madeBySampler": {
                                             "@id": "boor:boring1965-068140-a",
                                             "@type": "grondboringen:Boor",
+                                            "hasProperty": "https://data.bodemenondergrond.vlaanderen.be/id/boordiameter/boring1965-068140-a",
                                             "implements": {
                                                 "@id": "cl-brm:Lepelboring",
                                                 "@type": "sosa:Procedure",

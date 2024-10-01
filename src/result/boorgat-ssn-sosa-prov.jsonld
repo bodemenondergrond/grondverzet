@@ -259,7 +259,6 @@
     },
     "@id": "boorgat:boorgat001",
     "@type": "grondboringbeno:Boorgat",
-    "hasGeometry": "geometrie:boorgat001",
     "hasSample": [
         "result:boorgat001-sam1965-068140-a",
         "result:boorgat001-sam1965-068140-b",
