@@ -293,6 +293,14 @@
             "madeBySampler": "boor:boring1965-068140-a",
             "resultTime": "1965-01-01T00:00:00.000",
             "usedProcedure": "cl-brm:Lepelboring"
+        },
+        {
+            "@id": "sam:2024-325560-a",
+            "@type": "sosa:Sampling",
+            "hasResult": "result:sam2024-325560-a",
+            "madeBySampler": "boor:boring2006-002527-a",
+            "resultTime": "2020-01-01T00:00:00.000",
+            "usedProcedure": "cl-brm:Lepelboring"
         }
     ]
 }

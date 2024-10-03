@@ -257,12 +257,26 @@
         "wettelijkkader": "https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": "opm:boring1965-068140_1",
-    "@type": "grondboringbeno:Opmerking",
-    "dcterms:creator": {
-        "@id": "ag:agent001"
-    },
-    "date": "2007-01-02",
-    "dcterms:description": "Dit is een opmerking",
-    "about": "boring:1965-068140"
+    "@graph": [
+        {
+            "@id": "opm:boring1965-068140_1",
+            "@type": "grondboringbeno:Opmerking",
+            "dcterms:creator": {
+                "@id": "ag:agent001"
+            },
+            "date": "2007-01-02",
+            "dcterms:description": "Dit is een opmerking",
+            "about": "boring:1965-068140"
+        },
+        {
+            "@id": "opm:sam2024-325560-a-1",
+            "@type": "grondboringbeno:Opmerking",
+            "dcterms:creator": {
+                "@id": "ag:agent001"
+            },
+            "date": "2020-01-02",
+            "dcterms:description": "Dit is een opmerking",
+            "about": "result:sam2024-325560-a"
+        }
+    ]
 }

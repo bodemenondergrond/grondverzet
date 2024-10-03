@@ -353,6 +353,13 @@
             "@type": "sosa:Actuation",
             "actsOnProperty": "obs_prop:bekistingdikte_boorgat1965-068140-1",
             "usedProcedure": "https://data.bodemenondergrond.vlaanderen.be/id/concept/bekistingsmateriaal/metselwerk"
+        },
+        {
+            "@id": "act:sam2024-325560-a",
+            "@type": "sosa:Actuation",
+            "actsOnProperty": "obs_prop:monsterbehandeling",
+            "resultTime": "2020-01-05T00:00:00.000",
+            "usedProcedure": "https://data.bodemenondergrond.vlaanderen.be/id/concept/behandeling/drogingvooraf"
         }
     ]
 }

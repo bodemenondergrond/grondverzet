@@ -343,6 +343,42 @@
                 "unitMeasure": "qudt-unit:M",
                 "value": "0.90"
             }
+        },
+        {
+            "@id": "result:sam2024-325560-a",
+            "@type": "sosa:Sample",
+            "identifier": [
+                {
+                    "@id": "id:sam2024-325560-a-1",
+                    "@type": "adms:Identifier",
+                    "dcterms:source": {
+                        "@id": "ag:agent004"
+                    },
+                    "notation": "Dit is de default naam"
+                },
+                {
+                    "@id": "id:sam2024-325560-a-2",
+                    "@type": "adms:Identifier",
+                    "dcterms:source": {
+                        "@id": "ag:agent005"
+                    },
+                    "notation": "Dit is een alternatieve naam"
+                }
+            ],
+            "wasStartedBy": {
+                "@id": "opdracht:2007-005512",
+                "@type": "boe:Opdracht",
+                "wasAttributedTo": {
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
+                }
+            },
+            "sosa:isResultOf": {
+                "@id": "sam:2024-325560-a"
+            },
+            "isSampleOf": "boorgat:boorgat2006-002527",
+            "sampleDiepteTot": "result:boorgat2006-002527-sam2024-325560-a-tot",
+            "sampleDiepteVan": "result:boorgat2006-002527-sam2024-325560-a-van"
         }
     ]
 }

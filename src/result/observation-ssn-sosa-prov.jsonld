@@ -1095,6 +1095,287 @@
                 "@type": "boe:Opdracht",
                 "wasAttributedTo": "ag:agent003"
             }
+        },
+        {
+            "@id": "obs:sam2006-002527-a-3",
+            "@type": "sosa:Observation",
+            "hasFeatureOfInterest": {
+                "@id": "result:sam2024-325560-a",
+                "@type": "sosa:Sample",
+                "identifier": [
+                    {
+                        "@id": "id:sam2024-325560-a-1",
+                        "@type": "adms:Identifier",
+                        "dcterms:source": {
+                            "@id": "ag:agent004"
+                        },
+                        "notation": "Dit is de default naam"
+                    },
+                    {
+                        "@id": "id:sam2024-325560-a-2",
+                        "@type": "adms:Identifier",
+                        "dcterms:source": {
+                            "@id": "ag:agent005"
+                        },
+                        "notation": "Dit is een alternatieve naam"
+                    }
+                ],
+                "wasStartedBy": {
+                    "@id": "opdracht:2007-005512",
+                    "@type": "boe:Opdracht",
+                    "wasAttributedTo": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                },
+                "sosa:isResultOf": {
+                    "@id": "sam:2024-325560-a",
+                    "@type": "sosa:Sampling",
+                    "hasFeatureOfInterest": "boorgat:boorgat2006-002527",
+                    "hasResult": "result:sam2024-325560-a",
+                    "madeBySampler": "boor:boring2006-002527-a",
+                    "resultTime": "2020-01-01T00:00:00.000",
+                    "usedProcedure": {
+                        "@id": "cl-brm:Lepelboring",
+                        "@type": "sosa:Procedure",
+                        "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                        "exactMatch": {
+                            "@id": "cl-bpt:CMA_1_A2_v032022",
+                            "@type": "sosa:Procedure",
+                            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                            "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+                        }
+                    }
+                },
+                "isSampleOf": "boorgat:boorgat2006-002527",
+                "sampleDiepteTot": "result:boorgat2006-002527-sam2024-325560-a-tot",
+                "sampleDiepteVan": "result:boorgat2006-002527-sam2024-325560-a-van"
+            },
+            "sosa:hasSimpleResult": "enkelvoudig monster",
+            "madeBySensor": "ag:agent003",
+            "observedProperty": {
+                "@id": "obs_prop:monstersamenstelling-sam2024-325560-a",
+                "@type": "sosa:ObservableProperty",
+                "subject": "prop:monstersamenstelling",
+                "isPropertyOf": "result:sam2024-325560-a"
+            }
+        },
+        {
+            "@id": "obs:sam2006-002527-a-4",
+            "@type": "sosa:Observation",
+            "hasFeatureOfInterest": {
+                "@id": "result:sam2024-325560-a",
+                "@type": "sosa:Sample",
+                "identifier": [
+                    {
+                        "@id": "id:sam2024-325560-a-1",
+                        "@type": "adms:Identifier",
+                        "dcterms:source": {
+                            "@id": "ag:agent004"
+                        },
+                        "notation": "Dit is de default naam"
+                    },
+                    {
+                        "@id": "id:sam2024-325560-a-2",
+                        "@type": "adms:Identifier",
+                        "dcterms:source": {
+                            "@id": "ag:agent005"
+                        },
+                        "notation": "Dit is een alternatieve naam"
+                    }
+                ],
+                "wasStartedBy": {
+                    "@id": "opdracht:2007-005512",
+                    "@type": "boe:Opdracht",
+                    "wasAttributedTo": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                },
+                "sosa:isResultOf": {
+                    "@id": "sam:2024-325560-a",
+                    "@type": "sosa:Sampling",
+                    "hasFeatureOfInterest": "boorgat:boorgat2006-002527",
+                    "hasResult": "result:sam2024-325560-a",
+                    "madeBySampler": "boor:boring2006-002527-a",
+                    "resultTime": "2020-01-01T00:00:00.000",
+                    "usedProcedure": {
+                        "@id": "cl-brm:Lepelboring",
+                        "@type": "sosa:Procedure",
+                        "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                        "exactMatch": {
+                            "@id": "cl-bpt:CMA_1_A2_v032022",
+                            "@type": "sosa:Procedure",
+                            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                            "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+                        }
+                    }
+                },
+                "isSampleOf": "boorgat:boorgat2006-002527",
+                "sampleDiepteTot": "result:boorgat2006-002527-sam2024-325560-a-tot",
+                "sampleDiepteVan": "result:boorgat2006-002527-sam2024-325560-a-van"
+            },
+            "hasResult": "https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/geotheekvilvoorde",
+            "madeBySensor": "ag:agent003",
+            "observedProperty": {
+                "@id": "obs_prop:opslag-sam2024-325560-a",
+                "@type": "sosa:ObservableProperty",
+                "subject": "prop:opslag",
+                "isPropertyOf": "result:sam2024-325560-a"
+            },
+            "phenomenonTime": {
+                "@id": "moment:sam2024-325560-a",
+                "@type": "time:Interval",
+                "time:hasBeginning": {
+                    "@id": "https://data.bodemenondergrond.vlaanderen.be/id/datum/start-sam2024-325560-a-4",
+                    "@type": "time:Instant",
+                    "time:inXSDDateTimeStamp": {
+                        "@type": "xsd:dateTimeStamp",
+                        "@value": "2020-01-01T00:00:00+00:00"
+                    }
+                },
+                "time:hasEnd": {
+                    "@id": "https://data.bodemenondergrond.vlaanderen.be/id/datum/end-sam2024-325560-a-4",
+                    "@type": "time:Instant",
+                    "time:inXSDDateTimeStamp": {
+                        "@type": "xsd:dateTimeStamp",
+                        "@value": "2024-04-16T00:00:00+00:00"
+                    }
+                }
+            },
+            "resultTime": "2020-01-01T00:00:00.000"
+        },
+        {
+            "@id": "obs:sam2024-325560-a-1",
+            "@type": "sosa:Observation",
+            "hasFeatureOfInterest": {
+                "@id": "result:sam2024-325560-a",
+                "@type": "sosa:Sample",
+                "identifier": [
+                    {
+                        "@id": "id:sam2024-325560-a-1",
+                        "@type": "adms:Identifier",
+                        "dcterms:source": {
+                            "@id": "ag:agent004"
+                        },
+                        "notation": "Dit is de default naam"
+                    },
+                    {
+                        "@id": "id:sam2024-325560-a-2",
+                        "@type": "adms:Identifier",
+                        "dcterms:source": {
+                            "@id": "ag:agent005"
+                        },
+                        "notation": "Dit is een alternatieve naam"
+                    }
+                ],
+                "wasStartedBy": {
+                    "@id": "opdracht:2007-005512",
+                    "@type": "boe:Opdracht",
+                    "wasAttributedTo": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                },
+                "sosa:isResultOf": {
+                    "@id": "sam:2024-325560-a",
+                    "@type": "sosa:Sampling",
+                    "hasFeatureOfInterest": "boorgat:boorgat2006-002527",
+                    "hasResult": "result:sam2024-325560-a",
+                    "madeBySampler": "boor:boring2006-002527-a",
+                    "resultTime": "2020-01-01T00:00:00.000",
+                    "usedProcedure": {
+                        "@id": "cl-brm:Lepelboring",
+                        "@type": "sosa:Procedure",
+                        "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                        "exactMatch": {
+                            "@id": "cl-bpt:CMA_1_A2_v032022",
+                            "@type": "sosa:Procedure",
+                            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                            "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+                        }
+                    }
+                },
+                "isSampleOf": "boorgat:boorgat2006-002527",
+                "sampleDiepteTot": "result:boorgat2006-002527-sam2024-325560-a-tot",
+                "sampleDiepteVan": "result:boorgat2006-002527-sam2024-325560-a-van"
+            },
+            "hasResult": "https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/plantaardigmateriaal",
+            "madeBySensor": "ag:agent003",
+            "observedProperty": "obs_prop:materiaalklasse-sam2024-325560-a",
+            "resultTime": "2020-01-01T00:00:00.000",
+            "usedProcedure": {
+                "@id": "cl-bpt:bepaling_materiaalklasse",
+                "@type": "sosa:Procedure"
+            },
+            "wasOriginatedBy": "opdracht:2007-005512"
+        },
+        {
+            "@id": "obs:sam2024-325560-a-2",
+            "@type": "sosa:Observation",
+            "hasFeatureOfInterest": {
+                "@id": "result:sam2024-325560-a",
+                "@type": "sosa:Sample",
+                "identifier": [
+                    {
+                        "@id": "id:sam2024-325560-a-1",
+                        "@type": "adms:Identifier",
+                        "dcterms:source": {
+                            "@id": "ag:agent004"
+                        },
+                        "notation": "Dit is de default naam"
+                    },
+                    {
+                        "@id": "id:sam2024-325560-a-2",
+                        "@type": "adms:Identifier",
+                        "dcterms:source": {
+                            "@id": "ag:agent005"
+                        },
+                        "notation": "Dit is een alternatieve naam"
+                    }
+                ],
+                "wasStartedBy": {
+                    "@id": "opdracht:2007-005512",
+                    "@type": "boe:Opdracht",
+                    "wasAttributedTo": {
+                        "@id": "ag:agent003",
+                        "@type": "prov:Agent"
+                    }
+                },
+                "sosa:isResultOf": {
+                    "@id": "sam:2024-325560-a",
+                    "@type": "sosa:Sampling",
+                    "hasFeatureOfInterest": "boorgat:boorgat2006-002527",
+                    "hasResult": "result:sam2024-325560-a",
+                    "madeBySampler": "boor:boring2006-002527-a",
+                    "resultTime": "2020-01-01T00:00:00.000",
+                    "usedProcedure": {
+                        "@id": "cl-brm:Lepelboring",
+                        "@type": "sosa:Procedure",
+                        "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                        "exactMatch": {
+                            "@id": "cl-bpt:CMA_1_A2_v032022",
+                            "@type": "sosa:Procedure",
+                            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                            "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+                        }
+                    }
+                },
+                "isSampleOf": "boorgat:boorgat2006-002527",
+                "sampleDiepteTot": "result:boorgat2006-002527-sam2024-325560-a-tot",
+                "sampleDiepteVan": "result:boorgat2006-002527-sam2024-325560-a-van"
+            },
+            "hasResult": "https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/ongeroerd",
+            "madeBySensor": "ag:agent003",
+            "observedProperty": {
+                "@id": "obs_prop:monstertype-sam2024-325560-a",
+                "@type": "sosa:ObservableProperty",
+                "subject": "prop:monstertype",
+                "isPropertyOf": "result:sam2024-325560-a"
+            },
+            "resultTime": "2020-01-01T00:00:00.000",
+            "usedProcedure": "cl-bpt:bepaling_monstertype",
+            "wasOriginatedBy": "opdracht:2007-005512"
         }
     ]
 }

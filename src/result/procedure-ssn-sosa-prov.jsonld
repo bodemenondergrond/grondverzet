@@ -273,6 +273,10 @@
             "@type": "sosa:Procedure"
         },
         {
+            "@id": "cl-bpt:bepaling_materiaalklasse",
+            "@type": "sosa:Procedure"
+        },
+        {
             "@id": "cl-bpt:meten_van_de_diepte_van_een_gat",
             "@type": "sosa:Procedure"
         },
