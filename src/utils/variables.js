@@ -3,35 +3,36 @@
 import fs from "fs";
 import jsonld from "jsonld";
 
+
 const context = JSON.parse(fs.readFileSync('source/context.json', 'utf8'));
 const frame_grondboring2 = {
     "@context": context,
     "@type": ["grondboringen:Grondboring"],
-    "qualifiedAssociation":{
+    "qualifiedAssociation": {
         "@embed": "@never",
         "@omitDefault": true
     },
-    "wasStartedBy":{
+    "wasStartedBy": {
         "@embed": "@never",
         "@omitDefault": true
     },
-    "boorder":{
+    "boorder": {
         "@embed": "@never",
         "@omitDefault": true
     },
-    "boormeester":{
+    "boormeester": {
         "@embed": "@never",
         "@omitDefault": true
     },
-    "actuations":{
+    "actuations": {
         "@embed": "@never",
         "@omitDefault": true
     },
-    "opdrachtgever":{
+    "opdrachtgever": {
         "@embed": "@never",
         "@omitDefault": true
     },
-    "samplings":{
+    "samplings": {
         "@embed": "@never",
         "@omitDefault": true
     },
@@ -52,13 +53,33 @@ const frame_association = {
     "@context": context,
     "@type": ["prov:Association"],
 
+    "hadPlan": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "hadRole": {
+        "@embed": "@never",
+        "@omitDefault": true
+    }
+
 }
+
+
+const frame_agent = {
+    "@context": context,
+    "@type": ["prov:Agent"],
+    actedOnBehalfOf: {
+        "@embed": "@never",
+        "@omitDefault": true
+    }
+}
+
 
 const frame_actuation = {
     "@context": context,
     "@type": ["sosa:Actuation"],
     "hasFeatureOfInterest": {
-        "@embed": "@always",
+        "@embed": "@never",
         "@omitDefault": true,
         "hasProperty": {
             "@embed": "@always",
@@ -74,14 +95,14 @@ const frame_actuation = {
         },
     },
     "actsOnProperty": {
-        "@embed": "@always",
+        "@embed": "@never",
         "@omitDefault": true,
         "isActedOnBy": {
             "@embed": "@never",
             "@omitDefault": true
         },
         "isPropertyOf": {
-            "@embed": "@always",
+            "@embed": "@never",
             "@omitDefault": true,
             "hasSample": {
                 "@embed": "@never",
@@ -89,14 +110,33 @@ const frame_actuation = {
             }
         }
     },
-
+    "hasResult": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "about": {
+            "@embed": "@never",
+            "@omitDefault": true,
+        },
+    },
+    "madeByActuator": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "implements": {
+            "@embed": "@never",
+            "@omitDefault": true,
+        },
+    },
+    "usedProcedure": {
+        "@embed": "@never",
+        "@omitDefault": true,
+    },
 }
 
 const frame_boorgat = {
     "@context": context,
     "@type": ["grondboringbeno:Boorgat"],
     "hasProperty": {
-        "@embed": "@always",
+        "@embed": "@never",
         "@omitDefault": true,
         "isActedOnBy": {
             "@embed": "@always",
@@ -105,9 +145,31 @@ const frame_boorgat = {
 
     },
     "hasSample": {
-        "@embed": "@always",
+        "@embed": "@never",
         "@omitDefault": true
     },
+    "hasGeometry": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+}
+
+const frame_geometry = {
+    "@context": context,
+    "@type": ["geosparql:Geometry"]
+}
+
+const frame_observableProperty = {
+    "@context": context,
+    "@type": ["sosa:ObservableProperty"],
+    "isActedOnBy":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "isPropertyOf":{
+        "@embed": "@never",
+        "@omitDefault": true
+    }
 
 }
 
@@ -122,11 +184,11 @@ const frame_bijlage = {
             "@embed": "@never",
             "@omitDefault": true
         },
-        "samplings":{
+        "samplings": {
             "@embed": "@never",
             "@omitDefault": true
         },
-        "qualifiedAssociation":{
+        "qualifiedAssociation": {
             "@embed": "@never",
             "@omitDefault": true
         }
@@ -138,7 +200,7 @@ const frame_sampling = {
     "@context": context,
     "@type": ["sosa:Sampling"],
     "hasFeatureOfInterest": {
-        "@embed": "@always",
+        "@embed": "@never",
         "@omitDefault": true,
         "hasProperty": {
             "@embed": "@always",
@@ -152,8 +214,65 @@ const frame_sampling = {
             "@embed": "@never",
             "@omitDefault": true
         },
-    }
+    },
+    "hasResult": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "madeBySampler":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "usedProcedure":
+        {
+            "@embed": "@never",
+            "@omitDefault": true
+        },
 
+}
+
+const frame_sample = {
+    "@context": context,
+    "@type": ["sosa:Sample"],
+    "sosa:isResultOf":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "isSampleOf":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+}
+
+const frame_procedure = {
+    "@context": context,
+    "@type": ["sosa:Procedure"],
+}
+
+const frame_list = {
+    "@context": context,
+    "@type": ["rdf:List"],
+    "first":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "rest":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+}
+
+const frame_opmerking = {
+    "@context": context,
+    "@type": ["grondboringbeno:Opmerking"],
+    "dcterms:creator":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "about":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
 }
 
 const sortLines = str => Array.from(new Set(str.split(/\r?\n/))).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
@@ -166,7 +285,8 @@ async function rdf_to_jsonld(nt, frame) {
     return await jsonld.frame(my_json, frame);
 }
 
-const prefixes = { "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
+const prefixes = {
+    "act": "https://data.bodemenondergrond.vlaanderen.be/id/actuation/",
     "adms": "http://www.w3.org/ns/adms#",
     "ag": "https://data.bodemenondergrond.vlaanderen.be/id/agent/",
     "ass": "https://data.bodemenondergrond.vlaanderen.be/id/association/",
@@ -230,6 +350,13 @@ export {
     frame_bijlage,
     frame_boorgat,
     frame_association,
+    frame_agent,
+    frame_sample,
+    frame_procedure,
+    frame_list,
+    frame_observableProperty,
+    frame_geometry,
+    frame_opmerking,
     rdf_to_jsonld,
     sortLines
 };

@@ -52,6 +52,7 @@
 @prefix wettelijkkader: <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
+
 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/1965-068140-1> a sosa:Actuation;
     sosa:actsOnProperty obs_prop:diepte_boorgat001;
     sosa:hasFeatureOfInterest boorgat:boorgat001;
@@ -350,3 +351,4 @@ grondboringen:boorder a rdf:Property;
     rdfs:subPropertyOf prov:wasAssociatedWith.
 grondboringen:boormeester a rdf:Property;
     rdfs:subPropertyOf prov:wasAssociatedWith.
+

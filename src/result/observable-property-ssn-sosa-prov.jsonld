@@ -259,48 +259,72 @@
     },
     "@graph": [
         {
-            "@id": "sam:1965-068140-a",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-a",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "obs_prop:boordiameter1965-068140-a",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:diameter",
+            "isPropertyOf": "boor:boring1965-068140-a"
         },
         {
-            "@id": "sam:1965-068140-b",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-b",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "obs_prop:diepte_boorgat001",
+            "@type": "sosa:ObservableProperty",
+            "subject": {
+                "@id": "prop:diepte",
+                "@type": "skos:Concept"
+            },
+            "isActedOnBy": [
+                "act:1965-068140-1",
+                "act:1965-068140-2",
+                "act:1965-068140-3"
+            ],
+            "isPropertyOf": "boorgat:boorgat001"
         },
         {
-            "@id": "sam:1965-068140-c",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-c",
-            "madeBySampler": "boor:boring1965-068140-b",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Gutsboring"
+            "@id": "obs_prop:geometrie_boorgat001",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:geometrie",
+            "isPropertyOf": "boorgat:boorgat001"
         },
         {
-            "@id": "sam:1965-068140-d",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-d",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
+            "@type": "sosa:ObservableProperty",
+            "subject": {
+                "@id": "prop:kleigehalte",
+                "@type": "skos:Concept"
+            },
+            "isPropertyOf": "result:boorgat001-sam1965-068140-a"
         },
         {
-            "@id": "sam:2024-325560-a",
-            "@type": "sosa:Sampling",
-            "hasResult": "result:sam2024-325560-a",
-            "madeBySampler": "boor:boring2006-002527-a",
-            "resultTime": "2020-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "obs_prop:monsterbehandeling",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:behandeling",
+            "isPropertyOf": "act:sam2024-325560-a"
+        },
+        {
+            "@id": "obs_prop:monstersamenstelling-sam2024-325560-a",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:monstersamenstelling",
+            "isPropertyOf": "result:sam2024-325560-a"
+        },
+        {
+            "@id": "obs_prop:monstertype-sam2024-325560-a",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:monstertype",
+            "isPropertyOf": "result:sam2024-325560-a"
+        },
+        {
+            "@id": "obs_prop:niveau_1965-068140-maaiveld",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:hoogte",
+            "isPropertyOf": "https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/maaiveld_op_de_plaats_van_boorgat001",
+            "grondboringbeno:tov": {
+                "@id": "https://data.bodemenondergrond.vlaanderen.be/id/concept/TAW"
+            }
+        },
+        {
+            "@id": "obs_prop:opslag-sam2024-325560-a",
+            "@type": "sosa:ObservableProperty",
+            "subject": "prop:opslag",
+            "isPropertyOf": "result:sam2024-325560-a"
         }
     ]
 }

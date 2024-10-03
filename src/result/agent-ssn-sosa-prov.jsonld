@@ -259,48 +259,18 @@
     },
     "@graph": [
         {
-            "@id": "sam:1965-068140-a",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-a",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "ag:agent001",
+            "@type": "prov:Agent",
+            "actedOnBehalfOf": "ag:agent003"
         },
         {
-            "@id": "sam:1965-068140-b",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-b",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "ag:agent002",
+            "@type": "prov:Agent",
+            "actedOnBehalfOf": "ag:agent003"
         },
         {
-            "@id": "sam:1965-068140-c",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-c",
-            "madeBySampler": "boor:boring1965-068140-b",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Gutsboring"
-        },
-        {
-            "@id": "sam:1965-068140-d",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-d",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
-        },
-        {
-            "@id": "sam:2024-325560-a",
-            "@type": "sosa:Sampling",
-            "hasResult": "result:sam2024-325560-a",
-            "madeBySampler": "boor:boring2006-002527-a",
-            "resultTime": "2020-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "ag:agent003",
+            "@type": "prov:Agent"
         }
     ]
 }

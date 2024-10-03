@@ -259,48 +259,46 @@
     },
     "@graph": [
         {
-            "@id": "sam:1965-068140-a",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-a",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "https://data.bodemenondergrond.vlaanderen.be/id/concept/bekistingsmateriaal/metselwerk",
+            "@type": "sosa:Procedure"
         },
         {
-            "@id": "sam:1965-068140-b",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-b",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "cl-bpt:CMA_1_A2_v032022",
+            "@type": "sosa:Procedure",
+            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+            "exactMatch": "cl-bpt:CMA_1_A2_v032022"
         },
         {
-            "@id": "sam:1965-068140-c",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-c",
-            "madeBySampler": "boor:boring1965-068140-b",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Gutsboring"
+            "@id": "cl-bpt:bepaling_kleigehalte",
+            "@type": "sosa:Procedure"
         },
         {
-            "@id": "sam:1965-068140-d",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-d",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "cl-bpt:bepaling_materiaalklasse",
+            "@type": "sosa:Procedure"
         },
         {
-            "@id": "sam:2024-325560-a",
-            "@type": "sosa:Sampling",
-            "hasResult": "result:sam2024-325560-a",
-            "madeBySampler": "boor:boring2006-002527-a",
-            "resultTime": "2020-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "cl-bpt:meten_van_de_diepte_van_een_gat",
+            "@type": "sosa:Procedure"
+        },
+        {
+            "@id": "cl-brm:Gutsboring",
+            "@type": "sosa:Procedure"
+        },
+        {
+            "@id": "cl-brm:Lepelboring",
+            "@type": "sosa:Procedure",
+            "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+            "exactMatch": {
+                "@id": "cl-bpt:CMA_1_A2_v032022",
+                "@type": "sosa:Procedure",
+                "seeAlso": "https://reflabos.vito.be/2024/CMA_1_A.1.pdf",
+                "exactMatch": "cl-bpt:CMA_1_A2_v032022"
+            }
+        },
+        {
+            "@id": "https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/G",
+            "@type": "sosa:Procedure",
+            "rdfs:label": "XY_gedigitaliseerd op topokaart"
         }
     ]
 }

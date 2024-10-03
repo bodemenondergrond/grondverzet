@@ -259,48 +259,126 @@
     },
     "@graph": [
         {
-            "@id": "sam:1965-068140-a",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-a",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "result:boorgat001-sam1965-068140-a",
+            "@type": "sosa:Sample",
+            "sosa:isResultOf": {
+                "@id": "sam:1965-068140-a"
+            },
+            "isSampleOf": "boorgat:boorgat001",
+            "hasProperty": {
+                "@id": "obs_prop:kleigehalte_boorgat001-sam1965-068140-a",
+                "@type": "sosa:ObservableProperty",
+                "subject": {
+                    "@id": "prop:kleigehalte",
+                    "@type": "skos:Concept"
+                },
+                "isPropertyOf": "result:boorgat001-sam1965-068140-a"
+            },
+            "sampleDiepteTot": {
+                "@id": "result:boorgat001-sam1965-068140-a-tot",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "0.95"
+            },
+            "sampleDiepteVan": {
+                "@id": "result:boorgat001-sam1965-068140-a-van",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "0.90"
+            }
         },
         {
-            "@id": "sam:1965-068140-b",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-b",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "result:boorgat001-sam1965-068140-b",
+            "@type": "sosa:Sample",
+            "sosa:isResultOf": {
+                "@id": "sam:1965-068140-b"
+            },
+            "isSampleOf": "boorgat:boorgat001",
+            "sampleDiepteTot": {
+                "@id": "result:boorgat001-sam1965-068140-b-tot",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "3.40"
+            },
+            "sampleDiepteVan": {
+                "@id": "result:boorgat001-sam1965-068140-b-van",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "3.35"
+            }
         },
         {
-            "@id": "sam:1965-068140-c",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-c",
-            "madeBySampler": "boor:boring1965-068140-b",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Gutsboring"
+            "@id": "result:boorgat001-sam1965-068140-c",
+            "@type": "sosa:Sample",
+            "sosa:isResultOf": {
+                "@id": "sam:1965-068140-c"
+            },
+            "isSampleOf": "boorgat:boorgat001",
+            "sampleDiepteTot": {
+                "@id": "result:boorgat001-sam1965-068140-c-tot",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "11.15"
+            },
+            "sampleDiepteVan": {
+                "@id": "result:boorgat001-sam1965-068140-c-van",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "11.10"
+            }
         },
         {
-            "@id": "sam:1965-068140-d",
-            "@type": "sosa:Sampling",
-            "hasFeatureOfInterest": "boorgat:boorgat001",
-            "hasResult": "result:boorgat001-sam1965-068140-d",
-            "madeBySampler": "boor:boring1965-068140-a",
-            "resultTime": "1965-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "result:boorgat001-sam1965-068140-d",
+            "@type": "sosa:Sample",
+            "isSampleOf": "boorgat:boorgat001",
+            "sampleDiepteTot": {
+                "@id": "result:boorgat001-sam1965-068140-d-tot",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "0.95"
+            },
+            "sampleDiepteVan": {
+                "@id": "result:boorgat001-sam1965-068140-d-van",
+                "@type": "grondboringbeno:Diepte",
+                "unitMeasure": "qudt-unit:M",
+                "value": "0.90"
+            }
         },
         {
-            "@id": "sam:2024-325560-a",
-            "@type": "sosa:Sampling",
-            "hasResult": "result:sam2024-325560-a",
-            "madeBySampler": "boor:boring2006-002527-a",
-            "resultTime": "2020-01-01T00:00:00.000",
-            "usedProcedure": "cl-brm:Lepelboring"
+            "@id": "result:sam2024-325560-a",
+            "@type": "sosa:Sample",
+            "identifier": [
+                {
+                    "@id": "id:sam2024-325560-a-1",
+                    "@type": "adms:Identifier",
+                    "dcterms:source": {
+                        "@id": "ag:agent004"
+                    },
+                    "notation": "Dit is de default naam"
+                },
+                {
+                    "@id": "id:sam2024-325560-a-2",
+                    "@type": "adms:Identifier",
+                    "dcterms:source": {
+                        "@id": "ag:agent005"
+                    },
+                    "notation": "Dit is een alternatieve naam"
+                }
+            ],
+            "wasStartedBy": {
+                "@id": "opdracht:2007-005512",
+                "@type": "boe:Opdracht",
+                "wasAttributedTo": {
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
+                }
+            },
+            "sosa:isResultOf": {
+                "@id": "sam:2024-325560-a"
+            },
+            "isSampleOf": "boorgat:boorgat2006-002527",
+            "sampleDiepteTot": "result:boorgat2006-002527-sam2024-325560-a-tot",
+            "sampleDiepteVan": "result:boorgat2006-002527-sam2024-325560-a-van"
         }
     ]
 }
