@@ -1,0 +1,1925 @@
+PREFIX act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/>
+PREFIX adms:                <http://www.w3.org/ns/adms#>
+PREFIX ag:                  <https://data.bodemenondergrond.vlaanderen.be/id/agent/>
+PREFIX ass:                 <https://data.bodemenondergrond.vlaanderen.be/id/association/>
+PREFIX bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/>
+PREFIX bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/>
+PREFIX boe:                 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#>
+PREFIX boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/>
+PREFIX boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/>
+PREFIX boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/>
+PREFIX boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/>
+PREFIX cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/>
+PREFIX cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/>
+PREFIX cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/>
+PREFIX cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/>
+PREFIX cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/>
+PREFIX dcterms:             <http://purl.org/dc/terms/>
+PREFIX geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/>
+PREFIX geosparql:           <http://www.opengis.net/ont/geosparql#>
+PREFIX gml:                 <http://www.opengis.net/ont/gml#>
+PREFIX gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/>
+PREFIX grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#>
+PREFIX grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#>
+PREFIX grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/>
+PREFIX hel:                 <https://data.bodemenondergrond.vlaanderen.be/id/helling/>
+PREFIX id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/>
+PREFIX incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/>
+PREFIX list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/>
+PREFIX moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/>
+PREFIX nodeshape:           <https://data.bodemenondergrond.vlaanderen.be/id/nodeshape/>
+PREFIX obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/>
+PREFIX obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/>
+PREFIX ons:                 <https://data.omgeving.vlaanderen.be/id/nodeshape/>
+PREFIX opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/>
+PREFIX opm:                 <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/>
+PREFIX prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/>
+PREFIX propertyshape:       <https://data.bodemenondergrond.vlaanderen.be/id/propertyshape/>
+PREFIX prov:                <http://www.w3.org/ns/prov#>
+PREFIX qudt-schema:         <https://qudt.org/schema/qudt/>
+PREFIX qudt-unit:           <https://qudt.org/vocab/unit/>
+PREFIX rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:                <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX result:              <https://data.bodemenondergrond.vlaanderen.be/id/result/>
+PREFIX richting:            <https://data.bodemenondergrond.vlaanderen.be/id/richting/>
+PREFIX rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/>
+PREFIX sam:                 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/>
+PREFIX schema:              <https://schema.org/>
+PREFIX sdmx-attribute:      <http://purl.org/linked-data/sdmx/2009/attribute#>
+PREFIX seb:                 <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#>
+PREFIX sh:                  <http://www.w3.org/ns/shacl#>
+PREFIX skos:                <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa:                <http://www.w3.org/ns/sosa/>
+PREFIX sosa-om:             <http://www.w3.org/ns/sosa/om#>
+PREFIX ssn:                 <http://www.w3.org/ns/ssn/>
+PREFIX time:                <http://www.w3.org/2006/time#>
+PREFIX wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/>
+PREFIX xsd:                 <http://www.w3.org/2001/XMLSchema#>
+
+[ rdf:type     sh:ValidationReport;
+  sh:conforms  false;
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-brm:Lepelboring;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 skos:exactMatch;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:core_exactMatch
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs_prop:kleigehalte_boorgat001-sam1965-068140-a;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 ssn:isPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-b;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-sam1;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:rest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_rest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-a;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-y-1;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2-pre;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-y-1;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 grondboringbeno:postconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_postconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-act3;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:first;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_first
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isSampleOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isSampleOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:CMA_1_A2_v032022;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 skos:exactMatch;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:core_exactMatch
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-a;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:madeBySampler;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeBySampler
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-sam3;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:first;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_first
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringen:boormeester;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdfs:range;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_range
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-b;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  boor:boring1965-068140-a;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 3";
+                 sh:resultPath                 sosa:madeSampling;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeSampling
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-d;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:madeBySampler;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeBySampler
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-act1;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:first;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_first
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-brm:Gutsboring;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 ssn:implementedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:implementedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-a-van;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-sam2;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:rest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_rest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2-post;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-sam3;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:rest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_rest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3-post;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2-post;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-act3;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:rest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_rest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs_prop:kleigehalte_boorgat001-sam1965-068140-a;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 sosa:isActedOnBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isActedOnBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d-van;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  bl:boring1965-068140_2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 dcterms:creator;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:creator
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:postconditie;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdfs:range;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_range
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringen:boorder;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdfs:range;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_range
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-c;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:bepaling_kleigehalte;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 skos:exactMatch;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:core_exactMatch
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d-tot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-sam4;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:first;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_first
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 sosa:isFeatureOfInterestOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isFeatureOfInterestOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3-post;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c-tot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent002;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:actedOnBehalfOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_actedOnBehalfOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:meten_van_de_diepte_van_een_gat;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 skos:exactMatch;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:core_exactMatch
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 ssn:hasProperty;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasProperty
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs_prop:diepte_boorgat001;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 ssn:isPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 schema:about;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:about
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  bl:boring1965-068140_1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 dcterms:date;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:date
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-c;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:madeBySampler;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeBySampler
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-y-1;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 grondboringbeno:preconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_preconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-brm:Gutsboring;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 skos:exactMatch;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:core_exactMatch
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-3;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 sosa:actsOnProperty;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:actsOnProperty
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent001;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:madeObservation;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeObservation
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 grondboringbeno:sampleDiepteVan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_sampleDiepteVan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c-tot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:preconditie;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdfs:range;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_range
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 schema:about;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:about
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-x;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:CMA_1_A2_v032022;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 ssn:implementedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:implementedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 grondboringbeno:sampleDiepteTot;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_sampleDiepteTot
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-act2;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:rest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_rest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-sam1;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:first;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_first
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-x;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 grondboringbeno:postconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_postconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-brm:Lepelboring;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdfs:seeAlso;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_seeAlso
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 grondboringbeno:sampleDiepteTot;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_sampleDiepteTot
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:madeBySensor;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeBySensor
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-d;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  bl:boring1965-068140_1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 dcterms:creator;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:creator
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-a;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1-pre;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  boor:boring1965-068140-b;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 ssn:implements;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:implements
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-a;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 grondboringbeno:sampleDiepteVan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_sampleDiepteVan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent003;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:madeObservation;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeObservation
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-b;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  boor:boring1965-068140-a;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 ssn:implements;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:implements
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-a-tot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  boor:boring1965-068140-b;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:madeSampling;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeSampling
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:sampleDiepteTot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdfs:range;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_range
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-c;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-sam4;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:rest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_rest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d-tot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-a;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  bl:boring1965-068140_1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdfs:seeAlso;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_seeAlso
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent001;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:actedOnBehalfOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_actedOnBehalfOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 grondboringbeno:sampleDiepteVan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_sampleDiepteVan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b-tot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1-post;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-act2;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:first;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_first
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-x;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 grondboringbeno:preconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_preconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent002;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 sosa:madeObservation;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeObservation
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  id:act1965-068140-1;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 skos:notation;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:core_notation
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent003;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 prov:wasInfluencedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_wasInfluencedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1-pre;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:meten_van_de_diepte_van_een_gat;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdfs:seeAlso;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_seeAlso
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:postconditie;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 rdfs:subPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_subPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 schema:about;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:about
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isSampleOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isSampleOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:CMA_1_A2_v032022;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdfs:seeAlso;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_seeAlso
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-1;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 sosa:madeByActuator;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeByActuator
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-a;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d-van;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringen:boormeester;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 rdfs:subPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_subPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-a;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isSampleOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isSampleOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-3;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 sosa:madeByActuator;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeByActuator
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent001;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:wasInfluencedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_wasInfluencedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-c;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-d;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  id:act1965-068140-2;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 skos:notation;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:core_notation
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-2;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 sosa:actsOnProperty;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:actsOnProperty
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:meten_van_de_diepte_van_een_gat;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 ssn:implementedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:implementedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c-van;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-3;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  bl:boring1965-068140_1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 schema:about;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:about
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 grondboringbeno:sampleDiepteTot;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_sampleDiepteTot
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-b;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:madeBySampler;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeBySampler
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:opdrachtgever;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdfs:range;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_range
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  boor:boring1965-068140-b;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 sosa:madeActuation;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeActuation
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:opdrachtgever;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 rdfs:subPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_subPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-3;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasResult;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasResult
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3-pre;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:bepaling_kleigehalte;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 ssn:implementedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:implementedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3-pre;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 schema:about;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:about
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-a-tot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b-van;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b-van;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 grondboringbeno:preconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_preconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2-pre;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 grondboringbeno:sampleDiepteVan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_sampleDiepteVan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:preconditie;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 rdfs:subPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_subPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  sam:1965-068140-d;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:hasFeatureOfInterest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasFeatureOfInterest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent002;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:wasInfluencedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_wasInfluencedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:sampleDiepteVan;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdfs:range;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_range
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs_prop:kleigehalte_boorgat001-sam1965-068140-a;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 dcterms:subject;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:subject
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c-van;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 sosa:isFeatureOfInterestOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isFeatureOfInterestOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:observedProperty;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:observedProperty
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 grondboringbeno:preconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_preconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs_prop:diepte_boorgat001;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 dcterms:subject;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:subject
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 ssn:wasOriginatedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:wasOriginatedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 schema:about;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:about
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-1;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 sosa:actsOnProperty;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:actsOnProperty
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-2;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 sosa:madeByActuator;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeByActuator
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:sampleDiepteVan;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 rdfs:subPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_subPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  bl:boring1965-068140_2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 dcterms:date;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:date
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1-post;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 ssn:hasProperty;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasProperty
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 sosa:isFeatureOfInterestOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isFeatureOfInterestOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ag:agent003;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 prov:actedOnBehalfOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_actedOnBehalfOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-1;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 grondboringbeno:postconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_postconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  act:1965-068140-3;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:usedProcedure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:usedProcedure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  id:act1965-068140-3;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 skos:notation;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:core_notation
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 grondboringbeno:postconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_postconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:influencer;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_influencer
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:observedProperty;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:observedProperty
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-bpt:bepaling_kleigehalte;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdfs:seeAlso;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_seeAlso
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-c;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isSampleOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isSampleOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 grondboringbeno:preconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_preconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-sam2;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:first;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_first
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association003;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 prov:hadPlan;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadPlan
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sdmx-attribute:unitMeasure;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:attribute_unitMeasure
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-y-1;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 ssn:wasOriginatedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:wasOriginatedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-a-van;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 sosa:isResultOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:isResultOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association002;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:agent;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_agent
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringen:boorder;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 rdfs:subPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_subPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-brm:Lepelboring;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 ssn:implementedBy;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:implementedBy
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-b-tot;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  bl:boring1965-068140_2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 schema:about;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:about
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  grondboringbeno:sampleDiepteTot;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 0";
+                 sh:resultPath                 rdfs:subPropertyOf;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_subPropertyOf
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  ass:association001;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 prov:hadRole;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:prov_hadRole
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-d;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0";
+                 sh:resultPath                 ssn:hasProperty;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:hasProperty
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-sam1965-068140-a;
+                 sh:resultMessage              "minCount[4]: Invalid cardinality: expected min 4: Got count = 1";
+                 sh:resultPath                 grondboringbeno:sampleDiepteTot;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_sampleDiepteTot
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  bl:boring1965-068140_2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 rdfs:seeAlso;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_seeAlso
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-3;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 1";
+                 sh:resultPath                 grondboringbeno:postconditie;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:grondboringen_postconditie
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  boor:boring1965-068140-a;
+                 sh:resultMessage              "minCount[3]: Invalid cardinality: expected min 3: Got count = 2";
+                 sh:resultPath                 sosa:madeActuation;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeActuation
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  obs:1965-068140-x;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 1";
+                 sh:resultPath                 sosa:madeBySensor;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:madeBySensor
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  cl-brm:Gutsboring;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdfs:seeAlso;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:rdf-schema_seeAlso
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  list:1965-068140-act1;
+                 sh:resultMessage              "minCount[7]: Invalid cardinality: expected min 7: Got count = 1";
+                 sh:resultPath                 rdf:rest;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_rest
+               ];
+  sh:result    [ rdf:type                      sh:ValidationResult;
+                 sh:focusNode                  result:boorgat001-act1965-068140-2;
+                 sh:resultMessage              "minCount[2]: Invalid cardinality: expected min 2: Got count = 0";
+                 sh:resultPath                 rdf:value;
+                 sh:resultSeverity             sh:Violation;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent;
+                 sh:sourceShape                propertyshape:22-rdf-syntax-ns_value
+               ]
+] .

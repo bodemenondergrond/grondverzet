@@ -4,6 +4,7 @@
 @prefix association:               <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
 @prefix mv:              <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/> .
 @prefix concept:         <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
+@prefix bodemenondergrond: <https://data.vlaanderen.be/ns/bodem-en-ondergrond#> .
 @prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
 @prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
 @prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
@@ -14,6 +15,7 @@
 @prefix cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/> .
 @prefix cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/> .
 @prefix cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/> .
+@prefix concept:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
 @prefix cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/> .
 @prefix cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/> .
 @prefix dcterms:             <http://purl.org/dc/terms/> .
@@ -29,6 +31,7 @@
 @prefix incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/> .
 @prefix list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/> .
 @prefix moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
+@prefix mv:              <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/> .
 @prefix obs:                <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
 @prefix obs_prop:                <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
 @prefix opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
@@ -149,10 +152,33 @@ obs:1965-068140-x  a   sosa:Observation;
 
 obs_prop:diepte_boorgat001 a sosa:ObservableProperty ;
                            dcterms:subject prop:diepte ;
+                               grondboringbeno:maaiveld mv:maaiveld_op_de_plaats_van_boorgat001 ;
                                sosa:isActedOnBy act:1965-068140-1;
                                sosa:isActedOnBy act:1965-068140-2;
                                sosa:isActedOnBy act:1965-068140-3;
                            ssn:isPropertyOf boorgat:boorgat001 .
+
+obs_prop:niveau_1965-068140-maaiveld a sosa:ObservableProperty ;
+                           dcterms:subject prop:hoogte ;
+                           grondboringbeno:tov concept:TAW ;
+                           ssn:isPropertyOf mv:maaiveld_op_de_plaats_van_boorgat001 .
+
+mv:maaiveld_op_de_plaats_van_boorgat001 a bodemenondergrond:Maaiveld .
+
+obs:1965-068140-maaiveld  a   sosa:Observation;
+                   sosa:hasResult                result:1965-068140-maaiveld;
+                   #adms:identifier                id:1965-068140-x;
+                   sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
+                   sosa:observedProperty obs_prop:niveau_1965-068140-maaiveld ;
+                   sosa:madeBySensor                agent:agent001;
+                   sosa:usedProcedure  cl-bpt:bepalen_van_de_hoogte_van_het_maaiveld ;
+                   ssn:wasOriginatedBy    opdracht:2007-005512 ;
+                   sosa:hasFeatureOfInterest      mv:maaiveld_op_de_plaats_van_boorgat001 .
+
+result:1965-068140-maaiveld a sosa:Result;
+        rdf:value 202.0 ;
+                     sdmx-attribute:unitMeasure qudt-unit:M .
 
 result:1965-068140-x a sosa:Result ; #a grondboringbeno:Diepte ;
                      rdf:value 20.0 ;
@@ -446,7 +472,7 @@ agent:agent002  a  prov:Agent ;
 
 agent:agent003  a  prov:Agent .
 
-opdracht:2007-005512  a  <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht> ;
+opdracht:2007-005512  a  bodemenondergrond:Opdracht ;
                       prov:wasAttributedTo agent:agent003 .
 
 association:association001 a prov:Association ;
