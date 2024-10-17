@@ -1,0 +1,790 @@
+@prefix act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/> .
+@prefix adms:                <http://www.w3.org/ns/adms#> .
+@prefix agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
+@prefix association:         <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
+@prefix avp:                 <https://data.bodemenondergrond.vlaanderen.be/id/aanvangspeil/> .
+@prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
+@prefix betrouwbaarheid:     <https://data.bodemenondergrond.vlaanderen.be/id/betrouwbaarheid/> .
+@prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
+@prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
+@prefix boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
+@prefix boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/> .
+@prefix boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/> .
+@prefix cl-astm:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/parameterastm/> .
+@prefix cl-beh:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandeling/> .
+@prefix cl-behwaarde:        <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandelingswaarde/> .
+@prefix cl-betr:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/betrouwbaarheid/> .
+@prefix cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/> .
+@prefix cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/> .
+@prefix cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/> .
+@prefix cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/> .
+@prefix cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/> .
+@prefix cl-loc:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/> .
+@prefix cl-mat:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/> .
+@prefix cl-mmt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/> .
+@prefix cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
+@prefix cl-opt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/> .
+@prefix concept:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
+@prefix datum:               <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
+@prefix dcterms:             <http://purl.org/dc/terms/> .
+@prefix geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
+@prefix geosparql:           <http://www.opengis.net/ont/geosparql#> .
+@prefix gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/> .
+@prefix gml:                 <http://www.opengis.net/ont/gml#> .
+@prefix grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#> .
+@prefix grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#> .
+@prefix grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/> .
+@prefix hel:                 <https://data.bodemenondergrond.vlaanderen.be/id/helling/> .
+@prefix her:                 <https://data.bodemenondergrond.vlaanderen.be/id/herkomst/> .
+@prefix herh:                <https://data.bodemenondergrond.vlaanderen.be/id/herhaling> .
+@prefix id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/> .
+@prefix incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/> .
+@prefix list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/> .
+@prefix moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
+@prefix mv:                  <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/> .
+@prefix obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
+@prefix obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
+@prefix opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
+@prefix opm:                 <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/> .
+@prefix prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/> .
+@prefix prov:                <http://www.w3.org/ns/prov#> .
+@prefix qb:                  <http://purl.org/linked-data/cube#> .
+@prefix qudt-schema:         <https://qudt.org/schema/qudt/> .
+@prefix qudt-unit:           <https://qudt.org/vocab/unit/> .
+@prefix rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:                <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix result:              <https://data.bodemenondergrond.vlaanderen.be/id/result/> .
+@prefix richting:            <https://data.bodemenondergrond.vlaanderen.be/id/richting/> .
+@prefix rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/> .
+@prefix sam:                 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/> .
+@prefix sample:              <https://data.bodemenondergrond.vlaanderen.be/id/sample/> .
+@prefix schema:              <https://schema.org/> .
+@prefix sdmx-attribute:      <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix seb:                 <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#> .
+@prefix skos:                <http://www.w3.org/2004/02/skos/core#> .
+@prefix sondering:           <https://data.bodemenondergrond.vlaanderen.be/id/sondering/> .
+@prefix sosa:                <http://www.w3.org/ns/sosa/> .
+@prefix sosa-om:             <http://www.w3.org/ns/sosa/om#> .
+@prefix sost:                <http://rdf-vocabulary.ddialliance.org/sost#> .
+@prefix ssn:                 <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system:          <http://www.w3.org/ns/ssn/systems/> .
+@prefix time:                <http://www.w3.org/2006/time#> .
+@prefix wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
+@prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
+
+
+# observatie ASTM uit fiche
+obs:2022-6907912  a   sosa:Observation;
+                     sosa:hasResult  cl-astm:SM ; # deze codelijst bestaat nog helemaal niet. Toe te voegen... Anders wordt dit result:obs2022-6907912
+                     #sosa:usedProcedure cl-opt:0 ; # komt overeen met onbekend
+                     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als phenomenontime indien niet ingevuld in DOV-fiche
+                     sosa:phenomenonTime  "2006-08-30T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:obs2022-6907912 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest result:sam2017-169209-a ;
+                     prov:atLocation her:obs2022-6907912 .
+
+obs_prop:obs2022-6907912  a sosa:ObservableProperty ;
+        dcterms:subject cl-par:ASTM_code ;
+        ssn:isPropertyOf obs:2022-6907912 .
+
+her:obs2022-6907912  a prov:Location ;
+        skos:notation "Labo" .
+
+# observatie Consistentiegrenzen - Plasticiteitsindex uit fiche
+obs:2023-11029442  a   sosa:Observation;
+                     sosa:hasResult  result:obs2023-11029442 ;
+                     sosa:usedProcedure cl-opt:306 ; # komt overeen met "Aangenomen"
+                     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als phenomenontime indien niet ingevuld in DOV-fiche
+                     sosa:phenomenonTime  "2006-08-30T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:obs2023-11029442 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest result:sam2017-169209-a ;
+                     prov:atLocation her:obs2023-11029442 .
+
+obs_prop:obs2023-11029442  a sosa:ObservableProperty ;
+        dcterms:subject cl-par:Consistentiegrenzen_Plasticiteitsindex ;
+        ssn:isPropertyOf obs:2023-11029442 .
+
+her:obs2023-11029442 a prov:Location ;
+        skos:notation "Labo" .
+
+cl-opt:306 a  sosa:Procedure ;
+        skos:notation  "Aangenomen" .
+
+result:obs2023-11029442 a sosa:Result ;
+        sosa:isResultOf obs:2023-11029442 ;
+        rdf:value 5.0 ;
+        # detectielimiet nog toe te voegen (<5%). Maar kan volgens SSN/SOSA enkel op system, dus via meettoestel en/of meetmethode (usedprocedure). bvb. ssn-system:DetectionLimit en schema:minValue en schema:maxValue
+        sdmx-attribute:unitMeasure qudt-unit:PERCENT .
+
+opm:obs2023-11029442-1  a  grondboringbeno:Opmerking ;
+    dcterms:description "Waarde <5% is aangenomen" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     obs:2023-11029442 ;
+    dcterms:date     "2006-08-30"^^xsd:date .
+
+
+# observatie Gehalte Kalkachtige stoffen uit fiche
+obs:2022-5996383  a   sosa:Observation;
+                     sosa:hasResult  result:obs2022-5996383 ;
+                     sosa:usedProcedure cl-opt:200 ; # komt overeen met "Chemische reactie met waterstofchloride"
+                     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als phenomenontime indien niet ingevuld in DOV-fiche
+                     sosa:phenomenonTime  "2006-08-30T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:obs2022-5996383 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest result:sam2017-169209-a ;
+                     prov:atLocation her:obs2023-11029442 .
+
+obs_prop:obs2023-11029442  a sosa:ObservableProperty ;
+        dcterms:subject cl-par:Gehalte_Kalkachtige_stoffen ;
+        ssn:isPropertyOf obs:2022-5996383 .
+
+her:obs2023-11029442 a prov:Location ;
+        skos:notation "Labo" .
+
+cl-opt:200 a  sosa:Procedure ;
+        skos:notation  "Chemische reactie met waterstofchloride" .
+
+result:obs2023-11029442 a sosa:Result ;
+        sosa:isResultOf obs:2023-11029442 ;
+        rdf:value 16.1 ;
+        sdmx-attribute:unitMeasure qudt-unit:PERCENT .
+
+
+# observatie Volumemassa nat uit fiche
+obs:2022-5354541  a   sosa:Observation;
+                     sosa:hasResult  result:obs2022-5354541 ;
+                     sosa:usedProcedure cl-opt:118 ; # komt overeen met "Volumieke massa door weging"
+                     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als phenomenontime indien niet ingevuld in DOV-fiche
+                     sosa:phenomenonTime  "2006-08-30T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:obs2022-5354541 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest result:sam2017-169209-a ;
+                     prov:wasInfluencedBy obs:2022-5354541-a ; # fictief toegevoegd om secundaire parameters te mappen (momenteel enkel bij bodemobservaties)
+                     prov:atLocation her:obs2022-5354541 .
+
+obs_prop:obs2022-5354541  a sosa:ObservableProperty ;
+        dcterms:subject cl-par:volumemassa_nat ;
+        ssn:isPropertyOf obs:2022-5354541 .
+
+her:obs2022-5354541 a prov:Location ;
+        skos:notation "Labo" .
+
+cl-opt:118 a  sosa:Procedure ;
+        skos:notation  "Volumieke massa door weging" .
+
+result:obs2022-5354541 a sosa:Result ;
+        sosa:isResultOf obs:2022-5354541 ;
+        rdf:value 1.79 ;
+        sdmx-attribute:unitMeasure qudt-unit:TONNE-PER-M3 .
+
+# Fictieve observatie met Secundaire parameter (is momenteel enkel beschikbaar bij bodemobservatie)
+obs:2022-5354541-a a   sosa:Observation;
+                     sosa:hasResult  result:obs2022-5354541-a ;
+                     #sosa:usedProcedure cl-opt:118 ; # Hier hebben we geen procedure voor
+                     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als de oorspronkelijke observatie in de DOV-fiche
+                     sosa:phenomenonTime  "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als de oorspronkelijke observatie in de DOV-fiche
+                     sosa:observedProperty obs_prop:obs2022-5354541-a ;
+                     sosa:madeBySensor  agent:agent003; # zelfde uitvoerder als de oorspronkelijke observatie in de DOV-fiche
+                     sosa:hasFeatureOfInterest obs:2022-5354541 . # Kan de featureOfInterest van een observatie ook een observatie zijn?
+
+obs_prop:obs2022-5354541-a  a sosa:ObservableProperty ;
+        dcterms:subject cl-par:temp_water ;
+        ssn:isPropertyOf obs:2022-5354541-a .
+
+result:obs2022-5354541-a a sosa:Result ;
+        sosa:isResultOf obs:2022-5354541-a ;
+        rdf:value 22.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:DEG_C .
+
+# observatie Korrelverdeling d.m.v. zeefproef uit fiche
+obs:2022-4033232  a   sosa:Observation;
+                     sosa:hasResult  result:obs2022-4033232 ;
+                     sosa:usedProcedure cl-opt:305 ; # komt overeen met "Zeving"
+                     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als phenomenontime indien niet ingevuld in DOV-fiche
+                     sosa:phenomenonTime  "2006-08-30T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:obs2022-4033232 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest result:sam2017-169209-a ;
+                     prov:atLocation her:obs2022-4033232 .
+
+obs_prop:obs2022-4033232  a sosa:ObservableProperty ;
+        dcterms:subject cl-par:Korrelverdeling_dmv_zeefproef ;
+        ssn:isPropertyOf obs:2022-4033232 .
+
+her:obs2022-4033232 a prov:Location ;
+        skos:notation "Labo" .
+
+cl-opt:305 a  sosa:Procedure ;
+        skos:notation  "Zeving" .
+
+# korrelverdeling als meetreeks weergeven. Nog af te toetsen.
+result:obs2022-4033232 a sosa:Result ;
+    grondboringenbeno:meetreeks [
+        rdf:first [
+            grondboringenbeno:diameter "0.063"^^xsd:float ;
+            grondboringenbeno:diameterEenheid "mm" ;
+            grondboringenbeno:fractiediameter "65.60"^^xsd:float ;
+            grondboringenbeno:fractiediameterEenheid "%"
+        ] ;
+        rdf:rest [
+            rdf:first [
+                grondboringenbeno:diameter "0.090"^^xsd:float ;
+                grondboringenbeno:diameterEenheid "mm" ;
+                grondboringenbeno:fractiediameter "42.00"^^xsd:float ;
+                grondboringenbeno:fractiediameterEenheid "%"
+            ] ;
+            rdf:rest [
+                rdf:first [
+                    grondboringenbeno:diameter "0.125"^^xsd:float ;
+                    grondboringenbeno:diameterEenheid "mm" ;
+                    grondboringenbeno:fractiediameter "29.20"^^xsd:float ;
+                    grondboringenbeno:fractiediameterEenheid "%"
+                ] ;
+                rdf:rest [
+                    rdf:first [
+                        grondboringenbeno:diameter "0.18"^^xsd:float ;
+                        grondboringenbeno:diameterEenheid "mm" ;
+                        grondboringenbeno:fractiediameter "24.40"^^xsd:float ;
+                        grondboringenbeno:fractiediameterEenheid "%"
+                    ] ;
+                    rdf:rest [
+                        rdf:first [
+                            grondboringenbeno:diameter "0.25"^^xsd:float ;
+                            grondboringenbeno:diameterEenheid "mm" ;
+                            grondboringenbeno:fractiediameter "21.30"^^xsd:float ;
+                            grondboringenbeno:fractiediameterEenheid "%"
+                        ] ;
+                        rdf:rest [
+                            rdf:first [
+                                grondboringenbeno:diameter "0.355"^^xsd:float ;
+                                grondboringenbeno:diameterEenheid "mm" ;
+                                grondboringenbeno:fractiediameter "19.90"^^xsd:float ;
+                                grondboringenbeno:fractiediameterEenheid "%"
+                            ] ;
+                            rdf:rest [
+                                rdf:first [
+                                    grondboringenbeno:diameter "0.5"^^xsd:float ;
+                                    grondboringenbeno:diameterEenheid "mm" ;
+                                    grondboringenbeno:fractiediameter "19.40"^^xsd:float ;
+                                    grondboringenbeno:fractiediameterEenheid "%"
+                                ] ;
+                                rdf:rest [
+                                    rdf:first [
+                                        grondboringenbeno:diameter "0.71"^^xsd:float ;
+                                        grondboringenbeno:diameterEenheid "mm" ;
+                                        grondboringenbeno:fractiediameter "18.70"^^xsd:float ;
+                                        grondboringenbeno:fractiediameterEenheid "%"
+                                    ] ;
+                                    rdf:rest [
+                                        rdf:first [
+                                            grondboringenbeno:diameter "1.0"^^xsd:float ;
+                                            grondboringenbeno:diameterEenheid "mm" ;
+                                            grondboringenbeno:fractiediameter "18.00"^^xsd:float ;
+                                            grondboringenbeno:fractiediameterEenheid "%"
+                                        ] ;
+                                        rdf:rest [
+                                            rdf:first [
+                                                grondboringenbeno:diameter "1.4"^^xsd:float ;
+                                                grondboringenbeno:diameterEenheid "mm" ;
+                                                grondboringenbeno:fractiediameter "17.20"^^xsd:float ;
+                                                grondboringenbeno:fractiediameterEenheid "%"
+                                            ] ;
+                                            rdf:rest [
+                                                rdf:first [
+                                                    grondboringenbeno:diameter "2.0"^^xsd:float ;
+                                                    grondboringenbeno:diameterEenheid "mm" ;
+                                                    grondboringenbeno:fractiediameter "15.90"^^xsd:float ;
+                                                    grondboringenbeno:fractiediameterEenheid "%"
+                                                ] ;
+                                                rdf:rest [
+                                                    rdf:first [
+                                                        grondboringenbeno:diameter "2.8"^^xsd:float ;
+                                                        grondboringenbeno:diameterEenheid "mm" ;
+                                                        grondboringenbeno:fractiediameter "14.50"^^xsd:float ;
+                                                        grondboringenbeno:fractiediameterEenheid "%"
+                                                    ] ;
+                                                    rdf:rest [
+                                                        rdf:first [
+                                                            grondboringenbeno:diameter "4.0"^^xsd:float ;
+                                                            grondboringenbeno:diameterEenheid "mm" ;
+                                                            grondboringenbeno:fractiediameter "13.30"^^xsd:float ;
+                                                            grondboringenbeno:fractiediameterEenheid "%"
+                                                        ] ;
+                                                        rdf:rest [
+                                                            rdf:first [
+                                                                grondboringenbeno:diameter "5.6"^^xsd:float ;
+                                                                grondboringenbeno:diameterEenheid "mm" ;
+                                                                grondboringenbeno:fractiediameter "11.60"^^xsd:float ;
+                                                                grondboringenbeno:fractiediameterEenheid "%"
+                                                            ] ;
+                                                            rdf:rest [
+                                                                rdf:first [
+                                                                    grondboringenbeno:diameter "8.0"^^xsd:float ;
+                                                                    grondboringenbeno:diameterEenheid "mm" ;
+                                                                    grondboringenbeno:fractiediameter "10.10"^^xsd:float ;
+                                                                    grondboringenbeno:fractiediameterEenheid "%"
+                                                                ] ;
+                                                                rdf:rest [
+                                                                    rdf:first [
+                                                                        grondboringenbeno:diameter "11.2"^^xsd:float ;
+                                                                        grondboringenbeno:diameterEenheid "mm" ;
+                                                                        grondboringenbeno:fractiediameter "5.50"^^xsd:float ;
+                                                                        grondboringenbeno:fractiediameterEenheid "%"
+                                                                    ] ;
+                                                                    rdf:rest rdf:nil
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ] .
+
+opm:obs2022-4033232-1  a  grondboringbeno:Opmerking ;
+    dcterms:description "Percentage korrels met fractie >IV is vrij groot. Resultaten moeten met de nodige voorzichtigheid geïnterpreteerd worden" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     obs:2022-4033232 ;
+    dcterms:date     "2006-08-30"^^xsd:date .
+
+opm:obs2022-4033232-1  a  grondboringbeno:Opmerking ;
+    dcterms:description "Percentage korrels met fractie >IV is vrij groot. Resultaten moeten met de nodige voorzichtigheid geÃ¯nterpreteerd worden" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     obs:2022-4033232 ;
+    dcterms:date     "2006-08-30"^^xsd:date .
+
+#Voor deze observatie zijn er ook 2 behandelingen, maar het lijkt absurd om een behandeling op een observatie te hebben. Dit zou een deelmonster moeten zijn.
+#detectieconditie is een nog groter probleem als het een "groter dan" waarde is. Bij "kleiner dan" is er nog een min-waarde 0 en kan dus zowel min-waarde als max-waarde opgegeven worden als alternatief.
+
+# Observatie met herhalingen: Dit zijn meerdere observaties waarvan de gerapporteerde waarde het gemiddelde is. Bestaat uit: aantal herhalingen, min-waarde (%), max-waarde (%) en standaardafwijking (%)
+# Onderstaande is een voorstel om dit te verwerken via Data Cube Vocabulary.
+
+obs:2024-9484747 a   sosa:Observation;
+                     sosa:hasResult  result:2024-9484747 ;
+                     sosa:usedProcedure cl-opt:BOD_TEX9 ; # komt overeen met "Volumieke massa door weging"
+                     sosa:resultTime "2024-10-07T00:00:00.000"^^xsd:dateTime ; # zelfde als phenomenontime indien niet ingevuld in DOV-fiche
+                     sosa:phenomenonTime  "2024-10-07T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:obs2024-9484747 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest result:sam1990-294153-a ;
+                     prov:atLocation her:obs2024-9484747 ;
+                     prov:wasDerivedFrom herh:obs2024-9484747 .
+
+obs_prop:2024-9484747 a sosa:ObservableProperty ;
+        dcterms:subject cl-par:textuur_fractie_zand ;
+        ssn:isPropertyOf obs:2024-9484747 .
+
+her:obs2024-9484747 a prov:Location ;
+        skos:notation "Labo" .
+
+cl-opt:BOD_TEX9 a  sosa:Procedure ;
+        skos:notation  "Berekend - fractie 63-2000 µm op basis van Laserdiffractie bodem (Cmon analyseprotocol)" .
+
+result:obs2024-9484747 a sosa:Result ;
+        sosa:isResultOf obs:2024-9484747 ;
+        rdf:value 5.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:PERCENT .
+
+herh:obs2024-9484747 a qb:Observation ;
+                          qb:dataSet obs:2024-9484747 ;
+                          sost:SampleSize "3"^^xsd:integer ;
+                          sost:Minimum "4.9"^^xsd:decimal ;
+                          sost:Maximum "5.1"^^xsd:decimal .
+
+# Observaties die reeds gebruikt werden in grondboring/boorgat, sampling en sample. Deze komen dus niet uit tbl_observaties
+# materiaalklasse uit monster
+obs:sam2024-325560-a-1  a   sosa:Observation;
+                     sosa:hasResult  cl-mat:plantaardigmateriaal;
+                     sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:materiaalklasse-sam2024-325560-a ;
+                     sosa:madeBySensor   agent:agent003;
+                     sosa:usedProcedure  cl-bpt:bepaling_materiaalklasse ;
+                     #ssn:wasOriginatedBy   opdracht:2007-005512 ; # opdracht bestaat (nog) niet voor observaties. Wordt mee opgenomen met mengmonsters. Dus binnenkort wel beschikbaar.
+                     sosa:hasFeatureOfInterest  result:sam2024-325560-a .
+
+cl-bpt:bepaling_materiaalklasse  a  sosa:Procedure. # skos:Concept .
+
+# monstertype uit monster
+obs:sam2024-325560-a-2  a   sosa:Observation;
+                     sosa:hasResult  cl-mtype:ongeroerd;
+                     sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:monstertype-sam2024-325560-a ;
+                     sosa:madeBySensor    agent:agent003;
+                     sosa:usedProcedure  cl-bpt:bepaling_monstertype ;
+                     #ssn:wasOriginatedBy   opdracht:2007-005512 ; # opdracht bestaat (nog) niet voor observaties. Wordt mee opgenomen met mengmonsters. Dus binnenkort wel beschikbaar.
+                     sosa:hasFeatureOfInterest  result:sam2024-325560-a .
+
+obs_prop:monstertype-sam2024-325560-a a sosa:ObservableProperty ;
+        dcterms:subject prop:monstertype ;
+        ssn:isPropertyOf result:sam2024-325560-a .
+
+# monstersamenstelling uit monster
+obs:sam2006-002527-a-3  a   sosa:Observation;
+                     sosa:hasSimpleResult  "enkelvoudig monster";
+                     sosa:observedProperty obs_prop:monstersamenstelling-sam2024-325560-a ;
+                     sosa:madeBySensor      agent:agent003;
+                     sosa:hasFeatureOfInterest  result:sam2024-325560-a .
+
+obs_prop:monstersamenstelling-sam2024-325560-a a sosa:ObservableProperty ;
+        dcterms:subject prop:monstersamenstelling ;
+        ssn:isPropertyOf result:sam2024-325560-a .
+
+# opslag monster (locatie en periode) uit monster
+obs:sam2006-002527-a-4  a   sosa:Observation;
+                     sosa:hasResult  cl-loc:geotheekvilvoorde;
+                     sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
+                     sosa:phenomenonTime  moment:sam2024-325560-a ;
+                     sosa:observedProperty obs_prop:opslag-sam2024-325560-a ;
+                     sosa:madeBySensor  agent:agent003;
+                     sosa:hasFeatureOfInterest result:sam2024-325560-a .
+
+moment:sam2024-325560-a a time:Interval ;
+      time:hasBeginning datum:start-sam2024-325560-a-4 ;
+      time:hasEnd datum:end-sam2024-325560-a-4 .
+
+datum:start-sam2024-325560-a-4 a time:Instant ;
+      time:inXSDDateTimeStamp "2020-01-01T00:00:00+00:00"^^xsd:dateTimeStamp .
+      
+datum:end-sam2024-325560-a-4 a time:Instant ;
+      time:inXSDDateTimeStamp "2024-04-16T00:00:00+00:00"^^xsd:dateTimeStamp .
+
+obs_prop:opslag-sam2024-325560-a a sosa:ObservableProperty ;
+        dcterms:subject prop:opslag ;
+        ssn:isPropertyOf result:sam2024-325560-a .
+
+# opmerking bij observatie
+opm:obs2024-325560-a-1  a  grondboringbeno:Opmerking ;
+    dcterms:description "Dit is een opmerking bij een observatie" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     obs:sam2006-002527-a-4 ;
+    dcterms:date     "2020-01-02"^^xsd:date .
+
+# bijlagen bij observatie
+bl:sam2024-325560-a-1  a  grondboringbeno:Bijlage ;
+    rdfs:label       "GEO-06/075 Schuifweerstandskarakteristieken" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     obs:sam2006-002527-a-4;
+    dcterms:date     "2020-01-02"^^xsd:date .
+
+bl:sam2024-325560-a-2   a  grondboringbeno:Bijlage;
+    rdfs:label       "GEO-06/075 Samendrukkingsproef";
+    dcterms:creator  agent:agent001 ;
+    schema:about     obs:sam2006-002527-a-4 ;
+    dcterms:date     "2020-01-02"^^xsd:date .
+
+
+# Maaiveld uit boorgat
+obs_prop:diepte_boorgat1965-068140 a sosa:ObservableProperty ;
+           dcterms:subject prop:diepte ;
+           grondboringbeno:maaiveld mv:maaiveld_op_de_plaats_van_boorgat1965-068140 ;
+           sosa:isActedOnBy act:1965-068140-1;
+           sosa:isActedOnBy act:1965-068140-2;
+           sosa:isActedOnBy act:1965-068140-3;
+           ssn:isPropertyOf boorgat:boorgat1965-068140 .
+
+obs_prop:niveau_1965-068140-maaiveld a sosa:ObservableProperty ;
+           dcterms:subject prop:hoogte ;
+           grondboringbeno:tov concept:TAW ;
+           ssn:isPropertyOf mv:maaiveld_op_de_plaats_van_boorgat1965-068140 .
+
+mv:maaiveld_op_de_plaats_van_boorgat1965-068140 a bodemenondergrond:Maaiveld .
+
+obs:1965-068140-maaiveld  a   sosa:Observation;
+                   sosa:hasResult                result:1965-068140-maaiveld;
+                   #adms:identifier                id:1965-068140-x;
+                   sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   #sosa:phenomenonTime                moment:boring1965-068140 ;
+                   sosa:observedProperty obs_prop:niveau_1965-068140-maaiveld ;
+                   sosa:madeBySensor                agent:agent001;
+                   sosa:usedProcedure  cl-bpt:bepalen_van_de_hoogte_van_het_maaiveld ;
+                   #ssn:wasOriginatedBy   opdracht:2007-005512 ; # opdracht bestaat (nog) niet voor observaties. Wordt mee opgenomen met mengmonsters. Dus binnenkort wel beschikbaar.
+                   sosa:hasFeatureOfInterest      mv:maaiveld_op_de_plaats_van_boorgat1965-068140 .
+
+result:1965-068140-maaiveld a sosa:Result;
+        rdf:value 202.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+
+# boordiameter uit grondboring
+obs:boordiameter1965-068140-a
+            a   sosa:Observation;
+            sosa:hasResult   result:boordiameter1965-068140-a ;
+            sosa:observedProperty     obs_prop:boordiameter1965-068140-a ;
+            sosa:hasFeatureOfInterest      boor:boring1965-068140-a .
+            
+obs_prop:boordiameter1965-068140-a a sosa:ObservableProperty ;
+                           dcterms:subject prop:diameter ;
+                           ssn:isPropertyOf boor:boring1965-068140-a .
+
+result:boordiameter1965-068140-a
+            a sosa:Result ;
+            rdf:value 250.0 ;
+            sdmx-attribute:unitMeasure qudt-unit:MilliM .
+
+# Geometrie boorgat
+obs:geometrie1965-068140  a   sosa:Observation;
+                   sosa:hasResult                result:geometrie1965-068140;
+                   sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                   sosa:observedProperty obs_prop:geometrie_boorgat1965-068140 ;
+                   sosa:madeBySensor   agent:agent001;
+                   sosa:usedProcedure  cl-mmt:G ;
+                   #ssn:wasOriginatedBy   opdracht:2007-005512 ; # opdracht bestaat (nog) niet voor observaties. Wordt mee opgenomen met mengmonsters. Dus binnenkort wel beschikbaar.
+                   sosa:hasFeatureOfInterest  boorgat:boorgat1965-068140 ;
+                   ssn:hasProperty  betrouwbaarheid:geometrie1965-068140 .
+
+obs_prop:geometrie_boorgat1965-068140 a sosa:ObservableProperty ;
+                           dcterms:subject prop:geometrie ;
+                           ssn:isPropertyOf boorgat:boorgat1965-068140 .
+
+betrouwbaarheid:geometrie1965-068140 a ssn:Property ;
+        skos:prefLabel "betrouwbaarheid goed"@nl ;
+        skos:inScheme cl-betr:A .
+
+cl-mmt:G a sosa:Procedure ; # skos:Concept 
+        rdfs:label  "XY_gedigitaliseerd op topokaart" .
+
+cl-betr:A a sosa:Procedure ; # skos:Concept 
+        rdfs:label  "betrouwbaarheid goed" .
+
+result:geometrie1965-068140 
+            a geosparql:Geometry ;    # sosa:Result ;
+            geosparql:asWKT "POINT(4.5660602119239 51.219401186425)"^^geosparql:wktLiteral .
+
+# Bekistingsdikte boorgat
+obs:bekistingdikte_boorgat1965-068140-1  a   sosa:Observation;
+    sosa:hasResult   result:bekistingdikte_boorgat1965-068140-1;
+    sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+    sosa:observedProperty obs_prop:bekistingdikte_boorgat1965-068140-11 ;
+    sosa:madeBySensor   agent:agent001;
+    #ssn:wasOriginatedBy   opdracht:2007-005512 ; # opdracht bestaat (nog) niet voor observaties. Wordt mee opgenomen met mengmonsters. Dus binnenkort wel beschikbaar.
+    sosa:hasFeatureOfInterest boorgat:boorgat1965-068140 .
+ 
+obs_prop:bekistingdikte_boorgat1965-068140-1 a sosa:ActuatableProperty ;
+    sosa:isActedOnBy act:bekisting-1965-068140-1;
+    ssn:isPropertyOf boorgat:boorgat1965-068140 .
+
+result:bekistingdikte_boorgat1965-068140-1  a sosa:Result ;
+    rdf:value 12.5 ;
+    sdmx-attribute:unitMeasure qudt-unit:CentiM .
+
+# helling grondboring: Geeft de hellingsgraad van de boring aan (in 360-delige graden). De helling wordt gemeten in een halve cirkel
+# loodrecht op het platte vlak gebruikt voor het aangeven van de boorrichting. De helling wordt als volgt aangegeven
+# hoek = 90° : horizontaal ; 0° <= hoek < 90° : dalend ; 90° < hoek <= 180° : stijgend
+obs:helling1965-068140  a   sosa:Observation;
+                     sosa:hasResult  result:obshelling1965-068140 ;
+                     sosa:usedProcedure cl-opt:meten_van_de_helling_van_een_grondboring ;
+                     sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:helling1965-068140 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest boring:1965-068140 .
+
+obs_prop:helling1965-068140  a sosa:ObservableProperty ;
+        dcterms:subject prop:helling ;
+        ssn:isPropertyOf boring:1965-068140.
+
+result:obshelling1965-068140 a sosa:Result ;
+        sosa:isResultOf obs:helling1965-068140 ;
+        rdf:value 90.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:DEG .
+
+# richting grondboring: boorrichting (in 360-delige graden). De boorrichting wordt beschreven als de hoek op de cirkel 
+# « in het plattevlak » met Noord=0°, Oost=90°, Zuid=180° en West=270°
+obs:richting1965-068140  a   sosa:Observation;
+                     sosa:hasResult  result:obsrichting1965-068140 ;
+                     sosa:usedProcedure cl-opt:meten_van_de_richting_van_een_grondboring ;
+                     sosa:resultTime "1965-01-01T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:richting1965-068140 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest boring:1965-068140 .
+
+obs_prop:richting1965-068140  a sosa:ObservableProperty ;
+        dcterms:subject prop:richting ;
+        ssn:isPropertyOf boring:1965-068140.
+
+result:obsrichting1965-068140 a sosa:Result ;
+        sosa:isResultOf obs:richting1965-068140 ;
+        rdf:value 90.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:DEG .
+
+# Grondwaterstand (ifv boorgat): procedure waarneming_grondwater nog te definiëren, zit niet in codelijst. Observatie gebeurt op de actuation waarbinnen de waterdiepte geconstateerd werd.
+# Bvb. bij actuation 0-2.5m diepte is grondwater gevonden op 2.4m diepte. Observatie gebeurt op actuation 0-2.5m.
+# Waterdiepte = 0 en waterdiepte = NULL kunnen we niet meenemen, gezien daar gewoon geen observatie van de waterdiepte mogelijk was.
+# Blijkbaar kan grondwater gevonden worden, verdwijnen en dan weer terugkomen. Hoe mappen we dat? Vb. https://www.dov.vlaanderen.be/data/boring/2003-109312#3
+obs:gwst2014-000973  a   sosa:Observation;
+                     sosa:hasResult  result:obsgwst2014-000973 ;
+                     sosa:usedProcedure cl-opt:waarneming_grondwater ;
+                     sosa:resultTime "2014-11-28T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:gwst2014-000973 ;
+                     sosa:madeBySensor  agent:agent003; # uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest result:boorgat-act2014-000973-1 .
+
+obs_prop:gwst2014-000973  a sosa:ObservableProperty ;
+        dcterms:subject prop:waterdiepte ;
+        ssn:isPropertyOf result:boorgat-act2014-000973-1 .
+
+result:obsgwst2014-000973 a sosa:Result ;
+        sosa:isResultOf obs:gwst2014-000973 ;
+        rdf:value 2.40 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+# Aanvangspeil (opgemeten in mTAW (aanvangspeiltype = 3))
+obs:aanvp2006-002527  a   sosa:Observation;
+                     sosa:hasResult  result:obsaanvp2006-002527 ;
+                     sosa:usedProcedure cl-mmt:T ; # Methode Z van Aanvangspeil in de DOV-fiche
+                     sosa:resultTime "1983-10-19T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:aanvp2006-002527 ;
+                     sosa:madeBySensor  agent:agent003; # Origine Z van Aanvangspeil in de DOV-fiche
+                     sosa:hasFeatureOfInterest boorgat:boorgat2006-002527 ;
+                     ssn:hasProperty  betrouwbaarheid:aanvp2006-002527 .
+
+cl-mmt:T a  sosa:Procedure ;
+        skos:notation  "Z_afgeleid van topokaart" .
+
+obs_prop:aanvp2006-002527  a sosa:ObservableProperty ;
+        dcterms:subject prop:aanvangspeil ;
+        grondboringbeno:aanvangspeil avp:aanvangspeil_op_de_plaats_van_boorgat2006-002527 ;
+        ssn:isPropertyOf boorgat:boorgat2006-002527 .
+
+obs_prop:niveau_2006-002527-maaiveld a sosa:ObservableProperty ;
+           dcterms:subject prop:hoogte ;
+           grondboringbeno:tov concept:TAW ;
+           ssn:isPropertyOf avp:aanvangspeil_op_de_plaats_van_boorgat2006-002527 .
+
+result:obsaanvp2006-002527 a sosa:Result ;
+        sosa:isResultOf obs:aanvp2006-002527 ;
+        rdf:value 28.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+avp:aanvangspeil_op_de_plaats_van_boorgat1965-068140 a bodemenondergrond:Aanvangspeil .
+
+betrouwbaarheid:aanvp2006-002527 a ssn:Property ;
+        skos:prefLabel "betrouwbaarheid twijfelachtig"@nl ;
+        skos:inScheme cl-betr:C .
+
+cl-betr:C a sosa:Procedure ; # skos:Concept 
+        rdfs:label  "betrouwbaarheid twijfelachtig" .
+
+
+# Aanvangspeil (gestart op het maaiveld (aanvangspeiltype = 0))
+obs:aanvp1983-024193  a   sosa:Observation;
+                     sosa:hasResult  result:obsaanvp1983-024193 ;
+                     sosa:usedProcedure cl-opt:bepaling_startpunt_aanvangspeil ;
+                     sosa:resultTime "1983-10-19T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:aanvp1983-024193 ;
+                     sosa:madeBySensor  agent:agent003; # Uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest boorgat:boorgat1983-024193 .
+
+cl-opt:bepaling_startpunt_aanvangspeil a sosa:procedure;
+        skos:prefLabel "gestart op het maaiveld" .
+
+obs_prop:aanvp1983-024193  a sosa:ObservableProperty ;
+        dcterms:subject prop:aanvangspeil ;
+        grondboringbeno:aanvangspeil avp:aanvangspeil_op_de_plaats_van_boorgat1983-024193 ;
+        ssn:isPropertyOf boorgat:boorgat1983-024193 .
+
+obs_prop:niveau_1983-024193-maaiveld a sosa:ObservableProperty ;
+           dcterms:subject prop:hoogte ;
+           grondboringbeno:tov concept:TAW ;
+           ssn:isPropertyOf avp:aanvangspeil_op_de_plaats_van_boorgat1983-024193 .
+
+result:obsaanvp1983-024193 a sosa:Result ;
+        sosa:isResultOf obs:aanvp1983-024193 ;
+        rdf:value 28.70 ; # result is in dit geval dezelfde waarde als de observatiewaarde van het maaiveld op het moment van de uitvoering.
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+avp:aanvangspeil_op_de_plaats_van_boorgat1965-068140 a bodemenondergrond:Aanvangspeil .
+
+
+# Aanvangspeil (gestart boven het maaiveld (aanvangspeiltype = 1)): voorbeeld is fictief
+obs:aanvp1983-024193  a   sosa:Observation;
+                     sosa:hasResult  result:obsaanvp1983-024193 ;
+                     sosa:usedProcedure cl-opt:bepaling_startpunt_aanvangspeil ;
+                     sosa:resultTime "1983-10-19T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:aanvp1983-024193 ;
+                     sosa:madeBySensor  agent:agent003; # Uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest boorgat:boorgat1983-024193 .
+
+cl-opt:bepaling_startpunt_aanvangspeil a sosa:procedure;
+        skos:prefLabel "gestart boven het maaiveld" .
+
+obs_prop:aanvp1983-024193  a sosa:ObservableProperty ;
+        dcterms:subject prop:aanvangspeil ;
+        grondboringbeno:aanvangspeil avp:aanvangspeil_op_de_plaats_van_boorgat1983-024193 ;
+        ssn:isPropertyOf boorgat:boorgat1983-024193 .
+
+obs_prop:niveau_1983-024193-maaiveld a sosa:ObservableProperty ;
+           dcterms:subject prop:hoogte ;
+           grondboringbeno:tov concept:TAW ;
+           ssn:isPropertyOf avp:aanvangspeil_op_de_plaats_van_boorgat1983-024193 .
+
+result:obsaanvp1983-024193 a sosa:Result ;
+        sosa:isResultOf obs:aanvp1983-024193 ;
+        rdf:value 29.00 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+avp:aanvangspeil_op_de_plaats_van_boorgat1965-068140 a bodemenondergrond:Aanvangspeil .
+
+
+# Aanvangspeil (gestart onder het maaiveld (aanvangspeiltype = 2)): voorbeeld is fictief
+obs:aanvp1983-024193  a   sosa:Observation;
+                     sosa:hasResult  result:obsaanvp1983-024193 ;
+                     sosa:usedProcedure cl-opt:bepaling_startpunt_aanvangspeil ;
+                     sosa:resultTime "1983-10-19T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:aanvp1983-024193 ;
+                     sosa:madeBySensor  agent:agent003; # Uitvoerder in de DOV-fiche
+                     sosa:hasFeatureOfInterest boorgat:boorgat1983-024193 .
+
+cl-opt:bepaling_startpunt_aanvangspeil a sosa:procedure;
+        skos:prefLabel "gestart onder het maaiveld" .
+
+obs_prop:aanvp1983-024193  a sosa:ObservableProperty ;
+        dcterms:subject prop:aanvangspeil ;
+        grondboringbeno:aanvangspeil avp:aanvangspeil_op_de_plaats_van_boorgat1983-024193 ;
+        ssn:isPropertyOf boorgat:boorgat1983-024193 .
+
+obs_prop:niveau_1983-024193-maaiveld a sosa:ObservableProperty ;
+           dcterms:subject prop:hoogte ;
+           grondboringbeno:tov concept:TAW ;
+           ssn:isPropertyOf avp:aanvangspeil_op_de_plaats_van_boorgat1983-024193 .
+
+result:obsaanvp1983-024193 a sosa:Result ;
+        sosa:isResultOf obs:aanvp1983-024193 ;
+        rdf:value 27.50 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+avp:aanvangspeil_op_de_plaats_van_boorgat1965-068140 a bodemenondergrond:Aanvangspeil .
+
+
+# Boorgatmetingen (zit enkel in de werkdb van geologie in schema geologie_varia, ondertussen ook gekopieerd naar datawarehouse)
+obs:bgm1992-001741  a   sosa:Observation; # de boorgatmetingen hebben hun eigen permkey
+                     sosa:hasResult  result:obsbgm1992-001741 ;
+                     sosa:usedProcedure cl-opt:meting_van_het_boorgat ;
+                     sosa:resultTime "1992-07-07T00:00:00.000"^^xsd:dateTime ;
+                     sosa:observedProperty obs_prop:bgm1992-001741 ;
+                     grondboringenbeno:opdrachtgever agent:agent002 ; # opdracht uit db
+                     grondboringenbeno:diepteboorgatmeting result:dieptebgm1992-001741 ; # boorgatmeting uitgevoerd op 20m diepte in het boorgat
+                     sosa:madeBySensor  agent:agent003 ; # logcomp uit db
+                     sosa:hasFeatureOfInterest boorgat:boorgat1992-106605 . # permkey boring/boorgat die dus niet dezelfde is als permkey boorgatmetingen
+
+obs_prop:bgm1992-001741  a sosa:ObservableProperty ;
+        dcterms:subject prop:boorgatmeting ;
+        ssn:isPropertyOf boorgat:boorgat1992-106605 .
+
+result:dieptebgm1992-001741	a grondboringbeno:Diepte ;
+              rdf:value 20.0;
+              sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:obsbgm1992-001741 a sosa:Result ;
+        sosa:isResultOf obs:bgm1992-001741 ;
+        rdfs:label      "92-18-SB2" ; # naam pdf (indien beschikbaar)
+        rdfs:seeAlso    <https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.distribution.geo.c03f9ddf-8819-4e7a-a88f-5b434255ce6d.DOV_boorgatmeting_92-18-SB2_pdf> . # pdf
