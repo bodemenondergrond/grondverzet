@@ -1,0 +1,273 @@
+@prefix act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/> .
+@prefix adms:                <http://www.w3.org/ns/adms#> .
+@prefix agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
+@prefix association:         <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
+@prefix avp:                 <https://data.bodemenondergrond.vlaanderen.be/id/aanvangspeil/> .
+@prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
+@prefix betrouwbaarheid:     <https://data.bodemenondergrond.vlaanderen.be/id/betrouwbaarheid/> .
+@prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
+@prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
+@prefix boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
+@prefix boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/> .
+@prefix boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/> .
+@prefix cl-astm:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/parameterastm/> .
+@prefix cl-beh:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandeling/> .
+@prefix cl-behwaarde:        <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandelingswaarde/> .
+@prefix cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/> .
+@prefix cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/> .
+@prefix cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/> .
+@prefix cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/> .
+@prefix cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/> .
+@prefix cl-loc:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/> .
+@prefix cl-mat:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/> .
+@prefix cl-mmt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/> .
+@prefix cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
+@prefix cl-opt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/> .
+@prefix concept:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
+@prefix datum:               <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
+@prefix dcterms:             <http://purl.org/dc/terms/> .
+@prefix geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
+@prefix geosparql:           <http://www.opengis.net/ont/geosparql#> .
+@prefix gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/> .
+@prefix gml:                 <http://www.opengis.net/ont/gml#> .
+@prefix grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#> .
+@prefix grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#> .
+@prefix grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/> .
+@prefix hel:                 <https://data.bodemenondergrond.vlaanderen.be/id/helling/> .
+@prefix her:                 <https://data.bodemenondergrond.vlaanderen.be/id/herkomst/> .
+@prefix herh:                <https://data.bodemenondergrond.vlaanderen.be/id/herhaling> .
+@prefix id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/> .
+@prefix incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/> .
+@prefix interp:              <https://data.bodemenondergrond.vlaanderen.be/id/interpretatie/> .
+@prefix list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/> .
+@prefix lithbesch:           <https://data.bodemenondergrond.vlaanderen.be/id/lithologischebeschrijving/> .
+@prefix moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
+@prefix mv:                  <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/> .
+@prefix obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
+@prefix obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
+@prefix opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
+@prefix opm:                 <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/> .
+@prefix periode:             <https://data.bodemenondergrond.vlaanderen.be/id/periode/> .
+@prefix prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/> .
+@prefix prov:                <http://www.w3.org/ns/prov#> .
+@prefix qb:                  <http://purl.org/linked-data/cube#> .
+@prefix qudt-schema:         <https://qudt.org/schema/qudt/> .
+@prefix qudt-unit:           <https://qudt.org/vocab/unit/> .
+@prefix rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:                <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix result:              <https://data.bodemenondergrond.vlaanderen.be/id/result/> .
+@prefix richting:            <https://data.bodemenondergrond.vlaanderen.be/id/richting/> .
+@prefix rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/> .
+@prefix sam:                 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/> .
+@prefix sample:              <https://data.bodemenondergrond.vlaanderen.be/id/sample/> .
+@prefix schema:              <https://schema.org/> .
+@prefix sdmx-attribute:      <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix seb:                 <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#> .
+@prefix skos:                <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa:                <http://www.w3.org/ns/sosa/> .
+@prefix sosa-om:             <http://www.w3.org/ns/sosa/om#> .
+@prefix sost:                <http://rdf-vocabulary.ddialliance.org/sost#> .
+@prefix ssn:                 <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system:          <http://www.w3.org/ns/ssn/systems/> .
+@prefix time:                <http://www.w3.org/2006/time#> .
+@prefix wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
+@prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
+
+
+# Consistentie boorgat: Deze "observaties" Worden behandeld zoals interpretaties.
+# Vochtgehalte boorgat: idem
+# Kleur boorgat: idem
+# Lithologische beschrijving
+# Formele stratigrafie
+# Informele stratigrafie
+# Quartaire stratigrafie
+# Informele hydrostratigrafie
+# Gecodeerde lithologie
+# Geotechnische codering
+# Hydrogeologische stratigrafie (HCOVv1)
+# Hydrogeologische stratigrafie (HCOVv2)
+
+# Interpretaties komen ook met opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
+# Interpretaties zijn persoonlijke waarnemingen op basis van verzamelde kennis van de uitvoerder. Dit kan gebaseerd zijn op boringen, sonderingen,
+# monsters, een kaart, een model, omgevingsfactoren, enz... Er is dus geen vastgelegde feature of interest. De locatie is wel telkens gekoppeld aan een boring of sondering.
+
+
+### Classes
+
+grondboringbeno:Interpretatie a rdf:Class ;
+        rdfs:label "Een Interpretatie is een beschrijving van de ondergrond op een bepaalde locatie in Vlaanderen. Om de ondergrond te beschrijven wordt deze in functie vande diepte onderverdeeld in discrete stukken. Men onderscheidt bepaalde types interpretaties, met name: informele stratigrafie, formele stratigrafie, lithologische beschrijving, hydrostratigrafie, gecodeerde lithologie en geotechnische codering."@nl .
+
+grondboringbeno:Diepte a rdf:Class ;
+        rdfs:label "Een maat voor de diepte van een boorgat, of diepte waar een monster uit een boorgat is genomen, uitgedrukt in meter."@nl .
+
+
+### Properties (verschillende instances van de klasse Interpretatie)
+
+grondboringbeno:lithologischeBeschrijving  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+grondboringbeno:formeleStratigrafie  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+grondboringbeno:informeleStratigrafie  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+grondboringbeno:quartaireStratigrafie  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+grondboringbeno:informeleHydrostratigrafie  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+grondboringbeno:gecodeerdeLithologie  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+grondboringbeno:geotechnischeCodering  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+grondboringbeno:hydrogeologischeStratigrafieV1  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+grondboringbeno:hydrogeologischeStratigrafieV2  a rdf:Property ;
+        rdfs:range grondboringbeno:Interpretatie .
+
+
+grondboringbeno:InterpDiepteVan  a rdf:Property ;
+                                 rdfs:range grondboringbeno:Diepte .
+
+grondboringbeno:InterpDiepteTot  a rdf:Property ;
+                                 rdfs:range grondboringbeno:Diepte .
+
+
+### Individuals
+
+# Lithologische beschrijving: diepte_van, diepte_tot, beschrijving, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
+interp:1983-215741 a grondboringbeno:Interpretatie ;
+        rdfs:label "Lithologische beschrijving op locatie van boorgat 1983-024193"@nl ;
+        sosa:resultTime "1983-10-19T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren lithologische beschrijving
+        sosa:phenomenonTime  periode:interp1983-215741 ; # Als tijdsinterval weer te geven (geldig van en geldig tot); fictief toegevoegd in dit voorbeeld
+        grondboringbeno:lithologischeBeschrijving lithbesch:1983-215741 ;
+        grondboringbeno:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
+        ssn:wasOriginatedBy   opdracht:2013-006419, opdracht:1981-012309 ;
+        sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche interpretatie
+        ssn:hasProperty  betrouwbaarheid:interp1983-215741 ;
+        prov:atLocation result:geometrie1965-068140 . # de 2D geometrie van het boorgat wordt hier hergebruikt. Het is geen feature of interest aangezien de interpretatie uitgevoerd werd op basis van een aantal factoren, waaronder (maar dus niet alleen) het boorgat, zijn monsters, andere modellen, kaarten, enz...
+
+
+lithbesch:1983-215741 a grondboringbeno:lithologischeBeschrijving ;
+        grondboringbeno:intervallen list:interp1983-215741-1 .
+
+list:interp1983-215741-1 a rdf:List ;
+        rdf:first lithbesch:1983-215741-1 ;
+        rdf:rest list:interp1983-215741-2 .
+
+list:interp1983-215741-2  a rdf:List ;
+        rdf:first lithbesch:1983-215741-2 ;
+        rdf:rest list:interp1983-215741-3 .
+
+list:interp1983-215741-3 a rdf:List ;
+        rdf:first lithbesch:1983-215741-3 ;
+        rdf:rest list:interp1983-215741-4 .
+
+list:interp1983-215741-4 a rdf:List ;
+        rdf:first lithbesch:1983-215741-4 ;
+        rdf:rest rdf:nil .
+# Dit is uiteraard de laatste niet uit de DOV-fiche, maar dient enkel als voorbeeld.
+
+lithbesch:1983-215741-1 a grondboringbeno:interval ;
+        grondboringbeno:InterpDiepteVan lithbesch:1983-215741-1-van ;
+        grondboringbeno:InterpDiepteTot lithbesch:1983-215741-1-tot ;
+        grondboringbeno:beschrijving "bruingrijs leemhoudend fijn tot zeer fijn zand met bovenaan wortels, silexgrind en plaatselijke okervlek" .
+
+lithbesch:1983-215741-2 a grondboringbeno:interval ;
+        grondboringbeno:InterpDiepteVan lithbesch:1983-215741-2-van ;
+        grondboringbeno:InterpDiepteTot lithbesch:1983-215741-2-tot ;
+        grondboringbeno:beschrijving "donkerbruin tot zwart fijn tot middelmatig zand met roestbruine concreties en zeer fijn kwartsgrind" .
+
+lithbesch:1983-215741-3 a grondboringbeno:interval ;
+        grondboringbeno:InterpDiepteVan lithbesch:1983-215741-3-van ;
+        grondboringbeno:InterpDiepteTot lithbesch:1983-215741-3-tot ;
+        grondboringbeno:beschrijving "roestbruin fijn tot middelmatig zand, plaatselijk iets verkit" .
+
+lithbesch:1983-215741-4 a grondboringbeno:interval ;
+        grondboringbeno:InterpDiepteVan lithbesch:1983-215741-4-van ;
+        grondboringbeno:InterpDiepteTot lithbesch:1983-215741-4-tot ;
+        grondboringbeno:beschrijving "lichtgroengrijze leemhoudende klei met okervlekken en plaatselijk dunne zandhoudende kleilaagjes" .
+
+lithbesch:1983-215741-1-van a grondboringbeno:InterpDiepteVan ;
+        rdf:value 0.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+lithbesch:1983-215741-1-tot a grondboringbeno:InterpDiepteTot ;
+        rdf:value 0.55 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+lithbesch:1983-215741-2-van a grondboringbeno:InterpDiepteVan ;
+        rdf:value 0.55 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+lithbesch:1983-215741-2-tot a grondboringbeno:InterpDiepteTot ;
+        rdf:value 0.7 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+lithbesch:1983-215741-3-van a grondboringbeno:InterpDiepteVan ;
+        rdf:value 0.7 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+lithbesch:1983-215741-3-tot a grondboringbeno:InterpDiepteTot ;
+        rdf:value 0.95 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+lithbesch:1983-215741-4-van a grondboringbeno:InterpDiepteVan ;
+        rdf:value 0.95 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+lithbesch:1983-215741-4-tot a grondboringbeno:InterpDiepteTot ;
+        rdf:value 1.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+
+
+betrouwbaarheid:interp1983-215741 a ssn:Property ;
+        skos:prefLabel "betrouwbaarheid goed"@nl ;
+        skos:inScheme cl-betr:A .
+
+cl-betr:A a sosa:Procedure ; # skos:Concept 
+        rdfs:label  "betrouwbaarheid goed" .
+
+
+grondboringenbeno:dataleverancier a rdf:Property ;
+        rdfs:subPropertyOf prov:wasAssociatedWith .
+
+periode:interp1983-215741 a  time:Interval ;
+    time:hasBeginning   moment:interp1983-215741-start ;
+    time:hasEnd         moment:interp1983-215741-einde .
+
+moment:interp1983-215741-start a time:Instant ;
+        time:inXSDDateTime  "1983-10-19T00:00:00.000"^^xsd:dateTime .
+
+moment:interp1983-215741-einde a time:Instant ;
+        time:inXSDDateTime  "1984-10-19T00:00:00.000"^^xsd:dateTime .
+
+opm:interp1983-215741-1 a  grondboringbeno:Opmerking ;
+    dcterms:description "Dit is een eerste fictieve opmerking bij de interpretatie" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     interp:1983-215741 ;
+    dcterms:date     "1983-10-19"^^xsd:date .
+
+opm:interp1983-215741-2 a  grondboringbeno:Opmerking ;
+    dcterms:description "Dit is een tweede fictieve opmerking bij de interpretatie" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     interp:1983-215741 ;
+    dcterms:date     "1983-10-19"^^xsd:date .
+
+bl:interp1983-215741-1  a  grondboringbeno:Bijlage ;
+    rdfs:label       "Een eerste relevante bijlage bij de interpretatie" ;
+    dcterms:creator  agent:agent001 ;
+    schema:about     interp:1983-215741 ;
+    dcterms:date     "1983-10-19"^^xsd:date .
+
+bl:interp1983-215741-2   a  grondboringbeno:Bijlage;
+    rdfs:label       "Een tweede relevante bijlage bij de interpretatie";
+    dcterms:creator  agent:agent001 ;
+    schema:about     interp:1983-215741 ;
+    dcterms:date     "1983-10-19"^^xsd:date .
