@@ -25,3 +25,6 @@
 
   sparql --results=TTL --data=../result/inferred/grondboring-ssn-sosa-prov.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > model_grondboring_inferred.png
+
+  sparql --results=TTL --data=../source/sample.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > sample.png
