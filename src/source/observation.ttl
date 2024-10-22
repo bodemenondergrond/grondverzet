@@ -5,6 +5,7 @@
 @prefix avp:                 <https://data.bodemenondergrond.vlaanderen.be/id/aanvangspeil/> .
 @prefix bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
 @prefix betrouwbaarheid:     <https://data.bodemenondergrond.vlaanderen.be/id/betrouwbaarheid/> .
+@prefix bodemenondergrond:   <https://data.vlaanderen.be/ns/bodem-en-ondergrond#> .
 @prefix bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
 @prefix boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
 @prefix boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
@@ -24,6 +25,7 @@
 @prefix cl-mmt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/> .
 @prefix cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
 @prefix cl-opt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/> .
+@prefix cl-par:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/par/> .
 @prefix concept:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
 @prefix datum:               <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
 @prefix dcterms:             <http://purl.org/dc/terms/> .
@@ -221,117 +223,117 @@ cl-opt:305 a  sosa:Procedure ;
 
 # korrelverdeling als meetreeks weergeven. Nog af te toetsen.
 result:obs2022-4033232 a sosa:Result ;
-    grondboringenbeno:meetreeks [
+                           grondboringbeno:meetreeks [ a rdf:List ;
         rdf:first [
-            grondboringenbeno:diameter "0.063"^^xsd:float ;
-            grondboringenbeno:diameterEenheid "mm" ;
-            grondboringenbeno:fractiediameter "65.60"^^xsd:float ;
-            grondboringenbeno:fractiediameterEenheid "%"
+            grondboringbeno:diameter "0.063"^^xsd:float ;
+            grondboringbeno:diameterEenheid "mm" ;
+            grondboringbeno:fractiediameter "65.60"^^xsd:float ;
+            grondboringbeno:fractiediameterEenheid "%"
         ] ;
         rdf:rest [
             rdf:first [
-                grondboringenbeno:diameter "0.090"^^xsd:float ;
-                grondboringenbeno:diameterEenheid "mm" ;
-                grondboringenbeno:fractiediameter "42.00"^^xsd:float ;
-                grondboringenbeno:fractiediameterEenheid "%"
+                grondboringbeno:diameter "0.090"^^xsd:float ;
+                grondboringbeno:diameterEenheid "mm" ;
+                grondboringbeno:fractiediameter "42.00"^^xsd:float ;
+                grondboringbeno:fractiediameterEenheid "%"
             ] ;
             rdf:rest [
                 rdf:first [
-                    grondboringenbeno:diameter "0.125"^^xsd:float ;
-                    grondboringenbeno:diameterEenheid "mm" ;
-                    grondboringenbeno:fractiediameter "29.20"^^xsd:float ;
-                    grondboringenbeno:fractiediameterEenheid "%"
+                    grondboringbeno:diameter "0.125"^^xsd:float ;
+                    grondboringbeno:diameterEenheid "mm" ;
+                    grondboringbeno:fractiediameter "29.20"^^xsd:float ;
+                    grondboringbeno:fractiediameterEenheid "%"
                 ] ;
                 rdf:rest [
                     rdf:first [
-                        grondboringenbeno:diameter "0.18"^^xsd:float ;
-                        grondboringenbeno:diameterEenheid "mm" ;
-                        grondboringenbeno:fractiediameter "24.40"^^xsd:float ;
-                        grondboringenbeno:fractiediameterEenheid "%"
+                        grondboringbeno:diameter "0.18"^^xsd:float ;
+                        grondboringbeno:diameterEenheid "mm" ;
+                        grondboringbeno:fractiediameter "24.40"^^xsd:float ;
+                        grondboringbeno:fractiediameterEenheid "%"
                     ] ;
                     rdf:rest [
                         rdf:first [
-                            grondboringenbeno:diameter "0.25"^^xsd:float ;
-                            grondboringenbeno:diameterEenheid "mm" ;
-                            grondboringenbeno:fractiediameter "21.30"^^xsd:float ;
-                            grondboringenbeno:fractiediameterEenheid "%"
+                            grondboringbeno:diameter "0.25"^^xsd:float ;
+                            grondboringbeno:diameterEenheid "mm" ;
+                            grondboringbeno:fractiediameter "21.30"^^xsd:float ;
+                            grondboringbeno:fractiediameterEenheid "%"
                         ] ;
                         rdf:rest [
                             rdf:first [
-                                grondboringenbeno:diameter "0.355"^^xsd:float ;
-                                grondboringenbeno:diameterEenheid "mm" ;
-                                grondboringenbeno:fractiediameter "19.90"^^xsd:float ;
-                                grondboringenbeno:fractiediameterEenheid "%"
+                                grondboringbeno:diameter "0.355"^^xsd:float ;
+                                grondboringbeno:diameterEenheid "mm" ;
+                                grondboringbeno:fractiediameter "19.90"^^xsd:float ;
+                                grondboringbeno:fractiediameterEenheid "%"
                             ] ;
                             rdf:rest [
                                 rdf:first [
-                                    grondboringenbeno:diameter "0.5"^^xsd:float ;
-                                    grondboringenbeno:diameterEenheid "mm" ;
-                                    grondboringenbeno:fractiediameter "19.40"^^xsd:float ;
-                                    grondboringenbeno:fractiediameterEenheid "%"
+                                    grondboringbeno:diameter "0.5"^^xsd:float ;
+                                    grondboringbeno:diameterEenheid "mm" ;
+                                    grondboringbeno:fractiediameter "19.40"^^xsd:float ;
+                                    grondboringbeno:fractiediameterEenheid "%"
                                 ] ;
                                 rdf:rest [
                                     rdf:first [
-                                        grondboringenbeno:diameter "0.71"^^xsd:float ;
-                                        grondboringenbeno:diameterEenheid "mm" ;
-                                        grondboringenbeno:fractiediameter "18.70"^^xsd:float ;
-                                        grondboringenbeno:fractiediameterEenheid "%"
+                                        grondboringbeno:diameter "0.71"^^xsd:float ;
+                                        grondboringbeno:diameterEenheid "mm" ;
+                                        grondboringbeno:fractiediameter "18.70"^^xsd:float ;
+                                        grondboringbeno:fractiediameterEenheid "%"
                                     ] ;
                                     rdf:rest [
                                         rdf:first [
-                                            grondboringenbeno:diameter "1.0"^^xsd:float ;
-                                            grondboringenbeno:diameterEenheid "mm" ;
-                                            grondboringenbeno:fractiediameter "18.00"^^xsd:float ;
-                                            grondboringenbeno:fractiediameterEenheid "%"
+                                            grondboringbeno:diameter "1.0"^^xsd:float ;
+                                            grondboringbeno:diameterEenheid "mm" ;
+                                            grondboringbeno:fractiediameter "18.00"^^xsd:float ;
+                                            grondboringbeno:fractiediameterEenheid "%"
                                         ] ;
                                         rdf:rest [
                                             rdf:first [
-                                                grondboringenbeno:diameter "1.4"^^xsd:float ;
-                                                grondboringenbeno:diameterEenheid "mm" ;
-                                                grondboringenbeno:fractiediameter "17.20"^^xsd:float ;
-                                                grondboringenbeno:fractiediameterEenheid "%"
+                                                grondboringbeno:diameter "1.4"^^xsd:float ;
+                                                grondboringbeno:diameterEenheid "mm" ;
+                                                grondboringbeno:fractiediameter "17.20"^^xsd:float ;
+                                                grondboringbeno:fractiediameterEenheid "%"
                                             ] ;
                                             rdf:rest [
                                                 rdf:first [
-                                                    grondboringenbeno:diameter "2.0"^^xsd:float ;
-                                                    grondboringenbeno:diameterEenheid "mm" ;
-                                                    grondboringenbeno:fractiediameter "15.90"^^xsd:float ;
-                                                    grondboringenbeno:fractiediameterEenheid "%"
+                                                    grondboringbeno:diameter "2.0"^^xsd:float ;
+                                                    grondboringbeno:diameterEenheid "mm" ;
+                                                    grondboringbeno:fractiediameter "15.90"^^xsd:float ;
+                                                    grondboringbeno:fractiediameterEenheid "%"
                                                 ] ;
                                                 rdf:rest [
                                                     rdf:first [
-                                                        grondboringenbeno:diameter "2.8"^^xsd:float ;
-                                                        grondboringenbeno:diameterEenheid "mm" ;
-                                                        grondboringenbeno:fractiediameter "14.50"^^xsd:float ;
-                                                        grondboringenbeno:fractiediameterEenheid "%"
+                                                        grondboringbeno:diameter "2.8"^^xsd:float ;
+                                                        grondboringbeno:diameterEenheid "mm" ;
+                                                        grondboringbeno:fractiediameter "14.50"^^xsd:float ;
+                                                        grondboringbeno:fractiediameterEenheid "%"
                                                     ] ;
                                                     rdf:rest [
                                                         rdf:first [
-                                                            grondboringenbeno:diameter "4.0"^^xsd:float ;
-                                                            grondboringenbeno:diameterEenheid "mm" ;
-                                                            grondboringenbeno:fractiediameter "13.30"^^xsd:float ;
-                                                            grondboringenbeno:fractiediameterEenheid "%"
+                                                            grondboringbeno:diameter "4.0"^^xsd:float ;
+                                                            grondboringbeno:diameterEenheid "mm" ;
+                                                            grondboringbeno:fractiediameter "13.30"^^xsd:float ;
+                                                            grondboringbeno:fractiediameterEenheid "%"
                                                         ] ;
                                                         rdf:rest [
                                                             rdf:first [
-                                                                grondboringenbeno:diameter "5.6"^^xsd:float ;
-                                                                grondboringenbeno:diameterEenheid "mm" ;
-                                                                grondboringenbeno:fractiediameter "11.60"^^xsd:float ;
-                                                                grondboringenbeno:fractiediameterEenheid "%"
+                                                                grondboringbeno:diameter "5.6"^^xsd:float ;
+                                                                grondboringbeno:diameterEenheid "mm" ;
+                                                                grondboringbeno:fractiediameter "11.60"^^xsd:float ;
+                                                                grondboringbeno:fractiediameterEenheid "%"
                                                             ] ;
                                                             rdf:rest [
                                                                 rdf:first [
-                                                                    grondboringenbeno:diameter "8.0"^^xsd:float ;
-                                                                    grondboringenbeno:diameterEenheid "mm" ;
-                                                                    grondboringenbeno:fractiediameter "10.10"^^xsd:float ;
-                                                                    grondboringenbeno:fractiediameterEenheid "%"
+                                                                    grondboringbeno:diameter "8.0"^^xsd:float ;
+                                                                    grondboringbeno:diameterEenheid "mm" ;
+                                                                    grondboringbeno:fractiediameter "10.10"^^xsd:float ;
+                                                                    grondboringbeno:fractiediameterEenheid "%"
                                                                 ] ;
                                                                 rdf:rest [
                                                                     rdf:first [
-                                                                        grondboringenbeno:diameter "11.2"^^xsd:float ;
-                                                                        grondboringenbeno:diameterEenheid "mm" ;
-                                                                        grondboringenbeno:fractiediameter "5.50"^^xsd:float ;
-                                                                        grondboringenbeno:fractiediameterEenheid "%"
+                                                                        grondboringbeno:diameter "11.2"^^xsd:float ;
+                                                                        grondboringbeno:diameterEenheid "mm" ;
+                                                                        grondboringbeno:fractiediameter "5.50"^^xsd:float ;
+                                                                        grondboringbeno:fractiediameterEenheid "%"
                                                                     ] ;
                                                                     rdf:rest rdf:nil
                                                                 ]
@@ -771,8 +773,8 @@ obs:bgm1992-001741  a   sosa:Observation; # de boorgatmetingen hebben hun eigen 
                      sosa:usedProcedure cl-opt:meting_van_het_boorgat ;
                      sosa:resultTime "1992-07-07T00:00:00.000"^^xsd:dateTime ;
                      sosa:observedProperty obs_prop:bgm1992-001741 ;
-                     grondboringenbeno:opdrachtgever agent:agent002 ; # opdracht uit db
-                     grondboringenbeno:diepteboorgatmeting result:dieptebgm1992-001741 ; # boorgatmeting uitgevoerd op 20m diepte in het boorgat
+                     grondboringbeno:opdrachtgever agent:agent002 ; # opdracht uit db
+                     grondboringbeno:diepteboorgatmeting result:dieptebgm1992-001741 ; # boorgatmeting uitgevoerd op 20m diepte in het boorgat
                      sosa:madeBySensor  agent:agent003 ; # logcomp uit db
                      sosa:hasFeatureOfInterest boorgat:boorgat1992-106605 . # permkey boring/boorgat die dus niet dezelfde is als permkey boorgatmetingen
 

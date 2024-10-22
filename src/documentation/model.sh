@@ -28,3 +28,9 @@
 
   sparql --results=TTL --data=../source/sample.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > sample.png
+
+  sparql --results=TTL --data=../source/observation.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > observation.png
+
+  sparql --results=TTL --data=../source/observation2.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > observation2.png
