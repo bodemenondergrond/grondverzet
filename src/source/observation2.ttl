@@ -484,12 +484,13 @@ obs:2022-4033232-0.063
         sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
         sosa:usedProcedure         cl-opt:305-0.063 .
 
-cl-opt:305  rdf:type   sosa:Procedure;
+cl-opt:305  rdf:type   prov:Plan;
         skos:notation  "Zeving" .
 
 obs:2022-4033232  rdf:type         prov:Activity;
         rdfs:label                 "bepaling van de fractie/Korrelverdeling van een grondstaal"@nl;
-        prov:qualifiedAssociation  [ prov:agent    agent:agent003;
+        prov:qualifiedAssociation  [ a prov:Association ;
+                                         prov:agent    agent:agent003;
                                      prov:hadPlan  cl-opt:305
                                    ];
         prov:wasAssociatedWith     agent:agent003 .
