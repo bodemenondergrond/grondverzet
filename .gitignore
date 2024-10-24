@@ -18,4 +18,3 @@ node_modules/
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 src/source/sample.ttl
-src/source/interpretaties.ttl

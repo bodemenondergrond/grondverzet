@@ -49,6 +49,7 @@
 @prefix prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/> .
 @prefix prov:                <http://www.w3.org/ns/prov#> .
 @prefix qb:                  <http://purl.org/linked-data/cube#> .
+@prefix quantitykind:        <https://qudt.org/vocab/quantitykind/> .
 @prefix qudt-schema:         <https://qudt.org/schema/qudt/> .
 @prefix qudt-unit:           <https://qudt.org/vocab/unit/> .
 @prefix rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -75,7 +76,7 @@
 
 # observatie ASTM uit fiche
 obs:2022-6907912  a   sosa:Observation;
-                     sosa:hasResult  cl-astm:SM ; # deze codelijst bestaat nog helemaal niet. Toe te voegen... Anders wordt dit result:obs2022-6907912
+                     sosa:hasResult  result:obs2022-6907912 ;
                      #sosa:usedProcedure cl-opt:0 ; # komt overeen met onbekend
                      sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als phenomenontime indien niet ingevuld in DOV-fiche
                      sosa:phenomenonTime  "2006-08-30T00:00:00.000"^^xsd:dateTime ;
@@ -86,7 +87,11 @@ obs:2022-6907912  a   sosa:Observation;
 
 obs_prop:obs2022-6907912  a sosa:ObservableProperty ;
         dcterms:subject cl-par:ASTM_code ;
-        ssn:isPropertyOf obs:2022-6907912 .
+        ssn:isPropertyOf result:sam2017-169209-a .
+
+result:obs2022-6907912 a sosa:Result ;
+        sosa:isResultOf obs:2022-6907912 ;
+        rdf:value cl-astm:SM . # deze codelijst bestaat nog helemaal niet. Toe te voegen...
 
 her:obs2022-6907912  a prov:Location ;
         skos:notation "Labo" .
@@ -104,7 +109,7 @@ obs:2023-11029442  a   sosa:Observation;
 
 obs_prop:obs2023-11029442  a sosa:ObservableProperty ;
         dcterms:subject cl-par:Consistentiegrenzen_Plasticiteitsindex ;
-        ssn:isPropertyOf obs:2023-11029442 .
+        ssn:isPropertyOf result:sam2017-169209-a .
 
 her:obs2023-11029442 a prov:Location ;
         skos:notation "Labo" .
@@ -138,7 +143,7 @@ obs:2022-5996383  a   sosa:Observation;
 
 obs_prop:obs2023-11029442  a sosa:ObservableProperty ;
         dcterms:subject cl-par:Gehalte_Kalkachtige_stoffen ;
-        ssn:isPropertyOf obs:2022-5996383 .
+        ssn:isPropertyOf result:sam2017-169209-a .
 
 her:obs2023-11029442 a prov:Location ;
         skos:notation "Labo" .
@@ -166,7 +171,7 @@ obs:2022-5354541  a   sosa:Observation;
 
 obs_prop:obs2022-5354541  a sosa:ObservableProperty ;
         dcterms:subject cl-par:volumemassa_nat ;
-        ssn:isPropertyOf obs:2022-5354541 .
+        ssn:isPropertyOf result:sam2017-169209-a .
 
 her:obs2022-5354541 a prov:Location ;
         skos:notation "Labo" .
@@ -187,11 +192,11 @@ obs:2022-5354541-a a   sosa:Observation;
                      sosa:phenomenonTime  "2006-08-30T00:00:00.000"^^xsd:dateTime ; # zelfde als de oorspronkelijke observatie in de DOV-fiche
                      sosa:observedProperty obs_prop:obs2022-5354541-a ;
                      sosa:madeBySensor  agent:agent003; # zelfde uitvoerder als de oorspronkelijke observatie in de DOV-fiche
-                     sosa:hasFeatureOfInterest obs:2022-5354541 . # Kan de featureOfInterest van een observatie ook een observatie zijn?
+                     sosa:hasFeatureOfInterest result:sam2017-169209-a . # FeatureOfInterest van een observatie kan onmogelijk ook een observatie zijn, dus is het opnieuw het oorspronkelijke monster.
 
 obs_prop:obs2022-5354541-a  a sosa:ObservableProperty ;
         dcterms:subject cl-par:temp_water ;
-        ssn:isPropertyOf obs:2022-5354541-a .
+        ssn:isPropertyOf result:sam2017-169209-a .
 
 result:obs2022-5354541-a a sosa:Result ;
         sosa:isResultOf obs:2022-5354541-a ;
@@ -211,7 +216,7 @@ obs:2022-4033232  a   sosa:Observation;
 
 obs_prop:obs2022-4033232  a sosa:ObservableProperty ;
         dcterms:subject cl-par:Korrelverdeling_dmv_zeefproef ;
-        ssn:isPropertyOf obs:2022-4033232 .
+        ssn:isPropertyOf result:sam2017-169209-a .
 
 her:obs2022-4033232 a prov:Location ;
         skos:notation "Labo" .
@@ -220,6 +225,13 @@ cl-opt:305 a  sosa:Procedure ;
         skos:notation  "Zeving" .
 
 # korrelverdeling als meetreeks weergeven. Nog af te toetsen.
+
+
+
+
+
+
+
 result:obs2022-4033232 a sosa:Result ;
     grondboringenbeno:meetreeks [
         rdf:first [
@@ -382,7 +394,7 @@ obs:2024-9484747 a   sosa:Observation;
 
 obs_prop:2024-9484747 a sosa:ObservableProperty ;
         dcterms:subject cl-par:textuur_fractie_zand ;
-        ssn:isPropertyOf obs:2024-9484747 .
+        ssn:isPropertyOf result:sam1990-294153-a .
 
 her:obs2024-9484747 a prov:Location ;
         skos:notation "Labo" .
@@ -395,7 +407,7 @@ result:obs2024-9484747 a sosa:Result ;
         rdf:value 5.0 ;
         sdmx-attribute:unitMeasure qudt-unit:PERCENT .
 
-herh:obs2024-9484747 a qb:Observation ;
+herh:obs2024-9484747 a qb:Observation ; # de herhalingen worden als statistische samenvatting weergegeven.
                           qb:dataSet obs:2024-9484747 ;
                           sost:SampleSize "3"^^xsd:integer ;
                           sost:Minimum "4.9"^^xsd:decimal ;
@@ -404,7 +416,7 @@ herh:obs2024-9484747 a qb:Observation ;
 # Observaties die reeds gebruikt werden in grondboring/boorgat, sampling en sample. Deze komen dus niet uit tbl_observaties
 # materiaalklasse uit monster
 obs:sam2024-325560-a-1  a   sosa:Observation;
-                     sosa:hasResult  cl-mat:plantaardigmateriaal;
+                     sosa:hasResult  result:obssam2024-325560-a-1 ;
                      sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
                      sosa:observedProperty obs_prop:materiaalklasse-sam2024-325560-a ;
                      sosa:madeBySensor   agent:agent003;
@@ -412,11 +424,20 @@ obs:sam2024-325560-a-1  a   sosa:Observation;
                      #ssn:wasOriginatedBy   opdracht:2007-005512 ; # opdracht bestaat (nog) niet voor observaties. Wordt mee opgenomen met mengmonsters. Dus binnenkort wel beschikbaar.
                      sosa:hasFeatureOfInterest  result:sam2024-325560-a .
 
+obs_prop:materiaalklasse-sam2024-325560-a a sosa:ObservableProperty ;
+        dcterms:subject prop:materiaalklasse ;
+        ssn:isPropertyOf result:sam2024-325560-a .
+
 cl-bpt:bepaling_materiaalklasse  a  sosa:Procedure. # skos:Concept .
+
+result:obssam2024-325560-a-1  a sosa:Result ;
+        sosa:isResultOf obs:sam2024-325560-a-1 ;
+        rdf:value cl-mat:plantaardigmateriaal . # deze codelijst bestaat nog helemaal niet. Toe te voegen...
+
 
 # monstertype uit monster
 obs:sam2024-325560-a-2  a   sosa:Observation;
-                     sosa:hasResult  cl-mtype:ongeroerd;
+                     sosa:hasResult  result:obssam2024-325560-a-2 ;
                      sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
                      sosa:observedProperty obs_prop:monstertype-sam2024-325560-a ;
                      sosa:madeBySensor    agent:agent003;
@@ -428,9 +449,15 @@ obs_prop:monstertype-sam2024-325560-a a sosa:ObservableProperty ;
         dcterms:subject prop:monstertype ;
         ssn:isPropertyOf result:sam2024-325560-a .
 
+cl-bpt:bepaling_monstertype  a  sosa:Procedure. # skos:Concept .
+
+result:obssam2024-325560-a-2  a sosa:Result ;
+        sosa:isResultOf obs:sam2024-325560-a-2 ;
+        rdf:value cl-mtype:ongeroerd . # deze codelijst bestaat nog helemaal niet. Toe te voegen...
+
 # monstersamenstelling uit monster
 obs:sam2006-002527-a-3  a   sosa:Observation;
-                     sosa:hasSimpleResult  "enkelvoudig monster";
+                     sosa:hasSimpleResult  "enkelvoudig monster"; # Kan een resultaat ook op deze manier weergegeven worden?
                      sosa:observedProperty obs_prop:monstersamenstelling-sam2024-325560-a ;
                      sosa:madeBySensor      agent:agent003;
                      sosa:hasFeatureOfInterest  result:sam2024-325560-a .
@@ -441,7 +468,7 @@ obs_prop:monstersamenstelling-sam2024-325560-a a sosa:ObservableProperty ;
 
 # opslag monster (locatie en periode) uit monster
 obs:sam2006-002527-a-4  a   sosa:Observation;
-                     sosa:hasResult  cl-loc:geotheekvilvoorde;
+                     sosa:hasResult  cl-loc:geotheekvilvoorde ;
                      sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
                      sosa:phenomenonTime  moment:sam2024-325560-a ;
                      sosa:observedProperty obs_prop:opslag-sam2024-325560-a ;
@@ -461,6 +488,11 @@ datum:end-sam2024-325560-a-4 a time:Instant ;
 obs_prop:opslag-sam2024-325560-a a sosa:ObservableProperty ;
         dcterms:subject prop:opslag ;
         ssn:isPropertyOf result:sam2024-325560-a .
+
+result:obssam2006-002527-a-4  a sosa:Result ;
+        sosa:isResultOf obs:sam2006-002527-a-4 ;
+        rdf:value cl-loc:geotheekvilvoorde . # deze codelijst bestaat nog helemaal niet. Toe te voegen...
+
 
 # opmerking bij observatie
 opm:obs2024-325560-a-1  a  grondboringbeno:Opmerking ;
@@ -485,7 +517,7 @@ bl:sam2024-325560-a-2   a  grondboringbeno:Bijlage;
 
 # Maaiveld uit boorgat
 obs_prop:diepte_boorgat1965-068140 a sosa:ObservableProperty ;
-           dcterms:subject prop:diepte ;
+           dcterms:subject quantitykind:Depth ;
            grondboringbeno:maaiveld mv:maaiveld_op_de_plaats_van_boorgat1965-068140 ;
            sosa:isActedOnBy act:1965-068140-1;
            sosa:isActedOnBy act:1965-068140-2;

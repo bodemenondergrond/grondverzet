@@ -15,17 +15,21 @@
 @prefix cl-behwaarde:        <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandelingswaarde/> .
 @prefix cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/> .
 @prefix cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/> .
+@prefix cl-cons:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/consistentietype/> .
 @prefix cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/> .
 @prefix cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/> .
 @prefix cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/> .
+@prefix cl-kleur:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/kleur/> .
 @prefix cl-loc:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/> .
 @prefix cl-mat:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/> .
 @prefix cl-mmt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/> .
 @prefix cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
 @prefix cl-opt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/> .
+@prefix cl-vocht:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/vochtgehaltetype/> .
 @prefix concept:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
 @prefix datum:               <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
 @prefix dcterms:             <http://purl.org/dc/terms/> .
+@prefix formstrat:           <https://data.bodemenondergrond.vlaanderen.be/id/formelestratigrafie/> .
 @prefix geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
 @prefix geosparql:           <http://www.opengis.net/ont/geosparql#> .
 @prefix gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/> .
@@ -74,10 +78,10 @@
 @prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
 
 
-# Consistentie boorgat: Deze "observaties" Worden behandeld zoals interpretaties.
-# Vochtgehalte boorgat: idem
-# Kleur boorgat: idem
-# Lithologische beschrijving
+## Consistentie boorgat: Deze "observaties" Worden behandeld zoals interpretaties.
+## Vochtgehalte boorgat: idem
+## Kleur boorgat: idem
+## Lithologische beschrijving
 # Formele stratigrafie
 # Informele stratigrafie
 # Quartaire stratigrafie
@@ -131,14 +135,240 @@ grondboringbeno:hydrogeologischeStratigrafieV2  a rdf:Property ;
         rdfs:range grondboringbeno:Interpretatie .
 
 
-grondboringbeno:InterpDiepteVan  a rdf:Property ;
+grondboringbeno:IntervDiepteVan  a rdf:Property ;
                                  rdfs:range grondboringbeno:Diepte .
 
-grondboringbeno:InterpDiepteTot  a rdf:Property ;
+grondboringbeno:IntervDiepteTot  a rdf:Property ;
                                  rdfs:range grondboringbeno:Diepte .
 
 
 ### Individuals
+
+# Consistentie boorgat: diepte_van, diepte_tot, consistentie
+obs:cons1998-109514 a sosa:Observation ;
+        rdfs:label "Consistentie boorgat 1998-109514"@nl ;
+        sosa:hasResult  result:cons1998-109514 ;
+        sosa:resultTime "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
+        sosa:observedProperty obs_prop:cons1998-109514 ;
+        sosa:usedProcedure  cl-bpt:bepalen_consistentie_boorgat ;
+        ssn:wasOriginatedBy   opdracht:1998-002814 ;
+        sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche boring
+        sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 .
+
+obs_prop:cons1998-109514 a sosa:ObservableProperty ;
+        dcterms:subject prop:consistentie ;
+        ssn:isPropertyOf boorgat:boorgat1998-109514 .
+
+result:cons1998-109514 a rdf:List ;
+    rdf:first result:cons1998-109514-1 ;
+    rdf:rest list:cons1998-109514-2 .
+
+list:cons1998-109514-2 a rdf:List ;
+    rdf:first result:cons1998-109514-2 ;
+    rdf:rest list:cons1998-109514-3 .
+
+list:cons1998-109514-3 a rdf:List ;
+    rdf:first result:cons1998-109514-3 ;
+    rdf:rest list:cons1998-109514-4 .
+
+list:cons1998-109514-4 a rdf:List ;
+    rdf:first result:cons1998-109514-4 ;
+    rdf:rest rdf:nil .
+# Dit is niet het laatste interval voor consistentie uit de DOV-fiche van boringen, maar dient enkel als voorbeeld.
+
+result:cons1998-109514-1 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:cons1998-109514-1-van ;
+    grondboringbeno:IntervDiepteTot result:cons1998-109514-1-tot ;
+    grondboringbeno:consistentie cl-cons:3 . # skos:prefLabel "plastisch"
+
+result:cons1998-109514-2 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:cons1998-109514-2-van ;
+    grondboringbeno:IntervDiepteTot result:cons1998-109514-2-tot ;
+    grondboringbeno:consistentie cl-cons:2 . # skos:prefLabel "slap"
+
+result:cons1998-109514-3 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:cons1998-109514-3-van ;
+    grondboringbeno:IntervDiepteTot result:cons1998-109514-3-tot ;
+    grondboringbeno:consistentie cl-cons:5 . # skos:prefLabel "vast"
+
+result:cons1998-109514-4 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:cons1998-109514-4-van ;
+    grondboringbeno:IntervDiepteTot result:cons1998-109514-4-tot ;
+    grondboringbeno:consistentie cl-cons:3 . # skos:prefLabel "plastisch"
+
+    
+result:cons1998-109514-1-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 0.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-1-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 6.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-2-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 6.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-2-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 7.5 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-3-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 9.5 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-3-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 11.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-4-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 14.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-4-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 14.5 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+
+
+# Vochtgehalte boorgat: diepte_van, diepte_tot, vochtgehalte
+obs:vocht1998-109514 a sosa:Observation ;
+        rdfs:label "Vochtgehalte boorgat 1998-109514"@nl ;
+        sosa:hasResult  result:vocht1998-109514 ;
+        sosa:resultTime "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
+        sosa:observedProperty obs_prop:vocht1998-109514 ;
+        sosa:usedProcedure  cl-bpt:bepalen_vochtgehalte_boorgat ;
+        ssn:wasOriginatedBy   opdracht:1998-002814 ;
+        sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche boring
+        sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 .
+
+obs_prop:vocht1998-109514 a sosa:ObservableProperty ;
+        dcterms:subject prop:vochtgehalte ;
+        ssn:isPropertyOf boorgat:boorgat1998-109514 .
+
+result:vocht1998-109514 a rdf:List ;
+    rdf:first result:vocht1998-109514-1 ;
+    rdf:rest list:vocht1998-109514-2 .
+
+list:vocht1998-109514-2 a rdf:List ;
+    rdf:first result:vocht1998-109514-2 ;
+    rdf:rest rdf:nil .
+
+
+result:vocht1998-109514-1 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:vocht1998-109514-1-van ;
+    grondboringbeno:IntervDiepteTot result:vocht1998-109514-1-tot ;
+    grondboringbeno:vochtgehalte cl-vocht:3 . # skos:prefLabel "vochtig"
+
+result:vocht1998-109514-2 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:vocht1998-109514-2-van ;
+    grondboringbeno:IntervDiepteTot result:vocht1998-109514-2-tot ;
+    grondboringbeno:vochtgehalte cl-vocht:5 . # skos:prefLabel "verzadigd"
+
+    
+result:cons1998-109514-1-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 0.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-1-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 8.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-2-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 8.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:cons1998-109514-2-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 25.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+
+# Kleur boorgat: diepte_van, diepte_tot, kleur
+obs:kleur1998-109514 a sosa:Observation ;
+        rdfs:label "Kleur boorgat 1998-109514"@nl ;
+        sosa:hasResult  result:kleur1998-109514 ;
+        sosa:resultTime "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
+        sosa:observedProperty obs_prop:kleur1998-109514 ;
+        sosa:usedProcedure  cl-bpt:bepalen_kleur_boorgat ;
+        ssn:wasOriginatedBy   opdracht:1998-002814 ;
+        sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche boring
+        sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 .
+
+obs_prop:kleur1998-109514 a sosa:ObservableProperty ;
+        dcterms:subject prop:kleur ;
+        ssn:isPropertyOf boorgat:boorgat1998-109514 .
+
+result:kleur1998-109514 a rdf:List ;
+    rdf:first result:kleur1998-109514-1 ;
+    rdf:rest list:kleur1998-109514-2 .
+
+list:kleur1998-109514-2 a rdf:List ;
+    rdf:first result:kleur1998-109514-2 ;
+    rdf:rest list:kleur1998-109514-3 .
+
+list:kleur1998-109514-3 a rdf:List ;
+    rdf:first result:kleur1998-109514-3 ;
+    rdf:rest list:kleur1998-109514-4 .
+
+list:kleur1998-109514-4 a rdf:List ;
+    rdf:first result:kleur1998-109514-4 ;
+    rdf:rest rdf:nil .
+# Dit is niet het laatste interval voor kleur uit de DOV-fiche van boringen, maar dient enkel als voorbeeld.
+
+result:kleur1998-109514-1 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:kleur1998-109514-1-van ;
+    grondboringbeno:IntervDiepteTot result:kleur1998-109514-1-tot ;
+    grondboringbeno:kleur cl-kleur:3 . # skos:prefLabel "bruin"
+
+result:kleur1998-109514-2 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:kleur1998-109514-2-van ;
+    grondboringbeno:IntervDiepteTot result:kleur1998-109514-2-tot ;
+    grondboringbeno:kleur cl-kleur:15 . # skos:prefLabel "bruingrijs"
+
+result:kleur1998-109514-3 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:kleur1998-109514-3-van ;
+    grondboringbeno:IntervDiepteTot result:kleur1998-109514-3-tot ;
+    grondboringbeno:kleur cl-kleur:5 . # skos:prefLabel "grijs"
+
+result:kleur1998-109514-4 a grondboringbeno:interval ;
+    grondboringbeno:IntervDiepteVan result:kleur1998-109514-4-van ;
+    grondboringbeno:IntervDiepteTot result:kleur1998-109514-4-tot ;
+    grondboringbeno:kleur cl-kleur:52 . # skos:prefLabel "grijsbruin"
+
+    
+result:kleur1998-109514-1-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 0.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:kleur1998-109514-1-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 3.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:kleur1998-109514-2-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 3.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:kleur1998-109514-2-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 4.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:kleur1998-109514-3-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 4.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:kleur1998-109514-3-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 5.5 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:kleur1998-109514-4-van a grondboringbeno:IntervDiepteVan ;
+    rdf:value 5.5 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+result:kleur1998-109514-4-tot a grondboringbeno:IntervDiepteTot ;
+    rdf:value 6.0 ;
+    sdmx-attribute:unitMeasure qudt-unit:M .
+
+
 
 # Lithologische beschrijving: diepte_van, diepte_tot, beschrijving, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
 interp:1983-215741 a grondboringbeno:Interpretatie ;
@@ -174,54 +404,54 @@ list:interp1983-215741-4 a rdf:List ;
 # Dit is uiteraard de laatste niet uit de DOV-fiche, maar dient enkel als voorbeeld.
 
 lithbesch:1983-215741-1 a grondboringbeno:interval ;
-        grondboringbeno:InterpDiepteVan lithbesch:1983-215741-1-van ;
-        grondboringbeno:InterpDiepteTot lithbesch:1983-215741-1-tot ;
+        grondboringbeno:IntervDiepteVan lithbesch:1983-215741-1-van ;
+        grondboringbeno:IntervDiepteTot lithbesch:1983-215741-1-tot ;
         grondboringbeno:beschrijving "bruingrijs leemhoudend fijn tot zeer fijn zand met bovenaan wortels, silexgrind en plaatselijke okervlek" .
 
 lithbesch:1983-215741-2 a grondboringbeno:interval ;
-        grondboringbeno:InterpDiepteVan lithbesch:1983-215741-2-van ;
-        grondboringbeno:InterpDiepteTot lithbesch:1983-215741-2-tot ;
+        grondboringbeno:IntervDiepteVan lithbesch:1983-215741-2-van ;
+        grondboringbeno:IntervDiepteTot lithbesch:1983-215741-2-tot ;
         grondboringbeno:beschrijving "donkerbruin tot zwart fijn tot middelmatig zand met roestbruine concreties en zeer fijn kwartsgrind" .
 
 lithbesch:1983-215741-3 a grondboringbeno:interval ;
-        grondboringbeno:InterpDiepteVan lithbesch:1983-215741-3-van ;
-        grondboringbeno:InterpDiepteTot lithbesch:1983-215741-3-tot ;
+        grondboringbeno:IntervDiepteVan lithbesch:1983-215741-3-van ;
+        grondboringbeno:IntervDiepteTot lithbesch:1983-215741-3-tot ;
         grondboringbeno:beschrijving "roestbruin fijn tot middelmatig zand, plaatselijk iets verkit" .
 
 lithbesch:1983-215741-4 a grondboringbeno:interval ;
-        grondboringbeno:InterpDiepteVan lithbesch:1983-215741-4-van ;
-        grondboringbeno:InterpDiepteTot lithbesch:1983-215741-4-tot ;
+        grondboringbeno:IntervDiepteVan lithbesch:1983-215741-4-van ;
+        grondboringbeno:IntervDiepteTot lithbesch:1983-215741-4-tot ;
         grondboringbeno:beschrijving "lichtgroengrijze leemhoudende klei met okervlekken en plaatselijk dunne zandhoudende kleilaagjes" .
 
-lithbesch:1983-215741-1-van a grondboringbeno:InterpDiepteVan ;
+lithbesch:1983-215741-1-van a grondboringbeno:IntervDiepteVan ;
         rdf:value 0.0 ;
         sdmx-attribute:unitMeasure qudt-unit:M .
 
-lithbesch:1983-215741-1-tot a grondboringbeno:InterpDiepteTot ;
+lithbesch:1983-215741-1-tot a grondboringbeno:IntervDiepteTot ;
         rdf:value 0.55 ;
         sdmx-attribute:unitMeasure qudt-unit:M .
 
-lithbesch:1983-215741-2-van a grondboringbeno:InterpDiepteVan ;
+lithbesch:1983-215741-2-van a grondboringbeno:IntervDiepteVan ;
         rdf:value 0.55 ;
         sdmx-attribute:unitMeasure qudt-unit:M .
 
-lithbesch:1983-215741-2-tot a grondboringbeno:InterpDiepteTot ;
+lithbesch:1983-215741-2-tot a grondboringbeno:IntervDiepteTot ;
         rdf:value 0.7 ;
         sdmx-attribute:unitMeasure qudt-unit:M .
 
-lithbesch:1983-215741-3-van a grondboringbeno:InterpDiepteVan ;
+lithbesch:1983-215741-3-van a grondboringbeno:IntervDiepteVan ;
         rdf:value 0.7 ;
         sdmx-attribute:unitMeasure qudt-unit:M .
 
-lithbesch:1983-215741-3-tot a grondboringbeno:InterpDiepteTot ;
+lithbesch:1983-215741-3-tot a grondboringbeno:IntervDiepteTot ;
         rdf:value 0.95 ;
         sdmx-attribute:unitMeasure qudt-unit:M .
 
-lithbesch:1983-215741-4-van a grondboringbeno:InterpDiepteVan ;
+lithbesch:1983-215741-4-van a grondboringbeno:IntervDiepteVan ;
         rdf:value 0.95 ;
         sdmx-attribute:unitMeasure qudt-unit:M .
 
-lithbesch:1983-215741-4-tot a grondboringbeno:InterpDiepteTot ;
+lithbesch:1983-215741-4-tot a grondboringbeno:IntervDiepteTot ;
         rdf:value 1.0 ;
         sdmx-attribute:unitMeasure qudt-unit:M .
 
@@ -271,3 +501,80 @@ bl:interp1983-215741-2   a  grondboringbeno:Bijlage;
     dcterms:creator  agent:agent001 ;
     schema:about     interp:1983-215741 ;
     dcterms:date     "1983-10-19"^^xsd:date .
+
+
+
+
+# Formele stratigrafie: diepte_van, diepte_tot, beschrijving, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
+interp:1991-098767 a grondboringbeno:Interpretatie ;
+        rdfs:label "Formele stratigrafie op locatie van boorgat 1965-068140"@nl ;
+        sosa:resultTime "1991-06-25T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren formele stratigrafie
+        grondboringbeno:formeleStratigrafie formstrat:1991-098767 ;
+        grondboringbeno:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
+        sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche interpretatie
+        prov:atLocation result:geometrie1965-068140 . # de 2D geometrie van het boorgat wordt hier hergebruikt. Het is geen feature of interest aangezien de interpretatie uitgevoerd werd op basis van een aantal factoren, waaronder (maar dus niet alleen) het boorgat, zijn monsters, andere modellen, kaarten, enz...
+
+
+formstrat:1991-098767 a grondboringbeno:formeleStratigrafie ;
+        grondboringbeno:intervallen list:interp1991-098767-1 .
+
+list:interp1991-098767-1 a rdf:List ;
+        rdf:first formstrat:1991-098767-1 ;
+        rdf:rest list:interp1991-098767-2 .
+
+list:interp1991-098767-2  a rdf:List ;
+        rdf:first formstrat:1991-098767-2 ;
+        rdf:rest list:interp1991-098767-3 .
+
+list:interp1991-098767-3 a rdf:List ;
+        rdf:first formstrat:1991-098767-3 ;
+        rdf:rest rdf:nil .
+
+
+formstrat:1991-098767-1 a grondboringbeno:interval ;
+        grondboringbeno:IntervDiepteVan formstrat:1991-098767-1-van ;
+        grondboringbeno:IntervDiepteTot formstrat:1991-098767-1-tot ;
+        grondboringbeno:lid1 "bruingrijs leemhoudend fijn tot zeer fijn zand met bovenaan wortels, silexgrind en plaatselijke okervlek" .
+
+formstrat:1991-098767-2 a grondboringbeno:interval ;
+        grondboringbeno:IntervDiepteVan formstrat:1991-098767-2-van ;
+        grondboringbeno:IntervDiepteTot formstrat:1991-098767-2-tot ;
+        grondboringbeno:lid1 "donkerbruin tot zwart fijn tot middelmatig zand met roestbruine concreties en zeer fijn kwartsgrind" .
+
+formstrat:1991-098767-3 a grondboringbeno:interval ;
+        grondboringbeno:IntervDiepteVan formstrat:1991-098767-3-van ;
+        grondboringbeno:IntervDiepteTot formstrat:1991-098767-3-tot ;
+        grondboringbeno:lid1 "roestbruin fijn tot middelmatig zand, plaatselijk iets verkit" .
+
+
+formstrat:1991-098767-1-van a grondboringbeno:IntervDiepteVan ;
+        rdf:value 0.0 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+formstrat:1991-098767-1-tot a grondboringbeno:IntervDiepteTot ;
+        rdf:value 16.8 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+formstrat:1991-098767-2-van a grondboringbeno:IntervDiepteVan ;
+        rdf:value 16.8 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+formstrat:1991-098767-2-tot a grondboringbeno:IntervDiepteTot ;
+        rdf:value 17.9 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+formstrat:1991-098767-3-van a grondboringbeno:IntervDiepteVan ;
+        rdf:value 17.9 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+formstrat:1991-098767-3-tot a grondboringbeno:IntervDiepteTot ;
+        rdf:value 21.5 ;
+        sdmx-attribute:unitMeasure qudt-unit:M .
+
+
+betrouwbaarheid:interp1991-098767 a ssn:Property ;
+        skos:prefLabel "betrouwbaarheid goed"@nl ;
+        skos:inScheme cl-betr:A .
+
+cl-betr:A a sosa:Procedure ; # skos:Concept 
+        rdfs:label  "betrouwbaarheid goed" .
