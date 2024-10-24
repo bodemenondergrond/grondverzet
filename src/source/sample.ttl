@@ -57,7 +57,7 @@
 @prefix time:                <http://www.w3.org/2006/time#> .
 @prefix wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
 @prefix xsd:                 <http://www.w3.org/2001/XMLSchema#> .
-
+ 
 # bemonstering
 sam:2024-325560-a  a   sosa:Sampling ;
                    sosa:madeBySampler boor:boring2006-002527-a ;
@@ -65,33 +65,33 @@ sam:2024-325560-a  a   sosa:Sampling ;
                    sosa:hasResult  result:sam2024-325560-a;
                    sosa:resultTime "2020-01-01T00:00:00.000"^^xsd:dateTime ;
                    sosa:hasFeatureOfInterest boorgat:boorgat2006-002527.
-
+ 
 # monster
 result:sam2024-325560-a a sosa:Sample ;
                     sosa:isResultOf sam:2024-325560-a ;
                     sosa:isSampleOf boorgat:boorgat2006-002527 ;
                     grondboringbeno:sampleDiepteVan result:boorgat2006-002527-sam2024-325560-a-van ;
                     grondboringbeno:sampleDiepteTot result:boorgat2006-002527-sam2024-325560-a-tot ;
-                    adms:identifier id:sam2024-325560-a-1,  id:sam2024-325560-a-2; 
+                    adms:identifier id:sam2024-325560-a-1,  id:sam2024-325560-a-2;
                     prov:wasStartedBy  opdracht:2007-005512 .
-
+ 
 result:sam2024-325560-a-van a grondboringbeno:Diepte ;
     rdf:value 3.00 ;
     sdmx-attribute:unitMeasure qudt-unit:M .
-
+ 
 result:sam2024-325560-a-tot a grondboringbeno:Diepte ;
     rdf:value 3.34 ;
     sdmx-attribute:unitMeasure qudt-unit:M .
-
+ 
 # namen monster
 id:sam2024-325560-a-1 a adms:Identifier;
     skos:notation  "Dit is de default naam" ;
     dcterms:source agent:agent004 .
-
+ 
 id:sam2024-325560-a-2 a adms:Identifier;
     skos:notation  "Dit is een alternatieve naam" ;    
     dcterms:source agent:agent005 .
-
+ 
 # materiaalklasse
 obs:sam2024-325560-a-1  a   sosa:Observation;
                      sosa:hasResult  cl-mat:plantaardigmateriaal;
@@ -101,9 +101,9 @@ obs:sam2024-325560-a-1  a   sosa:Observation;
                      sosa:usedProcedure  cl-bpt:bepaling_materiaalklasse ;
                      ssn:wasOriginatedBy   opdracht:2007-005512 ;
                      sosa:hasFeatureOfInterest  result:sam2024-325560-a .
-
+ 
 cl-bpt:bepaling_materiaalklasse  a  sosa:Procedure. # skos:Concept .
-
+ 
 # monstertype
 obs:sam2024-325560-a-2  a   sosa:Observation;
                      sosa:hasResult  cl-mtype:ongeroerd;
@@ -113,22 +113,22 @@ obs:sam2024-325560-a-2  a   sosa:Observation;
                      sosa:usedProcedure  cl-bpt:bepaling_monstertype ;
                      ssn:wasOriginatedBy    opdracht:2007-005512 ;
                      sosa:hasFeatureOfInterest  result:sam2024-325560-a .
-
+ 
 obs_prop:monstertype-sam2024-325560-a a sosa:ObservableProperty ;
         dcterms:subject prop:monstertype ;
         ssn:isPropertyOf result:sam2024-325560-a .
-
+ 
 # monstersamenstelling
 obs:sam2024-325560-a-3  a   sosa:Observation;
                      sosa:hasSimpleResult  "enkelvoudig monster";
                      sosa:observedProperty obs_prop:monstersamenstelling-sam2024-325560-a ;
                      sosa:madeBySensor      agent:agent003;
                      sosa:hasFeatureOfInterest  result:sam2024-325560-a .
-
+ 
 obs_prop:monstersamenstelling-sam2024-325560-a a sosa:ObservableProperty ;
         dcterms:subject prop:monstersamenstelling ;
         ssn:isPropertyOf result:sam2024-325560-a .
-
+ 
 # opslag monster (locatie en periode)
 obs:sam2024-325560-a-4  a   sosa:Observation;
                      sosa:hasResult  cl-loc:geotheekvilvoorde ;# cl-loc:1
@@ -137,86 +137,108 @@ obs:sam2024-325560-a-4  a   sosa:Observation;
                      sosa:observedProperty obs_prop:opslag-sam2024-325560-a ;
                      sosa:madeBySensor  agent:agent003;
                      sosa:hasFeatureOfInterest result:sam2024-325560-a .
-
+ 
 moment:sam2024-325560-a a time:Interval ;
       time:hasBeginning datum:start-sam2024-325560-a-4 ;
       time:hasEnd datum:end-sam2024-325560-a-4 .
-
+ 
 datum:start-sam2024-325560-a-4 a time:Instant ;
       time:inXSDDateTimeStamp "2020-01-01T00:00:00+00:00"^^xsd:dateTimeStamp .
-      
+     
 datum:end-sam2024-325560-a-4 a time:Instant ;
       time:inXSDDateTimeStamp "2024-04-16T00:00:00+00:00"^^xsd:dateTimeStamp .
-
+ 
 obs_prop:opslag-sam2024-325560-a a sosa:ObservableProperty ;
         dcterms:subject prop:opslag ;
         ssn:isPropertyOf result:sam2024-325560-a .
-
+ 
 # opmerking bij monster
 opm:sam2024-325560-a-1  a  grondboringbeno:Opmerking ;
     dcterms:description "Dit is een opmerking" ;
     dcterms:creator  agent:agent001 ;
     schema:about     result:sam2024-325560-a ;
     dcterms:date     "2020-01-02"^^xsd:date .
-
+ 
 # bijlagen bij monster
 bl:sam2024-325560-a-1  a  grondboringbeno:Bijlage ;
     rdfs:label       "GEO-06/075 Schuifweerstandskarakteristieken" ;
     dcterms:creator  agent:agent001 ;
     schema:about     result:sam2024-325560-a ;
     dcterms:date     "2020-01-02"^^xsd:date .
-
+ 
 bl:sam2024-325560-a-2   a  grondboringbeno:Bijlage;
     rdfs:label       "GEO-06/075 Samendrukkingsproef";
     dcterms:creator  agent:agent001 ;
     schema:about     result:sam2024-325560-a ;
     dcterms:date     "2020-01-02"^^xsd:date .
+<<<<<<< HEAD
 
 
+=======
+ 
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 # monsterbehandeling
 sam:sam2024-325560-a-1 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
     sosa:usedProcedure cl-behwaarde:gebroken_manueel_in_mortier ;
     sosa:hasResult   result:deltasam2024-325560-a ;
     sosa:resultTime "2020-01-05T00:00:00.000"^^xsd:dateTime ;
+<<<<<<< HEAD
     sosa:hasFeatureOfInterest result:sam2024-325560-a .   
 
+=======
+    sosa:hasFeatureOfInterest result:sam2024-325560-a .  
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 sam:sam2024-325560-a-2 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
     sosa:usedProcedure cl-behwaarde:gezeefd_2mm_zeef ;
     sosa:hasResult   result:deltasam2024-325560-a ;
     sosa:resultTime "2020-01-05T00:00:00.000"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest result:sam2024-325560-a .
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 sam:sam2024-325560-a-3 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
     sosa:usedProcedure cl-behwaarde:gemalen_messenmolen ;
     sosa:hasResult   result:deltasam2024-325560-a ;
     sosa:resultTime "2020-01-05T00:00:00.000"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest result:sam2024-325560-a .
-
+ 
 # Gewijzigd monster na behandeling
 result:deltasam2024-325560-a a sosa:Sample ;
         sosa:isResultOf sam:sam2024-325560-a-1, sam:sam2024-325560-a-2, sam:sam2024-325560-a-3 ;
         sosa:isSampleOf boorgat:boorgat2006-002527 .
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 ## Observaties op monster 2024-325560 gebeuren op de delta (behandelde monster), nl. deltasam2024-325560-a
 ## Monsterbehandeling "Monstervoorbereiding door" brengen we niet in rekening, tenzij de organisatie die deze uitgevoerd heeft verschillend
-## is van de organisatie die de bemonstering heeft uitgevoerd. In dat geval wijzigt de sosa:madeByActuator naar deze nieuwe waarde voor 
+## is van de organisatie die de bemonstering heeft uitgevoerd. In dat geval wijzigt de sosa:madeByActuator naar deze nieuwe waarde voor
 ## alle monsterbehandelingen.
-
+ 
 ## Observatiebehandelingen nog toe te voegen als pseudo-monsters in sample
 # "Observatie"behandeling wordt weergegeven als een behandeling op een (fictief) deelmonster. Het monster wordt dus behandeld, specifiek voor de observatie in kwestie.
 # Observaties die een observatiebehandeling bevatten worden later gekoppeld op deze fictieve monsters en dus niet op de originele monsters waar ze bij DOV aan gekoppeld zijn.
 # Deelmonster is fictief uit monster 2017-169209 gehaald. Op het deelmonster zijn (twee) behandelingen gebeurd.
 # En op dat deelmonster is dan een observatie uitgevoerd, nl. een korrelverdeling.
-
+ 
 # Fictief deelmonster wordt dus gemaakt uit het originele monster, zodat observatiebehandelingen kunnen uitgevoerd worden op dit deelmonster, terwijl de
 # andere observaties nog steeds kunnen uitgevoerd worden op het originele monster.
 result:sam2024-325560-a-bis a sosa:Sample ;
     prov:wasDerivedFrom result:sam2024-325560-a ;
     sosa:isSampleOf boorgat:boorgat2006-002527 .
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 # Daarna vier samplings op fictief deelmonster
 sam:sam2024-325560-a-bis-1 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
@@ -224,31 +246,47 @@ sam:sam2024-325560-a-bis-1 a sosa:Sampling ;
     sosa:hasResult result:deltasam2024-325560-a-bis ;
     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest result:sam2024-325560-a-bis .
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 sam:sam2024-325560-a-bis-2 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
     sosa:usedProcedure cl-behwaarde:organisch_materiaal_verwijderd ;
     sosa:hasResult  result:deltasam2024-325560-a-bis ;
     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest result:sam2024-325560-a-bis .
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 sam:sam2024-325560-a-bis-3 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
     sosa:usedProcedure cl-behwaarde:Luchtgedroogd ;
     sosa:hasResult  result:deltasam2024-325560-a-bis ;
     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest result:sam2024-325560-a-bis .
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 sam:sam2024-325560-a-bis-4 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
     sosa:usedProcedure cl-behwaarde:gemalen_kogelmalen ;
     sosa:hasResult  result:deltasam2024-325560-a-bis ;
     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest result:sam2024-325560-a-bis .
-
+ 
 result:deltasam2024-325560-a-bis a sosa:Sample ;
     prov:wasDerivedFrom result:sam2024-325560-a-bis ;
     sosa:isResultOf sam:sam2024-325560-a-bis-1, sam:sam2024-325560-a-bis-2, sam:sam2024-325560-a-bis-3, sam:sam2024-325560-a-bis-4 ;
     sosa:isSampleOf boorgat:boorgat2006-002527 .
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
 # Observatie 2022-6042081 werd dan gedaan op een fictief deelmonster deltasam2024-325560-a-bis (dus na de behandeling die bij DOV als observatiebehandeling staat)
