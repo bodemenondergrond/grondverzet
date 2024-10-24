@@ -179,7 +179,11 @@ sam:sam2024-325560-a-1 a sosa:Sampling ;
     sosa:usedProcedure cl-behwaarde:gebroken_manueel_in_mortier ;
     sosa:hasResult   result:deltasam2024-325560-a ;
     sosa:resultTime "2020-01-05T00:00:00.000"^^xsd:dateTime ;
-    sosa:hasFeatureOfInterest result:sam2024-325560-a .   
+
+
+    sosa:hasFeatureOfInterest result:sam2024-325560-a .
+
+
 
 sam:sam2024-325560-a-2 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
@@ -194,7 +198,7 @@ sam:sam2024-325560-a-3 a sosa:Sampling ;
     sosa:hasResult   result:deltasam2024-325560-a ;
     sosa:resultTime "2020-01-05T00:00:00.000"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest result:sam2024-325560-a .
- 
+
 # Gewijzigd monster na behandeling
 result:deltasam2024-325560-a a sosa:Sample ;
         sosa:isResultOf sam:sam2024-325560-a-1, sam:sam2024-325560-a-2, sam:sam2024-325560-a-3 ;
@@ -204,19 +208,19 @@ result:deltasam2024-325560-a a sosa:Sample ;
 ## Monsterbehandeling "Monstervoorbereiding door" brengen we niet in rekening, tenzij de organisatie die deze uitgevoerd heeft verschillend
 ## is van de organisatie die de bemonstering heeft uitgevoerd. In dat geval wijzigt de sosa:madeByActuator naar deze nieuwe waarde voor
 ## alle monsterbehandelingen.
- 
+
 ## Observatiebehandelingen nog toe te voegen als pseudo-monsters in sample
 # "Observatie"behandeling wordt weergegeven als een behandeling op een (fictief) deelmonster. Het monster wordt dus behandeld, specifiek voor de observatie in kwestie.
 # Observaties die een observatiebehandeling bevatten worden later gekoppeld op deze fictieve monsters en dus niet op de originele monsters waar ze bij DOV aan gekoppeld zijn.
 # Deelmonster is fictief uit monster 2017-169209 gehaald. Op het deelmonster zijn (twee) behandelingen gebeurd.
 # En op dat deelmonster is dan een observatie uitgevoerd, nl. een korrelverdeling.
- 
+
 # Fictief deelmonster wordt dus gemaakt uit het originele monster, zodat observatiebehandelingen kunnen uitgevoerd worden op dit deelmonster, terwijl de
 # andere observaties nog steeds kunnen uitgevoerd worden op het originele monster.
 result:sam2024-325560-a-bis a sosa:Sample ;
     prov:wasDerivedFrom result:sam2024-325560-a ;
     sosa:isSampleOf boorgat:boorgat2006-002527 .
-    
+
 # Daarna vier samplings op fictief deelmonster
 sam:sam2024-325560-a-bis-1 a sosa:Sampling ;
     sosa:madeBySampler agent:agent004 ;
@@ -245,10 +249,32 @@ sam:sam2024-325560-a-bis-4 a sosa:Sampling ;
     sosa:hasResult  result:deltasam2024-325560-a-bis ;
     sosa:resultTime "2006-08-30T00:00:00.000"^^xsd:dateTime ;
     sosa:hasFeatureOfInterest result:sam2024-325560-a-bis .
- 
+
 result:deltasam2024-325560-a-bis a sosa:Sample ;
     prov:wasDerivedFrom result:sam2024-325560-a-bis ;
     sosa:isResultOf sam:sam2024-325560-a-bis-1, sam:sam2024-325560-a-bis-2, sam:sam2024-325560-a-bis-3, sam:sam2024-325560-a-bis-4 ;
     sosa:isSampleOf boorgat:boorgat2006-002527 .
 
 # Observatie 2022-6042081 werd dan gedaan op een fictief deelmonster deltasam2024-325560-a-bis (dus na de behandeling die bij DOV als observatiebehandeling staat)
+
+
+
+####Alternatief
+################################
+
+
+# monsterbehandeling
+sam:sam2024-325560-a-1 a sosa:Sampling ;
+                       sosa:madeBySampler agent:agent004 ;
+                       sosa:usedProcedure cl-behwaarde:sam2024-325560-a-1 ;
+                       sosa:hasResult   result:deltasam2024-325560-a ;
+                       sosa:resultTime "2020-01-05T00:00:00.000"^^xsd:dateTime ;
+                       sosa:hasFeatureOfInterest result:sam2024-325560-a .
+
+cl-behwaarde:sam2024-325560-a-1 a sosa:Procedure ;
+            dcterms:hasPart  cl-behwaarde:gebroken_manueel_in_mortier, cl-behwaarde:gezeefd_2mm_zeef , cl-behwaarde:gemalen_messenmolen .
+# Gewijzigd monster na behandeling
+result:deltasam2024-325560-a a sosa:Sample ;
+                             sosa:isResultOf sam:sam2024-325560-a-1 ;
+                             sosa:isSampleOf boorgat:boorgat2006-002527, result:sam2024-325560-a .
+
