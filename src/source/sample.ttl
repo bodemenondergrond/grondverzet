@@ -278,3 +278,34 @@ result:deltasam2024-325560-a a sosa:Sample ;
                              sosa:isResultOf sam:sam2024-325560-a-1 ;
                              sosa:isSampleOf boorgat:boorgat2006-002527, result:sam2024-325560-a .
 
+####Alternatief 2
+################################
+
+
+# monsterbehandeling
+sam:sam2024-325560-a-1 a sosa:Sampling ;
+                       sosa:madeBySampler agent:agent004 ;
+                       sosa:usedProcedure cl-behwaarde:sam2024-325560-a-1 ;
+                       sosa:hasResult   result:deltasam2024-325560-a ;
+                       sosa:resultTime "2020-01-05T00:00:00.000"^^xsd:dateTime ;
+                       sosa:hasFeatureOfInterest result:sam2024-325560-a .
+
+cl-behwaarde:sam2024-325560-a-1 a sosa:Procedure ;
+                                dcterms:hasPart  cl-behwaarde:gebroken_manueel_in_mortier, cl-behwaarde:gezeefd_2mm_zeef , cl-behwaarde:gemalen_messenmolen .
+# Gewijzigd monster na behandeling
+result:deltasam2024-325560-a a sosa:Sample ;
+                             sosa:isResultOf sam:sam2024-325560-a-1 ;
+                             sosa:isSampleOf boorgat:boorgat2006-002527, result:sam2024-325560-a .
+
+sam:sam2024-325560-a-1-a a prov:Activity ;
+                        prov:wasInformedBy sam:sam2024-325560-a-1 ;
+                        sosa:usedProcedure cl-behwaarde:gebroken_manueel_in_mortier ;
+                        prov:endedAtTime  "2020-01-05T00:00:00.000"^^xsd:dateTime .
+sam:sam2024-325560-a-1-b a prov:Activity ;
+                         prov:wasInformedBy sam:sam2024-325560-a-1 ;
+                         sosa:usedProcedure cl-behwaarde:gemalen_messenmolen ;
+                         prov:endedAtTime  "2020-01-05T00:00:00.000"^^xsd:dateTime .
+sam:sam2024-325560-a-1-c a prov:Activity ;
+                         prov:wasInformedBy sam:sam2024-325560-a-1 ;
+                         sosa:usedProcedure cl-behwaarde:gezeefd_2mm_zeef ;
+                         prov:endedAtTime  "2020-01-05T00:00:00.000"^^xsd:dateTime .
