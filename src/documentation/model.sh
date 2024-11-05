@@ -26,10 +26,7 @@
   sparql --results=TTL --data=../result/inferred/grondboring-ssn-sosa-prov.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > model_grondboring_inferred.png
 
-<<<<<<< HEAD
-  sparql --results=TTL --data=../source/sample.ttl --query model.rq  > ./model.ttl
-  rdf2dot  ./model.ttl | dot -Tpng > sample.png
-=======
+
   sparql --results=TTL --data=../source/sample.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > sample.png
 
@@ -38,4 +35,9 @@
 
   sparql --results=TTL --data=../source/observation2.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > observation2.png
->>>>>>> 54da18c1f93037d288056cadde6e533f01dfa7b0
+
+  sparql --results=TTL --data=../source/interpretaties.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > interpretaties.png
+
+  sparql --results=TTL --data=../source/interpretaties-cube.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > interpretaties-cube.png
