@@ -26,11 +26,16 @@
 @prefix cl-mat:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/> .
 @prefix cl-mmt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/> .
 @prefix cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
+@prefix cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
 @prefix cl-opt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/> .
 @prefix cl-vocht:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/vochtgehaltetype/> .
+@prefix cl-interpretatie:    <https://data.bodemenondergrond.vlaanderen.be/id/concept/interpretatie/> .
+@prefix componentspecification:    <https://data.bodemenondergrond.vlaanderen.be/id/componentspecification/> .
 @prefix concept:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
 @prefix datum:               <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
 @prefix dcterms:             <http://purl.org/dc/terms/> .
+
+@prefix dsd:              <https://data.bodemenondergrond.vlaanderen.be/id/dsd/> .
 @prefix formstrat:           <https://data.bodemenondergrond.vlaanderen.be/id/formelestratigrafie/> .
 @prefix geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
 @prefix geosparql:           <http://www.opengis.net/ont/geosparql#> .
@@ -41,7 +46,7 @@
 @prefix grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/> .
 @prefix hel:                 <https://data.bodemenondergrond.vlaanderen.be/id/helling/> .
 @prefix her:                 <https://data.bodemenondergrond.vlaanderen.be/id/herkomst/> .
-@prefix herh:                <https://data.bodemenondergrond.vlaanderen.be/id/herhaling> .
+@prefix herh:                <https://data.bodemenondergrond.vlaanderen.be/id/herhaling/> .
 @prefix id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/> .
 @prefix incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/> .
 @prefix interp:              <https://data.bodemenondergrond.vlaanderen.be/id/interpretatie/> .
@@ -106,42 +111,86 @@ bodemenondergrond:Interpretatie a rdf:Class ;
 bodemenondergrond:Diepte a rdf:Class ;
         rdfs:label "Een maat voor de diepte van een boorgat, of diepte waar een monster uit een boorgat is genomen, uitgedrukt in meter."@nl .
 
+# Properties
+
+bodemenondergrond:type a rdf:Property, qb:DimensionProperty, qb:CodedProperty ;
+                       rdfs:subPropertyOf dcterms:type .
+
+
+bodemenondergrond:consistentie a rdf:Property, qb:CodedProperty ;
+                                   rdfs:subPropertyOf sosa:hasResult .
+
+
+bodemenondergrond:kleur a rdf:Property, qb:CodedProperty ;
+                        rdfs:subPropertyOf sosa:hasResult .
+
+bodemenondergrond:vochtgehalte a rdf:Property, qb:CodedProperty ;
+                               rdfs:subPropertyOf sosa:hasResult .
+
+bodemenondergrond:beschrijving a rdf:Property ;
+                               rdfs:subPropertyOf sosa:hasSimpleResult .
+
+# Data structure definition
+dsd:lithologische_beschrijving a qb:DataStructureDefinition;
+                               rdfs:comment "Datastructuur van een Lithologische beschrijving"@nl;
+                               qb:component componentspecification:type, componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:beschrijving .
+
+#Component specification
+componentspecification:type a   qb:ComponentSpecification ;
+                            rdfs:label        "type ComponentSpecification"@nl ;
+                            qb:dimension       bodemenondergrond:type .
+
+componentspecification:diepteVan a   qb:ComponentSpecification ;
+                                 rdfs:label        "diepteVan ComponentSpecification"@nl ;
+                                 qb:dimension       bodemenondergrond:diepteVan .
+
+componentspecification:diepteTot a   qb:ComponentSpecification ;
+                                 rdfs:label        "diepteTot ComponentSpecification"@nl ;
+                                 qb:dimension       bodemenondergrond:diepteTot .
+
+componentspecification:beschrijving a   qb:ComponentSpecification ;
+                                    rdfs:label        "beschrijving ComponentSpecification"@nl ;
+                                    qb:measure       bodemenondergrond:beschrijving .
+
+componentspecification:vochtgehalte a   qb:ComponentSpecification ;
+                                    rdfs:label        "vochtgehalte ComponentSpecification"@nl ;
+                                    qb:dimension       bodemenondergrond:vochtgehalte .
+
+componentspecification:consistentie a   qb:ComponentSpecification ;
+                                    rdfs:label        "consistentie ComponentSpecification"@nl ;
+                                    qb:dimension       bodemenondergrond:consistentie .
+
+componentspecification:kleur a   qb:ComponentSpecification ;
+                                    rdfs:label        "kleur ComponentSpecification"@nl ;
+                                    qb:dimension       bodemenondergrond:kleur .
+
 
 ### Properties (verschillende instances van de klasse Interpretatie)
 
-bodemenondergrond:lithologischeBeschrijving  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:lithologischeBeschrijving  a skos:Concept.
 
-bodemenondergrond:formeleStratigrafie  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:formeleStratigrafie  a skos:Concept.
 
-bodemenondergrond:informeleStratigrafie  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:informeleStratigrafie  a skos:Concept.
 
-bodemenondergrond:quartaireStratigrafie  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:quartaireStratigrafie  a skos:Concept.
 
-bodemenondergrond:informeleHydrostratigrafie  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:informeleHydrostratigrafie  a skos:Concept.
 
-bodemenondergrond:gecodeerdeLithologie  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:gecodeerdeLithologie  a skos:Concept.
 
-bodemenondergrond:geotechnischeCodering  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:geotechnischeCodering  a skos:Concept.
 
-bodemenondergrond:hydrogeologischeStratigrafieV1  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:hydrogeologischeStratigrafieV1  a skos:Concept.
 
-bodemenondergrond:hydrogeologischeStratigrafieV2  a rdf:Property ;
-        rdfs:range bodemenondergrond:Interpretatie .
+cl-interpretatie:hydrogeologischeStratigrafieV2  a skos:Concept.
 
 
-bodemenondergrond:IntervDiepteVan  a rdf:Property ;
-                                 rdfs:range bodemenondergrond:Diepte .
+bodemenondergrond:diepteVan  a rdf:Property ;
+                                 rdfs:range qudt:QuantityValue .
 
-bodemenondergrond:IntervDiepteTot  a rdf:Property ;
-                                 rdfs:range bodemenondergrond:Diepte .
+bodemenondergrond:diepteTot  a rdf:Property ;
+                                 rdfs:range qudt:QuantityValue .
 
 
 ### Individuals
@@ -151,52 +200,51 @@ obs:cons1998-109514 a sosa:Observation ;
         rdfs:label "Consistentie boorgat 1998-109514"@nl ;
         sosa:hasResult  result:cons1998-109514 ;
         sosa:resultTime "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
-        sosa:observedProperty obs_prop:cons1998-109514 ;
+        sosa:observedProperty prop:consistentie ;
         sosa:usedProcedure  cl-bpt:bepalen_consistentie_boorgat ;
         ssn:wasOriginatedBy   opdracht:1998-002814 ;
         sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche boring
         sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 .
 
 
-obs_prop:cons1998-109514 a sosa:ObservableProperty ;
-        dcterms:subject prop:consistentie ;
+prop:consistentie a sosa:ObservableProperty ;
         ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
-result:cons1998-109514 a rdf:List ;
-    rdf:first result:cons1998-109514-1 ;
-    rdf:rest list:cons1998-109514-2 .
+result:cons1998-109514 a qb:observationGroup ;
+    rdfs:label "Observation group consistentie boorgat 1998-109514"@nl ;
+    qb:observation result:cons1998-109514-1 ;
+    qb:observation result:cons1998-109514-2 ;
+    qb:observation result:cons1998-109514-3 ;
+    qb:observation result:cons1998-109514-4  .
 
-list:cons1998-109514-2 a rdf:List ;
-    rdf:first result:cons1998-109514-2 ;
-    rdf:rest list:cons1998-109514-3 .
-
-list:cons1998-109514-3 a rdf:List ;
-    rdf:first result:cons1998-109514-3 ;
-    rdf:rest list:cons1998-109514-4 .
-
-list:cons1998-109514-4 a rdf:List ;
-    rdf:first result:cons1998-109514-4 ;
-    rdf:rest rdf:nil .
 # Dit is niet het laatste interval voor consistentie uit de DOV-fiche van boringen, maar dient enkel als voorbeeld.
 
-result:cons1998-109514-1 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:cons1998-109514-1-van ;
-    bodemenondergrond:IntervDiepteTot result:cons1998-109514-1-tot ;
+result:cons1998-109514-1 a qb:Observation ;
+sosa:observedProperty prop:consistentie ;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:cons1998-109514-1-van ;
+    bodemenondergrond:diepteTot result:cons1998-109514-1-tot ;
     bodemenondergrond:consistentie cl-cons:3 . # skos:prefLabel "plastisch"
 
-result:cons1998-109514-2 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:cons1998-109514-2-van ;
-    bodemenondergrond:IntervDiepteTot result:cons1998-109514-2-tot ;
+result:cons1998-109514-2 a qb:Observation ;
+sosa:observedProperty prop:consistentie ;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:cons1998-109514-2-van ;
+    bodemenondergrond:diepteTot result:cons1998-109514-2-tot ;
     bodemenondergrond:consistentie cl-cons:2 . # skos:prefLabel "slap"
 
-result:cons1998-109514-3 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:cons1998-109514-3-van ;
-    bodemenondergrond:IntervDiepteTot result:cons1998-109514-3-tot ;
+result:cons1998-109514-3 a qb:Observation ;
+sosa:observedProperty prop:consistentie ;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:cons1998-109514-3-van ;
+    bodemenondergrond:diepteTot result:cons1998-109514-3-tot ;
     bodemenondergrond:consistentie cl-cons:5 . # skos:prefLabel "vast"
 
-result:cons1998-109514-4 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:cons1998-109514-4-van ;
-    bodemenondergrond:IntervDiepteTot result:cons1998-109514-4-tot ;
+result:cons1998-109514-4 a qb:Observation ;
+sosa:observedProperty prop:consistentie ;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:cons1998-109514-4-van ;
+    bodemenondergrond:diepteTot result:cons1998-109514-4-tot ;
     bodemenondergrond:consistentie cl-cons:3 . # skos:prefLabel "plastisch"
 
     
@@ -239,33 +287,33 @@ obs:vocht1998-109514 a sosa:Observation ;
         rdfs:label "Vochtgehalte boorgat 1998-109514"@nl ;
         sosa:hasResult  result:vocht1998-109514 ;
         sosa:resultTime "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
-        sosa:observedProperty obs_prop:vocht1998-109514 ;
+        sosa:observedProperty prop:vochtgehalte ;
         sosa:usedProcedure  cl-bpt:bepalen_vochtgehalte_boorgat ;
         ssn:wasOriginatedBy   opdracht:1998-002814 ;
         sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche boring
         sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 .
 
-obs_prop:vocht1998-109514 a sosa:ObservableProperty ;
-        dcterms:subject prop:vochtgehalte ;
+prop:vochtgehalte a sosa:ObservableProperty ;
         ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
-result:vocht1998-109514 a rdf:List ;
-    rdf:first result:vocht1998-109514-1 ;
-    rdf:rest list:vocht1998-109514-2 .
-
-list:vocht1998-109514-2 a rdf:List ;
-    rdf:first result:vocht1998-109514-2 ;
-    rdf:rest rdf:nil .
+result:vocht1998-109514  a qb:observationGroup ;
+    rdfs:label "Observation group vochtgehalte boorgat 1998-109514"@nl ;
+    qb:observation result:vocht1998-109514-1 ;
+    qb:observation result:vocht1998-109514-2 .
 
 
-result:vocht1998-109514-1 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:vocht1998-109514-1-van ;
-    bodemenondergrond:IntervDiepteTot result:vocht1998-109514-1-tot ;
+result:vocht1998-109514-1 a qb:Observation ;
+sosa:observedProperty prop:vochtgehalte;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:vocht1998-109514-1-van ;
+    bodemenondergrond:diepteTot result:vocht1998-109514-1-tot ;
     bodemenondergrond:vochtgehalte cl-vocht:3 . # skos:prefLabel "vochtig"
 
-result:vocht1998-109514-2 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:vocht1998-109514-2-van ;
-    bodemenondergrond:IntervDiepteTot result:vocht1998-109514-2-tot ;
+result:vocht1998-109514-2 a qb:Observation ;
+sosa:observedProperty prop:vochtgehalte;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:vocht1998-109514-2-van ;
+    bodemenondergrond:diepteTot result:vocht1998-109514-2-tot ;
     bodemenondergrond:vochtgehalte cl-vocht:5 . # skos:prefLabel "verzadigd"
 
     
@@ -291,51 +339,49 @@ obs:kleur1998-109514 a sosa:Observation ;
         rdfs:label "Kleur boorgat 1998-109514"@nl ;
         sosa:hasResult  result:kleur1998-109514 ;
         sosa:resultTime "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
-        sosa:observedProperty obs_prop:kleur1998-109514 ;
+        sosa:observedProperty prop:kleur ;
         sosa:usedProcedure  cl-bpt:bepalen_kleur_boorgat ;
         ssn:wasOriginatedBy   opdracht:1998-002814 ;
         sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche boring
         sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 .
 
-obs_prop:kleur1998-109514 a sosa:ObservableProperty ;
-        dcterms:subject prop:kleur ;
+prop:kleur a sosa:ObservableProperty ;
         ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
-result:kleur1998-109514 a rdf:List ;
-    rdf:first result:kleur1998-109514-1 ;
-    rdf:rest list:kleur1998-109514-2 .
-
-list:kleur1998-109514-2 a rdf:List ;
-    rdf:first result:kleur1998-109514-2 ;
-    rdf:rest list:kleur1998-109514-3 .
-
-list:kleur1998-109514-3 a rdf:List ;
-    rdf:first result:kleur1998-109514-3 ;
-    rdf:rest list:kleur1998-109514-4 .
-
-list:kleur1998-109514-4 a rdf:List ;
-    rdf:first result:kleur1998-109514-4 ;
-    rdf:rest rdf:nil .
+result:kleur1998-109514 a qb:observationGroup ;
+    rdfs:label "Kleur boorgat 1998-109514"@nl ;
+    qb:observation result:kleur1998-109514-1 ;
+    qb:observation result:kleur1998-109514-2 ;
+    qb:observation result:kleur1998-109514-3 ;
+    qb:observation result:kleur1998-109514-4 .
 # Dit is niet het laatste interval voor kleur uit de DOV-fiche van boringen, maar dient enkel als voorbeeld.
 
-result:kleur1998-109514-1 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:kleur1998-109514-1-van ;
-    bodemenondergrond:IntervDiepteTot result:kleur1998-109514-1-tot ;
+result:kleur1998-109514-1 a qb:Observation ;
+sosa:observedProperty prop:kleur;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:kleur1998-109514-1-van ;
+    bodemenondergrond:diepteTot result:kleur1998-109514-1-tot ;
     bodemenondergrond:kleur cl-kleur:3 . # skos:prefLabel "bruin"
 
-result:kleur1998-109514-2 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:kleur1998-109514-2-van ;
-    bodemenondergrond:IntervDiepteTot result:kleur1998-109514-2-tot ;
+result:kleur1998-109514-2 a qb:Observation ;
+sosa:observedProperty prop:kleur;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:kleur1998-109514-2-van ;
+    bodemenondergrond:diepteTot result:kleur1998-109514-2-tot ;
     bodemenondergrond:kleur cl-kleur:15 . # skos:prefLabel "bruingrijs"
 
-result:kleur1998-109514-3 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:kleur1998-109514-3-van ;
-    bodemenondergrond:IntervDiepteTot result:kleur1998-109514-3-tot ;
+result:kleur1998-109514-3 a qb:Observation ;
+sosa:observedProperty prop:kleur;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:kleur1998-109514-3-van ;
+    bodemenondergrond:diepteTot result:kleur1998-109514-3-tot ;
     bodemenondergrond:kleur cl-kleur:5 . # skos:prefLabel "grijs"
 
-result:kleur1998-109514-4 a bodemenondergrond:interval ;
-    bodemenondergrond:IntervDiepteVan result:kleur1998-109514-4-van ;
-    bodemenondergrond:IntervDiepteTot result:kleur1998-109514-4-tot ;
+result:kleur1998-109514-4 a qb:Observation ;
+sosa:observedProperty prop:kleur;
+ sosa:hasFeatureOfInterest  boorgat:boorgat1998-109514 ; ;
+    bodemenondergrond:diepteVan result:kleur1998-109514-4-van ;
+    bodemenondergrond:diepteTot result:kleur1998-109514-4-tot ;
     bodemenondergrond:kleur cl-kleur:52 . # skos:prefLabel "grijsbruin"
 
     
@@ -373,66 +419,50 @@ result:kleur1998-109514-4-tot a qudt:QuantityValue ;
 
 
 
+
 # Lithologische beschrijving: diepte_van, diepte_tot, beschrijving, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
-interp:1983-215741 a bodemenondergrond:Interpretatie ;
+interp:1983-215741 a qb:observationGroup , bodemenondergrond:Interpretatie ;
+       dcterms:type cl-interpretatie:lithologischeBeschrijving ;
         rdfs:label "Lithologische beschrijving op locatie van boorgat 1983-024193"@nl ;
         sosa:resultTime "1984-10-19T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren lithologische beschrijving
         prov:startedAtTime "1983-10-19T00:00:00.000"^^xsd:dateTime ;
         prov:endedAtTime  "1984-10-19T00:00:00.000"^^xsd:dateTime ;
-        bodemenondergrond:lithologischeBeschrijving lithbesch:1983-215741 ;
+        #bodemenondergrond:lithologischeBeschrijving lithbesch:1983-215741 ;
         bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
         ssn:wasOriginatedBy   opdracht:2013-006419, opdracht:1981-012309 ;
         prov:wasStartedBy      opdracht:2013-006419, opdracht:1981-012309 ;
         sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche interpretatie
         ssn:hasProperty  betrouwbaarheid:interp1983-215741 ;
-        prov:atLocation result:geometrie1965-068140 . # de 2D geometrie van het boorgat wordt hier hergebruikt. Het is geen feature of interest aangezien de interpretatie uitgevoerd werd op basis van een aantal factoren, waaronder (maar dus niet alleen) het boorgat, zijn monsters, andere modellen, kaarten, enz...
-
-
-opdracht:2007-005512  a  bodemenondergrond:Opdracht ;
-                      prov:wasAttributedTo agent:agent003 .
-
-opdracht:1981-012309  a  bodemenondergrond:Opdracht ;
-                      prov:wasAttributedTo agent:agent003 .
-
-lithbesch:1983-215741 a bodemenondergrond:lithologischeBeschrijving ;
-        bodemenondergrond:intervallen list:interp1983-215741-1 .
-
-list:interp1983-215741-1 a rdf:List ;
-        rdf:first lithbesch:1983-215741-1 ;
-        rdf:rest list:interp1983-215741-2 .
-
-list:interp1983-215741-2  a rdf:List ;
-        rdf:first lithbesch:1983-215741-2 ;
-        rdf:rest list:interp1983-215741-3 .
-
-list:interp1983-215741-3 a rdf:List ;
-        rdf:first lithbesch:1983-215741-3 ;
-        rdf:rest list:interp1983-215741-4 .
-
-list:interp1983-215741-4 a rdf:List ;
-        rdf:first lithbesch:1983-215741-4 ;
-        rdf:rest rdf:nil .
+        prov:atLocation result:geometrie1965-068140 ; # de 2D geometrie van het boorgat wordt hier hergebruikt. Het is geen feature of interest aangezien de interpretatie uitgevoerd werd op basis van een aantal factoren, waaronder (maar dus niet alleen) het boorgat, zijn monsters, andere modellen, kaarten, enz...
+        qb:observation lithbesch:1983-215741-1 ;
+        qb:observation lithbesch:1983-215741-2 ;
+        qb:observation lithbesch:1983-215741-3 ;
+        qb:observation lithbesch:1983-215741-4 .
 # Dit is uiteraard de laatste niet uit de DOV-fiche, maar dient enkel als voorbeeld.
 
-lithbesch:1983-215741-1 a bodemenondergrond:interval ;
-        bodemenondergrond:IntervDiepteVan lithbesch:1983-215741-1-van ;
-        bodemenondergrond:IntervDiepteTot lithbesch:1983-215741-1-tot ;
-        bodemenondergrond:beschrijving "bruingrijs leemhoudend fijn tot zeer fijn zand met bovenaan wortels, silexgrind en plaatselijke okervlek" .
+lithbesch:1983-215741-1 a qb:Observation   ;
+        dcterms:type cl-interpretatie:lithologischeBeschrijving ;
+        bodemenondergrond:diepteVan lithbesch:1983-215741-1-van ;
+        bodemenondergrond:diepteTot lithbesch:1983-215741-1-tot ;
+        bodemenondergrond:beschrijving "bruingrijs leemhoudend fijn tot zeer fijn zand met bovenaan wortels, silexgrind en plaatselijke okervlek"@nl .
 
-lithbesch:1983-215741-2 a bodemenondergrond:interval ;
-        bodemenondergrond:IntervDiepteVan lithbesch:1983-215741-2-van ;
-        bodemenondergrond:IntervDiepteTot lithbesch:1983-215741-2-tot ;
-        bodemenondergrond:beschrijving "donkerbruin tot zwart fijn tot middelmatig zand met roestbruine concreties en zeer fijn kwartsgrind" .
+lithbesch:1983-215741-2 a qb:Observation   ;
+                            dcterms:type cl-interpretatie:lithologischeBeschrijving ;
+        bodemenondergrond:diepteVan lithbesch:1983-215741-2-van ;
+        bodemenondergrond:diepteTot lithbesch:1983-215741-2-tot ;
+        bodemenondergrond:beschrijving "donkerbruin tot zwart fijn tot middelmatig zand met roestbruine concreties en zeer fijn kwartsgrind"@nl .
 
-lithbesch:1983-215741-3 a bodemenondergrond:interval ;
-        bodemenondergrond:IntervDiepteVan lithbesch:1983-215741-3-van ;
-        bodemenondergrond:IntervDiepteTot lithbesch:1983-215741-3-tot ;
-        bodemenondergrond:beschrijving "roestbruin fijn tot middelmatig zand, plaatselijk iets verkit" .
+lithbesch:1983-215741-3 a qb:Observation  ;
+        dcterms:type cl-interpretatie:lithologischeBeschrijving ;
+        bodemenondergrond:diepteVan lithbesch:1983-215741-3-van ;
+        bodemenondergrond:diepteTot lithbesch:1983-215741-3-tot ;
+        bodemenondergrond:beschrijving "roestbruin fijn tot middelmatig zand, plaatselijk iets verkit"@nl .
 
-lithbesch:1983-215741-4 a bodemenondergrond:interval ;
-        bodemenondergrond:IntervDiepteVan lithbesch:1983-215741-4-van ;
-        bodemenondergrond:IntervDiepteTot lithbesch:1983-215741-4-tot ;
-        bodemenondergrond:beschrijving "lichtgroengrijze leemhoudende klei met okervlekken en plaatselijk dunne zandhoudende kleilaagjes" .
+lithbesch:1983-215741-4 a qb:Observation  ;
+                            dcterms:type cl-interpretatie:lithologischeBeschrijving ;
+        bodemenondergrond:diepteVan lithbesch:1983-215741-4-van ;
+        bodemenondergrond:diepteTot lithbesch:1983-215741-4-tot ;
+        bodemenondergrond:beschrijving "lichtgroengrijze leemhoudende klei met okervlekken en plaatselijk dunne zandhoudende kleilaagjes"@nl .
 
 lithbesch:1983-215741-1-van a qudt:QuantityValue ;
         qudt:value 0.0 ;
@@ -508,45 +538,37 @@ bl:interp1983-215741-2   a  bodemenondergrond:Bijlage;
 
 
 
+
 # Formele stratigrafie: diepte_van, diepte_tot, beschrijving, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
-interp:1991-098767 a bodemenondergrond:Interpretatie ;
+interp:1991-098767 a qb:observationGroup , bodemenondergrond:Interpretatie ;
+                   dcterms:type cl-interpretatie:formeleStratigrafie ;
         rdfs:label "Formele stratigrafie op locatie van boorgat 1965-068140"@nl ;
         sosa:resultTime "1991-06-25T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren formele stratigrafie
-        bodemenondergrond:formeleStratigrafie formstrat:1991-098767 ;
+        #bodemenondergrond:formeleStratigrafie formstrat:1991-098767 ;
         bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
         sosa:madeBySensor  agent:agent003 ; # auteur in de DOV-fiche interpretatie
-        prov:atLocation result:geometrie1965-068140 . # de 2D geometrie van het boorgat wordt hier hergebruikt. Het is geen feature of interest aangezien de interpretatie uitgevoerd werd op basis van een aantal factoren, waaronder (maar dus niet alleen) het boorgat, zijn monsters, andere modellen, kaarten, enz...
+        prov:atLocation result:geometrie1965-068140 ; # de 2D geometrie van het boorgat wordt hier hergebruikt. Het is geen feature of interest aangezien de interpretatie uitgevoerd werd op basis van een aantal factoren, waaronder (maar dus niet alleen) het boorgat, zijn monsters, andere modellen, kaarten, enz...
+        qb:observation formstrat:1991-098767-1 ;
+        qb:observation formstrat:1991-098767-2 ;
+        qb:observation formstrat:1991-098767-3 .
 
 
-formstrat:1991-098767 a bodemenondergrond:formeleStratigrafie ;
-        bodemenondergrond:intervallen list:interp1991-098767-1 .
-
-list:interp1991-098767-1 a rdf:List ;
-        rdf:first formstrat:1991-098767-1 ;
-        rdf:rest list:interp1991-098767-2 .
-
-list:interp1991-098767-2  a rdf:List ;
-        rdf:first formstrat:1991-098767-2 ;
-        rdf:rest list:interp1991-098767-3 .
-
-list:interp1991-098767-3 a rdf:List ;
-        rdf:first formstrat:1991-098767-3 ;
-        rdf:rest rdf:nil .
-
-
-formstrat:1991-098767-1 a bodemenondergrond:interval ;
-        bodemenondergrond:IntervDiepteVan formstrat:1991-098767-1-van ;
-        bodemenondergrond:IntervDiepteTot formstrat:1991-098767-1-tot ;
+formstrat:1991-098767-1 a qb:Observation  ;
+                            dcterms:type cl-interpretatie:formeleStratigrafie ;
+        bodemenondergrond:diepteVan formstrat:1991-098767-1-van ;
+        bodemenondergrond:diepteTot formstrat:1991-098767-1-tot ;
         bodemenondergrond:lid1 "bruingrijs leemhoudend fijn tot zeer fijn zand met bovenaan wortels, silexgrind en plaatselijke okervlek" .
 
-formstrat:1991-098767-2 a bodemenondergrond:interval ;
-        bodemenondergrond:IntervDiepteVan formstrat:1991-098767-2-van ;
-        bodemenondergrond:IntervDiepteTot formstrat:1991-098767-2-tot ;
+formstrat:1991-098767-2 a qb:Observation  ;
+                            dcterms:type cl-interpretatie:formeleStratigrafie ;
+        bodemenondergrond:diepteVan formstrat:1991-098767-2-van ;
+        bodemenondergrond:diepteTot formstrat:1991-098767-2-tot ;
         bodemenondergrond:lid1 "donkerbruin tot zwart fijn tot middelmatig zand met roestbruine concreties en zeer fijn kwartsgrind" .
 
-formstrat:1991-098767-3 a bodemenondergrond:interval ;
-        bodemenondergrond:IntervDiepteVan formstrat:1991-098767-3-van ;
-        bodemenondergrond:IntervDiepteTot formstrat:1991-098767-3-tot ;
+formstrat:1991-098767-3 a qb:Observation  ;
+                            dcterms:type cl-interpretatie:formeleStratigrafie ;
+        bodemenondergrond:diepteVan formstrat:1991-098767-3-van ;
+        bodemenondergrond:diepteTot formstrat:1991-098767-3-tot ;
         bodemenondergrond:lid1 "roestbruin fijn tot middelmatig zand, plaatselijk iets verkit" .
 
 
