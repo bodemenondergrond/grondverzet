@@ -54,14 +54,15 @@
 @prefix lithbesch:                 <https://data.bodemenondergrond.vlaanderen.be/id/lithologischebeschrijving/> .
 @prefix moment:                    <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
 @prefix mv:                        <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/> .
-@prefix obs:                       <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
 @prefix obs_prop:                  <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
 @prefix opdracht:                  <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
+@prefix observation:               <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
 @prefix opm:                       <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/> .
 @prefix periode:                   <https://data.bodemenondergrond.vlaanderen.be/id/periode/> .
 @prefix prop:                      <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/> .
 @prefix prov:                      <http://www.w3.org/ns/prov#> .
 @prefix qb:                        <http://purl.org/linked-data/cube#> .
+@prefix quantityvalue:             <https://data.bodemenondergrond.vlaanderen.be/id/quantityvalue/> .
 @prefix qudt:                      <http://qudt.org/schema/qudt/> .
 @prefix qudt-unit:                 <http://qudt.org/vocab/unit/> .
 @prefix rdf:                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -76,6 +77,8 @@
 @prefix sdmx-measure:              <http://purl.org/linked-data/sdmx/2009/measure#> .
 @prefix seb:                       <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#> .
 @prefix skos:                      <http://www.w3.org/2004/02/skos/core#> .
+@prefix slice:                     <https://data.bodemenondergrond.vlaanderen.be/id/slice/> .
+@prefix slicekey:                  <https://data.bodemenondergrond.vlaanderen.be/id/slicekey/> .
 @prefix sosa:                      <http://www.w3.org/ns/sosa/> .
 @prefix sosa-om:                   <http://www.w3.org/ns/sosa/om#> .
 @prefix sost:                      <http://rdf-vocabulary.ddialliance.org/sost#> .
@@ -117,6 +120,13 @@ bodemenondergrond:Interpretatie
 
 # Properties
 
+bodemenondergrond:diepteVan
+    a          rdf:Property ;
+    rdfs:range qudt:QuantityValue .
+
+bodemenondergrond:diepteTot
+    a          rdf:Property ;
+    rdfs:range qudt:QuantityValue .
 
 bodemenondergrond:type
     a                  rdf:Property, qb:DimensionProperty, qb:CodedProperty ;
@@ -127,21 +137,6 @@ bodemenondergrond:beoordeling
     a                  rdf:Property, qb:MeasureProperty, qb:CodedProperty ;
     rdfs:label         "kubus beoordeling property"@nl ;
     rdfs:comment       "generieke property voor consistentie, kleur, vochtgehalte, .... (coded lists) in een cube"@nl ;
-    rdfs:subPropertyOf sdmx-measure:obsValue .
-
-bodemenondergrond:consistentie
-    a                  rdf:Property, qb:CodedProperty, qb:MeasureProperty ;
-    rdfs:label         "kubus consistentie property"@nl ;
-    rdfs:subPropertyOf sdmx-measure:obsValue .
-
-bodemenondergrond:kleur
-    a                  rdf:Property, qb:CodedProperty, qb:MeasureProperty ;
-    rdfs:label         "kubus kleur property"@nl ;
-    rdfs:subPropertyOf sdmx-measure:obsValue .
-
-bodemenondergrond:vochtgehalte
-    a                  rdf:Property, qb:CodedProperty, qb:MeasureProperty ;
-    rdfs:label         "kubus vochtgehalte property"@nl ;
     rdfs:subPropertyOf sdmx-measure:obsValue .
 
 bodemenondergrond:beschrijving
@@ -171,6 +166,7 @@ dataset:cube_results
     a            qb:DataSet ;
     rdfs:label   "kubus resultaten"@nl ;
     rdfs:comment "Dataset van resultaten"@nl ;
+    qb:slice     slice:cons1998-109514 ;
     qb:structure dsd:cube_results .
 
 # Data structure definition
@@ -183,10 +179,23 @@ dsd:interpretatie
 dsd:cube_results
     a            qb:DataStructureDefinition ;
     rdfs:comment "Datastructuur van een cube observatie van een sosa result"@nl ;
+# slices
+    qb:sliceKey  slicekey:sliceBydepth ;
+# components
     qb:component componentspecification:onderwerp, componentspecification:eigenschap, componentspecification:diepteVan,
                  componentspecification:diepteTot, componentspecification:beoordeling .
 #componentspecification:vochtgehalte, componentspecification:consistentie, componentspecification:kleur, componentspecification:measureType .
 #zie: https://www.w3.org/TR/vocab-data-cube/#dsd-mm-dim
+
+
+### SliceKey
+slicekey:sliceBydepth
+    a                    qb:SliceKey ;
+    rdfs:label           "sliceByDepth SliceKey"@nl ;
+    rdfs:comment
+                         "Slice door eigenschap (sosa:observedProperty) en onderwerp (sosa:hasFeatureOfInterest) vast te zetten"@en ;
+    qb:componentProperty bodemenondergrond:onderwerp, bodemenondergrond:eigenschap .
+
 
 #Component specification
 componentspecification:measureType
@@ -235,17 +244,19 @@ componentspecification:kleur
     qb:measure bodemenondergrond:kleur .
 
 componentspecification:onderwerp
-    a            qb:ComponentSpecification ;
-    rdfs:label   "onderwerp  ComponentSpecification (sosa:hasFeatureOfInterest)"@nl ;
-    qb:dimension bodemenondergrond:onderwerp .
+    a                      qb:ComponentSpecification ;
+    rdfs:label             "onderwerp  ComponentSpecification (sosa:hasFeatureOfInterest)"@nl ;
+    qb:componentAttachment qb:ObservationGroup ;
+    qb:dimension           bodemenondergrond:onderwerp .
 
 componentspecification:eigenschap
-    a            qb:ComponentSpecification ;
-    rdfs:label   "eigenschap ComponentSpecification (sosa:observedProperty)"@nl ;
-    qb:dimension bodemenondergrond:eigenschap .
+    a                      qb:ComponentSpecification ;
+    rdfs:label             "eigenschap ComponentSpecification (sosa:observedProperty)"@nl ;
+    qb:componentAttachment qb:ObservationGroup ;
+    qb:dimension           bodemenondergrond:eigenschap .
 
 
-### Properties (verschillende instances van de klasse Interpretatie)
+### Concepten
 
 cl-interpretatie:lithologischeBeschrijving
     a skos:Concept .
@@ -275,22 +286,13 @@ cl-interpretatie:hydrogeologischeStratigrafieV2
     a skos:Concept .
 
 
-bodemenondergrond:diepteVan
-    a          rdf:Property ;
-    rdfs:range qudt:QuantityValue .
-
-bodemenondergrond:diepteTot
-    a          rdf:Property ;
-    rdfs:range qudt:QuantityValue .
-
-
 ### Individuals
 
 # Consistentie boorgat: diepte_van, diepte_tot, consistentie
-obs:cons1998-109514
+observation:cons1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Consistentie boorgat 1998-109514"@nl ;
-    sosa:hasResult            result:cons1998-109514 ;
+    sosa:hasResult            slice:cons1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:consistentie ;
     sosa:usedProcedure        cl-bpt:bepalen_consistentie_boorgat ;
@@ -303,100 +305,98 @@ prop:consistentie
     a                sosa:ObservableProperty ;
     ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
-result:cons1998-109514
-    a              qb:ObservationGroup ;
-    rdfs:label     "Observation group consistentie boorgat 1998-109514"@nl ;
-    qb:observation result:cons1998-109514-1 ;
-    qb:observation result:cons1998-109514-2 ;
-    qb:observation result:cons1998-109514-3 ;
-    qb:observation result:cons1998-109514-4 .
+slice:cons1998-109514
+    a                            qb:Slice ;
+    rdfs:label                   "Slice consistentie boorgat 1998-109514"@nl ;
+    bodemenondergrond:eigenschap prop:consistentie ;
+    bodemenondergrond:onderwerp  boorgat:boorgat1998-109514 ;
+    qb:observation               observation:cons1998-109514-1 ;
+    qb:observation               observation:cons1998-109514-2 ;
+    qb:observation               observation:cons1998-109514-3 ;
+    qb:observation               observation:cons1998-109514-4 .
 
 # Dit is niet het laatste interval voor consistentie uit de DOV-fiche van boringen, maar dient enkel als voorbeeld.
 #componentspecification:type, componentspecification:onderwerp, componentspecification:eigenschap, componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:beschrijving .
 
-result:cons1998-109514-1
+observation:cons1998-109514-1
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:consistentie ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:cons1998-109514-1-van ;
-    bodemenondergrond:diepteTot   result:cons1998-109514-1-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:cons1998-109514-1-van ;
+    bodemenondergrond:diepteTot   quantityvalue:cons1998-109514-1-tot ;
     bodemenondergrond:beoordeling cl-cons:3 .
 #bodemenondergrond:consistentie cl-cons:3 . # skos:prefLabel "plastisch"
 
-result:cons1998-109514-2
+observation:cons1998-109514-2
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:consistentie ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:cons1998-109514-2-van ;
-    bodemenondergrond:diepteTot   result:cons1998-109514-2-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:cons1998-109514-2-van ;
+    bodemenondergrond:diepteTot   quantityvalue:cons1998-109514-2-tot ;
     bodemenondergrond:beoordeling cl-cons:2 .
 #bodemenondergrond:consistentie cl-cons:2 . # skos:prefLabel "slap"
 
-result:cons1998-109514-3
+observation:cons1998-109514-3
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:consistentie ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:cons1998-109514-3-van ;
-    bodemenondergrond:diepteTot   result:cons1998-109514-3-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:cons1998-109514-3-van ;
+    bodemenondergrond:diepteTot   quantityvalue:cons1998-109514-3-tot ;
     bodemenondergrond:beoordeling cl-cons:5 .
 #bodemenondergrond:consistentie cl-cons:5 . # skos:prefLabel "vast"
 
-result:cons1998-109514-4
+observation:cons1998-109514-4
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:consistentie ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:cons1998-109514-4-van ;
-    bodemenondergrond:diepteTot   result:cons1998-109514-4-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:cons1998-109514-4-van ;
+    bodemenondergrond:diepteTot   quantityvalue:cons1998-109514-4-tot ;
     bodemenondergrond:beoordeling cl-cons:3 .
 #bodemenondergrond:consistentie cl-cons:3 . # skos:prefLabel "plastisch"
 
 
-result:cons1998-109514-1-van
+quantityvalue:cons1998-109514-1-van
     a          qudt:QuantityValue ;
     qudt:value 0.0 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-1-tot
+quantityvalue:cons1998-109514-1-tot
     a          qudt:QuantityValue ;
     qudt:value 6.0 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-2-van
+quantityvalue:cons1998-109514-2-van
     a          qudt:QuantityValue ;
     qudt:value 6.0 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-2-tot
+quantityvalue:cons1998-109514-2-tot
     a          qudt:QuantityValue ;
     qudt:value 7.5 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-3-van
+quantityvalue:cons1998-109514-3-van
     a          qudt:QuantityValue ;
     qudt:value 9.5 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-3-tot
+quantityvalue:cons1998-109514-3-tot
     a          qudt:QuantityValue ;
     qudt:value 11.0 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-4-van
+quantityvalue:cons1998-109514-4-van
     a          qudt:QuantityValue ;
     qudt:value 14.0 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-4-tot
+quantityvalue:cons1998-109514-4-tot
     a          qudt:QuantityValue ;
     qudt:value 14.5 ;
     qudt:unit  qudt-unit:M .
 
 
 # Vochtgehalte boorgat: diepte_van, diepte_tot, vochtgehalte
-obs:vocht1998-109514
+observation:vocht1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Vochtgehalte boorgat 1998-109514"@nl ;
-    sosa:hasResult            result:vocht1998-109514 ;
+    sosa:hasResult            slice:vocht1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:vochtgehalte ;
     sosa:usedProcedure        cl-bpt:bepalen_vochtgehalte_boorgat ;
@@ -408,58 +408,58 @@ prop:vochtgehalte
     a                sosa:ObservableProperty ;
     ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
-result:vocht1998-109514
-    a              qb:ObservationGroup ;
-    rdfs:label     "Observation group vochtgehalte boorgat 1998-109514"@nl ;
-    qb:observation result:vocht1998-109514-1 ;
-    qb:observation result:vocht1998-109514-2 .
+slice:vocht1998-109514
+    a                            qb:Slice ;
+    rdfs:label                   "Observation group vochtgehalte boorgat 1998-109514"@nl ;
+    bodemenondergrond:eigenschap prop:vochtgehalte ;
+    bodemenondergrond:onderwerp  boorgat:boorgat1998-109514 ;
+    qb:observation               observation:vocht1998-109514-1 ;
+    qb:observation               observation:vocht1998-109514-2 .
 
 
-result:vocht1998-109514-1
+observation:vocht1998-109514-1
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:vochtgehalte ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:vocht1998-109514-1-van ;
-    bodemenondergrond:diepteTot   result:vocht1998-109514-1-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:vocht1998-109514-1-van ;
+    bodemenondergrond:diepteTot   quantityvalue:vocht1998-109514-1-tot ;
     bodemenondergrond:beoordeling cl-vocht:3 .
 #bodemenondergrond:vochtgehalte cl-vocht:3 . # skos:prefLabel "vochtig"
 
-result:vocht1998-109514-2
+observation:vocht1998-109514-2
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:vochtgehalte ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:vocht1998-109514-2-van ;
-    bodemenondergrond:diepteTot   result:vocht1998-109514-2-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:vocht1998-109514-2-van ;
+    bodemenondergrond:diepteTot   quantityvalue:vocht1998-109514-2-tot ;
     bodemenondergrond:beoordeling cl-vocht:5 .
 #bodemenondergrond:vochtgehalte cl-vocht:5 . # skos:prefLabel "verzadigd"
 
 
-result:cons1998-109514-1-van
+quantityvalue:cons1998-109514-1-van
     a          qudt:QuantityValue ;
     qudt:value 0.0 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-1-tot
+quantityvalue:cons1998-109514-1-tot
     a          qudt:QuantityValue ;
     qudt:value 8.0 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-2-van
+quantityvalue:cons1998-109514-2-van
     a          qudt:QuantityValue ;
     qudt:value 8.0 ;
     qudt:unit  qudt-unit:M .
 
-result:cons1998-109514-2-tot
+quantityvalue:cons1998-109514-2-tot
     a          qudt:QuantityValue ;
     qudt:value 25.0 ;
     qudt:unit  qudt-unit:M .
 
 
 # Kleur boorgat: diepte_van, diepte_tot, kleur
-obs:kleur1998-109514
+observation:kleur1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Kleur boorgat 1998-109514"@nl ;
-    sosa:hasResult            result:kleur1998-109514 ;
+    sosa:hasResult            slice:kleur1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:kleur ;
     sosa:usedProcedure        cl-bpt:bepalen_kleur_boorgat ;
@@ -471,88 +471,86 @@ prop:kleur
     a                sosa:ObservableProperty ;
     ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
-result:kleur1998-109514
-    a              qb:ObservationGroup ;
-    rdfs:label     "Kleur boorgat 1998-109514"@nl ;
-    qb:observation result:kleur1998-109514-1 ;
-    qb:observation result:kleur1998-109514-2 ;
-    qb:observation result:kleur1998-109514-3 ;
-    qb:observation result:kleur1998-109514-4 .
+slice:kleur1998-109514
+    a                            qb:ObservationGroup ;
+    rdfs:label                   "Kleur boorgat 1998-109514"@nl ;
+    bodemenondergrond:eigenschap prop:kleur ;
+    bodemenondergrond:onderwerp  boorgat:boorgat1998-109514 ;
+    qb:observation               observation:kleur1998-109514-1 ;
+    qb:observation               observation:kleur1998-109514-2 ;
+    qb:observation               observation:kleur1998-109514-3 ;
+    qb:observation               observation:kleur1998-109514-4 .
 # Dit is niet het laatste interval voor kleur uit de DOV-fiche van boringen, maar dient enkel als voorbeeld.
 
-result:kleur1998-109514-1
+observation:kleur1998-109514-1
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:kleur ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:kleur1998-109514-1-van ;
-    bodemenondergrond:diepteTot   result:kleur1998-109514-1-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:kleur1998-109514-1-van ;
+    bodemenondergrond:diepteTot   quantityvalue:kleur1998-109514-1-tot ;
     bodemenondergrond:beoordeling cl-kleur:3 .
 #bodemenondergrond:kleur     cl-kleur:3 . # skos:prefLabel "bruin"
 
-result:kleur1998-109514-2
+observation:kleur1998-109514-2
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:kleur ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:kleur1998-109514-2-van ;
-    bodemenondergrond:diepteTot   result:kleur1998-109514-2-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:kleur1998-109514-2-van ;
+    bodemenondergrond:diepteTot   quantityvalue:kleur1998-109514-2-tot ;
     bodemenondergrond:beoordeling cl-kleur:15 .
 #bodemenondergrond:kleur     cl-kleur:15 . # skos:prefLabel "bruingrijs"
 
-result:kleur1998-109514-3
+observation:kleur1998-109514-3
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:kleur ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:kleur1998-109514-3-van ;
-    bodemenondergrond:diepteTot   result:kleur1998-109514-3-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:kleur1998-109514-3-van ;
+    bodemenondergrond:diepteTot   quantityvalue:kleur1998-109514-3-tot ;
     bodemenondergrond:beoordeling cl-kleur:5 .
 #bodemenondergrond:kleur     cl-kleur:5 . # skos:prefLabel "grijs"
 
-result:kleur1998-109514-4
+observation:kleur1998-109514-4
     a                             qb:Observation ;
-    bodemenondergrond:eigenschap  prop:kleur ;
-    bodemenondergrond:onderwerp   boorgat:boorgat1998-109514 ;
-    bodemenondergrond:diepteVan   result:kleur1998-109514-4-van ;
-    bodemenondergrond:diepteTot   result:kleur1998-109514-4-tot ;
+    qb:dataSet                    dataset:cube_results ;
+    bodemenondergrond:diepteVan   quantityvalue:kleur1998-109514-4-van ;
+    bodemenondergrond:diepteTot   quantityvalue:kleur1998-109514-4-tot ;
     bodemenondergrond:beoordeling cl-kleur:52 .
 #bodemenondergrond:kleur     cl-kleur:52 . # skos:prefLabel "grijsbruin"
 
 
-result:kleur1998-109514-1-van
+quantityvalue:kleur1998-109514-1-van
     a          qudt:QuantityValue ;
     qudt:value 0.0 ;
     qudt:unit  qudt-unit:M .
 
-result:kleur1998-109514-1-tot
+quantityvalue:kleur1998-109514-1-tot
     a          qudt:QuantityValue ;
     qudt:value 3.0 ;
     qudt:unit  qudt-unit:M .
 
-result:kleur1998-109514-2-van
+quantityvalue:kleur1998-109514-2-van
     a          qudt:QuantityValue ;
     qudt:value 3.0 ;
     qudt:unit  qudt-unit:M .
 
-result:kleur1998-109514-2-tot
+quantityvalue:kleur1998-109514-2-tot
     a          qudt:QuantityValue ;
     qudt:value 4.0 ;
     qudt:unit  qudt-unit:M .
 
-result:kleur1998-109514-3-van
+quantityvalue:kleur1998-109514-3-van
     a          qudt:QuantityValue ;
     qudt:value 4.0 ;
     qudt:unit  qudt-unit:M .
 
-result:kleur1998-109514-3-tot
+quantityvalue:kleur1998-109514-3-tot
     a          qudt:QuantityValue ;
     qudt:value 5.5 ;
     qudt:unit  qudt-unit:M .
 
-result:kleur1998-109514-4-van
+quantityvalue:kleur1998-109514-4-van
     a          qudt:QuantityValue ;
     qudt:value 5.5 ;
     qudt:unit  qudt-unit:M .
 
-result:kleur1998-109514-4-tot
+quantityvalue:kleur1998-109514-4-tot
     a          qudt:QuantityValue ;
     qudt:value 6.0 ;
     qudt:unit  qudt-unit:M .
