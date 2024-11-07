@@ -41,3 +41,6 @@
 
   sparql --results=TTL --data=../source/interpretaties-cube.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > interpretaties-cube.png
+
+  sparql --results=TTL --data=../source/interpretaties-cube-component_attachment.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > interpretaties-cube-component_attachment.png
