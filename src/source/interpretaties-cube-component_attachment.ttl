@@ -248,13 +248,13 @@ componentspecification:kleur
 componentspecification:onderwerp
     a                      qb:ComponentSpecification ;
     rdfs:label             "onderwerp  ComponentSpecification (sosa:hasFeatureOfInterest)"@nl ;
-    qb:componentAttachment qb:ObservationGroup ;
+    qb:componentAttachment qb:Slice ;
     qb:dimension           bodemenondergrond:onderwerp .
 
 componentspecification:eigenschap
     a                      qb:ComponentSpecification ;
     rdfs:label             "eigenschap ComponentSpecification (sosa:observedProperty)"@nl ;
-    qb:componentAttachment qb:ObservationGroup ;
+    qb:componentAttachment qb:Slice ;
     qb:dimension           bodemenondergrond:eigenschap .
 
 
