@@ -474,7 +474,7 @@ prop:kleur
     ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
 slice:kleur1998-109514
-    a                            qb:ObservationGroup ;
+    a                            qb:Slice ;
     rdfs:label                   "Kleur boorgat 1998-109514"@nl ;
     bodemenondergrond:eigenschap prop:kleur ;
     bodemenondergrond:onderwerp  boorgat:boorgat1998-109514 ;
