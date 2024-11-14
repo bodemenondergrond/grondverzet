@@ -109,6 +109,8 @@ bodemenondergrond:Diepte a rdf:Class ;
 
 ### Properties (verschillende instances van de klasse Interpretatie)
 
+bodemenondergrond:LithologischeBeschrijving  a rdf:Class .
+
 bodemenondergrond:lithologischeBeschrijving  a rdf:Property ;
         rdfs:range bodemenondergrond:Interpretatie .
 
@@ -394,7 +396,7 @@ opdracht:2007-005512  a  bodemenondergrond:Opdracht ;
 opdracht:1981-012309  a  bodemenondergrond:Opdracht ;
                       prov:wasAttributedTo agent:agent003 .
 
-lithbesch:1983-215741 a bodemenondergrond:lithologischeBeschrijving ;
+lithbesch:1983-215741 a bodemenondergrond:LithologischeBeschrijving ;
         bodemenondergrond:intervallen list:interp1983-215741-1 .
 
 list:interp1983-215741-1 a rdf:List ;

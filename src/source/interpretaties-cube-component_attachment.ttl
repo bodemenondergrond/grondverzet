@@ -625,7 +625,6 @@ sequence:interp1983-215741-1
     rdf:_4 observation:1983-215741-4 .
 
 
-
 observation:1983-215741-1
     a                           qb:Observation ;
     qb:dataSet                  dataset:interpretatie ;
