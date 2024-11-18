@@ -295,6 +295,7 @@ cl-interpretatie:hydrogeologischeStratigrafieV2
 observation:cons1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Consistentie boorgat 1998-109514"@nl ;
+    prov:atLocation  location:1965-068140 ;
     sosa:hasResult            slice:cons1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:consistentie ;
@@ -400,6 +401,7 @@ quantityvalue:cons1998-109514-4-tot
 observation:vocht1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Vochtgehalte boorgat 1998-109514"@nl ;
+    prov:atLocation  location:1965-068140 ;
     sosa:hasResult            slice:vocht1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:vochtgehalte ;
@@ -464,6 +466,7 @@ quantityvalue:cons1998-109514-2-tot
 observation:kleur1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Kleur boorgat 1998-109514"@nl ;
+    prov:atLocation  location:1965-068140 ;
     sosa:hasResult            slice:kleur1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:kleur ;
@@ -573,6 +576,7 @@ interp:1983-215741
     prov:endedAtTime                  "1984-10-19T00:00:00.000"^^xsd:dateTime ;
     sosa:hasResult                    observationgroup:interp1983-215741-1 ;
     sosa:hasFeatureOfInterest         location:1965-068140 ;
+    prov:atLocation  location:1965-068140 ;
 #bodemenondergrond:intervallen        list:interp1983-215741-1 ;
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     ssn:wasOriginatedBy               opdracht:2013-006419, opdracht:1981-012309 ;
@@ -747,12 +751,16 @@ bl:interp1983-215741-2
 location:1965-068140 a dcterms:Location ;
         geosparql:hasGeometry geometrie:1965-068140 .
 
+geometrie:1965-068140 a geosparql:Geometry ;
+        geosparql:asWKT "POINT (12.3456 56.7890)" .
+
 # Formele stratigrafie: diepte_van, diepte_tot, beschrijving, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
 observation:1991-098767
     a                                 sosa:Observation, bodemenondergrond:Interpretatie ;
     dcterms:type                      cl-interpretatie:formeleStratigrafie ;
     rdfs:label                        "Formele stratigrafie op locatie van boorgat 1965-068140"@nl ;
     sosa:hasFeatureOfInterest         location:1965-068140 ;
+    prov:atLocation  location:1965-068140 ;
     sosa:resultTime
                                       "1991-06-25T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren formele stratigrafie
     sosa:hasResult                    observationgroup:1991-098767 ;
