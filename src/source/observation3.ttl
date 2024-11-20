@@ -1,0 +1,503 @@
+PREFIX act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/>
+PREFIX adms:                <http://www.w3.org/ns/adms#>
+PREFIX agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/>
+PREFIX association:         <https://data.bodemenondergrond.vlaanderen.be/id/association/>
+PREFIX avp:                 <https://data.bodemenondergrond.vlaanderen.be/id/aanvangspeil/>
+PREFIX bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/>
+PREFIX betrouwbaarheid:     <https://data.bodemenondergrond.vlaanderen.be/id/betrouwbaarheid/>
+PREFIX bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/>
+PREFIX bodemenondergrond:   <https://data.vlaanderen.be/ns/bodem-en-ondergrond#>
+PREFIX boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/>
+PREFIX boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/>
+PREFIX boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/>
+PREFIX boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/>
+PREFIX cl-astm:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/parameterastm/>
+PREFIX cl-beh:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandeling/>
+PREFIX cl-behwaarde:        <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandelingswaarde/>
+PREFIX cl-betr:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/betrouwbaarheid/>
+PREFIX cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/>
+PREFIX cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/>
+PREFIX cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/>
+PREFIX cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/>
+PREFIX cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/>
+PREFIX cl-loc:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/>
+PREFIX cl-mat:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/>
+PREFIX cl-mmt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/>
+PREFIX cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/>
+PREFIX cl-opt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/>
+PREFIX cl-par:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/par/>
+PREFIX concept:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/>
+PREFIX datum:               <https://data.bodemenondergrond.vlaanderen.be/id/datum/>
+PREFIX dcterms:             <http://purl.org/dc/terms/>
+PREFIX geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/>
+PREFIX geosparql:           <http://www.opengis.net/ont/geosparql#>
+PREFIX gml:                 <http://www.opengis.net/ont/gml#>
+PREFIX gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/>
+PREFIX grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#>
+PREFIX grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#>
+PREFIX grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/>
+PREFIX hel:                 <https://data.bodemenondergrond.vlaanderen.be/id/helling/>
+PREFIX her:                 <https://data.bodemenondergrond.vlaanderen.be/id/herkomst/>
+PREFIX herh:                <https://data.bodemenondergrond.vlaanderen.be/id/herhaling>
+PREFIX id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/>
+PREFIX incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/>
+PREFIX list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/>
+PREFIX moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/>
+PREFIX mv:                  <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/>
+PREFIX obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/>
+PREFIX obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/>
+PREFIX opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/>
+PREFIX opm:                 <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/>
+PREFIX prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/>
+PREFIX prov:                <http://www.w3.org/ns/prov#>
+PREFIX qb:                  <http://purl.org/linked-data/cube#>
+PREFIX quantitykind:        <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt:                <http://qudt.org/schema/qudt/>
+PREFIX qudt-schema:         <https://qudt.org/schema/qudt/>
+PREFIX rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:                <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX result:              <https://data.bodemenondergrond.vlaanderen.be/id/result/>
+PREFIX richting:            <https://data.bodemenondergrond.vlaanderen.be/id/richting/>
+PREFIX rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/>
+PREFIX sam:                 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/>
+PREFIX sample:              <https://data.bodemenondergrond.vlaanderen.be/id/sample/>
+PREFIX schema:              <https://schema.org/>
+PREFIX sdmx-attribute:      <http://purl.org/linked-data/sdmx/2009/attribute#>
+PREFIX seb:                 <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#>
+PREFIX skos:                <http://www.w3.org/2004/02/skos/core#>
+PREFIX sondering:           <https://data.bodemenondergrond.vlaanderen.be/id/sondering/>
+PREFIX sosa:                <http://www.w3.org/ns/sosa/>
+PREFIX sosa-om:             <http://www.w3.org/ns/sosa/om#>
+PREFIX sost:                <http://rdf-vocabulary.ddialliance.org/sost#>
+PREFIX ssn:                 <http://www.w3.org/ns/ssn/>
+PREFIX ssn-system:          <http://www.w3.org/ns/ssn/systems/>
+PREFIX time:                <http://www.w3.org/2006/time#>
+PREFIX unit:                <https://qudt.org/vocab/unit/>
+PREFIX wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/>
+PREFIX xsd:                 <http://www.w3.org/2001/XMLSchema#>
+
+result:obs2022-4033232-11.2
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  5.5 .
+
+cl-opt:305-11.2  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  11.2
+                                                  ]
+                          ] .
+
+obs:2022-4033232-11.2
+        rdf:type                   sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 11.2 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-11.2;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-11.2 .
+
+result:obs2022-4033232-8
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  10.1 .
+
+cl-opt:305-8  rdf:type    sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  8
+                                                  ]
+                          ] .
+
+obs:2022-4033232-8  rdf:type       sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 8 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-8;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-8 .
+
+result:obs2022-4033232-5.6
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  11.6 .
+
+cl-opt:305-5.6  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  5.6
+                                                  ]
+                          ] .
+
+obs:2022-4033232-5.6  rdf:type     sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 5.6 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-5.6;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-5.6 .
+
+result:obs2022-4033232-4
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  13.3 .
+
+cl-opt:305-4  rdf:type    sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  4
+                                                  ]
+                          ] .
+
+obs:2022-4033232-4  rdf:type       sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 4 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-4;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-4 .
+
+result:obs2022-4033232-2.8
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  14.5 .
+
+cl-opt:305-2.8  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  2.8
+                                                  ]
+                          ] .
+
+obs:2022-4033232-2.8  rdf:type     sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 2.8 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-2.8;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-2.8 .
+
+result:obs2022-4033232-2
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  15.9 .
+
+cl-opt:305-2  rdf:type    sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  2
+                                                  ]
+                          ] .
+
+obs:2022-4033232-2  rdf:type       sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 2 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-2;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-2 .
+
+result:obs2022-4033232-1.4
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  17.2 .
+
+cl-opt:305-1.4  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  1.4
+                                                  ]
+                          ] .
+
+obs:2022-4033232-1.4  rdf:type     sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 1.4 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-1.4;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-1.4 .
+
+result:obs2022-4033232-1
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  18 .
+
+cl-opt:305-1  rdf:type    sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  1
+                                                  ]
+                          ] .
+
+obs:2022-4033232-1  rdf:type       sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 1 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-1;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-1 .
+
+result:obs2022-4033232-0.71
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  18.7 .
+
+cl-opt:305-0.71  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  0.71
+                                                  ]
+                          ] .
+
+obs:2022-4033232-0.71
+        rdf:type                   sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 0.71 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-0.71;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-0.71 .
+
+result:obs2022-4033232-0.5
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  19.4 .
+
+cl-opt:305-0.5  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  0.5
+                                                  ]
+                          ] .
+
+obs:2022-4033232-0.5  rdf:type     sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 0.5 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-0.5;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-0.5 .
+
+result:obs2022-4033232-0.355
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  19.9 .
+
+cl-opt:305-0.355  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  0.355
+                                                  ]
+                          ] .
+
+obs:2022-4033232-0.355
+        rdf:type                   sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 0.355 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-0.355;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-0.355 .
+
+result:obs2022-4033232-0.25
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  21.3 .
+
+cl-opt:305-0.25  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  0.25
+                                                  ]
+                          ] .
+
+obs:2022-4033232-0.25
+        rdf:type                   sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 0.25 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-0.25;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-0.25 .
+
+result:obs2022-4033232-0.18
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  24.4 .
+
+cl-opt:305-0.18  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  0.18
+                                                  ]
+                          ] .
+
+obs:2022-4033232-0.18
+        rdf:type                   sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 0.18 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-0.18;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-0.18 .
+
+result:obs2022-4033232-0.125
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  29.2 .
+
+cl-opt:305-0.125  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  0.125
+                                                  ]
+                          ] .
+
+obs:2022-4033232-0.125
+        rdf:type                   sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 0.125 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-0.125;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-0.125 .
+
+result:obs2022-4033232-0.09
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  42 .
+
+cl-opt:305-0.09  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  0.09
+                                                  ]
+                          ] .
+
+obs:2022-4033232-0.09
+        rdf:type                   sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 0.09 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-0.09;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-0.09 .
+
+result:obs2022-4033232-0.063
+        rdf:type    sosa:Result;
+        qudt:unit   unit:PERCENT;
+        qudt:value  65.6 .
+
+cl-opt:305-0.063  rdf:type  sosa:Procedure;
+        dcterms:isPartOf  cl-opt:305;
+        qudt:hasQuantity  [ qudt:hasQuantityKind  quantitykind:Diameter;
+                            qudt:quantityValue    [ qudt:unit   unit:MilliM;
+                                                    qudt:value  0.063
+                                                  ]
+                          ] .
+
+obs:2022-4033232-0.063
+        rdf:type                   sosa:Observation;
+        rdfs:label                 "bepaling van de fractie van een grondstaal dat groter is dan 0.063 millimeter"@nl;
+        prov:atLocation            her:obs2022-4033232;
+        prov:wasInformedBy         obs:2022-4033232;
+        sosa:hasFeatureOfInterest  result:sam2017-169209-a;
+        sosa:hasResult             result:obs2022-4033232-0.063;
+        sosa:madeBySensor          agent:agent003;
+        sosa:observedProperty      obs_prop:obs2022-4033232;
+        sosa:phenomenonTime        "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
+        sosa:usedProcedure         cl-opt:305-0.063 .
+
+cl-opt:305  rdf:type   prov:Plan;
+        skos:notation  "Zeving" .
+
+cl-opt:305-11.2  rdf:type  sosa:Procedure;
+        skos:broader cl-opt:305 ;
+        skos:prefLabel   "Zeving met een diameter van 11.2 mm"@nl ;
+        bodemenondergrond:zeefdiameter [ qudt:unit   unit:MilliM;
+                                         qudt:value  11.2
+                                       ].
+
+obs:2022-4033232  rdf:type         prov:Activity;
+        rdfs:label                 "bepaling van de fractie/Korrelverdeling van een grondstaal"@nl;
+        prov:qualifiedAssociation  [ a prov:Association ;
+                                         prov:agent    agent:agent003;
+                                     prov:hadPlan  cl-opt:305
+                                   ];
+        prov:wasAssociatedWith     agent:agent003 .
