@@ -52,6 +52,7 @@
 @prefix interp:                    <https://data.bodemenondergrond.vlaanderen.be/id/interpretatie/> .
 @prefix list:                      <https://data.bodemenondergrond.vlaanderen.be/id/list/> .
 @prefix lithbesch:                 <https://data.bodemenondergrond.vlaanderen.be/id/lithologischebeschrijving/> .
+@prefix location: <https://data.bodemenondergrond.vlaanderen.be/id/location/> .
 @prefix moment:                    <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
 @prefix mv:                        <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/> .
 @prefix obs_prop:                  <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
@@ -248,13 +249,13 @@ componentspecification:kleur
 componentspecification:onderwerp
     a                      qb:ComponentSpecification ;
     rdfs:label             "onderwerp  ComponentSpecification (sosa:hasFeatureOfInterest)"@nl ;
-    qb:componentAttachment qb:ObservationGroup ;
+    qb:componentAttachment qb:Slice ;
     qb:dimension           bodemenondergrond:onderwerp .
 
 componentspecification:eigenschap
     a                      qb:ComponentSpecification ;
     rdfs:label             "eigenschap ComponentSpecification (sosa:observedProperty)"@nl ;
-    qb:componentAttachment qb:ObservationGroup ;
+    qb:componentAttachment qb:Slice ;
     qb:dimension           bodemenondergrond:eigenschap .
 
 
@@ -294,6 +295,7 @@ cl-interpretatie:hydrogeologischeStratigrafieV2
 observation:cons1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Consistentie boorgat 1998-109514"@nl ;
+    prov:atLocation  location:1965-068140 ;
     sosa:hasResult            slice:cons1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:consistentie ;
@@ -310,6 +312,7 @@ prop:consistentie
 slice:cons1998-109514
     a                            qb:Slice ;
     rdfs:label                   "Slice consistentie boorgat 1998-109514"@nl ;
+    qb:sliceStructure slicekey:sliceBydepth ;
     bodemenondergrond:eigenschap prop:consistentie ;
     bodemenondergrond:onderwerp  boorgat:boorgat1998-109514 ;
     qb:observation               observation:cons1998-109514-1 ;
@@ -398,6 +401,7 @@ quantityvalue:cons1998-109514-4-tot
 observation:vocht1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Vochtgehalte boorgat 1998-109514"@nl ;
+    prov:atLocation  location:1965-068140 ;
     sosa:hasResult            slice:vocht1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:vochtgehalte ;
@@ -412,6 +416,7 @@ prop:vochtgehalte
 
 slice:vocht1998-109514
     a                            qb:Slice ;
+    qb:sliceStructure slicekey:sliceBydepth ;
     rdfs:label                   "Observation group vochtgehalte boorgat 1998-109514"@nl ;
     bodemenondergrond:eigenschap prop:vochtgehalte ;
     bodemenondergrond:onderwerp  boorgat:boorgat1998-109514 ;
@@ -461,6 +466,7 @@ quantityvalue:cons1998-109514-2-tot
 observation:kleur1998-109514
     a                         sosa:Observation ;
     rdfs:label                "Kleur boorgat 1998-109514"@nl ;
+    prov:atLocation  location:1965-068140 ;
     sosa:hasResult            slice:kleur1998-109514 ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:kleur ;
@@ -474,8 +480,9 @@ prop:kleur
     ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
 slice:kleur1998-109514
-    a                            qb:ObservationGroup ;
+    a                            qb:Slice ;
     rdfs:label                   "Kleur boorgat 1998-109514"@nl ;
+    qb:sliceStructure slicekey:sliceBydepth ;
     bodemenondergrond:eigenschap prop:kleur ;
     bodemenondergrond:onderwerp  boorgat:boorgat1998-109514 ;
     qb:observation               observation:kleur1998-109514-1 ;
@@ -568,15 +575,15 @@ interp:1983-215741
     prov:startedAtTime                "1983-10-19T00:00:00.000"^^xsd:dateTime ;
     prov:endedAtTime                  "1984-10-19T00:00:00.000"^^xsd:dateTime ;
     sosa:hasResult                    observationgroup:interp1983-215741-1 ;
-#bodemenondergrond:intervallen     list:interp1983-215741-1 ;
+    sosa:hasFeatureOfInterest         location:1965-068140 ;
+    prov:atLocation  location:1965-068140 ;
+#bodemenondergrond:intervallen        list:interp1983-215741-1 ;
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     ssn:wasOriginatedBy               opdracht:2013-006419, opdracht:1981-012309 ;
     prov:wasStartedBy                 opdracht:2013-006419, opdracht:1981-012309 ;
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A ;
 #ssn:hasProperty                   betrouwbaarheid:interp1983-215741 ;
-    prov:atLocation
-                                      result:geometrie1965-068140 ; # de 2D geometrie van het boorgat wordt hier hergebruikt. Het is geen feature of interest aangezien de interpretatie uitgevoerd werd op basis van een aantal factoren, waaronder (maar dus niet alleen) het boorgat, zijn monsters, andere modellen, kaarten, enz...
 .
 # Dit is uiteraard de laatste niet uit de DOV-fiche, maar dient enkel als voorbeeld.
 
@@ -623,7 +630,6 @@ sequence:interp1983-215741-1
     rdf:_2 observation:1983-215741-2 ;
     rdf:_3 observation:1983-215741-3 ;
     rdf:_4 observation:1983-215741-4 .
-
 
 
 observation:1983-215741-1
@@ -742,20 +748,25 @@ bl:interp1983-215741-2
     schema:about    interp:1983-215741 ;
     dcterms:date    "1983-10-19"^^xsd:date .
 
+location:1965-068140 a dcterms:Location ;
+        geosparql:hasGeometry geometrie:1965-068140 .
+
+geometrie:1965-068140 a geosparql:Geometry ;
+        geosparql:asWKT "POINT (12.3456 56.7890)" .
 
 # Formele stratigrafie: diepte_van, diepte_tot, beschrijving, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
 observation:1991-098767
     a                                 sosa:Observation, bodemenondergrond:Interpretatie ;
     dcterms:type                      cl-interpretatie:formeleStratigrafie ;
     rdfs:label                        "Formele stratigrafie op locatie van boorgat 1965-068140"@nl ;
+    sosa:hasFeatureOfInterest         location:1965-068140 ;
+    prov:atLocation  location:1965-068140 ;
     sosa:resultTime
                                       "1991-06-25T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren formele stratigrafie
     sosa:hasResult                    observationgroup:1991-098767 ;
 #bodemenondergrond:formeleStratigrafie formstrat:1991-098767 ;
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
-    prov:atLocation
-                                      result:geometrie1965-068140 ; # de 2D geometrie van het boorgat wordt hier hergebruikt. Het is geen feature of interest aangezien de interpretatie uitgevoerd werd op basis van een aantal factoren, waaronder (maar dus niet alleen) het boorgat, zijn monsters, andere modellen, kaarten, enz...
 .
 
 
