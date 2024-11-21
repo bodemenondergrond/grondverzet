@@ -36,6 +36,9 @@
   sparql --results=TTL --data=../source/observation2.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > observation2.png
 
+    sparql --results=TTL --data=../source/observation3.ttl --query model.rq  > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > observation3.png
+
   sparql --results=TTL --data=../source/interpretaties.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > interpretaties.png
 
