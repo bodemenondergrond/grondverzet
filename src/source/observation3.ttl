@@ -316,7 +316,6 @@ result:obs2022-4033232
 obs:2022-4033232  rdf:type         sosa:Observation;
                   rdfs:label                 "bepaling van de fractie van een grondstaal"@nl;
                   prov:atLocation            her:obs2022-4033232;
-                  prov:wasInformedBy         obs:2022-4033232;
                   sosa:hasFeatureOfInterest  result:sam2017-169209;
                   sosa:hasResult             result:obs2022-4033232;
                   sosa:madeBySensor          agent:agent003;
@@ -324,5 +323,5 @@ obs:2022-4033232  rdf:type         sosa:Observation;
                   sosa:resultTime            "2006-08-30T00:00:00.000"^^xsd:dateTime;
                   sosa:usedProcedure         cl-opt:305 .
 
-cl-opt:305  rdf:type   prov:Plan;
+cl-opt:305  rdf:type   sosa:Procedure;
             skos:notation  "Zeving" .
