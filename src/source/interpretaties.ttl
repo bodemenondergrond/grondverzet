@@ -1891,6 +1891,8 @@ cl-bijnaam:KL a skos:Concept ;
 cl-bijnaam:PVGH a skos:Concept ;
     rdfs:label "Plaatselijk veel glauconiethoudend" .
 
+cl-bijnaam:FZ a skos:Concept .
+
 cl-bijnaam:PWSH a skos:Concept ;
     rdfs:label "Plaatselijk Weinig silthoudend" .
 
