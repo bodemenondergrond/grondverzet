@@ -161,32 +161,24 @@ bodemenondergrond:eigenschap a rdf:Property, qb:DimensionProperty ;
     rdfs:label         "kubus eigenschap property"@nl ;
     rdfs:subPropertyOf sosa:observedProperty .
 
-bodemenondergrond:lithostratigrafischeEenheid1 a rdf:Property, qb:MeasureProperty ;
-    rdfs:label         "kubus jongste lithostratigrafische eenheid property"@nl ;
+bodemenondergrond:bovengrens a rdf:Property, qb:MeasureProperty ;
+    rdfs:label         "kubus jongste stratigrafische eenheid property"@nl ;
     rdfs:subPropertyOf sdmx-measure:obsValue .
 
-bodemenondergrond:lithostratigrafischeEenheid2 a rdf:Property, qb:MeasureProperty ;
-    rdfs:label         "kubus oudste lithostratigrafische eenheid property"@nl ;
+bodemenondergrond:ondergrens a rdf:Property, qb:MeasureProperty ;
+    rdfs:label         "kubus oudste stratigrafische eenheid property"@nl ;
     rdfs:subPropertyOf sdmx-measure:obsValue .
 
 bodemenondergrond:relatietusseneenheden a rdf:Property, qb:MeasureProperty ;
     rdfs:label         "kubus relatie tussen stratigrafische eenheden property"@nl ;
     rdfs:subPropertyOf sdmx-measure:obsValue .
 
-bodemenondergrond:quartairestratigrafischeEenheid1 a rdf:Property, qb:MeasureProperty ;
-    rdfs:label         "kubus jongste quartaire stratigrafische eenheid property"@nl ;
+bodemenondergrond:hoofdnaam a rdf:Property, qb:MeasureProperty ;
+    rdfs:label         "kubus hoofdnaam van de lithologische codering property"@nl ;
     rdfs:subPropertyOf sdmx-measure:obsValue .
 
-bodemenondergrond:quartairestratigrafischeEenheid2 a rdf:Property, qb:MeasureProperty ;
-    rdfs:label         "kubus oudste quartaire stratigrafische eenheid property"@nl ;
-    rdfs:subPropertyOf sdmx-measure:obsValue .
-
-bodemenondergrond:hoofdnamen a rdf:Property, qb:MeasureProperty ;
-    rdfs:label         "kubus hoofdnamen van de lithologische codering property"@nl ;
-    rdfs:subPropertyOf sdmx-measure:obsValue .
-
-bodemenondergrond:bijnamen a rdf:Property, qb:MeasureProperty ;
-    rdfs:label         "kubus bijnamen van de lithologische codering property"@nl ;
+bodemenondergrond:bijnaam a rdf:Property, qb:MeasureProperty ;
+    rdfs:label         "kubus bijnaam van de lithologische codering property"@nl ;
     rdfs:subPropertyOf sdmx-measure:obsValue .
 
 bodemenondergrond:kleur a rdf:Property, qb:MeasureProperty ;
@@ -214,29 +206,105 @@ bodemenondergrond:hydrotype a rdf:Property, qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue .
 
 
-
 ### Datasets
-dataset:interpretatie a qb:DataSet ;
-    rdfs:label   "kubus interpretatie"@nl ;
-    rdfs:comment "Dataset van interpretaties"@nl ;
-    qb:structure dsd:interpretatie .
+dataset:lithologischeBeschrijving a qb:DataSet ;
+    rdfs:label   "kubus lithologische beschrijving interpretatie"@nl ;
+    rdfs:comment "Dataset van lithologische beschrijving interpretaties"@nl ;
+    qb:structure dsd:lithologischeBeschrijving .
 
-dataset:cube_results_boorgat1998-109514 a qb:DataSet ;
+dataset:formeleStratigrafie a qb:DataSet ;
+    rdfs:label   "kubus formele stratigrafie interpretatie"@nl ;
+    rdfs:comment "Dataset van formele stratigrafie interpretaties"@nl ;
+    qb:structure dsd:formeleStratigrafie .
+
+dataset:informeleStratigrafie a qb:DataSet ;
+    rdfs:label   "kubus informele stratigrafie interpretatie"@nl ;
+    rdfs:comment "Dataset van informele stratigrafie interpretaties"@nl ;
+    qb:structure dsd:informeleStratigrafie .
+
+dataset:quartaireStratigrafie a qb:DataSet ;
+    rdfs:label   "kubus quartaire stratigrafie interpretatie"@nl ;
+    rdfs:comment "Dataset van quartaire stratigrafie interpretaties"@nl ;
+    qb:structure dsd:quartaireStratigrafie .
+
+dataset:informeleHydrostratigrafie a qb:DataSet ;
+    rdfs:label   "kubus informele hydrostratigrafie interpretatie"@nl ;
+    rdfs:comment "Dataset van informele hydrostratigrafie interpretaties"@nl ;
+    qb:structure dsd:informeleHydrostratigrafie .
+
+dataset:gecodeerdeLithologie a qb:DataSet ;
+    rdfs:label   "kubus gecodeerde lithologie interpretatie"@nl ;
+    rdfs:comment "Dataset van gecodeerde lithologie interpretaties"@nl ;
+    qb:structure dsd:gecodeerdeLithologie .
+
+dataset:geotechnischeCodering a qb:DataSet ;
+    rdfs:label   "kubus geotechnische codering interpretatie"@nl ;
+    rdfs:comment "Dataset van geotechnische codering interpretaties"@nl ;
+    qb:structure dsd:geotechnischeCodering .
+
+dataset:hydrogeologischeStratigrafieV1 a qb:DataSet ;
+    rdfs:label   "kubus hydrogeologische stratigrafie (HCOVv1) interpretatie"@nl ;
+    rdfs:comment "Dataset van hydrogeologische stratigrafie (HCOVv1) interpretaties"@nl ;
+    qb:structure dsd:hydrogeologischeStratigrafieV1 .
+
+dataset:hydrogeologischeStratigrafieV2 a qb:DataSet ;
+    rdfs:label   "kubus hydrogeologische stratigrafie (HCOVv2) interpretatie"@nl ;
+    rdfs:comment "Dataset van hydrogeologische stratigrafie (HCOVv2) interpretaties"@nl ;
+    qb:structure dsd:hydrogeologischeStratigrafieV2 .
+
+dataset:cube_results a qb:DataSet ;
     rdfs:label   "kubus resultaten"@nl ;
     rdfs:comment "Dataset van resultaten"@nl ;
     qb:slice     slice:cons1998-109514, slice:vocht1998-109514, slice:kleur1998-109514 ;
     qb:structure dsd:cube_results .
 
-# Data structure definition
-dsd:interpretatie a qb:DataStructureDefinition ;
-    rdfs:comment "Datastructuur van een interpretatie"@nl ;
-    qb:component componentspecification:type, componentspecification:diepteVan, componentspecification:diepteTot,
-                 componentspecification:beschrijving, componentspecification:lithostratigrafischeEenheid1, componentspecification:lithostratigrafischeEenheid2,
-                 componentspecification:relatietusseneenheden, componentspecification:quartairestratigrafischeEenheid1,
-                 componentspecification:quartairestratigrafischeEenheid2, componentspecification:hoofdnamen, componentspecification:bijnamen,
-                 componentspecification:kleur, componentspecification:kleurMunsell, componentspecification:extrakenmerken,
-                 componentspecification::aquiferV1, componentspecification:aquiferV2, componentspecification:hydrotype .
 
+### Data structure definition
+
+dsd:lithologischeBeschrijving a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een lithologische beschrijving interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:beschrijving .
+
+dsd:formeleStratigrafie a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een formele stratigrafie interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:bovengrens, 
+                 componentspecification:ondergrens, componentspecification:relatietusseneenheden .
+
+dsd:informeleStratigrafie a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een informele stratigrafie interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:beschrijving .
+
+dsd:quartaireStratigrafie a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een quartaire stratigrafie interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:bovengrens, 
+                 componentspecification:ondergrens, componentspecification:relatietusseneenheden .
+
+dsd:informeleHydrostratigrafie a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een informele hydrostratigrafie interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:beschrijving .
+
+dsd:gecodeerdeLithologie a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een gecodeerde lithologie interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:hoofdnaam, 
+                 componentspecification:bijnaam, componentspecification:kleur, componentspecification:kleurMunsell, 
+                 componentspecification:extrakenmerken .
+
+dsd:geotechnischeCodering a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een geotechnische codering interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification:hoofdnaam, 
+                 componentspecification:bijnaam .
+
+dsd:hydrogeologischeStratigrafieV1 a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een hydrogeologische stratigrafie (HCOVv1) interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification::aquiferV1, 
+                 componentspecification:hydrotype .
+
+dsd:hydrogeologischeStratigrafieV2 a qb:DataStructureDefinition ;
+    rdfs:comment "Datastructuur van een hydrogeologische stratigrafie (HCOVv2) interpretatie"@nl ;
+    qb:component componentspecification:diepteVan, componentspecification:diepteTot, componentspecification::aquiferV2, 
+                 componentspecification:hydrotype .
+
+# Definiëren slice: enkel voor de boorstaatgegevens
 dsd:cube_results a qb:DataStructureDefinition ;
     rdfs:comment "Datastructuur van een cube observatie van een sosa result"@nl ;
 # slices
@@ -249,13 +317,15 @@ dsd:cube_results a qb:DataStructureDefinition ;
 
 
 ### SliceKey
+
 slicekey:sliceBydepth a qb:SliceKey ;
     rdfs:label    "sliceByDepth SliceKey"@nl ;
     rdfs:comment  "Slice door eigenschap (sosa:observedProperty) en onderwerp (sosa:hasFeatureOfInterest) vast te zetten"@en ;
     qb:componentProperty bodemenondergrond:onderwerp, bodemenondergrond:eigenschap .
 
 
-#Component specification
+### Component specification
+
 componentspecification:measureType a qb:ComponentSpecification ;
     rdfs:label   "qb:measureType ComponentSpecification"@nl ;
     qb:dimension qb:measureType .
@@ -302,33 +372,25 @@ componentspecification:eigenschap a qb:ComponentSpecification ;
     qb:componentAttachment qb:Slice ;
     qb:dimension           bodemenondergrond:eigenschap .
 
-componentspecification:lithostratigrafischeEenheid1 a qb:ComponentSpecification ;
+componentspecification:bovengrens a qb:ComponentSpecification ;
     rdfs:label   "jongste lithostratigrafische eenheid ComponentSpecification"@nl ;
-    qb:measure   bodemenondergrond:lithostratigrafischeEenheid1 .
+    qb:measure   bodemenondergrond:bovengrens .
 
-componentspecification:lithostratigrafischeEenheid2 a qb:ComponentSpecification ;
+componentspecification:ondergrens a qb:ComponentSpecification ;
     rdfs:label   "oudste lithostratigrafische eenheid ComponentSpecification"@nl ;
-    qb:measure   bodemenondergrond:lithostratigrafischeEenheid2 .
+    qb:measure   bodemenondergrond:ondergrens .
 
 componentspecification:relatietusseneenheden a qb:ComponentSpecification ;
     rdfs:label   "relatie tussen stratigrafische eenheden ComponentSpecification"@nl ;
     qb:measure   bodemenondergrond:relatietusseneenheden .
 
-componentspecification:quartairestratigrafischeEenheid1 a qb:ComponentSpecification ;
-    rdfs:label   "jongste quartaire stratigrafische eenheid ComponentSpecification"@nl ;
-    qb:measure   bodemenondergrond:quartairestratigrafischeEenheid1 .
+componentspecification:hoofdnaam a qb:ComponentSpecification ;
+    rdfs:label   "hoofdnaam van de lithologische codering ComponentSpecification"@nl ;
+    qb:measure   bodemenondergrond:hoofdnaam .
 
-componentspecification:quartairestratigrafischeEenheid2 a qb:ComponentSpecification ;
-    rdfs:label   "oudste quartaire stratigrafische eenheid ComponentSpecification"@nl ;
-    qb:measure   bodemenondergrond:quartairestratigrafischeEenheid2 .
-
-componentspecification:hoofdnamen a qb:ComponentSpecification ;
-    rdfs:label   "hoofdnamen van de lithologische codering ComponentSpecification"@nl ;
-    qb:measure   bodemenondergrond:hoofdnamen .
-
-componentspecification:bijnamen a qb:ComponentSpecification ;
-    rdfs:label   "bijnamen van de lithologische codering ComponentSpecification"@nl ;
-    qb:measure   bodemenondergrond:bijnamen .
+componentspecification:bijnaam a qb:ComponentSpecification ;
+    rdfs:label   "bijnaam van de lithologische codering ComponentSpecification"@nl ;
+    qb:measure   bodemenondergrond:bijnaam .
 
 componentspecification:kleurMunsell a qb:ComponentSpecification ;
     rdfs:label   "kleurcode volgens Munsell ComponentSpecification"@nl ;
@@ -354,27 +416,32 @@ componentspecification:hydrotype a qb:ComponentSpecification ;
 
 ### Concepten
 
-cl-interpretatie:lithologischeBeschrijving a skos:Concept .
+cl-interpretatie:lithologischeBeschrijving a skos:Concept ;
+    rdfs:label "lithologische beschrijving interpretatie" .
 
-cl-interpretatie:formeleStratigrafie a skos:Concept .
+cl-interpretatie:formeleStratigrafie a skos:Concept ;
+    rdfs:label "formele stratigrafie interpretatie" .
 
-cl-interpretatie:informeleStratigrafie a skos:Concept .
+cl-interpretatie:informeleStratigrafie a skos:Concept ;
+    rdfs:label "informele stratigrafie interpretatie" .
 
-cl-interpretatie:quartaireStratigrafie a skos:Concept .
+cl-interpretatie:quartaireStratigrafie a skos:Concept ;
+    rdfs:label "quartaire stratigrafie interpretatie" .
 
-cl-interpretatie:informeleHydrostratigrafie a skos:Concept .
+cl-interpretatie:informeleHydrostratigrafie a skos:Concept ;
+    rdfs:label "informele hydrostratigrafie interpretatie" .
 
-cl-interpretatie:gecodeerdeLithologie a skos:Concept .
+cl-interpretatie:gecodeerdeLithologie a skos:Concept ;
+    rdfs:label "gecodeerde lithologie interpretatie" .
 
-cl-interpretatie:geotechnischeCodering a skos:Concept .
+cl-interpretatie:geotechnischeCodering a skos:Concept ;
+    rdfs:label "geotechnische codering interpretatie" .
 
-cl-interpretatie:hydrogeologischeStratigrafieV1 a skos:Concept .
+cl-interpretatie:hydrogeologischeStratigrafieV1 a skos:Concept ;
+    rdfs:label "hydrogeologische stratigrafie (HCOVv1) interpretatie" .
 
-cl-interpretatie:hydrogeologischeStratigrafieV2 a skos:Concept .
-
-cl-cons:2 a skos:Concept .
-cl-cons:3 a skos:Concept .
-cl-cons:5 a skos:Concept .
+cl-interpretatie:hydrogeologischeStratigrafieV2 a skos:Concept ;
+    rdfs:label "hydrogeologische stratigrafie (HCOVv2) interpretatie" .
 
 
 ### Individuals
@@ -388,7 +455,7 @@ observation:cons1998-109514 a sosa:Observation ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:consistentie ;
     sosa:usedProcedure        cl-bpt:bepalen_consistentie_boorgat ;
-    ssn:wasOriginatedBy       opdracht:1998-002814 ;
+    prov:wasStartedBy         opdracht:1998-002814 ;
     sosa:madeBySensor         agent:agent003 ; # auteur in de DOV-fiche boring
     sosa:hasFeatureOfInterest boorgat:boorgat1998-109514 .
 
@@ -413,28 +480,34 @@ observation:cons1998-109514-1 a qb:Observation ;
     bodemenondergrond:diepteVan   quantityvalue:cons1998-109514-1-van ;
     bodemenondergrond:diepteTot   quantityvalue:cons1998-109514-1-tot ;
     bodemenondergrond:beoordeling cl-cons:3 .
-#bodemenondergrond:consistentie cl-cons:3 . # skos:prefLabel "plastisch"
 
 observation:cons1998-109514-2 a qb:Observation ;
     qb:dataSet                    dataset:cube_results ;
     bodemenondergrond:diepteVan   quantityvalue:cons1998-109514-2-van ;
     bodemenondergrond:diepteTot   quantityvalue:cons1998-109514-2-tot ;
     bodemenondergrond:beoordeling cl-cons:2 .
-#bodemenondergrond:consistentie cl-cons:2 . # skos:prefLabel "slap"
 
 observation:cons1998-109514-3 a qb:Observation ;
     qb:dataSet                    dataset:cube_results ;
     bodemenondergrond:diepteVan   quantityvalue:cons1998-109514-3-van ;
     bodemenondergrond:diepteTot   quantityvalue:cons1998-109514-3-tot ;
     bodemenondergrond:beoordeling cl-cons:5 .
-#bodemenondergrond:consistentie cl-cons:5 . # skos:prefLabel "vast"
 
 observation:cons1998-109514-4 a qb:Observation ;
     qb:dataSet                    dataset:cube_results ;
     bodemenondergrond:diepteVan   quantityvalue:cons1998-109514-4-van ;
     bodemenondergrond:diepteTot   quantityvalue:cons1998-109514-4-tot ;
     bodemenondergrond:beoordeling cl-cons:3 .
-#bodemenondergrond:consistentie cl-cons:3 . # skos:prefLabel "plastisch"
+
+
+cl-cons:2 a skos:Concept ;
+    rdfs:label "slap" .
+
+cl-cons:3 a skos:Concept ;
+    rdfs:label "plastisch" .
+
+cl-cons:5 a skos:Concept ;
+    rdfs:label "vast" .
 
 
 quantityvalue:cons1998-109514-1-van a qudt:QuantityValue ;
@@ -478,7 +551,7 @@ observation:vocht1998-109514 a sosa:Observation ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:vochtgehalte ;
     sosa:usedProcedure        cl-bpt:bepalen_vochtgehalte_boorgat ;
-    ssn:wasOriginatedBy       opdracht:1998-002814 ;
+    prov:wasStartedBy         opdracht:1998-002814 ;
     sosa:madeBySensor         agent:agent003 ; # auteur in de DOV-fiche boring
     sosa:hasFeatureOfInterest boorgat:boorgat1998-109514 .
 
@@ -486,7 +559,7 @@ prop:vochtgehalte a sosa:ObservableProperty ;
     ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
 slice:vocht1998-109514 a qb:Slice ;
-    rdfs:label                   "Observation group vochtgehalte boorgat 1998-109514"@nl ;
+    rdfs:label                   "Slice vochtgehalte boorgat 1998-109514"@nl ;
     qb:sliceStructure            slicekey:sliceBydepth ; # Toegevoegd aan voorbeeld van Geert op basis van cube model.
     bodemenondergrond:eigenschap prop:vochtgehalte ;
     bodemenondergrond:onderwerp  boorgat:boorgat1998-109514 ;
@@ -499,14 +572,19 @@ observation:vocht1998-109514-1 a qb:Observation ;
     bodemenondergrond:diepteVan   quantityvalue:vocht1998-109514-1-van ;
     bodemenondergrond:diepteTot   quantityvalue:vocht1998-109514-1-tot ;
     bodemenondergrond:beoordeling cl-vocht:3 .
-#bodemenondergrond:vochtgehalte cl-vocht:3 . # skos:prefLabel "vochtig"
 
 observation:vocht1998-109514-2 a qb:Observation ;
     qb:dataSet                    dataset:cube_results ;
     bodemenondergrond:diepteVan   quantityvalue:vocht1998-109514-2-van ;
     bodemenondergrond:diepteTot   quantityvalue:vocht1998-109514-2-tot ;
     bodemenondergrond:beoordeling cl-vocht:5 .
-#bodemenondergrond:vochtgehalte cl-vocht:5 . # skos:prefLabel "verzadigd"
+
+
+cl-vocht:3 a skos:Concept ;
+    rdfs:label "vochtig" .
+
+cl-vocht:5 a skos:Concept ;
+    rdfs:label "verzadigd" .
 
 
 quantityvalue:cons1998-109514-1-van a qudt:QuantityValue ;
@@ -534,14 +612,14 @@ observation:kleur1998-109514 a sosa:Observation ;
     sosa:resultTime           "1998-06-04T00:00:00.000"^^xsd:dateTime ; # datum van uitvoeren boring
     sosa:observedProperty     prop:kleur ;
     sosa:usedProcedure        cl-bpt:bepalen_kleur_boorgat ;
-    ssn:wasOriginatedBy       opdracht:1998-002814 ;
+    prov:wasStartedBy         opdracht:1998-002814 ;
     sosa:madeBySensor         agent:agent003 ; # auteur in de DOV-fiche boring
     sosa:hasFeatureOfInterest boorgat:boorgat1998-109514 .
 
 prop:kleur a sosa:ObservableProperty ;
     ssn:isPropertyOf boorgat:boorgat1998-109514 .
 
-slice:kleur1998-109514 a qb:ObservationGroup ;
+slice:kleur1998-109514 a qb:Slice ;
     rdfs:label                   "Kleur boorgat 1998-109514"@nl ;
     qb:sliceStructure            slicekey:sliceBydepth ; # Toegevoegd aan voorbeeld van Geert op basis van cube model.
     bodemenondergrond:eigenschap prop:kleur ;
@@ -557,28 +635,37 @@ observation:kleur1998-109514-1 a  qb:Observation ;
     bodemenondergrond:diepteVan   quantityvalue:kleur1998-109514-1-van ;
     bodemenondergrond:diepteTot   quantityvalue:kleur1998-109514-1-tot ;
     bodemenondergrond:beoordeling cl-kleur:3 .
-#bodemenondergrond:kleur     cl-kleur:3 . # skos:prefLabel "bruin"
 
 observation:kleur1998-109514-2 a  qb:Observation ;
     qb:dataSet                    dataset:cube_results ;
     bodemenondergrond:diepteVan   quantityvalue:kleur1998-109514-2-van ;
     bodemenondergrond:diepteTot   quantityvalue:kleur1998-109514-2-tot ;
     bodemenondergrond:beoordeling cl-kleur:15 .
-#bodemenondergrond:kleur     cl-kleur:15 . # skos:prefLabel "bruingrijs"
 
 observation:kleur1998-109514-3 a  qb:Observation ;
     qb:dataSet                    dataset:cube_results ;
     bodemenondergrond:diepteVan   quantityvalue:kleur1998-109514-3-van ;
     bodemenondergrond:diepteTot   quantityvalue:kleur1998-109514-3-tot ;
     bodemenondergrond:beoordeling cl-kleur:5 .
-#bodemenondergrond:kleur     cl-kleur:5 . # skos:prefLabel "grijs"
 
 observation:kleur1998-109514-4 a  qb:Observation ;
     qb:dataSet                    dataset:cube_results ;
     bodemenondergrond:diepteVan   quantityvalue:kleur1998-109514-4-van ;
     bodemenondergrond:diepteTot   quantityvalue:kleur1998-109514-4-tot ;
     bodemenondergrond:beoordeling cl-kleur:52 .
-#bodemenondergrond:kleur     cl-kleur:52 . # skos:prefLabel "grijsbruin"
+
+
+cl-kleur:3 a skos:Concept ;
+    rdfs:label "bruin" .
+
+cl-kleur:5 a skos:Concept ;
+    rdfs:label "grijs" .
+
+cl-kleur:15 a skos:Concept ;
+    rdfs:label "bruingrijs" .
+
+cl-kleur:52 a skos:Concept ;
+    rdfs:label "grijsbruin" .
 
 
 quantityvalue:kleur1998-109514-1-van a qudt:QuantityValue ;
@@ -628,7 +715,6 @@ interp:1983-215741 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat1983-024193 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:2013-006419, opdracht:1981-012309 ;
     prov:wasStartedBy                 opdracht:2013-006419, opdracht:1981-012309 ;
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -668,32 +754,33 @@ list:interp1983-215741-3 a rdf:List ;
 # De eigenlijke observaties met diepte_van, diepte_tot en een lithologische beschrijving
 
 observation:interp1983-215741-1 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:lithologischeBeschrijving ;
     dcterms:type                     cl-interpretatie:lithologischeBeschrijving ;
     bodemenondergrond:diepteVan      quantityvalue:interp1983-215741-1-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1983-215741-1-tot ;
     bodemenondergrond:beschrijving   "bruingrijs leemhoudend fijn tot zeer fijn zand met bovenaan wortels, silexgrind en plaatselijke okervlek"@nl .
 
 observation:interp1983-215741-2 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:lithologischeBeschrijving ;
     dcterms:type                     cl-interpretatie:lithologischeBeschrijving ;
     bodemenondergrond:diepteVan      quantityvalue:interp1983-215741-2-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1983-215741-2-tot ;
     bodemenondergrond:beschrijving   "donkerbruin tot zwart fijn tot middelmatig zand met roestbruine concreties en zeer fijn kwartsgrind"@nl .
 
 observation:interp1983-215741-3 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:lithologischeBeschrijving ;
     dcterms:type                     cl-interpretatie:lithologischeBeschrijving ;
     bodemenondergrond:diepteVan      quantityvalue:interp1983-215741-3-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1983-215741-3-tot ;
     bodemenondergrond:beschrijving   "roestbruin fijn tot middelmatig zand, plaatselijk iets verkit"@nl .
 
 observation:interp1983-215741-4 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:lithologischeBeschrijving ;
     dcterms:type                     cl-interpretatie:lithologischeBeschrijving ;
     bodemenondergrond:diepteVan      quantityvalue:interp1983-215741-4-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1983-215741-4-tot ;
     bodemenondergrond:beschrijving   "lichtgroengrijze leemhoudende klei met okervlekken en plaatselijk dunne zandhoudende kleilaagjes"@nl .
+
 
 quantityvalue:interp1983-215741-1-van a  qudt:QuantityValue ;
     qudt:value          0.0 ;
@@ -783,7 +870,6 @@ interp:2000-003285 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat1965-068140 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:2016-012417 ;
     prov:wasStartedBy                 opdracht:2016-012417 ;
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -825,42 +911,43 @@ list:interp2000-003285-3 a rdf:List ;
 # - Lid1 en Lid2 zijn verschillend: Zowel lid1 als lid2 wordt weergegeven. De relatie tussen de leden eveneens.
 
 observation:interp2000-003285-1 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:formeleStratigrafie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2000-003285-1-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2000-003285-1-tot ;
-    bodemenondergrond:lithostratigrafischeEenheid1      cl-forme:Q ;
-    ssn-system:qualityOfObservation                     cl-betr:A . # Betrouwbaarheid van de afzonderlijke bepaling van de formele stratigrafie van het diepteinterval in kwestie
+    qb:dataSet                       dataset:formeleStratigrafie ;
+    dcterms:type                     cl-interpretatie:formeleStratigrafie ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2000-003285-1-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2000-003285-1-tot ;
+    bodemenondergrond:bovengrens     cl-forme:Q ;
+    bodemenondergrond:ondergrens     cl-forme:Q ;
+    ssn-system:qualityOfObservation  cl-betr:A . # Betrouwbaarheid van de afzonderlijke bepaling van de formele stratigrafie van het diepteinterval in kwestie
 
 observation:interp2000-003285-2 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:formeleStratigrafie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2000-003285-2-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2000-003285-2-tot ;
-    bodemenondergrond:lithostratigrafischeEenheid1      cl-forme:LiOo ;
-    bodemenondergrond:lithostratigrafischeEenheid2      cl-forme:Kd ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
-    bodemenondergrond:relatietusseneenheden             cl-releenh:tot ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
-    ssn-system:qualityOfObservation                     cl-betr:A .
+    qb:dataSet                                  dataset:formeleStratigrafie ;
+    dcterms:type                                cl-interpretatie:formeleStratigrafie ;
+    bodemenondergrond:diepteVan                 quantityvalue:interp2000-003285-2-van ;
+    bodemenondergrond:diepteTot                 quantityvalue:interp2000-003285-2-tot ;
+    bodemenondergrond:bovengrens                cl-forme:LiOo ;
+    bodemenondergrond:ondergrens                cl-forme:Kd ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
+    bodemenondergrond:relatietusseneenheden     cl-releenh:tot ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
+    ssn-system:qualityOfObservation             cl-betr:A .
 
 observation:interp2000-003285-3 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:formeleStratigrafie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2000-003285-3-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2000-003285-3-tot ;
-    bodemenondergrond:lithostratigrafischeEenheid1      cl-forme:Kd ;
-    bodemenondergrond:lithostratigrafischeEenheid2      cl-forme:Bc ;
-    bodemenondergrond:relatietusseneenheden             cl-releenh:of ;
-    ssn-system:qualityOfObservation                     cl-betr:A .
+    qb:dataSet                                  dataset:formeleStratigrafie ;
+    dcterms:type                                cl-interpretatie:formeleStratigrafie ;
+    bodemenondergrond:diepteVan                 quantityvalue:interp2000-003285-3-van ;
+    bodemenondergrond:diepteTot                 quantityvalue:interp2000-003285-3-tot ;
+    bodemenondergrond:bovengrens                cl-forme:Kd ;
+    bodemenondergrond:ondergrens                cl-forme:Bc ;
+    bodemenondergrond:relatietusseneenheden     cl-releenh:of ;
+    ssn-system:qualityOfObservation             cl-betr:A .
 
 observation:interp2000-003285-4 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:formeleStratigrafie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2000-003285-4-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2000-003285-4-tot ;
-    bodemenondergrond:lithostratigrafischeEenheid1      cl-forme:Bm ;
-    bodemenondergrond:lithostratigrafischeEenheid2      cl-forme:Zz ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
-    bodemenondergrond:relatietusseneenheden             cl-releenh:en ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
-    ssn-system:qualityOfObservation                     cl-betr:A .
+    qb:dataSet                                  dataset:formeleStratigrafie ;
+    dcterms:type                                cl-interpretatie:formeleStratigrafie ;
+    bodemenondergrond:diepteVan                 quantityvalue:interp2000-003285-4-van ;
+    bodemenondergrond:diepteTot                 quantityvalue:interp2000-003285-4-tot ;
+    bodemenondergrond:bovengrens                cl-forme:Bm ;
+    bodemenondergrond:ondergrens                cl-forme:Zz ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
+    bodemenondergrond:relatietusseneenheden     cl-releenh:en ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
+    ssn-system:qualityOfObservation             cl-betr:A .
 
 
 location:boorgat1965-068140 a dcterms:Location ;
@@ -980,7 +1067,6 @@ interp:1981-217301 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat1981-081861 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:2013-006419, opdracht:1979-012311 ;
     prov:wasStartedBy                 opdracht:2013-006419, opdracht:1979-012311 ;
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -1022,35 +1108,35 @@ list:interp1981-217301-4 a rdf:List ;
 # De eigenlijke observaties met diepte_van, diepte_tot en een informele stratigrafie (beschrijving)
 
 observation:interp1981-217301-1 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleStratigrafie ;
     dcterms:type                     cl-interpretatie:informeleStratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217301-1-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217301-1-tot ;
     bodemenondergrond:beschrijving   "Aanvulling"@nl .
 
 observation:interp1981-217301-2 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleStratigrafie ;
     dcterms:type                     cl-interpretatie:informeleStratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217301-2-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217301-2-tot ;
     bodemenondergrond:beschrijving   "Kwartair"@nl .
 
 observation:interp1981-217301-3 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleStratigrafie ;
     dcterms:type                     cl-interpretatie:informeleStratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217301-3-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217301-3-tot ;
     bodemenondergrond:beschrijving   "Tertiair: Paniseliaan (P1c)"@nl .
 
 observation:interp1981-217301-4 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleStratigrafie ;
     dcterms:type                     cl-interpretatie:informeleStratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217301-4-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217301-4-tot ;
     bodemenondergrond:beschrijving   "Tertiair: Ieperiaan (Yd)"@nl .
 
 observation:interp1981-217301-5 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleStratigrafie ;
     dcterms:type                     cl-interpretatie:informeleStratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217301-5-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217301-5-tot ;
@@ -1151,7 +1237,6 @@ interp:1996-104435 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat1961-094957 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:2013-006419 ; # geen opdrachten in het voorbeeld, deze heb ik laten staan als fictief voorbeeld
     prov:wasStartedBy                 opdracht:2013-006419 ; # geen opdrachten in het voorbeeld, deze heb ik laten staan als fictief voorbeeld
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -1187,30 +1272,31 @@ list:interp1996-104435-2 a rdf:List ;
 # - Lid1 en Lid2 zijn verschillend: Zowel lid1 als lid2 wordt weergegeven. De relatie tussen de leden eveneens.
 
 observation:interp1996-104435-1 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
+    qb:dataSet                                          dataset:quartaireStratigrafie ;
     dcterms:type                                        cl-interpretatie:quartaireStratigrafie ;
     bodemenondergrond:diepteVan                         quantityvalue:interp1996-104435-1-van ;
     bodemenondergrond:diepteTot                         quantityvalue:interp1996-104435-1-tot ;
-    bodemenondergrond:quartairestratigrafischeEenheid1  cl-quarte:k ; # Codelijst quartaire eenheid is hoofdlettergevoelig!
+    bodemenondergrond:bovengrens                        cl-quarte:k ; # Codelijst quartaire eenheid is hoofdlettergevoelig!
+    bodemenondergrond:ondergrens                        cl-quarte:k ;
     ssn-system:qualityOfObservation                     cl-betr:B . # Betrouwbaarheid van de afzonderlijke bepaling van de formele stratigrafie van het diepteinterval in kwestie
 
 observation:interp1996-104435-2 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
+    qb:dataSet                                          dataset:quartaireStratigrafie ;
     dcterms:type                                        cl-interpretatie:quartaireStratigrafie ;
     bodemenondergrond:diepteVan                         quantityvalue:interp1996-104435-2-van ;
     bodemenondergrond:diepteTot                         quantityvalue:interp1996-104435-2-tot ;
-    bodemenondergrond:quartairestratigrafischeEenheid1  cl-quarte:h ;
-    bodemenondergrond:quartairestratigrafischeEenheid2  cl-quarte:y ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
+    bodemenondergrond:bovengrens                        cl-quarte:h ;
+    bodemenondergrond:ondergrens                        cl-quarte:y ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
     bodemenondergrond:relatietusseneenheden             cl-releenh:tot ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
     ssn-system:qualityOfObservation                     cl-betr:B .
 
 observation:interp1996-104435-3 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
+    qb:dataSet                                          dataset:quartaireStratigrafie ;
     dcterms:type                                        cl-interpretatie:quartaireStratigrafie ;
     bodemenondergrond:diepteVan                         quantityvalue:interp1996-104435-3-van ;
     bodemenondergrond:diepteTot                         quantityvalue:interp1996-104435-3-tot ;
-    bodemenondergrond:quartairestratigrafischeEenheid1  cl-quarte:dollar ; # Zou eigenlijk cl-quarte:$ moeten zijn, maar dat vreemd teken valideert niet.
-    bodemenondergrond:quartairestratigrafischeEenheid2  cl-quarte:A ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
+    bodemenondergrond:bovengrens                        cl-quarte:dollar ; # Zou eigenlijk cl-quarte:$ moeten zijn, maar dat vreemd teken valideert niet.
+    bodemenondergrond:ondergrens                        cl-quarte:A ; # Fictief toegevoegd om relatie tussen eenheden weer te geven
     bodemenondergrond:relatietusseneenheden             cl-releenh:of ;
     ssn-system:qualityOfObservation                     cl-betr:B .
 
@@ -1325,7 +1411,6 @@ interp:1981-217464 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat1981-025210 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:2013-006419 ; # Fictief, want in dit voorbeeld zijn er geen opdrachten
     prov:wasStartedBy                 opdracht:2013-006419 ; # Fictief, want in dit voorbeeld zijn er geen opdrachten
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -1372,42 +1457,42 @@ list:interp1981-217464-5 a rdf:List ;
 # De eigenlijke observaties met diepte_van, diepte_tot en een informele stratigrafie (beschrijving)
 
 observation:interp1981-217464-1 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleHydrostratigrafie ;
     dcterms:type                     cl-interpretatie:informeleHydrostratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217464-1-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217464-1-tot ;
     bodemenondergrond:beschrijving   "QUARTAIR"@nl .
 
 observation:interp1981-217464-2 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleHydrostratigrafie ;
     dcterms:type                     cl-interpretatie:informeleHydrostratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217464-2-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217464-2-tot ;
     bodemenondergrond:beschrijving   "FORMATIE VAN MALDEGEM"@nl .
 
 observation:interp1981-217464-3 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleHydrostratigrafie ;
     dcterms:type                     cl-interpretatie:informeleHydrostratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217464-3-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217464-3-tot ;
     bodemenondergrond:beschrijving   "FORMATIE VAN MALDEGEM (Lid van Wemmel)"@nl .
 
 observation:interp1981-217464-4 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleHydrostratigrafie ;
     dcterms:type                     cl-interpretatie:informeleHydrostratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217464-4-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217464-4-tot ;
     bodemenondergrond:beschrijving   "FORMATIE VAN LEDE"@nl .
 
 observation:interp1981-217464-5 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleHydrostratigrafie ;
     dcterms:type                     cl-interpretatie:informeleHydrostratigrafie;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217464-5-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217464-5-tot ;
     bodemenondergrond:beschrijving   "FORMATIE VAN BRUSSEL"@nl .
 
 observation:interp1981-217464-6 a    qb:Observation ;
-    qb:dataSet                       dataset:interpretatie ;
+    qb:dataSet                       dataset:informeleHydrostratigrafie ;
     dcterms:type                     cl-interpretatie:informeleHydrostratigrafie ;
     bodemenondergrond:diepteVan      quantityvalue:interp1981-217464-6-van ;
     bodemenondergrond:diepteTot      quantityvalue:interp1981-217464-6-tot ;
@@ -1504,7 +1589,7 @@ bl:interp1981-217464-2 a   bodemenondergrond:Bijlage ;
 
 
 
-# Gecodeerde lithologie: diepte_van, diepte_tot, kleur, kleur-Munsell, hoofdnamen, bijnamen, extrakenmerken, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
+# Gecodeerde lithologie: diepte_van, diepte_tot, kleur, kleur-Munsell, hoofdnaam, bijnaam, extrakenmerken, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode en dataleverancier.
 interp:2001-046845 a                  sosa:Observation ;
     dcterms:type                      cl-interpretatie:gecodeerdeLithologie ;
     rdfs:label                        "Gecodeerde lithologie op locatie van boorgat 1981-082236"@nl ;
@@ -1516,7 +1601,6 @@ interp:2001-046845 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat1981-082236 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:2016-012417 ; # Fictief, wegens geen opdrachten voor deze interpretatie
     prov:wasStartedBy                 opdracht:2016-012417 ; # Fictief, wegens geen opdrachten voor deze interpretatie
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -1564,57 +1648,57 @@ list:interp2001-046845-5 a rdf:List ;
     rdf:rest               rdf:nil .
 
 
-# De eigenlijke observaties met diepte_van, diepte_tot, hoofdnamen, bijnamen en extrakenmerken.
+# De eigenlijke observaties met diepte_van, diepte_tot, hoofdnaam, bijnaam en extrakenmerken.
 
 observation:interp2001-046845-1 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-046845-1-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-046845-1-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:LE .
+    qb:dataSet                          dataset:gecodeerdeLithologie ;
+    dcterms:type                        cl-interpretatie:gecodeerdeLithologie ;
+    bodemenondergrond:diepteVan         quantityvalue:interp2001-046845-1-van ;
+    bodemenondergrond:diepteTot         quantityvalue:interp2001-046845-1-tot ;
+    bodemenondergrond:hoofdnaam         cl-hoofdnaam:LE .
 
 observation:interp2001-046845-2 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-046845-2-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-046845-2-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:FZ .
+    qb:dataSet                          dataset:gecodeerdeLithologie ;
+    dcterms:type                        cl-interpretatie:gecodeerdeLithologie ;
+    bodemenondergrond:diepteVan         quantityvalue:interp2001-046845-2-van ;
+    bodemenondergrond:diepteTot         quantityvalue:interp2001-046845-2-tot ;
+    bodemenondergrond:hoofdnaam         cl-hoofdnaam:FZ .
 
 observation:interp2001-046845-3 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-046845-3-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-046845-3-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:FZ ;
-    bodemenondergrond:bijnamen                          cl-bijnaam:GH . # Voorlopig nog fictieve codelijst!!
+    qb:dataSet                          dataset:gecodeerdeLithologie ;
+    dcterms:type                        cl-interpretatie:gecodeerdeLithologie ;
+    bodemenondergrond:diepteVan         quantityvalue:interp2001-046845-3-van ;
+    bodemenondergrond:diepteTot         quantityvalue:interp2001-046845-3-tot ;
+    bodemenondergrond:hoofdnaam         cl-hoofdnaam:FZ ;
+    bodemenondergrond:bijnaam           cl-bijnaam:GH . # Voorlopig nog fictieve codelijst!!
 
 observation:interp2001-046845-4 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-046845-4-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-046845-4-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:FZ ;
-    bodemenondergrond:bijnamen                          cl-bijnaam:SGH . # Voorlopig nog fictieve codelijst!!
+    qb:dataSet                          dataset:gecodeerdeLithologie ;
+    dcterms:type                        cl-interpretatie:gecodeerdeLithologie ;
+    bodemenondergrond:diepteVan         quantityvalue:interp2001-046845-4-van ;
+    bodemenondergrond:diepteTot         quantityvalue:interp2001-046845-4-tot ;
+    bodemenondergrond:hoofdnaam         cl-hoofdnaam:FZ ;
+    bodemenondergrond:bijnaam           cl-bijnaam:SGH . # Voorlopig nog fictieve codelijst!!
 
 observation:interp2001-046845-5 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-046845-5-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-046845-5-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:FZ, cl-hoofdnaam:KL ; # Meerdere hoofdnamen zijn perfect mogelijk
-    bodemenondergrond:bijnamen                          cl-bijnaam:WGH . # Voorlopig nog fictieve codelijst!! Ook hier zijn meerdere bijnamen mogelijk
+    qb:dataSet                          dataset:gecodeerdeLithologie ;
+    dcterms:type                        cl-interpretatie:gecodeerdeLithologie ;
+    bodemenondergrond:diepteVan         quantityvalue:interp2001-046845-5-van ;
+    bodemenondergrond:diepteTot         quantityvalue:interp2001-046845-5-tot ;
+    bodemenondergrond:hoofdnaam         cl-hoofdnaam:FZ, cl-hoofdnaam:KL ; # Meerdere hoofdnaam zijn perfect mogelijk
+    bodemenondergrond:bijnaam           cl-bijnaam:WGH . # Voorlopig nog fictieve codelijst!! Ook hier zijn meerdere bijnaam mogelijk
 
 #Hieronder een fichtief interval van de gecodeerde lithologie om de verschillende mogelijkheden aan te duiden
 observation:interp2001-046845-6 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-046845-6-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-046845-6-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:FZ, cl-hoofdnaam:KL ; # Meerdere hoofdnamen zijn perfect mogelijk
-    bodemenondergrond:bijnamen                          cl-bijnaam:WGH, cl-bijnaam:PWSH, cl-bijnaam:WKH ; # Voorlopig nog fictieve codelijst!! Ook hier zijn meerdere bijnamen mogelijk. Extra opmerking: alle waarden moeten telkens 12x voorkomen, aangezien de gebruiker keuze heeft uit 1.houdend, 2.veel, 3.weinig, 4.sterk houdend, 5.weinig houdend en 6.zonder voorzetsel (+ telkens al dan niet plaatselijk, dus nog eens dubbel zoveel mogelijkheden = 12) !!
-    bodemenondergrond:kleur                             cl-kleur:103 ;
-    bodemenondergrond:kleurMunsell                      "233, 193, 162"@nl ;
-    bodemenondergrond:extrakenmerken                    cl-ader:9, cl-fossielaard:3, cl-fossieltype:10, cl-seckenm:14, cl-sedstruct:31, cl-tektoniek:6 . # Fictief voorbeeld met alle mogelijke extra kenmerken via bestaande codelijsten
+    qb:dataSet                          dataset:gecodeerdeLithologie ;
+    dcterms:type                        cl-interpretatie:gecodeerdeLithologie ;
+    bodemenondergrond:diepteVan         quantityvalue:interp2001-046845-6-van ;
+    bodemenondergrond:diepteTot         quantityvalue:interp2001-046845-6-tot ;
+    bodemenondergrond:hoofdnaam         cl-hoofdnaam:FZ, cl-hoofdnaam:KL ; # Meerdere hoofdnaam zijn perfect mogelijk
+    bodemenondergrond:bijnaam           cl-bijnaam:WGH, cl-bijnaam:PWSH, cl-bijnaam:WKH ; # Voorlopig nog fictieve codelijst!! Ook hier zijn meerdere bijnaam mogelijk. Extra opmerking: alle waarden moeten telkens 12x voorkomen, aangezien de gebruiker keuze heeft uit 1.houdend, 2.veel, 3.weinig, 4.sterk houdend, 5.weinig houdend en 6.zonder voorzetsel (+ telkens al dan niet plaatselijk, dus nog eens dubbel zoveel mogelijkheden = 12) !!
+    bodemenondergrond:kleur             cl-kleur:103 ;
+    bodemenondergrond:kleurMunsell      "233, 193, 162"@nl ;
+    bodemenondergrond:extrakenmerken    cl-ader:9, cl-fossielaard:3, cl-fossieltype:10, cl-seckenm:14, cl-sedstruct:31, cl-tektoniek:6 . # Fictief voorbeeld met alle mogelijke extra kenmerken via bestaande codelijsten
 
 
 location:boorgat1981-082236 a dcterms:Location ;
@@ -1757,7 +1841,7 @@ bl:interp2001-046845-2 a   bodemenondergrond:Bijlage ;
 
 
 
-# Geotechnische codering: diepte_van, diepte_tot, hoofdnamen, bijnamen, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode, databeheerder en dataleverancier.
+# Geotechnische codering: diepte_van, diepte_tot, hoofdnaam, bijnaam, opmerkingen, bijlagen, opdrachten, type interpretatie, datum, auteur, geldigheidsperiode, databeheerder en dataleverancier.
 interp:2005-157983 a                  sosa:Observation ;
     dcterms:type                      cl-interpretatie:geotechnischeCodering ;
     rdfs:label                        "Geotechnische codering op locatie van boorgat 1948-103796"@nl ;
@@ -1769,7 +1853,6 @@ interp:2005-157983 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat1948-103796 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:1948-003617 ;
     prov:wasStartedBy                 opdracht:1948-003617 ;
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -1817,53 +1900,53 @@ list:interp2005-157983-5 a rdf:List ;
     rdf:rest               rdf:nil .
 
 
-# De eigenlijke observaties met diepte_van, diepte_tot, hoofdnamen, bijnamen en extrakenmerken.
+# De eigenlijke observaties met diepte_van, diepte_tot, hoofdnaam, bijnaam en extrakenmerken.
 
 observation:interp2005-157983-1 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2005-157983-1-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2005-157983-1-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:FZ, cl-hoofdnaam:AF .
+    qb:dataSet                       dataset:geotechnischeCodering ;
+    dcterms:type                     cl-interpretatie:geotechnischeCodering ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2005-157983-1-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2005-157983-1-tot ;
+    bodemenondergrond:hoofdnaam      cl-hoofdnaam:FZ, cl-hoofdnaam:AF .
 
 observation:interp2005-157983-2 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2005-157983-2-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2005-157983-2-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:LE ;
-    bodemenondergrond:bijnamen                          cl-bijnaam:FZ . # Voorlopig nog fictieve codelijst!!
+    qb:dataSet                       dataset:geotechnischeCodering ;
+    dcterms:type                     cl-interpretatie:geotechnischeCodering ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2005-157983-2-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2005-157983-2-tot ;
+    bodemenondergrond:hoofdnaam      cl-hoofdnaam:LE ;
+    bodemenondergrond:bijnaam        cl-bijnaam:FZ . # Voorlopig nog fictieve codelijst!!
 
 observation:interp2005-157983-3 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2005-157983-3-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2005-157983-3-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:LE .
+    qb:dataSet                       dataset:geotechnischeCodering ;
+    dcterms:type                     cl-interpretatie:geotechnischeCodering ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2005-157983-3-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2005-157983-3-tot ;
+    bodemenondergrond:hoofdnaam      cl-hoofdnaam:LE .
 
 observation:interp2005-157983-4 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2005-157983-4-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2005-157983-4-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:LE ;
-    bodemenondergrond:bijnamen                          cl-bijnaam:HT, cl-bijnaam:KL . # Voorlopig nog fictieve codelijst!!
+    qb:dataSet                       dataset:geotechnischeCodering ;
+    dcterms:type                     cl-interpretatie:geotechnischeCodering ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2005-157983-4-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2005-157983-4-tot ;
+    bodemenondergrond:hoofdnaam      cl-hoofdnaam:LE ;
+    bodemenondergrond:bijnaam        cl-bijnaam:HT, cl-bijnaam:KL . # Voorlopig nog fictieve codelijst!!
 
 observation:interp2005-157983-5 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2005-157983-5-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2005-157983-5-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:FZ .
+    qb:dataSet                       dataset:geotechnischeCodering ;
+    dcterms:type                     cl-interpretatie:geotechnischeCodering ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2005-157983-5-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2005-157983-5-tot ;
+    bodemenondergrond:hoofdnaam      cl-hoofdnaam:FZ .
 
 #Hieronder een fichtief interval van de gecodeerde lithologie om de verschillende mogelijkheden aan te duiden
 observation:interp2005-157983-6 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:gecodeerdeLithologie ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2005-157983-6-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2005-157983-6-tot ;
-    bodemenondergrond:hoofdnamen                        cl-hoofdnaam:FZ, cl-hoofdnaam:KL ; # Meerdere hoofdnamen zijn perfect mogelijk
-    bodemenondergrond:bijnamen                          cl-bijnaam:PVGH, cl-bijnaam:PWSH, cl-bijnaam:WKH, cl-bijnaam:VHT . # Voorlopig nog fictieve codelijst!! Ook hier zijn meerdere bijnamen mogelijk. Extra opmerking: alle waarden moeten telkens 12x voorkomen, aangezien de gebruiker keuze heeft uit 1.houdend, 2.veel, 3.weinig, 4.sterk houdend, 5.weinig houdend en 6.zonder voorzetsel (+ telkens al dan niet plaatselijk, dus nog eens dubbel zoveel mogelijkheden = 12) !!
+    qb:dataSet                       dataset:geotechnischeCodering ;
+    dcterms:type                     cl-interpretatie:geotechnischeCodering ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2005-157983-6-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2005-157983-6-tot ;
+    bodemenondergrond:hoofdnaam      cl-hoofdnaam:FZ, cl-hoofdnaam:KL ; # Meerdere hoofdnaam zijn perfect mogelijk
+    bodemenondergrond:bijnaam        cl-bijnaam:PVGH, cl-bijnaam:PWSH, cl-bijnaam:WKH, cl-bijnaam:VHT . # Voorlopig nog fictieve codelijst!! Ook hier zijn meerdere bijnaam mogelijk. Extra opmerking: alle waarden moeten telkens 12x voorkomen, aangezien de gebruiker keuze heeft uit 1.houdend, 2.veel, 3.weinig, 4.sterk houdend, 5.weinig houdend en 6.zonder voorzetsel (+ telkens al dan niet plaatselijk, dus nog eens dubbel zoveel mogelijkheden = 12) !!
 
 
 location:boorgat1948-103796 a dcterms:Location ;
@@ -1879,6 +1962,9 @@ cl-hoofdnaam:LE a skos:Concept ;
 cl-hoofdnaam:FZ a skos:Concept ;
     rdfs:label "Fijn zand" .
 
+cl-hoofdnaam:AF a skos:Concept ;
+    rdfs:label "Afval" .
+
 cl-hoofdnaam:KL a skos:Concept ;
     rdfs:label "Klei" .
 
@@ -1887,6 +1973,9 @@ cl-bijnaam:HT a skos:Concept ;
 
 cl-bijnaam:KL a skos:Concept ;
     rdfs:label "Klei" . # Komt dus zowel in de codelijst hoofdnaam als in bijnaam voor.
+
+cl-bijnaam:FZ a skos:Concept ;
+    rdfs:label "Fijn zand" . # Komt dus zowel in de codelijst hoofdnaam als in bijnaam voor.
 
 cl-bijnaam:PVGH a skos:Concept ;
     rdfs:label "Plaatselijk veel glauconiethoudend" .
@@ -1999,7 +2088,6 @@ interp:2001-192188 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat1961-083086 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:2013-006419 ; # geen opdrachten in het voorbeeld, deze heb ik laten staan als fictief voorbeeld
     prov:wasStartedBy                 opdracht:2013-006419 ; # geen opdrachten in het voorbeeld, deze heb ik laten staan als fictief voorbeeld
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -2031,26 +2119,26 @@ list:interp2001-192188-2 a rdf:List ;
 
 # De eigenlijke observaties met diepte_van, diepte_tot, Aquifer (HCOVv1) en hydrtype.
 observation:interp2001-192188-1 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:hydrogeologischeStratigrafieV1 ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-192188-1-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-192188-1-tot ;
-    bodemenondergrond:aquiferV1                         cl-aquiferv1:0162 . # Fictief toegevoegd. Codelijst Aquiferv1 bestaat nog niet.
+    qb:dataSet                       dataset:hydrogeologischeStratigrafieV1 ;
+    dcterms:type                     cl-interpretatie:hydrogeologischeStratigrafieV1 ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2001-192188-1-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2001-192188-1-tot ;
+    bodemenondergrond:aquiferV1      cl-aquiferv1:0162 . # Fictief toegevoegd. Codelijst Aquiferv1 bestaat nog niet.
 
 observation:interp2001-192188-2 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:hydrogeologischeStratigrafieV1 ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-192188-2-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-192188-2-tot ;
-    bodemenondergrond:aquiferV1                         cl-aquiferv1:0612 .
+    qb:dataSet                       dataset:hydrogeologischeStratigrafieV1 ;
+    dcterms:type                     cl-interpretatie:hydrogeologischeStratigrafieV1 ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2001-192188-2-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2001-192188-2-tot ;
+    bodemenondergrond:aquiferV1      cl-aquiferv1:0612 .
 
 observation:interp2001-192188-3 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:hydrogeologischeStratigrafieV1 ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2001-192188-3-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2001-192188-3-tot ;
-    bodemenondergrond:aquiferV1                         cl-aquiferv1:0640 ;
-    bodemenondergrond:hydrotype                         cl-hydrotype:W . # Fictief toegevoegd. Codelijst hydrotype bestaat ook nog niet.
+    qb:dataSet                       dataset:hydrogeologischeStratigrafieV1 ;
+    dcterms:type                     cl-interpretatie:hydrogeologischeStratigrafieV1 ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2001-192188-3-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2001-192188-3-tot ;
+    bodemenondergrond:aquiferV1      cl-aquiferv1:0640 ;
+    bodemenondergrond:hydrotype      cl-hydrotype:W . # Fictief toegevoegd. Codelijst hydrotype bestaat ook nog niet.
 
 
 location:boorgat1961-083086 a dcterms:Location ;
@@ -2146,7 +2234,6 @@ interp:2024-380966 a                  sosa:Observation ;
     prov:atLocation                   location:boorgat2024-214357 ; # x,y geometrie van het boorgat waarop interpretatie gekoppeld is
     bodemenondergrond:dataleverancier agent:agent004 ; # dataleverancier in de DOV-fiche interpretatie
     bodemenondergrond:databeheerder   agent:agent005 ; # databeheerder in de DOV-fiche interpretatie
-    ssn:wasOriginatedBy               opdracht:2013-006419 ; # geen opdrachten in het voorbeeld, deze heb ik laten staan als fictief voorbeeld
     prov:wasStartedBy                 opdracht:2013-006419 ; # geen opdrachten in het voorbeeld, deze heb ik laten staan als fictief voorbeeld
     sosa:madeBySensor                 agent:agent003 ; # auteur in de DOV-fiche interpretatie
     ssn-system:qualityOfObservation   cl-betr:A .
@@ -2183,33 +2270,33 @@ list:interp2024-380966-3 a rdf:List ;
 
 # De eigenlijke observaties met diepte_van, diepte_tot, Aquifer (HCOVv2) en hydrtype.
 observation:interp2024-380966-1 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:hydrogeologischeStratigrafieV2 ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2024-380966-1-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2024-380966-1-tot ;
-    bodemenondergrond:aquiferV2                         cl-aquiferv2:A0131 . # Fictief toegevoegd. Codelijst Aquiferv2 bestaat nog niet.
+    qb:dataSet                       dataset:hydrogeologischeStratigrafieV2 ;
+    dcterms:type                     cl-interpretatie:hydrogeologischeStratigrafieV2 ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2024-380966-1-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2024-380966-1-tot ;
+    bodemenondergrond:aquiferV2      cl-aquiferv2:A0131 . # Fictief toegevoegd. Codelijst Aquiferv2 bestaat nog niet.
 
 observation:interp2024-380966-2 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:hydrogeologischeStratigrafieV2 ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2024-380966-2-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2024-380966-2-tot ;
-    bodemenondergrond:aquiferV2                         cl-aquiferv2:A0100 .
+    qb:dataSet                       dataset:hydrogeologischeStratigrafieV2 ;
+    dcterms:type                     cl-interpretatie:hydrogeologischeStratigrafieV2 ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2024-380966-2-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2024-380966-2-tot ;
+    bodemenondergrond:aquiferV2      cl-aquiferv2:A0100 .
 
 observation:interp2024-380966-3 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:hydrogeologischeStratigrafieV2 ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2024-380966-3-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2024-380966-3-tot ;
-    bodemenondergrond:aquiferV2                         cl-aquiferv2:A0225 .
+    qb:dataSet                       dataset:hydrogeologischeStratigrafieV2 ;
+    dcterms:type                     cl-interpretatie:hydrogeologischeStratigrafieV2 ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2024-380966-3-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2024-380966-3-tot ;
+    bodemenondergrond:aquiferV2      cl-aquiferv2:A0225 .
 
 observation:interp2024-380966-4 a    qb:Observation ;
-    qb:dataSet                                          dataset:interpretatie ;
-    dcterms:type                                        cl-interpretatie:hydrogeologischeStratigrafieV2 ;
-    bodemenondergrond:diepteVan                         quantityvalue:interp2024-380966-4-van ;
-    bodemenondergrond:diepteTot                         quantityvalue:interp2024-380966-4-tot ;
-    bodemenondergrond:aquiferV2                         cl-aquiferv2:A0240 ;
-    bodemenondergrond:hydrotype                         cl-hydrotype:S . # Fictief toegevoegd. Codelijst hydrotype bestaat ook nog niet.
+    qb:dataSet                       dataset:hydrogeologischeStratigrafieV2 ;
+    dcterms:type                     cl-interpretatie:hydrogeologischeStratigrafieV2 ;
+    bodemenondergrond:diepteVan      quantityvalue:interp2024-380966-4-van ;
+    bodemenondergrond:diepteTot      quantityvalue:interp2024-380966-4-tot ;
+    bodemenondergrond:aquiferV2      cl-aquiferv2:A0240 ;
+    bodemenondergrond:hydrotype      cl-hydrotype:S . # Fictief toegevoegd. Codelijst hydrotype bestaat ook nog niet.
 
 
 location:boorgat2024-214357 a dcterms:Location ;
