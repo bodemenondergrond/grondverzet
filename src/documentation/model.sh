@@ -40,7 +40,7 @@
   rdf2dot  /tmp/model.ttl | dot -Tpng > observation3.png
 
   sparql --results=TTL --data=../source/interpretaties.ttl --query model.rq  | sed -e 's/rdfs:label/rdfs:Label/' > /tmp/model.ttl
-  rdf2dot  /tmp/model.ttl | dot -Tpng > interpretaties.png
+  rdf2dot  /tmp/model.ttl | dot -Tpng > model_interpretaties.png
 
   sparql --results=TTL --data=../source/interpretaties-cube.ttl --query model.rq  > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > interpretaties-cube.png
