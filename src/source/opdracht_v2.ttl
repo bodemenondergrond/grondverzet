@@ -53,7 +53,9 @@
 @prefix datum:                     <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
 @prefix dcterms:                   <http://purl.org/dc/terms/> .
 @prefix dataset:                   <https://data.bodemenondergrond.vlaanderen.be/id/dataset/> .
+@prefix dbo:                       <http://dbpedia.org/ontology/> .
 @prefix dossier:                   <https://data.vlaanderen.be/ns/dossier#> .
+@prefix doss:                      <https://data.bodemenondergrond.vlaanderen.be/id/dossier/> .
 @prefix dsd:                       <https://data.bodemenondergrond.vlaanderen.be/id/dsd/> .
 @prefix formstrat:                 <https://data.bodemenondergrond.vlaanderen.be/id/formelestratigrafie/> .
 @prefix geometrie:                 <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
@@ -110,6 +112,7 @@
 @prefix time:                      <http://www.w3.org/2006/time#> .
 @prefix wettelijkkader:            <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
 @prefix xsd:                       <http://www.w3.org/2001/XMLSchema#> .
+@prefix zaak:                      <https://data.bodemenondergrond.vlaanderen.be/id/zaak/> .
 
 
 agent:agent004 a prov:Agent . # dataleverancier of databeheerder(?) in de DOV-fiche.
@@ -136,6 +139,15 @@ boring:1947-030248  a  grondboringen:Grondboring; # a prov:Activity
         prov:startedAtTime            "1947-03-02T00:00:00Z"^^xsd:dateTime ; # startdatum
         prov:endedAtTime               "1947-03-02T23:59:59Z"^^xsd:dateTime ; # einddatum
         prov:wasStartedBy      opdracht:1948-003617 .
+
+zaak:1948-003617 a dbo:Case;
+         dossier:openingsdatum            "1947-03-02"^^xsd:date ; # startdatum
+         dossier:sluitingsdatum             "1947-03-02"^^xsd:date ; # einddatum
+        .
+
+doss:1948-003617 a dossier:Dossier;
+        prov:hadMember opdracht:1948-003617 ;
+        dossier:isNeerslagVan zaak:1948-003617 .
 
 
 opdracht:1948-003617 a dossier:Stuk ;

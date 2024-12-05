@@ -379,7 +379,7 @@ result:boorgat001-act1965-068140-3 a sosa:Result ;
                                    schema:about boorgat:boorgat001 .
 
 boorgat:boorgat001 a grondboringbeno:Boorgat ; # sosa:Result, geosparql:Feature  ;
-                   ssn:hasProperty obs_prop:diepte_boorgat001 ;
+                   ssn:hasProperty   obs_prop:diepte_boorgat001 ;
                    sosa:hasSample    result:boorgat001-sam1965-068140-a ;
                    sosa:hasSample    result:boorgat001-sam1965-068140-b ;
                    sosa:hasSample    result:boorgat001-sam1965-068140-c ;
