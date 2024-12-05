@@ -152,13 +152,19 @@ opdracht:1948-003617 a dossier:Stuk ;
     dcterms:relation                    opdracht:2022-030475 ; # gekoppelde opdracht: fictief voorbeeld hier.
     dcterms:type                        cl-opdrorigine:studiesProjecten ; # niet zeker als de origine van de opdracht hier op zijn plaatst staat
     prov:value                          "Sonderingen voor studie der funderingen der te herbouwen brug over de Schelde te Temse"@nl ;
-    dossier:beschrijft         boorgat:boorgat1948-103795, boorgat:boorgat1948-103796, boorgat:boorgat1948-103233, boorgat:boorgat1948-103232,
+    dossier:beschrijft         location:boorgat1948-103795, boorgat:boorgat1948-103795, boorgat:boorgat1948-103796, boorgat:boorgat1948-103233, boorgat:boorgat1948-103232,
                                         sondering:1947-030248, sondering:1947-030249, sondering:1947-030250, sondering:1947-030251, sondering:1947-030253,
                                         interp:2005-197156, interp:2005-197155, interp:2005-157984, interp:2005-157983 ;
     adms:identifier                        id:opdracht1948-003617 ;
 #    prov:atLocation                     location:opdracht1948-003617 ; # de locatie van een stuk is de kast waarin het zich bevindt
-
 .
+
+location:boorgat1948-103795 a dcterms:Location ;
+                             geosparql:hasGeometry geometrie:boorgat1965-068140 .
+
+boorgat:boorgat1948-103795 a bodemenondergrond:Boorgat;
+        prov:atLocation                     location:boorgat1948-103795 ;
+                               geosparql:hasGeometry geometrie:boorgat1965-068140.
 
 # Alle mogelijke gekoppelde objecten (om eventueel mee te nemen in dossier:is_voorgesteld_door):  boring (weergegeven als boorgat),
 # (grond)monster, sondering, interpretatie, grondwaterlocatie(put), filter, bodemlocatie, bodemsite, bodemmonster, bodemobservatie en voorafmelding
@@ -192,25 +198,25 @@ geometrie:opdracht1948-003617 a geosparql:Geometry ;
 # omhullende geometrie van alle gekoppelde objecten.
 
 # Fictieve opmerkingen en bijlagen toegevoegd
-opm:opdracht1948-003617-1 a dossier:Stukonderdeel ; #bodemenondergrond:Opmerking ;
+opm:opdracht1948-003617-1 a dossier:Stukonderdeel, bodemenondergrond:Opmerking ;
     dcterms:description    "Dit is een eerste fictieve opmerking bij de opdracht" ;
     dcterms:creator        agent:agent001 ;
                               dcterms:isPartOf     opdracht:1948-003617 ;
     dcterms:created        "1948-03-13"^^xsd:date .
 
-opm:opdracht1948-003617-2 a dossier:Stukonderdeel ; #bodemenondergrond:Opmerking ;
+opm:opdracht1948-003617-2 a dossier:Stukonderdeel , bodemenondergrond:Opmerking ;
     dcterms:description    "Dit is een tweede fictieve opmerking bij de opdracht" ;
     dcterms:creator        agent:agent001 ;
                               dcterms:isPartOf    opdracht:1948-003617 ;
     dcterms:created           "1948-03-13"^^xsd:date .
 
-bl:opdracht1948-003617-1 a dossier:Stukonderdeel ; #bodemenondergrond:Bijlage ;
+bl:opdracht1948-003617-1 a dossier:Stukonderdeel , bodemenondergrond:Bijlage ;
     rdfs:label             "Een eerste relevante bijlage bij de opdracht" ;
     dcterms:creator        agent:agent001 ;
                              dcterms:isPartOf     opdracht:1948-003617 ;
     dcterms:created        "1948-03-13"^^xsd:date .
 
-bl:opdracht1948-003617-2 a dossier:Stukonderdeel ; #bodemenondergrond:Bijlage ;
+bl:opdracht1948-003617-2 a dossier:Stukonderdeel , bodemenondergrond:Bijlage ;
     rdfs:label             "Een tweede relevante bijlage bij de opdracht" ;
     dcterms:creator        agent:agent001 ;
     dcterms:isPartOf    opdracht:1948-003617 ;
