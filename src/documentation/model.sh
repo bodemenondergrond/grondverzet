@@ -47,3 +47,6 @@
 
   sparql --results=TTL --data=../source/interpretaties-cube-component_attachment.ttl --query model.rq | sed -e 's/rdfs:label/rdfs:Label/' > /tmp/model.ttl
   rdf2dot  /tmp/model.ttl | dot -Tpng > interpretaties-cube-component_attachment.png
+
+  sparql --results=TTL --data=../source/opdracht_v2.ttl --query model.rq | sed -e 's/rdfs:label/rdfs:Label/' > /tmp/model.ttl
+  rdf2dot  /tmp/model.ttl | dot -Tpng > opdracht_v2.png
