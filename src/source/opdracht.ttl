@@ -111,7 +111,7 @@
 @prefix wettelijkkader:            <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
 @prefix xsd:                       <http://www.w3.org/2001/XMLSchema#> .
 
-
+agent:agent001 a prov:Agent .
 agent:agent004 a prov:Agent . # dataleverancier in de DOV-fiche.
 agent:agent003 a prov:Agent . # opdrachtgever in de DOV-fiche. Stond tevoren als grondboringbeno:opdrachtgever
 agent:agent005 a prov:Agent . # databeheerder in de DOV-fiche opdracht, als die al bestaat.
@@ -126,6 +126,8 @@ cl-rol:dataleverancier a prov:Role  .
 cl-rol:opdrachtgever a prov:Role .
 cl-rol:databeheerder a prov:Role .
 cl-rol:opdrachtnemer a prov:Role .
+
+opdracht:2022-030475 a dossier:Stuk .
 
 ### Opdracht met permkey 1948-003617 uit fiche: startdatum, einddatum, opdrachtnemer, opdrachtgever, dataleverancier,
 ### aard opdracht (meerdere opties mogelijk), origine, beschrijving, gelinkte opdrachten, opmerkingen, bijlagen, ligging en gekoppelde objecten.
@@ -150,10 +152,12 @@ opdracht:1948-003617 a dossier:Stuk ;
     dcterms:relation                    opdracht:2022-030475 ; # gekoppelde opdracht: fictief voorbeeld hier.
     dcterms:type                        cl-opdrorigine:studiesProjecten ; # de origine van de opdracht
     prov:value                          "Sonderingen voor studie der funderingen der te herbouwen brug over de Schelde te Temse"@nl ; # beschrijving van de opdracht
+    rdfs:label                          "Sonderingen voor studie der funderingen der te herbouwen brug over de Schelde te Temse"@nl ; # beschrijving van de opdracht
     dossier:beschrijft                  location:boorgat1948-103795, location:boorgat1948-103796, location:boorgat1948-103233, location:boorgat1948-103232,
                                         location:sondering1947-030248, location:sondering1947-030249, location:sondering1947-030250, location:sondering1947-030251, location:sondering1947-030253,
                                         location:interp2005-197156, location:interp2005-197155, location:interp2005-157984, location:interp2005-157983 ; # de locaties van de gekoppelde objecten. Verschillende types zijn hier mogelijk.
-    dcterms:title                       "GEO-47/449" . # naam van de opdracht
+    adms:identifier                     id:1948-003617 ; #
+    dcterms:title                       "Opdracht GEO-47/449"@nl . # naam van de opdracht
 
 # Alle mogelijke gekoppelde objecten (om eventueel mee te nemen in dossier:is_voorgesteld_door):  boring (weergegeven als boorgat),
 # (grond)monster, sondering, interpretatie, grondwaterlocatie(put), filter, bodemlocatie, bodemsite, bodemmonster, bodemobservatie en voorafmelding
@@ -162,35 +166,43 @@ opdracht:1948-003617 a dossier:Stuk ;
 
 # Meerdere opdracht-aard mogelijkheden!!
 cl-dlb:geotechnischOnderzoek a skos:Concept ; # vreemd genoeg is de codelijst doelboring en aard opdracht dezelfde. Ik neem hier dus de doelboring op.
-    rdfs:label "geotechnisch onderzoek" . 
+    rdfs:label "geotechnisch onderzoek"@nl .
 
 # Opdracht-origine kan telkens maar 1x voorkomen.
 cl-opdrorigine:studiesProjecten a skos:Concept ;
-    rdfs:label "studies en projecten" .
+    rdfs:label "studies en projecten"@nl .
 
 
 # Fictieve opmerkingen en bijlagen toegevoegd
 opm:opdracht1948-003617-1 a dossier:Stukonderdeel ; #bodemenondergrond:Opmerking ;
-    dcterms:description    "Dit is een eerste fictieve opmerking bij de opdracht" ;
+    dcterms:title          "Opmerking bij opdracht GEO-47/449"@nl ;
+    dcterms:description    "Dit is een eerste fictieve opmerking bij de opdracht"@nl ;
     dcterms:creator        agent:agent001 ;
     dcterms:isPartOf       opdracht:1948-003617 ;
     dcterms:created        "1948-03-13"^^xsd:date .
 
 opm:opdracht1948-003617-2 a dossier:Stukonderdeel ; #bodemenondergrond:Opmerking ;
-    dcterms:description    "Dit is een tweede fictieve opmerking bij de opdracht" ;
+    dcterms:title          "Opmerking bij opdracht GEO-47/449"@nl ;
+    dcterms:description    "Dit is een tweede fictieve opmerking bij de opdracht"@nl ;
     dcterms:creator        agent:agent001 ;
     dcterms:isPartOf       opdracht:1948-003617 ;
     dcterms:created        "1948-03-13"^^xsd:date .
 
 bl:opdracht1948-003617-1 a dossier:Stukonderdeel ; #bodemenondergrond:Bijlage ;
-    rdfs:label             "Een eerste relevante bijlage bij de opdracht" ;
+    dcterms:title          "Bijlage bij opdracht GEO-47/449"@nl ;
+    rdfs:label             "Een eerste relevante bijlage bij de opdracht"@nl ;
     dcterms:creator        agent:agent001 ;
     dcterms:isPartOf       opdracht:1948-003617 ;
     dcterms:created        "1948-03-13"^^xsd:date .
 
 bl:opdracht1948-003617-2 a dossier:Stukonderdeel ; #bodemenondergrond:Bijlage ;
-    rdfs:label             "Een tweede relevante bijlage bij de opdracht" ;
+    dcterms:title          "Bijlage bij opdracht GEO-47/449"@nl ;
+    rdfs:label             "Een tweede relevante bijlage bij de opdracht"@nl ;
     dcterms:creator        agent:agent001 ;
     dcterms:isPartOf       opdracht:1948-003617 ;
     dcterms:created        "1948-03-13"^^xsd:date .
+
+id:1948-003617
+    a              adms:Identifier;
+    skos:notation  "GEO-47/449"^^cl-idt:boornummer .
 
