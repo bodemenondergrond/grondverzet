@@ -1,0 +1,239 @@
+@prefix act:                       <https://data.bodemenondergrond.vlaanderen.be/id/actuation/> .
+@prefix adms:                      <http://www.w3.org/ns/adms#> .
+@prefix agent:                     <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
+@prefix association:               <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
+@prefix attribution:               <https://data.bodemenondergrond.vlaanderen.be/id/attribution/> .
+@prefix avp:                       <https://data.bodemenondergrond.vlaanderen.be/id/aanvangspeil/> .
+@prefix bemprocedure:              <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/> .
+@prefix betrouwbaarheid:           <https://data.bodemenondergrond.vlaanderen.be/id/betrouwbaarheid/> .
+@prefix bl:                        <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
+@prefix bodemenondergrond:         <https://data.vlaanderen.be/ns/bodem-en-ondergrond#> .
+@prefix boorgat:                   <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
+@prefix boor:                      <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
+@prefix boormethodeinterval:       <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/> .
+@prefix boring:                    <https://data.bodemenondergrond.vlaanderen.be/id/boring/> .
+@prefix cl-ader:                   <https://data.bodemenondergrond.vlaanderen.be/id/concept/adertype/> .
+@prefix cl-astm:                   <https://data.bodemenondergrond.vlaanderen.be/id/concept/parameterastm/> .
+@prefix cl-aquiferv1:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/aquiferhcovv1/> .
+@prefix cl-aquiferv2:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/aquiferhcovv2/> .
+@prefix cl-beh:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandeling/> .
+@prefix cl-behwaarde:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandelingswaarde/> .
+@prefix cl-bijnaam:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/bijnaam/> .
+@prefix cl-bpt:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/> .
+@prefix cl-betr:                   <https://data.bodemenondergrond.vlaanderen.be/id/concept/betrouwbaarheid/> .
+@prefix cl-brm:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/> .
+@prefix cl-cons:                   <https://data.bodemenondergrond.vlaanderen.be/id/concept/consistentietype/> .
+@prefix cl-dlb:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/> .
+@prefix cl-forme:                  <https://data.bodemenondergrond.vlaanderen.be/id/concept/formeleeenheid/> .
+@prefix cl-fossielaard:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/fossielaard/> .
+@prefix cl-fossieltype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/fossieltype/> .
+@prefix cl-got:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/> .
+@prefix cl-hoofdnaam:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/hoofdnaam/> .
+@prefix cl-hydrotype:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/hydrotype/> .
+@prefix cl-idt:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/> .
+@prefix cl-interpretatie:          <https://data.bodemenondergrond.vlaanderen.be/id/concept/interpretatie/> .
+@prefix cl-kleur:                  <https://data.bodemenondergrond.vlaanderen.be/id/concept/kleur/> .
+@prefix cl-loc:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/> .
+@prefix cl-mat:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/> .
+@prefix cl-mmt:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/> .
+@prefix cl-mtype:                  <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
+@prefix cl-mtype:                  <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
+@prefix cl-opdraard:               <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/> .
+@prefix cl-opdrorigine:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/opdrachtaard/> .
+@prefix cl-opt:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/opdrachtorigine/> .
+@prefix cl-quarte:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/quartaireeenheid/> .
+@prefix cl-releenh:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/relatieeenheden/> .
+@prefix cl-rol:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/> .
+@prefix cl-seckenm:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/secundairekenmerktype/> .
+@prefix cl-sedstruct:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/sedimentairestructuurtype/> .
+@prefix cl-tektoniek:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/tektoniektype/> .
+@prefix cl-vocht:                  <https://data.bodemenondergrond.vlaanderen.be/id/concept/vochtgehaltetype/> .
+@prefix componentspecification:    <https://data.bodemenondergrond.vlaanderen.be/id/componentspecification/> .
+@prefix concept:                   <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
+@prefix datum:                     <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
+@prefix dcterms:                   <http://purl.org/dc/terms/> .
+@prefix dataset:                   <https://data.bodemenondergrond.vlaanderen.be/id/dataset/> .
+@prefix dbo:                       <http://dbpedia.org/ontology/> .
+@prefix dossier:                   <https://data.vlaanderen.be/ns/dossier#> .
+@prefix doss:                      <https://data.bodemenondergrond.vlaanderen.be/id/dossier/> .
+@prefix dsd:                       <https://data.bodemenondergrond.vlaanderen.be/id/dsd/> .
+@prefix formstrat:                 <https://data.bodemenondergrond.vlaanderen.be/id/formelestratigrafie/> .
+@prefix geometrie:                 <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
+@prefix geosparql:                 <http://www.opengis.net/ont/geosparql#> .
+@prefix gmldov:                    <https://data.bodemenondergrond.vlaanderen.be/id/gml/> .
+@prefix gml:                       <http://www.opengis.net/ont/gml#> .
+@prefix grondbor_ingbeno:          <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#> .
+@prefix grondboringen:             <https://data.vlaanderen.be/ns/grondboringen#> .
+@prefix grondobject:               <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/> .
+@prefix hel:                       <https://data.bodemenondergrond.vlaanderen.be/id/helling/> .
+@prefix her:                       <https://data.bodemenondergrond.vlaanderen.be/id/herkomst/> .
+@prefix herh:                      <https://data.bodemenondergrond.vlaanderen.be/id/herhaling/> .
+@prefix id:                        <https://data.bodemenondergrond.vlaanderen.be/id/identificator/> .
+@prefix incl:                      <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/> .
+@prefix interp:                    <https://data.bodemenondergrond.vlaanderen.be/id/interpretatie/> .
+@prefix list:                      <https://data.bodemenondergrond.vlaanderen.be/id/list/> .
+@prefix lithbesch:                 <https://data.bodemenondergrond.vlaanderen.be/id/lithologischebeschrijving/> .
+@prefix location:                  <https://data.bodemenondergrond.vlaanderen.be/id/location/> .
+@prefix moment:                    <https://data.bodemenondergrond.vlaanderen.be/id/moment/> .
+@prefix mv:                        <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/> .
+@prefix obs_prop:                  <https://data.bodemenondergrond.vlaanderen.be/id/property/> .
+@prefix opdracht:                  <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
+@prefix observation:               <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
+@prefix observationgroup:          <https://data.bodemenondergrond.vlaanderen.be/id/observationgroup/> .
+@prefix opm:                       <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/> .
+@prefix periode:                   <https://data.bodemenondergrond.vlaanderen.be/id/periode/> .
+@prefix prop:                      <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/> .
+@prefix prov:                      <http://www.w3.org/ns/prov#> .
+@prefix qb:                        <http://purl.org/linked-data/cube#> .
+@prefix quantityvalue:             <https://data.bodemenondergrond.vlaanderen.be/id/quantityvalue/> .
+@prefix qudt:                      <http://qudt.org/schema/qudt/> .
+@prefix qudt-unit:                 <http://qudt.org/vocab/unit/> .
+@prefix rdf:                       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:                      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix result:                    <https://data.bodemenondergrond.vlaanderen.be/id/result/> .
+@prefix richting:                  <https://data.bodemenondergrond.vlaanderen.be/id/richting/> .
+@prefix rol:                       <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/> .
+@prefix sam:                       <https://data.bodemenondergrond.vlaanderen.be/id/sampling/> .
+@prefix sample:                    <https://data.bodemenondergrond.vlaanderen.be/id/sample/> .
+@prefix schema:                    <https://schema.org/> .
+@prefix sdmx-attribute:            <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:              <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix seb:                       <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#> .
+@prefix sequence:                  <https://data.bodemenondergrond.vlaanderen.be/id/sequence/> .
+@prefix skos:                      <http://www.w3.org/2004/02/skos/core#> .
+@prefix slice:                     <https://data.bodemenondergrond.vlaanderen.be/id/slice/> .
+@prefix slicekey:                  <https://data.bodemenondergrond.vlaanderen.be/id/slicekey/> .
+@prefix sondering:                 <https://data.bodemenondergrond.vlaanderen.be/id/sondering/> .
+@prefix sosa:                      <http://www.w3.org/ns/sosa/> .
+@prefix sosa-om:                   <http://www.w3.org/ns/sosa/om#> .
+@prefix sost:                      <http://rdf-vocabulary.ddialliance.org/sost#> .
+@prefix ssn:                       <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system:                <http://www.w3.org/ns/ssn/systems/> .
+@prefix time:                      <http://www.w3.org/2006/time#> .
+@prefix wettelijkkader:            <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
+@prefix xsd:                       <http://www.w3.org/2001/XMLSchema#> .
+@prefix zaak:                      <https://data.bodemenondergrond.vlaanderen.be/id/zaak/> .
+
+
+agent:agent004 a prov:Agent . # dataleverancier of databeheerder(?) in de DOV-fiche.
+agent:agent003 a prov:Agent . # opdrachtgever in de DOV-fiche. Stond tevoren als grondboringbeno:opdrachtgever
+agent:agent005 a prov:Agent . # databeheerder in de DOV-fiche opdracht, als die al bestaat.
+agent:agent002 a prov:Agent . # opdrachtnemer in de DOV-fiche.
+
+
+attribution:agent004_1948-003617 a prov:Attribution ; prov:hadRole cl-rol:dataleverancier ; prov:agent agent:agent004.
+attribution:agent003_1948-003617 a prov:Attribution ; prov:hadRole cl-rol:opdrachtgever ; prov:agent agent:agent003.
+attribution:agent005_1948-003617 a prov:Attribution ; prov:hadRole cl-rol:databeheerder ; prov:agent agent:agent005.
+attribution:agent002_1948-003617 a prov:Attribution ; prov:hadRole cl-rol:opdrachtnemer ; prov:agent agent:agent002.
+
+cl-rol:dataleverancier a prov:Role  .
+cl-rol:opdrachtgever a prov:Role .
+cl-rol:databeheerder a prov:Role .
+cl-rol:opdrachtnemer a prov:Role .
+
+### Opdracht met permkey 1948-003617 uit fiche: startdatum, einddatum, opdrachtnemer, opdrachtgever, dataleverancier,
+### aard opdracht (meerdere opties mogelijk), origine, beschrijving, gelinkte opdrachten, opmerkingen, bijlagen, ligging en gekoppelde objecten.
+### gekoppelde objecten dienen niet weergegeven te worden. Vanuit de afzonderlijke objecten wordt reeds de link gelegd naar de opdracht.
+
+boring:1947-030248  a  grondboringen:Grondboring; # a prov:Activity
+        prov:startedAtTime            "1947-03-02T00:00:00Z"^^xsd:dateTime ; # startdatum
+        prov:endedAtTime               "1947-03-02T23:59:59Z"^^xsd:dateTime ; # einddatum
+        prov:wasStartedBy      opdracht:1948-003617 .
+
+zaak:1948-003617 a dbo:Case;
+         dossier:openingsdatum            "1947-03-02"^^xsd:date ; # startdatum
+         dossier:sluitingsdatum             "1947-03-02"^^xsd:date ; # einddatum
+        .
+
+doss:1948-003617 a dossier:Dossier;
+        prov:hadMember opdracht:1948-003617 ;
+        dossier:isNeerslagVan zaak:1948-003617 .
+
+
+opdracht:1948-003617 a dossier:Stuk ;
+    prov:wasAttributedTo                agent:agent004 ; # dataleverancier of databeheerder(?) in de DOV-fiche.
+    prov:qualifiedAttribution           attribution:agent004_1948-003617;
+    prov:wasAttributedTo                agent:agent003 ; # opdrachtgever in de DOV-fiche. Stond tevoren als grondboringbeno:opdrachtgever
+    prov:qualifiedAttribution           attribution:agent003_1948-003617 ;
+    prov:wasAttributedTo                agent:agent005 ; # databeheerder in de DOV-fiche opdracht, als die al bestaat.
+    prov:qualifiedAttribution           attribution:agent005_1948-003617 ;
+    prov:wasAttributedTo                agent:agent002 ; # opdrachtnemer in de DOV-fiche.
+    prov:qualifiedAttribution           attribution:agent005_1948-003617 ;
+    dcterms:subject                     cl-dlb:geotechnischOnderzoek  ; # staat de aard van de opdracht hier op zijn plaats?
+    #dossier:datum                       datum:opdracht1948-003617-start, datum:opdracht1948-003617-eind ;
+    dcterms:relation                    opdracht:2022-030475 ; # gekoppelde opdracht: fictief voorbeeld hier.
+    dcterms:type                        cl-opdrorigine:studiesProjecten ; # niet zeker als de origine van de opdracht hier op zijn plaatst staat
+    prov:value                          "Sonderingen voor studie der funderingen der te herbouwen brug over de Schelde te Temse"@nl ;
+    dossier:beschrijft         location:boorgat1948-103795, boorgat:boorgat1948-103795, boorgat:boorgat1948-103796, boorgat:boorgat1948-103233, boorgat:boorgat1948-103232,
+                                        sondering:1947-030248, sondering:1947-030249, sondering:1947-030250, sondering:1947-030251, sondering:1947-030253,
+                                        interp:2005-197156, interp:2005-197155, interp:2005-157984, interp:2005-157983 ;
+    adms:identifier                        id:opdracht1948-003617 ;
+#    prov:atLocation                     location:opdracht1948-003617 ; # de locatie van een stuk is de kast waarin het zich bevindt
+.
+
+location:boorgat1948-103795 a dcterms:Location ;
+                             geosparql:hasGeometry geometrie:boorgat1965-068140 .
+
+boorgat:boorgat1948-103795 a bodemenondergrond:Boorgat;
+        prov:atLocation                     location:boorgat1948-103795 ;
+                               geosparql:hasGeometry geometrie:boorgat1965-068140.
+
+# Alle mogelijke gekoppelde objecten (om eventueel mee te nemen in dossier:is_voorgesteld_door):  boring (weergegeven als boorgat),
+# (grond)monster, sondering, interpretatie, grondwaterlocatie(put), filter, bodemlocatie, bodemsite, bodemmonster, bodemobservatie en voorafmelding
+# PS: gekoppelde opdrachten zitten reeds bij dossier:heeft_relatie_tot
+
+# naam van de opdracht
+id:opdracht1948-003617 a adms:Identifier ;
+    skos:notation  "GEO-47/449"^^cl-idt:boornummer ;
+#    dcterms:source agent:agent004 ; # wat bedoel je hiermee?
+.
+
+# Meerdere opdracht-aard mogelijkheden!!
+cl-dlb:geotechnischOnderzoek a skos:Concept ; # vreemd genoeg is de codelijst doelboring en aard opdracht dezelfde. Ik neem hier dus de doelboring op.
+    rdfs:label "geotechnisch onderzoek" . 
+
+# Opdracht-origine kan telkens maar 1x voorkomen.
+cl-opdrorigine:studiesProjecten a skos:Concept ;
+    rdfs:label "studies en projecten" .
+
+
+
+
+
+# geometrie van de opdracht (al dan niet fictief)
+location:opdracht1948-003617 a dcterms:Location ;
+        geosparql:hasGeometry geometrie:opdracht1948-003617 .
+
+geometrie:opdracht1948-003617 a geosparql:Geometry ;
+        geosparql:asWKT "MULTIPOLYGON(((4.560 51.219, 4.600 51.230, 4.750 51.300, 4.560 51.219)))"^^geosparql:wktLiteral . # De geometrie is fictief.
+# Er is niet altijd een geometrie voor een opdracht. Desgevallend kunnen we opteren om een geometrie samen te stellen als
+# omhullende geometrie van alle gekoppelde objecten.
+
+# Fictieve opmerkingen en bijlagen toegevoegd
+opm:opdracht1948-003617-1 a dossier:Stukonderdeel, bodemenondergrond:Opmerking ;
+    dcterms:description    "Dit is een eerste fictieve opmerking bij de opdracht" ;
+    dcterms:creator        agent:agent001 ;
+                              dcterms:isPartOf     opdracht:1948-003617 ;
+    dcterms:created        "1948-03-13"^^xsd:date .
+
+opm:opdracht1948-003617-2 a dossier:Stukonderdeel , bodemenondergrond:Opmerking ;
+    dcterms:description    "Dit is een tweede fictieve opmerking bij de opdracht" ;
+    dcterms:creator        agent:agent001 ;
+                              dcterms:isPartOf    opdracht:1948-003617 ;
+    dcterms:created           "1948-03-13"^^xsd:date .
+
+bl:opdracht1948-003617-1 a dossier:Stukonderdeel , bodemenondergrond:Bijlage ;
+    rdfs:label             "Een eerste relevante bijlage bij de opdracht" ;
+    dcterms:creator        agent:agent001 ;
+                             dcterms:isPartOf     opdracht:1948-003617 ;
+    dcterms:created        "1948-03-13"^^xsd:date .
+
+bl:opdracht1948-003617-2 a dossier:Stukonderdeel , bodemenondergrond:Bijlage ;
+    rdfs:label             "Een tweede relevante bijlage bij de opdracht" ;
+    dcterms:creator        agent:agent001 ;
+    dcterms:isPartOf    opdracht:1948-003617 ;
+    dcterms:created        "1948-03-13"^^xsd:date .
+
+
+
+

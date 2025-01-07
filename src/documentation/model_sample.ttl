@@ -1,0 +1,134 @@
+PREFIX act:                 <https://data.bodemenondergrond.vlaanderen.be/id/actuation/>
+PREFIX adms:                <http://www.w3.org/ns/adms#>
+PREFIX agent:               <https://data.bodemenondergrond.vlaanderen.be/id/agent/>
+PREFIX association:         <https://data.bodemenondergrond.vlaanderen.be/id/association/>
+PREFIX bemprocedure:        <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/>
+PREFIX bl:                  <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/>
+PREFIX boor:                <https://data.bodemenondergrond.vlaanderen.be/id/boor/>
+PREFIX boorgat:             <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/>
+PREFIX boormethodeinterval: <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/>
+PREFIX boring:              <https://data.bodemenondergrond.vlaanderen.be/id/boring/>
+PREFIX cl-beh:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandeling/>
+PREFIX cl-behwaarde:        <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandelingswaarde/>
+PREFIX cl-bpt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/>
+PREFIX cl-brm:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/>
+PREFIX cl-dlb:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/>
+PREFIX cl-got:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/>
+PREFIX cl-idt:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/>
+PREFIX cl-loc:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/>
+PREFIX cl-mat:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/>
+PREFIX cl-mtype:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/>
+PREFIX cs:                  <https://data.vlaanderen.be/ns/chemische_stof#>
+PREFIX csc:                 <https://data.omgeving.vlaanderen.be/id/concept/chemische_stof/>
+PREFIX datum:               <https://data.bodemenondergrond.vlaanderen.be/id/datum/>
+PREFIX dbo:                 <http://dbpedia.org/ontology/>
+PREFIX dbp:                 <http://dbpedia.org/property/>
+PREFIX dcterms:             <http://purl.org/dc/terms/>
+PREFIX geometrie:           <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/>
+PREFIX geosparql:           <http://www.opengis.net/ont/geosparql#>
+PREFIX gml:                 <http://www.opengis.net/ont/gml#>
+PREFIX gmldov:              <https://data.bodemenondergrond.vlaanderen.be/id/gml/>
+PREFIX grondboringbeno:     <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#>
+PREFIX grondboringen:       <https://data.vlaanderen.be/ns/grondboringen#>
+PREFIX grondobject:         <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/>
+PREFIX hel:                 <https://data.bodemenondergrond.vlaanderen.be/id/helling/>
+PREFIX id:                  <https://data.bodemenondergrond.vlaanderen.be/id/identificator/>
+PREFIX incl:                <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/>
+PREFIX list:                <https://data.bodemenondergrond.vlaanderen.be/id/list/>
+PREFIX moment:              <https://data.bodemenondergrond.vlaanderen.be/id/moment/>
+PREFIX obs:                 <https://data.bodemenondergrond.vlaanderen.be/id/observation/>
+PREFIX obs_prop:            <https://data.bodemenondergrond.vlaanderen.be/id/property/>
+PREFIX opdracht:            <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/>
+PREFIX opm:                 <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/>
+PREFIX owl:                 <http://www.w3.org/2002/07/owl#>
+PREFIX prop:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/>
+PREFIX prov:                <http://www.w3.org/ns/prov#>
+PREFIX qudt-schema:         <https://qudt.org/schema/qudt/>
+PREFIX qudt-unit:           <https://qudt.org/vocab/unit/>
+PREFIX rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:                <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX result:              <https://data.bodemenondergrond.vlaanderen.be/id/result/>
+PREFIX richting:            <https://data.bodemenondergrond.vlaanderen.be/id/richting/>
+PREFIX rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/>
+PREFIX sam:                 <https://data.bodemenondergrond.vlaanderen.be/id/sampling/>
+PREFIX sample:              <https://data.bodemenondergrond.vlaanderen.be/id/sample/>
+PREFIX schema:              <https://schema.org/>
+PREFIX sdmx-attribute:      <http://purl.org/linked-data/sdmx/2009/attribute#>
+PREFIX seb:                 <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#>
+PREFIX skos:                <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa:                <http://www.w3.org/ns/sosa/>
+PREFIX sosa-om:             <http://www.w3.org/ns/sosa/om#>
+PREFIX ssn:                 <http://www.w3.org/ns/ssn/>
+PREFIX time:                <http://www.w3.org/2006/time#>
+PREFIX vlcs:                <https://data.omgeving.vlaanderen.be/id/conceptscheme/>
+PREFIX wettelijkkader:      <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/>
+PREFIX xsd:                 <http://www.w3.org/2001/XMLSchema#>
+
+sosa:Sample  rdf:type        "rdfs:Resource";
+        adms:identifier      adms:Identifier;
+        prov:wasDerivedFrom  sosa:Sample;
+        prov:wasStartedBy    "rdfs:Resource";
+        sosa:isResultOf      sosa:Sampling;
+        sosa:isSampleOf      "rdfs:Resource";
+        grondboringbeno:sampleDiepteTot
+                "rdfs:Resource";
+        grondboringbeno:sampleDiepteVan
+                "rdfs:Resource" .
+
+sosa:ObservableProperty
+        rdf:type          "rdfs:Resource";
+        dcterms:subject   "rdfs:Resource";
+        ssn:isPropertyOf  sosa:Sample .
+
+adms:Identifier  rdf:type  "rdfs:Resource";
+        dcterms:source  "rdfs:Resource";
+        skos:notation   "http://www.w3.org/2001/XMLSchema#string" .
+
+sosa:Observation  rdf:type         "rdfs:Resource";
+        sosa:hasFeatureOfInterest  sosa:Sample;
+        sosa:hasResult             "rdfs:Resource";
+        sosa:hasSimpleResult       "http://www.w3.org/2001/XMLSchema#string";
+        sosa:madeBySensor          "rdfs:Resource";
+        sosa:observedProperty      "rdfs:Resource";
+        sosa:observedProperty      sosa:ObservableProperty;
+        sosa:phenomenonTime        time:Interval;
+        sosa:resultTime            "http://www.w3.org/2001/XMLSchema#dateTime";
+        sosa:usedProcedure         "rdfs:Resource";
+        sosa:usedProcedure         sosa:Procedure;
+        ssn:wasOriginatedBy        "rdfs:Resource" .
+
+time:Interval  rdf:type    "rdfs:Resource";
+        time:hasBeginning  time:Instant;
+        time:hasEnd        time:Instant .
+
+time:Instant  rdf:type           "rdfs:Resource";
+        time:inXSDDateTimeStamp  "http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+
+grondboringbeno:Opmerking
+        rdf:type             "rdfs:Resource";
+        dcterms:creator      "rdfs:Resource";
+        dcterms:date         "http://www.w3.org/2001/XMLSchema#date";
+        dcterms:description  "http://www.w3.org/2001/XMLSchema#string";
+        schema:about         sosa:Sample .
+
+sosa:Procedure  rdf:type  "rdfs:Resource" .
+
+grondboringbeno:Diepte
+        rdf:type                    "rdfs:Resource";
+        rdf:value                   "http://www.w3.org/2001/XMLSchema#decimal";
+        sdmx-attribute:unitMeasure  "rdfs:Resource" .
+
+grondboringbeno:Bijlage
+        rdf:type         "rdfs:Resource";
+        rdfs:label       "http://www.w3.org/2001/XMLSchema#string";
+        dcterms:creator  "rdfs:Resource";
+        dcterms:date     "http://www.w3.org/2001/XMLSchema#date";
+        schema:about     sosa:Sample .
+
+sosa:Sampling  rdf:type            "rdfs:Resource";
+        sosa:hasFeatureOfInterest  "rdfs:Resource";
+        sosa:hasFeatureOfInterest  sosa:Sample;
+        sosa:hasResult             sosa:Sample;
+        sosa:madeBySampler         "rdfs:Resource";
+        sosa:resultTime            "http://www.w3.org/2001/XMLSchema#dateTime";
+        sosa:usedProcedure         "rdfs:Resource" .

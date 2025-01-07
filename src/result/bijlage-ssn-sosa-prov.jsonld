@@ -375,6 +375,34 @@
                     }
                 }
             }
+        },
+        {
+            "@id": "bl:sam2024-325560-a-1",
+            "@type": "grondboringbeno:Bijlage",
+            "dcterms:creator": {
+                "@id": "ag:agent001",
+                "@type": "prov:Agent",
+                "actedOnBehalfOf": {
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
+                }
+            },
+            "date": "2020-01-02",
+            "rdfs:label": "GEO-06/075 Schuifweerstandskarakteristieken"
+        },
+        {
+            "@id": "bl:sam2024-325560-a-2",
+            "@type": "grondboringbeno:Bijlage",
+            "dcterms:creator": {
+                "@id": "ag:agent001",
+                "@type": "prov:Agent",
+                "actedOnBehalfOf": {
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
+                }
+            },
+            "date": "2020-01-02",
+            "rdfs:label": "GEO-06/075 Samendrukkingsproef"
         }
     ]
 }

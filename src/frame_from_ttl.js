@@ -13,28 +13,44 @@ import {
     frame_bijlage,
     frame_boorgat,
     frame_association,
+    frame_agent,
+    frame_sample,
+    frame_procedure,
+    frame_list,
+    frame_observableProperty,
+    frame_geometry,
     rdf_to_jsonld,
-    sortLines
+    sortLines,
+    frame_opmerking
 } from './utils/variables.js';
 
-const dir = path.join(process.cwd(), 'source/')
+
+const dir = path.join(process.cwd(), 'source')
 const rules = path.join(process.cwd(), 'n3/')
 const reasoner = RoxiReasoner.new();
 const ttl_files = await glob('*.ttl', {
     cwd: dir
 })
+
 ttl_files.forEach(file => {
     reasoner.add_abox(fs.readFileSync(path.join(dir, file), 'utf8').toString());
 })
 let nt = await reasoner.get_abox_dump()
 //console.log(reasoner.get_abox_dump())
-fs.writeFileSync('result/grondboring-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_grondboring), null, 4));
-fs.writeFileSync('result/observation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_observation), null, 4));
-fs.writeFileSync('result/actuation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_actuation), null, 4));
-fs.writeFileSync('result/sampling-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_sampling), null, 4));
-fs.writeFileSync('result/bijlage-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_bijlage), null, 4));
-fs.writeFileSync('result/boorgat-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_boorgat), null, 4));
-fs.writeFileSync('result/association-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_association), null, 4));
+fs.writeFileSync('src/result/grondboring-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_grondboring), null, 4));
+fs.writeFileSync('src/result/observation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_observation), null, 4));
+fs.writeFileSync('src/result/actuation-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_actuation), null, 4));
+fs.writeFileSync('src/result/sampling-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_sampling), null, 4));
+fs.writeFileSync('src/result/bijlage-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_bijlage), null, 4));
+fs.writeFileSync('src/result/boorgat-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_boorgat), null, 4));
+fs.writeFileSync('src/result/association-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_association), null, 4));
+fs.writeFileSync('src/result/agent-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_agent), null, 4));
+fs.writeFileSync('src/result/sample-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_sample), null, 4));
+fs.writeFileSync('src/result/procedure-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_procedure), null, 4));
+fs.writeFileSync('src/result/list-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_list), null, 4));
+fs.writeFileSync('src/result/observable-property-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_observableProperty), null, 4));
+fs.writeFileSync('src/result/geometry-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_geometry), null, 4));
+fs.writeFileSync('src/result/opmerking-ssn-sosa-prov.jsonld', JSON.stringify(await rdf_to_jsonld(nt, frame_opmerking), null, 4));
 
 
 const n3_files = await glob('*.n3', {

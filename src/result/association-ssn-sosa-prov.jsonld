@@ -4,14 +4,6 @@
             "@id": "adms:identifier",
             "@type": "@id"
         },
-        "id": {
-            "@id": "@id",
-            "@type": "@id"
-        },
-        "type": {
-            "@id": "@type",
-            "@type": "@id"
-        },
         "qualifiedAssociation": {
             "@id": "prov:qualifiedAssociation",
             "@type": "@id"
@@ -236,7 +228,7 @@
         "grondboringen": "https://data.vlaanderen.be/ns/grondboringen#",
         "grondobject": "https://data.bodemenondergrond.vlaanderen.be/id/grondobject/",
         "hel": "https://data.bodemenondergrond.vlaanderen.be/id/helling/",
-        "_id": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
+        "id": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
         "incl": "https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/",
         "list": "https://data.bodemenondergrond.vlaanderen.be/id/list/",
         "moment": "https://data.bodemenondergrond.vlaanderen.be/id/moment/",
@@ -267,56 +259,41 @@
     },
     "@graph": [
         {
-            "id": "ass:association001",
-            "type": "prov:Association",
+            "@id": "ass:association001",
+            "@type": "prov:Association",
             "agent": {
-                "id": "ag:agent001",
-                "type": "prov:Agent",
+                "@id": "ag:agent001",
+                "@type": "prov:Agent",
                 "actedOnBehalfOf": {
-                    "id": "ag:agent003",
-                    "type": "prov:Agent"
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
                 }
             },
-            "hadPlan": {
-                "id": "wettelijkkader:wettelijkkader001",
-                "type": "grondboringen:WettelijkKaderBoring"
-            },
-            "hadRole": {
-                "id": "rol:boorder",
-                "type": "prov:Role"
-            }
+            "hadPlan": "wettelijkkader:wettelijkkader001",
+            "hadRole": "rol:boorder"
         },
         {
-            "id": "ass:association002",
-            "type": "prov:Association",
+            "@id": "ass:association002",
+            "@type": "prov:Association",
             "agent": {
-                "id": "ag:agent002",
-                "type": "prov:Agent",
+                "@id": "ag:agent002",
+                "@type": "prov:Agent",
                 "actedOnBehalfOf": {
-                    "id": "ag:agent003",
-                    "type": "prov:Agent"
+                    "@id": "ag:agent003",
+                    "@type": "prov:Agent"
                 }
             },
-            "hadRole": {
-                "id": "rol:boormeester",
-                "type": "prov:Role"
-            }
+            "hadRole": "rol:boormeester"
         },
         {
-            "id": "ass:association003",
-            "type": "prov:Association",
+            "@id": "ass:association003",
+            "@type": "prov:Association",
             "agent": {
-                "id": "ag:agent003",
-                "type": "prov:Agent"
+                "@id": "ag:agent003",
+                "@type": "prov:Agent"
             },
-            "hadPlan": {
-                "id": "cl-dlb:Grondwaterwinning",
-                "type": "prov:Plan"
-            },
-            "hadRole": {
-                "id": "rol:opdractgever",
-                "type": "prov:Role"
-            }
+            "hadPlan": "cl-dlb:Grondwaterwinning",
+            "hadRole": "rol:opdractgever"
         }
     ]
 }

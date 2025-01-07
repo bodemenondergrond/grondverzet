@@ -1,0 +1,53 @@
+prefix nodeshape:  <https://data.bodemenondergrond.vlaanderen.be/id/nodeshape/>
+prefix propertyshape:  <https://data.bodemenondergrond.vlaanderen.be/id/propertyshape/>
+prefix ons:   <https://data.omgeving.vlaanderen.be/id/nodeshape/>
+prefix sh:    <http://www.w3.org/ns/shacl#>
+
+
+construct
+{
+?type2 a sh:NodeShape ;
+sh:closed true ;
+sh:targetClass ?type ;
+sh:property ?p2 .
+
+?p2
+a                sh:PropertyShape ;
+sh:maxCount      ?max ;
+sh:minCount      ?min ;
+sh:nodeKind      ?datatype ;
+sh:path          ?p .
+}
+
+where
+{{ select ?p ?p2 ?datatype (MAX(?c) AS ?max) (MIN(?c) AS ?min)
+where
+{
+    select ?type ?type2 ?p ?p2 ?datatype (count(?o) as ?c)
+    where
+    {
+        ?s a ?type ;
+        ?p ?o .
+        BIND (IRI(REPLACE(REPLACE(STR(?p), ".*/([a-z]*)", "https://data.bodemenondergrond.vlaanderen.be/id/propertyshape/$1"), "#", "_"))  AS ?p2)
+        bind(COALESCE(
+        IF(isliteral(?o), sh:Literal , 1/0),
+        IF(exists{?o a ?type2}, ?type2, 1/0),
+        sh:IRI
+        )  as ?datatype)
+    }
+    GROUP BY ?type ?type2 ?p ?p2 ?datatype
+}
+GROUP BY ?p ?p2 ?datatype
+}
+    UNION
+{select ?type ?type2 ?p2
+where
+{
+?s a ?type ;
+?p ?o .
+BIND (IRI(REPLACE(REPLACE(STR(?type), ".*/([a-z]*)", "https://data.bodemenondergrond.vlaanderen.be/id/nodeshape/$1"), "#", "_")) AS ?type2)
+BIND (IRI(REPLACE(REPLACE(STR(?p), ".*/([a-z]*)", "https://data.bodemenondergrond.vlaanderen.be/id/propertyshape/$1"), "#", "_"))  AS ?p2)
+
+}
+
+}}
