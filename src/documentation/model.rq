@@ -18,33 +18,11 @@ where
     ?s a ?type ; ?p ?o .
     optional{?o a ?type2}
     bind(  COALESCE(
-    IF(isliteral(?o), str(datatype(?o)) , 1/0),
-    IF(exists{?o a ?type2}, ?type2, 1/0),
+    IF(isliteral(?o), str(datatype(?o)) , ?unbound ), #1/0),
+    IF(exists{?o a ?type2}, ?type2, ?unbound ), #1/0),
     #IF(?o = rdf:nil, "rdf:nil", 1/0),
     "rdfs:Resource"
     )  as ?datatype)
 }
 }
-#CONSTRUCT {
-#    ?type ?p ?datatype
-#}
-#WHERE {
-#    GRAPH <https://data.omgeving.vlaanderen.be/id/graph/temporary> {
-#        ?s a ?type ; ?p ?o .
-#        OPTIONAL { ?o a ?type2 }
-#        BIND(
-#        COALESCE(
-#        IF(
-#            ISLITERAL(?o),
-#            STR(DATATYPE(?o)),
-#            "rdfs:Resource"
-#        ),
-#        IF(
-#        EXISTS { ?o a ?type2 },
-#        ?type2,
-#        "rdfs:Resource"
-#        )
-#        ) AS ?datatype
-#        )
-#    }
-#}
+
