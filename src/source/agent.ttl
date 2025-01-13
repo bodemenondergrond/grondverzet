@@ -130,19 +130,12 @@
 ### Agent als persoon is gezien de GDPR telkens een dummy persoon, dus standaard zetten we die op "privépersoon". Organisatie wordt wel volledig meegegeven. Dit zal Agent sterk vereenvoudigen.
 
 
+# Telkens er een verwijzing is naar een persoon, dan geven we standaard onderstaande mee. 
+# Is er een verwijzing naar een organisatie, dan specifiëren we wel, maar dan enkel op basis van OVO-code of KBO-nummer.
 agent:agent3032 a prov:Agent, prov:Person ;
     foaf:name     "privépersoon"^^xsd:string .
     # link van agent naar organisatie hebben we jammergenoeg niet, anders was dit mogelijk:   prov:actedOnBehalfOf    organisatie:organisatie13644 .
 
-organisatie:organisatie13644 a prov:Agent, prov:Organization ;
-    rov:registration           id:organisatie13644 ; 
-    foaf:name                  "De schutter Boringen" .
-
-id:organisatie13644 a adms:Identifier ;
-    skos:notation     "0820873881" ; # KBO-nummer of OVO-code
-    skos:note         "KBO-nummer" ; # Aanduiding KBO-nummer of OVO-code
-    adms:schemeAgencyName "Kruispuntbank van Ondernemingen (KBO)" ; # of "Organisatie Vlaamse Overheid (OVO)"
-    dcterms:source    organisatie:organisatie13644 .
 
 attribution:agent3032_opdracht1948-003617 a prov:Attribution ; 
     prov:hadRole cl-rol:opdrachtgever ;
@@ -151,16 +144,64 @@ attribution:agent3032_opdracht1948-003617 a prov:Attribution ;
 cl-rol:opdrachtgever a prov:Role .
 
 
-# uit kern:
-# tbl_actor 1995
-# tbl_contact 45587
-# tbl_contactitem 34054
-# tbl_contactpersoon 148
-# tbl_dataleverancier 26022
-# tbl_opdrachtgever 26022
-# tbl_opdrachtnemer 26022
-# tbl_organisatie 26022
-# tbl_uitvoerder 26022
-# lnk_organisatie_actor (leeg)
-# tbl_bedrijf_dienst 26022 (link tussen verschillende afdelingen van 1 organisatie)
+
+# KBO-nummer
+organisatie:organisatie13969 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie13969 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "Vaes BVBA" .  # Naam gekend zoals geregistreerd in DOV
+
+id:organisatie13969 a adms:Identifier ;
+    skos:notation            "0423947309" ; # KBO-nummer
+    skos:note                "KBO-nummer" ; # Aanduiding KBO-nummer
+    adms:schemeAgencyName    "Kruispuntbank van Ondernemingen (KBO)" ; # Aanduiding KBO
+    schema:about             <https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0423947309> ; # optioneel
+    dcterms:source           organisatie:organisatie13969 .
+
+
+
+organisatie:organisatie5739 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie5739 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "De schutter Boringen" .  # Naam gekend zoals geregistreerd in DOV
+
+id:organisatie5739 a adms:Identifier ;
+    skos:notation              "0820873881" ; # KBO-nummer
+    skos:note                  "KBO-nummer" ; # Aanduiding KBO-nummer
+    adms:schemeAgencyName      "Kruispuntbank van Ondernemingen (KBO)" ; # Aanduiding KBO
+    schema:about               <https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0820873881> ; # optioneel
+    dcterms:source             organisatie:organisatie5739 .
+
+
+
+
+# OVO-code
+organisatie:organisatie13644 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie13644 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "DE VLAAMSE WATERWEG" . # Naam gekend zoals geregistreerd in DOV
+
+id:organisatie13644 a adms:Identifier ;
+    skos:notation     "OVO000112" ; # OVO-code
+    skos:note         "OVO-code" ; # Aanduiding OVO-code
+    adms:schemeAgencyName "Organisatie Vlaamse Overheid (OVO)" ; # Aanduiding OVO
+    dcterms:source    organisatie:organisatie13644 .
+
+
+
+organisatie:organisatie27217 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie27217 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "VO - Departement Omgeving" . # Naam gekend zoals geregistreerd in DOV
+
+id:organisatie27217 a adms:Identifier ;
+    skos:notation     "OVO003323" ; # OVO-code
+    skos:note         "OVO-code" ; # Aanduiding OVO-code
+    adms:schemeAgencyName "Organisatie Vlaamse Overheid (OVO)" ; # Aanduiding OVO
+    dcterms:source    organisatie:organisatie27217 .
+
+
+
+
+# Geen KBO-nummer of OVO-code beschikbaar (maw een "gewoon" bedrijf)
+# Ofwel vermelding zoals hieronder, ofwel geen registratie in OSLO. Ter discussie.
+organisatie:organisatie5427 a prov:Agent, prov:Organization ; # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "Jan De Nul" . # Naam gekend zoals geregistreerd in DOV
+
 
