@@ -133,7 +133,8 @@
 # Telkens er een verwijzing is naar een persoon, dan geven we standaard onderstaande mee. 
 # Is er een verwijzing naar een organisatie, dan specifiëren we wel, maar dan enkel op basis van OVO-code of KBO-nummer.
 agent:agent3032 a prov:Agent, prov:Person ;
-    foaf:name     "privépersoon"^^xsd:string .
+    foaf:familyName     "De Nil"^^xsd:string ;
+    foaf:givenName      "Katrien"^^xsd:string .
     # link van agent naar organisatie hebben we jammergenoeg niet, anders was dit mogelijk:   prov:actedOnBehalfOf    organisatie:organisatie13644 .
 
 
