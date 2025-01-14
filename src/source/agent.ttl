@@ -1,6 +1,7 @@
 @prefix act:                       <https://data.bodemenondergrond.vlaanderen.be/id/actuation/> .
 @prefix adms:                      <http://www.w3.org/ns/adms#> .
 @prefix agent:                     <https://data.bodemenondergrond.vlaanderen.be/id/agent/> .
+@prefix anderwettelijkkader:       <https://data.bodemenondergrond.vlaanderen.be/id/anderwettelijkkader/> .
 @prefix association:               <https://data.bodemenondergrond.vlaanderen.be/id/association/> .
 @prefix attribution:               <https://data.bodemenondergrond.vlaanderen.be/id/attribution/> .
 @prefix avp:                       <https://data.bodemenondergrond.vlaanderen.be/id/aanvangspeil/> .
@@ -8,6 +9,10 @@
 @prefix betrouwbaarheid:           <https://data.bodemenondergrond.vlaanderen.be/id/betrouwbaarheid/> .
 @prefix bl:                        <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/> .
 @prefix bodemenondergrond:         <https://data.vlaanderen.be/ns/bodem-en-ondergrond#> .
+@prefix bodemlocatie:              <https://data.bodemenondergrond.vlaanderen.be/id/bodemlocatie/> .
+@prefix bodemmonster:              <https://data.bodemenondergrond.vlaanderen.be/id/bodemmonster/> .
+@prefix bodemobservatie:           <https://data.bodemenondergrond.vlaanderen.be/id/bodemobservatie/> .
+@prefix bodemsite:                 <https://data.bodemenondergrond.vlaanderen.be/id/bodemsite/> .
 @prefix boorgat:                   <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/> .
 @prefix boor:                      <https://data.bodemenondergrond.vlaanderen.be/id/boor/> .
 @prefix boormethodeinterval:       <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/> .
@@ -54,14 +59,12 @@
 @prefix concept:                   <https://data.bodemenondergrond.vlaanderen.be/id/concept/> .
 @prefix datum:                     <https://data.bodemenondergrond.vlaanderen.be/id/datum/> .
 @prefix dcterms:                   <http://purl.org/dc/terms/> .
-@prefix dcelements:                <http://purl.org/dc/elements/1.1/> .
 @prefix dataset:                   <https://data.bodemenondergrond.vlaanderen.be/id/dataset/> .
 @prefix dossier:                   <https://data.vlaanderen.be/ns/dossier#> .
 @prefix dsd:                       <https://data.bodemenondergrond.vlaanderen.be/id/dsd/> .
-@prefix eli:                       <https://data.europa.eu/eli/ontology#> .
 @prefix erkenning:                 <https://data.bodemenondergrond.vlaanderen.be/id/erkenning/> .
-@prefix foaf:                      <http://xmlns.com/foaf/0.1/> .
 @prefix formstrat:                 <https://data.bodemenondergrond.vlaanderen.be/id/formelestratigrafie/> .
+@prefix foaf:                      <http://xmlns.com/foaf/0.1/> .
 @prefix geometrie:                 <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/> .
 @prefix geosparql:                 <http://www.opengis.net/ont/geosparql#> .
 @prefix gmldov:                    <https://data.bodemenondergrond.vlaanderen.be/id/gml/> .
@@ -84,8 +87,8 @@
 @prefix opdracht:                  <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
 @prefix observation:               <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
 @prefix observationgroup:          <https://data.bodemenondergrond.vlaanderen.be/id/observationgroup/> .
+@prefix omgevingsvergunning:       <https://data.bodemenondergrond.vlaanderen.be/id/omgevingsvergunning/> .
 @prefix organisatie:               <https://data.bodemenondergrond.vlaanderen.be/id/organisatie/> .
-@prefix omgevingsvergunning:       <https://data.vlaanderen.be/ns/omgevingsvergunning/#> .
 @prefix opm:                       <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/> .
 @prefix periode:                   <https://data.bodemenondergrond.vlaanderen.be/id/periode/> .
 @prefix prop:                      <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/> .
@@ -118,84 +121,88 @@
 @prefix ssn:                       <http://www.w3.org/ns/ssn/> .
 @prefix ssn-system:                <http://www.w3.org/ns/ssn/systems/> .
 @prefix time:                      <http://www.w3.org/2006/time#> .
-@prefix vergunning:                <https://data.bodemenondergrond.vlaanderen.be/id/vergunning/> .
+@prefix vlaremvergunning:          <https://data.bodemenondergrond.vlaanderen.be/id/vlaremvergunning/> .
 @prefix voorafmelding:             <https://data.bodemenondergrond.vlaanderen.be/id/voorafmelding/> .
 @prefix wettelijkkader:            <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/> .
 @prefix xsd:                       <http://www.w3.org/2001/XMLSchema#> .
 
-### Tweede poging, dit keer op basis van AP Bodem en ondergrond (grondboringen): https://data.vlaanderen.be/doc/applicatieprofiel/bodem-en-ondergrond/grondboringen/
-### en AP omgevingsvergunning: https://data.vlaanderen.be/doc/applicatieprofiel/omgevingsvergunning/erkendestandaard/2024-11-07/
-boring:1965-068140  a              grondboringen:Grondboring ;
-    prov:qualifiedAssociation      association:association001 ;
-    prov:wasAssociatedWith         agent:agent001 .
-    #prov:wasGeneratedBy voorafmelding:2021-009917 .
-
-association:association001 a    prov:Association ;
-    prov:agent                  agent:agent001 ;
-    prov:hadPlan                wettelijkkader:boring2021-186067 ;
-    prov:hadRole                rol:boorder .
-
-rol:boorder a prov:Role .
+### Agent als organisatie, auteur, dataleverancier, databeheerder, opdrachtgever, opdrachtnemer, boorder, uitvoerder, ...
+### Agent als persoon is gezien de GDPR telkens een dummy persoon, dus standaard zetten we die op "privépersoon". Organisatie wordt wel volledig meegegeven. Dit zal Agent sterk vereenvoudigen.
 
 
-wettelijkkader:boring2021-186067 a      grondboringen:WettelijkKaderBoring ; # omgevingsvergunning:JuridischWerk
-    grondboringen:wettelijkKaderBoring  vergunning:boring2021-186067 ; # mogelijkheden hier zijn: omgevingsvergunning, vlaremvergunning, anderwettelijkkader, rechtvaardiging, attestVlarem of VlareboNaleving
-    grondboringen:wettelijkKaderBoorder erkenning:boring2021-186067 .
+# Telkens er een verwijzing is naar een persoon, dan geven we standaard onderstaande mee. 
+# Is er een verwijzing naar een organisatie, dan specifiëren we wel, maar dan enkel op basis van OVO-code of KBO-nummer.
+agent:agent3032 a prov:Agent, prov:Person ;
+    foaf:familyName     "De Nil"^^xsd:string ;
+    foaf:givenName      "Katrien"^^xsd:string .
+    # link van agent naar organisatie hebben we jammergenoeg niet, anders was dit mogelijk:   prov:actedOnBehalfOf    organisatie:organisatie13644 .
 
 
-# Voorafmelding
-voorafmelding:2021-009917 a grondboringen:voorafmelding ; # staat op zichzelf, voorafmelding heeft zijn eigen permkey.
-    rdfs:label              "Voorafmelding aan Grondboring" ;
-    dcterms:description     "Verplichte voorafmelding voordat een grondboring mag worden uitgevoerd." ;
-    prov:used               wettelijkkader:boring2021-186067 ;
-    prov:wasAssociatedWith  organisatie:organisatie15739 .
+attribution:agent3032_opdracht1948-003617 a prov:Attribution ; 
+    prov:hadRole cl-rol:opdrachtgever ;
+    prov:agent agent:agent3032 .
 
-organisatie:organisatie15739 a prov:Agent, prov:Organization ;
-    foaf:name                  "De schutter Boringen" .
+cl-rol:opdrachtgever a prov:Role .
 
 
-# Erkenning
-erkenning:boring2021-186067 a bodemenondergrond:Erkenning ;
-    dcterms:type    cl-erk:a .
 
-cl-erk:a a sosa:Procedure ; # skos:Concept .
-    skos:definition "Boorwerkzaamheden die vallen onder discipline 1: bemalingen van de VLAREL-erkenning artikel 6, 7°, a) 1)."@nl ;
-    skos:prefLabel "1. Bemalingen"@nl .
+# KBO-nummer
+organisatie:organisatie13969 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie13969 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "Vaes BVBA" .  # Naam gekend zoals geregistreerd in DOV
 
-
- # omgevingsvergunning
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Omgevingsvergunning" ;
-    adms:identifier                 id:omgvergunning-boring2021-186067 ;
-    rdfs:seeAlso <https://omgevingsloket.omgeving.vlaanderen.be/?project=2021118121> . # hier komt eventueel nog de link naar iioa omgevingsvergunning ivm projectnummer = 2021118121
-
-id:omgvergunning-boring2021-186067 a  adms:Identifier ;
-    skos:notation  "2021118121"^^cl-idt:omgevingsloket .
+id:organisatie13969 a adms:Identifier ;
+    skos:notation            "0423947309" ; # KBO-nummer
+    skos:note                "KBO-nummer" ; # Aanduiding KBO-nummer
+    adms:schemeAgencyName    "Kruispuntbank van Ondernemingen (KBO)" ; # Aanduiding KBO
+    schema:about             <https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0423947309> ; # optioneel
+    dcterms:source           organisatie:organisatie13969 .
 
 
- # vlaremvergunning
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Milieuvergunning VLAREM voor Grondboring" ;
-    dcterms:description             "Hier komt het kenmerk en datum van het besluit als vrije tekst" .
+
+organisatie:organisatie5739 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie5739 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "De schutter Boringen" .  # Naam gekend zoals geregistreerd in DOV
+
+id:organisatie5739 a adms:Identifier ;
+    skos:notation              "0820873881" ; # KBO-nummer
+    skos:note                  "KBO-nummer" ; # Aanduiding KBO-nummer
+    adms:schemeAgencyName      "Kruispuntbank van Ondernemingen (KBO)" ; # Aanduiding KBO
+    schema:about               <https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0820873881> ; # optioneel
+    dcterms:source             organisatie:organisatie5739 .
 
 
- # ander wettelijk kader
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Ander wettelijk kader" ;
-    dcterms:description             "Hier komt het kenmerk en datum van het besluit als vrije tekst" .
 
 
- # rechtvaardiging
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Reden waarom er alsnog een Grondboring werd uitgevoerd, ondanks gebrek aan wettelijk kader" ;
-    dcterms:description             "Hier komt de reden waarom er alsnog geboord werd als vrije tekst" .
+# OVO-code
+organisatie:organisatie13644 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie13644 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "DE VLAAMSE WATERWEG" . # Naam gekend zoals geregistreerd in DOV
+
+id:organisatie13644 a adms:Identifier ;
+    skos:notation     "OVO000112" ; # OVO-code
+    skos:note         "OVO-code" ; # Aanduiding OVO-code
+    adms:schemeAgencyName "Organisatie Vlaamse Overheid (OVO)" ; # Aanduiding OVO
+    dcterms:source    organisatie:organisatie13644 .
 
 
- # attest Vlarem
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Attest VLAREM toegekend" .
+
+organisatie:organisatie27217 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie27217 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "VO - Departement Omgeving" . # Naam gekend zoals geregistreerd in DOV
+
+id:organisatie27217 a adms:Identifier ;
+    skos:notation     "OVO003323" ; # OVO-code
+    skos:note         "OVO-code" ; # Aanduiding OVO-code
+    adms:schemeAgencyName "Organisatie Vlaamse Overheid (OVO)" ; # Aanduiding OVO
+    dcterms:source    organisatie:organisatie27217 .
 
 
- # attest Vlarebo naleving
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Attest naleving VLAREBO" .
+
+
+# Geen KBO-nummer of OVO-code beschikbaar (maw een "gewoon" bedrijf)
+# Ofwel vermelding zoals hieronder, ofwel geen registratie in OSLO. Ter discussie.
+organisatie:organisatie5427 a prov:Agent, prov:Organization ; # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "Jan De Nul" . # Naam gekend zoals geregistreerd in DOV
+
+
