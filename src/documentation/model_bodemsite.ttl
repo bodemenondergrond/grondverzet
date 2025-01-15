@@ -1,0 +1,171 @@
+PREFIX act:                    <https://data.bodemenondergrond.vlaanderen.be/id/actuation/>
+PREFIX adms:                   <http://www.w3.org/ns/adms#>
+PREFIX agent:                  <https://data.bodemenondergrond.vlaanderen.be/id/agent/>
+PREFIX anderwettelijkkader:    <https://data.bodemenondergrond.vlaanderen.be/id/anderwettelijkkader/>
+PREFIX association:            <https://data.bodemenondergrond.vlaanderen.be/id/association/>
+PREFIX attribution:            <https://data.bodemenondergrond.vlaanderen.be/id/attribution/>
+PREFIX avp:                    <https://data.bodemenondergrond.vlaanderen.be/id/aanvangspeil/>
+PREFIX bemprocedure:           <https://data.bodemenondergrond.vlaanderen.be/id/bemonsteringsprocedure/>
+PREFIX betrouwbaarheid:        <https://data.bodemenondergrond.vlaanderen.be/id/betrouwbaarheid/>
+PREFIX bl:                     <https://data.bodemenondergrond.vlaanderen.be/id/bijlage/>
+PREFIX bodemenondergrond:      <https://data.vlaanderen.be/ns/bodem-en-ondergrond#>
+PREFIX bodemlocatie:           <https://data.bodemenondergrond.vlaanderen.be/id/bodemlocatie/>
+PREFIX bodemmonster:           <https://data.bodemenondergrond.vlaanderen.be/id/bodemmonster/>
+PREFIX bodemobservatie:        <https://data.bodemenondergrond.vlaanderen.be/id/bodemobservatie/>
+PREFIX bodemsite:              <https://data.bodemenondergrond.vlaanderen.be/id/bodemsite/>
+PREFIX boor:                   <https://data.bodemenondergrond.vlaanderen.be/id/boor/>
+PREFIX boorgat:                <https://data.bodemenondergrond.vlaanderen.be/id/boorgat/>
+PREFIX boormethodeinterval:    <https://data.bodemenondergrond.vlaanderen.be/id/boormethodeinterval/>
+PREFIX boring:                 <https://data.bodemenondergrond.vlaanderen.be/id/boring/>
+PREFIX cl-ader:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/adertype/>
+PREFIX cl-aquiferv1:           <https://data.bodemenondergrond.vlaanderen.be/id/concept/aquiferhcovv1/>
+PREFIX cl-aquiferv2:           <https://data.bodemenondergrond.vlaanderen.be/id/concept/aquiferhcovv2/>
+PREFIX cl-astm:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/parameterastm/>
+PREFIX cl-beh:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandeling/>
+PREFIX cl-behwaarde:           <https://data.bodemenondergrond.vlaanderen.be/id/concept/behandelingswaarde/>
+PREFIX cl-betr:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/betrouwbaarheid/>
+PREFIX cl-bijnaam:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/bijnaam/>
+PREFIX cl-bpt:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringsproceduretype/>
+PREFIX cl-brm:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/boormethode/>
+PREFIX cl-cons:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/consistentietype/>
+PREFIX cl-dlb:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/doelboring/>
+PREFIX cl-erk:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/erkenningstype/>
+PREFIX cl-forme:               <https://data.bodemenondergrond.vlaanderen.be/id/concept/formeleeenheid/>
+PREFIX cl-fossielaard:         <https://data.bodemenondergrond.vlaanderen.be/id/concept/fossielaard/>
+PREFIX cl-fossieltype:         <https://data.bodemenondergrond.vlaanderen.be/id/concept/fossieltype/>
+PREFIX cl-got:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/grondobjecttype/>
+PREFIX cl-hoofdnaam:           <https://data.bodemenondergrond.vlaanderen.be/id/concept/hoofdnaam/>
+PREFIX cl-hydrotype:           <https://data.bodemenondergrond.vlaanderen.be/id/concept/hydrotype/>
+PREFIX cl-idt:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/identificatortype/>
+PREFIX cl-interpretatie:       <https://data.bodemenondergrond.vlaanderen.be/id/concept/interpretatie/>
+PREFIX cl-kleur:               <https://data.bodemenondergrond.vlaanderen.be/id/concept/kleur/>
+PREFIX cl-loc:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/opslaglocatie/>
+PREFIX cl-mat:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/>
+PREFIX cl-mmt:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/>
+PREFIX cl-mtype:               <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/>
+PREFIX cl-opdraard:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/>
+PREFIX cl-opdrorigine:         <https://data.bodemenondergrond.vlaanderen.be/id/concept/opdrachtaard/>
+PREFIX cl-opt:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/opdrachtorigine/>
+PREFIX cl-par:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/parameter/>
+PREFIX cl-quarte:              <https://data.bodemenondergrond.vlaanderen.be/id/concept/quartaireeenheid/>
+PREFIX cl-releenh:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/relatieeenheden/>
+PREFIX cl-rol:                 <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/>
+PREFIX cl-seckenm:             <https://data.bodemenondergrond.vlaanderen.be/id/concept/secundairekenmerktype/>
+PREFIX cl-sedstruct:           <https://data.bodemenondergrond.vlaanderen.be/id/concept/sedimentairestructuurtype/>
+PREFIX cl-tektoniek:           <https://data.bodemenondergrond.vlaanderen.be/id/concept/tektoniektype/>
+PREFIX cl-vocht:               <https://data.bodemenondergrond.vlaanderen.be/id/concept/vochtgehaltetype/>
+PREFIX componentspecification: <https://data.bodemenondergrond.vlaanderen.be/id/componentspecification/>
+PREFIX concept:                <https://data.bodemenondergrond.vlaanderen.be/id/concept/>
+PREFIX cs:                     <https://data.vlaanderen.be/ns/chemische_stof#>
+PREFIX csc:                    <https://data.omgeving.vlaanderen.be/id/concept/chemische_stof/>
+PREFIX dataset:                <https://data.bodemenondergrond.vlaanderen.be/id/dataset/>
+PREFIX datum:                  <https://data.bodemenondergrond.vlaanderen.be/id/datum/>
+PREFIX dbo:                    <http://dbpedia.org/ontology/>
+PREFIX dbp:                    <http://dbpedia.org/property/>
+PREFIX dcterms:                <http://purl.org/dc/terms/>
+PREFIX dossier:                <https://data.vlaanderen.be/ns/dossier#>
+PREFIX dsd:                    <https://data.bodemenondergrond.vlaanderen.be/id/dsd/>
+PREFIX erkenning:              <https://data.bodemenondergrond.vlaanderen.be/id/erkenning/>
+PREFIX formstrat:              <https://data.bodemenondergrond.vlaanderen.be/id/formelestratigrafie/>
+PREFIX geometrie:              <https://data.bodemenondergrond.vlaanderen.be/id/geometrie/>
+PREFIX geosparql:              <http://www.opengis.net/ont/geosparql#>
+PREFIX gml:                    <http://www.opengis.net/ont/gml#>
+PREFIX gmldov:                 <https://data.bodemenondergrond.vlaanderen.be/id/gml/>
+PREFIX grondboringbeno:        <https://data.bodemenondergrond.vlaanderen.be/ns/grondboringen#>
+PREFIX grondboringen:          <https://data.vlaanderen.be/ns/grondboringen#>
+PREFIX grondobject:            <https://data.bodemenondergrond.vlaanderen.be/id/grondobject/>
+PREFIX hel:                    <https://data.bodemenondergrond.vlaanderen.be/id/helling/>
+PREFIX her:                    <https://data.bodemenondergrond.vlaanderen.be/id/herkomst/>
+PREFIX herh:                   <https://data.bodemenondergrond.vlaanderen.be/id/herhaling/>
+PREFIX id:                     <https://data.bodemenondergrond.vlaanderen.be/id/identificator/>
+PREFIX incl:                   <https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/>
+PREFIX interp:                 <https://data.bodemenondergrond.vlaanderen.be/id/interpretatie/>
+PREFIX list:                   <https://data.bodemenondergrond.vlaanderen.be/id/list/>
+PREFIX lithbesch:              <https://data.bodemenondergrond.vlaanderen.be/id/lithologischebeschrijving/>
+PREFIX location:               <https://data.bodemenondergrond.vlaanderen.be/id/location/>
+PREFIX moment:                 <https://data.bodemenondergrond.vlaanderen.be/id/moment/>
+PREFIX mv:                     <https://data.bodemenondergrond.vlaanderen.be/id/maaiveld/>
+PREFIX obs_prop:               <https://data.bodemenondergrond.vlaanderen.be/id/property/>
+PREFIX observation:            <https://data.bodemenondergrond.vlaanderen.be/id/observation/>
+PREFIX observationgroup:       <https://data.bodemenondergrond.vlaanderen.be/id/observationgroup/>
+PREFIX omgevingsvergunning:    <https://data.bodemenondergrond.vlaanderen.be/id/omgevingsvergunning/>
+PREFIX opdracht:               <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/>
+PREFIX opm:                    <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/>
+PREFIX owl:                    <http://www.w3.org/2002/07/owl#>
+PREFIX periode:                <https://data.bodemenondergrond.vlaanderen.be/id/periode/>
+PREFIX prop:                   <https://data.bodemenondergrond.vlaanderen.be/id/concept/property/>
+PREFIX prov:                   <http://www.w3.org/ns/prov#>
+PREFIX qb:                     <http://purl.org/linked-data/cube#>
+PREFIX quantityvalue:          <https://data.bodemenondergrond.vlaanderen.be/id/quantityvalue/>
+PREFIX qudt:                   <http://qudt.org/schema/qudt/>
+PREFIX qudt-unit:              <http://qudt.org/vocab/unit/>
+PREFIX rdf:                    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:                   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rechtvaardiging:        <https://data.bodemenondergrond.vlaanderen.be/id/rechtvaardiging/>
+PREFIX result:                 <https://data.bodemenondergrond.vlaanderen.be/id/result/>
+PREFIX richting:               <https://data.bodemenondergrond.vlaanderen.be/id/richting/>
+PREFIX rol:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/rol/>
+PREFIX sam:                    <https://data.bodemenondergrond.vlaanderen.be/id/sampling/>
+PREFIX sample:                 <https://data.bodemenondergrond.vlaanderen.be/id/sample/>
+PREFIX schema:                 <https://schema.org/>
+PREFIX sdmx-attribute:         <http://purl.org/linked-data/sdmx/2009/attribute#>
+PREFIX sdmx-measure:           <http://purl.org/linked-data/sdmx/2009/measure#>
+PREFIX seb:                    <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#>
+PREFIX sequence:               <https://data.bodemenondergrond.vlaanderen.be/id/sequence/>
+PREFIX skos:                   <http://www.w3.org/2004/02/skos/core#>
+PREFIX slice:                  <https://data.bodemenondergrond.vlaanderen.be/id/slice/>
+PREFIX slicekey:               <https://data.bodemenondergrond.vlaanderen.be/id/slicekey/>
+PREFIX sondering:              <https://data.bodemenondergrond.vlaanderen.be/id/sondering/>
+PREFIX sosa:                   <http://www.w3.org/ns/sosa/>
+PREFIX sosa-om:                <http://www.w3.org/ns/sosa/om#>
+PREFIX sost:                   <http://rdf-vocabulary.ddialliance.org/sost#>
+PREFIX ssn:                    <http://www.w3.org/ns/ssn/>
+PREFIX ssn-system:             <http://www.w3.org/ns/ssn/systems/>
+PREFIX time:                   <http://www.w3.org/2006/time#>
+PREFIX vlaremvergunning:       <https://data.bodemenondergrond.vlaanderen.be/id/vlaremvergunning/>
+PREFIX vlcs:                   <https://data.omgeving.vlaanderen.be/id/conceptscheme/>
+PREFIX voorafmelding:          <https://data.bodemenondergrond.vlaanderen.be/id/voorafmelding/>
+PREFIX wettelijkkader:         <https://data.bodemenondergrond.vlaanderen.be/id/wettelijkkader/>
+PREFIX xsd:                    <http://www.w3.org/2001/XMLSchema#>
+
+sosa:ObservableProperty
+        rdf:type          "rdfs:Resource";
+        dcterms:subject   "rdfs:Resource";
+        ssn:isPropertyOf  prov:Collection .
+
+prov:Collection  rdf:type    "rdfs:Resource";
+        dcterms:created      "http://www.w3.org/2001/XMLSchema#date";
+        dcterms:creator      "rdfs:Resource";
+        dcterms:date         "http://www.w3.org/2001/XMLSchema#date";
+        dcterms:description  "http://www.w3.org/2001/XMLSchema#string";
+        dcterms:title        "http://www.w3.org/2001/XMLSchema#string";
+        prov:hadMember       "rdfs:Resource";
+        prov:wasStartedBy    "rdfs:Resource" .
+
+sosa:Observation  rdf:type         "rdfs:Resource";
+        sosa:hasFeatureOfInterest  prov:Collection;
+        sosa:hasResult             geosparql:Geometry;
+        sosa:madeBySensor          "rdfs:Resource";
+        sosa:observedProperty      sosa:ObservableProperty;
+        sosa:resultTime            "http://www.w3.org/2001/XMLSchema#date";
+        sosa:usedProcedure         sosa:Procedure .
+
+geosparql:Geometry  rdf:type  "rdfs:Resource";
+        geosparql:asWKT  "http://www.opengis.net/ont/geosparql#wktLiteral" .
+
+bodemenondergrond:Bijlage
+        rdf:type         "rdfs:Resource";
+        rdfs:label       "http://www.w3.org/2001/XMLSchema#string";
+        dcterms:creator  "rdfs:Resource";
+        dcterms:date     "http://www.w3.org/2001/XMLSchema#date";
+        schema:about     prov:Collection .
+
+sosa:Procedure  rdf:type  "rdfs:Resource";
+        rdfs:label  "http://www.w3.org/2001/XMLSchema#string" .
+
+bodemenondergrond:Opmerking
+        rdf:type             "rdfs:Resource";
+        dcterms:creator      "rdfs:Resource";
+        dcterms:date         "http://www.w3.org/2001/XMLSchema#date";
+        dcterms:description  "http://www.w3.org/2001/XMLSchema#string";
+        schema:about         prov:Collection .

@@ -13,15 +13,16 @@ construct
 }
 
 where
+
 {{
     ?s a ?type ; ?p ?o .
     optional{?o a ?type2}
     bind(  COALESCE(
-    IF(isliteral(?o), str(datatype(?o)) , 1/0),
-    IF(exists{?o a ?type2}, ?type2, 1/0),
+    IF(isliteral(?o), str(datatype(?o)) , ?unbound ), #1/0),
+    IF(exists{?o a ?type2}, ?type2, ?unbound ), #1/0),
     #IF(?o = rdf:nil, "rdf:nil", 1/0),
     "rdfs:Resource"
     )  as ?datatype)
 }
-
 }
+
