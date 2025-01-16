@@ -1,710 +1,784 @@
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix geometry: <https://data.omgeving.vlaanderen.be/id/geometry/>.
+@prefix conc_p: <https://data.omgeving.vlaanderen.be/id/concept/procedure/>.
+@prefix juridische_categorie: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/>.
+@prefix ruimtelijke_eenheid: <https://data.omgeving.vlaanderen.be/id/ruimtelijke_eenheid/>.
+@prefix adms: <http://www.w3.org/ns/adms#>.
+@prefix concept: <https://data.omgeving.vlaanderen.be/id/concept/>.
+@prefix dbo: <http://dbpedia.org/ontology/>.
+@prefix eurovoc: <http://eurovoc.europa.eu/>.
+@prefix perceel: <https://data.vlaanderen.be/ns/perceel#>.
+@prefix identificator: <https://data.omgeving.vlaanderen.be/id/identificator/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix locn: <http://www.w3.org/ns/locn#>.
+@prefix omv: <https://data.vlaanderen.be/ns/omgevingsvergunning#>.
+@prefix project: <https://data.omgeving.vlaanderen.be/id/project/>.
+@prefix voorwerp: <https://data.omgeving.vlaanderen.be/id/voorwerp/>.
+@prefix omv_id: <https://data.omgeving.vlaanderen.be/id/concept/identifier/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix inh: <https://data.omgeving.vlaanderen.be/id/inhoud/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cpsv: <http://purl.org/vocab/cpsv#>.
+@prefix m8g: <http://data.europa.eu/m8g/>.
+@prefix frbr: <http://purl.org/vocab/frbr/core#>.
+@prefix rechtssubject: <https://data.omgeving.vlaanderen.be/id/rechtssubject/>.
+@prefix procedurestap: <https://data.omgeving.vlaanderen.be/id/procedurestap/>.
+@prefix zaakhandeling: <https://data.omgeving.vlaanderen.be/id/zaakhandeling/>.
+@prefix identifier: <https://data.omgeving.vlaanderen.be/id/identifier/>.
+@prefix zaak: <https://data.omgeving.vlaanderen.be/id/zaak/>.
+@prefix crs: <http://www.opengis.net/def/crs/EPSG/0/>.
+@prefix location: <https://data.omgeving.vlaanderen.be/id/location/>.
+@prefix activiteit: <https://data.omgeving.vlaanderen.be/id/activiteit/>.
+@prefix stedenbouwkundig_code: <https://data.omgeving.vlaanderen.be/id/concept/stedenbouwkundig_code/>.
+@prefix handeling_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/handeling_code/>.
+@prefix functie_tobe_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/functie_tobe_code/>.
+@prefix functie_tobe_cascade: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/functie_tobe_cascade/>.
+@prefix voorwerptype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/voorwerptype_code/>.
+@prefix iioa_klasse: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/iioa_klasse/>.
+@prefix actuele_rubriek_klasse: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/actuele_rubriek_klasse/>.
+@prefix actuele_rubriek: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/actuele_rubriek/>.
+@prefix stedenbouwkundigtype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/stedenbouwkundigtype_code/>.
+@prefix terreinobjecttype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/terreinobjecttype_code/>.
+@prefix verkavelingtype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/verkavelingtype_code/>.
+@prefix verkavelingtype_code2: <https://data.omgeving.vlaanderen.be/id/concept/verkavelingtype_code/>.
+@prefix conceptscheme: <https://data.omgeving.vlaanderen.be/id/conceptscheme/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
 
 skos:Concept a rdfs:Class;
-  rdfs:label "Maaiveldtype"@nl,
-    "Erkenningtype"@nl .
-
+    rdfs:label "Maaiveldtype"@nl, "Erkenningtype"@nl.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_Curvewaardepaar.laag> a owl:ObjectProperty;
-  rdfs:label "laag"@nl;
-  rdfs:comment "Overeenstemmend Profielelement."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_CurveWaardepaar>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Profielelement> .
-
+    rdfs:label "laag"@nl;
+    rdfs:comment "Overeenstemmend Profielelement."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_CurveWaardepaar>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Profielelement>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject.diepte> a owl:ObjectProperty;
-  rdfs:label "diepte"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bvb nuttig in het geval wanneer men enkel de xy-coördinaten van een Boorgat heeft en wil aangeven hoe diep er geboord is."@nl;
-  rdfs:comment "Geeft aan tot welke Diepte het Bemonsteringsobject reikt."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> .
-
+    rdfs:label "diepte"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bvb nuttig in het geval wanneer men enkel de xy-coördinaten van een Boorgat heeft en wil aangeven hoe diep er geboord is."@nl;
+    rdfs:comment "Geeft aan tot welke Diepte het Bemonsteringsobject reikt."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject.ligging> a owl:ObjectProperty;
-  rdfs:label "ligging"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Naast de geometrie zijn bijkomende aanduidingen vd locatie soms nuttig, bv in het geval ve Boorgat in welke gemeente is geboord."@nl;
-  rdfs:comment "De ligging vh Bemonsteringsobject."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range prov:Location .
-
+    rdfs:label "ligging"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Naast de geometrie zijn bijkomende aanduidingen vd locatie soms nuttig, bv in het geval ve Boorgat in welke gemeente is geboord."@nl;
+    rdfs:comment "De ligging vh Bemonsteringsobject."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <http://www.w3.org/ns/prov#Location>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject.maaiveld> a owl:ObjectProperty;
-  rdfs:label "maaiveld"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bvb nuttig in het geval wanneer men de geometrie van een Boorgat  enkel met xy-coördinaten en diepte weergeeft en afzonderlijk de z-coördinaat van het Maaiveld."@nl;
-  rdfs:comment "Ligging van het grondoppervlak."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld> .
-
+    rdfs:label "maaiveld"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bvb nuttig in het geval wanneer men de geometrie van een Boorgat  enkel met xy-coördinaten en diepte weergeeft en afzonderlijk de z-coördinaat van het Maaiveld."@nl;
+    rdfs:comment "Ligging van het grondoppervlak."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Boring> a owl:Class;
-  rdfs:label "Boring"@nl;
-  <http://purl.org/vocab/vann/usageNote> "In het vocabularium Bodem & Ondergrond gebruiken we deze klasse louter als generalisatie van Grondboringen en Bodemboringen."@nl;
-  rdfs:comment "Het aanbrengen van een gat in iets dmv een boor."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond> .
-
+    rdfs:label "Boring"@nl;
+    <http://purl.org/vocab/vann/usageNote> "In het vocabularium Bodem & Ondergrond gebruiken we deze klasse louter als generalisatie van Grondboringen en Bodemboringen."@nl;
+    rdfs:comment "Het aanbrengen van een gat in iets dmv een boor."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Erkenning> a owl:Class;
-  rdfs:label "Erkenning"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bv de toelating aan een boormaatschappij om Boringen uit te voeren."@nl;
-  rdfs:comment "Officiële toelating toegekend aan een Persoon of Organisatie om een bepaald soort activiteiten uit te oefenen."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <https://data.vlaanderen.be/ns/besluit#Besluit> .
-
+    rdfs:label "Erkenning"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bv de toelating aan een boormaatschappij om Boringen uit te voeren."@nl;
+    rdfs:comment "Officiële toelating toegekend aan een Persoon of Organisatie om een bepaald soort activiteiten uit te oefenen."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <https://data.vlaanderen.be/ns/besluit#Besluit>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemeting> a owl:Class;
-  rdfs:label "Fractiemeting"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Dat aandeel wordt \"fractie\" genoemd. Vb is de statistische verdeling van onderwijsniveaus over de bevolking of de verdeling van korreldiameters in een bodemstaal."@nl;
-  rdfs:comment "Meetreeks waarbij het aandeel van iets varieert in functie van iets anders."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>,
-    <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeks> .
-
+    rdfs:label "Fractiemeting"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Dat aandeel wordt \"fractie\" genoemd. Vb is de statistische verdeling van onderwijsniveaus over de bevolking of de verdeling van korreldiameters in een bodemstaal."@nl;
+    rdfs:comment "Meetreeks waarbij het aandeel van iets varieert in functie van iets anders."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>, <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeks>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Interpretatie> a owl:Class;
-  rdfs:label "Interpretatie"@nl;
-  <http://purl.org/vocab/vann/usageNote> "In de context van Observaties en Metingen is een Interpretatie het resultaat van het toepassen van bestaande kennis op bestaande Observaties. Het onderscheid tussen een Interpretatie en een \"gewone\" Observatie is niet absoluut, in beide gevallen gaat het over het schatten van de waarde van een kenmerk. In het geval van een Interpretatie heeft de Observatie echter meer betekenis (meer \"semantische lading\") omdat er meer theorie en/of verwerking aan te pas komt."@nl;
-  rdfs:comment "Persoonlijk beredeneerd oordeel over de betekenis van iets."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation> .
-
+    rdfs:label "Interpretatie"@nl;
+    <http://purl.org/vocab/vann/usageNote> "In de context van Observaties en Metingen is een Interpretatie het resultaat van het toepassen van bestaande kennis op bestaande Observaties. Het onderscheid tussen een Interpretatie en een \"gewone\" Observatie is niet absoluut, in beide gevallen gaat het over het schatten van de waarde van een kenmerk. In het geval van een Interpretatie heeft de Observatie echter meer betekenis (meer \"semantische lading\") omdat er meer theorie en/of verwerking aan te pas komt."@nl;
+    rdfs:comment "Persoonlijk beredeneerd oordeel over de betekenis van iets."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Laag.waarde> a owl:ObjectProperty;
-  rdfs:label "waarde"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bvb een skos:Concept met het laagtype of een Record zoals GecodeerdeLithologieWaarde."@nl;
-  rdfs:comment "Verwijzing naar een record dat de laal beschrijft."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Laag>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range rdfs:Resource .
-
+    rdfs:label "waarde"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bvb een skos:Concept met het laagtype of een Record zoals GecodeerdeLithologieWaarde."@nl;
+    rdfs:comment "Verwijzing naar een record dat de laal beschrijft."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Laag>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range rdfs:Resource.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld.hoogte> a owl:ObjectProperty;
-  rdfs:label "hoogte"@nl;
-  rdfs:comment "Verticale maat naar boven vanaf het grondoppervlak van het maaiveld."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <https://data.vlaanderen.be/ns/generiek#DirectePositie> .
-
+    rdfs:label "hoogte"@nl;
+    rdfs:comment "Verticale maat naar boven vanaf het grondoppervlak van het maaiveld."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <https://data.vlaanderen.be/ns/generiek#DirectePositie>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeks.meetpuntparameter> a owl:ObjectProperty;
-  rdfs:label "meetpuntparameter"@nl;
-  rdfs:comment "Het kenmerk in functie waarvan het geobserveerdKenmerk verandert."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeks>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType>;
-  rdfs:subPropertyOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter> .
-
+    rdfs:label "meetpuntparameter"@nl;
+    rdfs:comment "Het kenmerk in functie waarvan het geobserveerdKenmerk verandert."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeks>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType>;
+    rdfs:subPropertyOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeksresultaat.meetreekswaarde> a owl:ObjectProperty;
-  rdfs:label "meetreekswaarde"@nl,
-    "fractiemetingwaarde"@nl;
-  rdfs:comment "Eén waarde in het resultaat van een Meetreeks."@nl,
-    "Waarde ve individuele Meting in de Meetreeks.."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeksresultaat>,
-    <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingresultaat>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde>,
-    <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde> .
-
+    rdfs:label "meetreekswaarde"@nl, "fractiemetingwaarde"@nl;
+    rdfs:comment "Eén waarde in het resultaat van een Meetreeks."@nl, "Waarde ve individuele Meting in de Meetreeks.."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeksresultaat>, <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingresultaat>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde>, <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde.meetpuntBovengrens> a owl:ObjectProperty;
-  rdfs:label "meetpuntBovengrens"@nl;
-  rdfs:comment "Bovengrens van een klasse van waarden van meetpunten."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure>;
-  rdfs:subPropertyOf <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde.meetpunt> .
-
+    rdfs:label "meetpuntBovengrens"@nl;
+    rdfs:comment "Bovengrens van een klasse van waarden van meetpunten."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure>;
+    rdfs:subPropertyOf <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde.meetpunt>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde.meetpuntOndergrens> a owl:ObjectProperty;
-  rdfs:label "meetpuntOndergrens"@nl;
-  rdfs:comment "Ondergrens van een klasse van waarden van meetpunten."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure>;
-  rdfs:subPropertyOf <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde.meetpunt> .
-
+    rdfs:label "meetpuntOndergrens"@nl;
+    rdfs:comment "Ondergrens van een klasse van waarden van meetpunten."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure>;
+    rdfs:subPropertyOf <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde.meetpunt>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde.meetwaarde> a owl:ObjectProperty;
-  rdfs:label "meetwaarde"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Datatype is te substitueren door het datatype vd meetwaarde."@nl;
-  rdfs:comment "Waarde van het geobserveerdKenmerk."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range rdfs:Resource .
-
+    rdfs:label "meetwaarde"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Datatype is te substitueren door het datatype vd meetwaarde."@nl;
+    rdfs:comment "Waarde van het geobserveerdKenmerk."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range rdfs:Resource.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht> a owl:Class;
-  rdfs:label "Opdracht"@nl;
-  <http://purl.org/vocab/vann/usageNote> "In deze context de taak om Observaties of Bemonsteringen uit te voeren."@nl;
-  rdfs:comment "Toegewezen taak."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond> .
-
+    rdfs:label "Opdracht"@nl;
+    <http://purl.org/vocab/vann/usageNote> "In deze context de taak om Observaties of Bemonsteringen uit te voeren."@nl;
+    rdfs:comment "Toegewezen taak."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#aanvangspeil> a owl:ObjectProperty;
-  rdfs:label "aanvangspeil"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bvb nuttig in het geval wanneer men enkel de xy-coördinaten van een Boorgat heeft en wil aangeven dat het boren boven of onder het Maaiveld is gestart."@nl;
-  rdfs:comment "Geeft aan waar tov het Maaiveld het Bemonsteringsobject start."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> .
-
+    rdfs:label "aanvangspeil"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bvb nuttig in het geval wanneer men enkel de xy-coördinaten van een Boorgat heeft en wil aangeven dat het boren boven of onder het Maaiveld is gestart."@nl;
+    rdfs:comment "Geeft aan waar tov het Maaiveld het Bemonsteringsobject start."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure>.
 <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair.geometry> a rdf:Property;
-  rdfs:label "geometrie"@nl .
-
+    rdfs:label "geometrie"@nl.
 <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_GeometryValuePair.value> a rdf:Property;
-  rdfs:label "waarde"@nl .
-
+    rdfs:label "waarde"@nl.
 <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty> a rdf:Property;
-  rdfs:label "meetwaardeparameter"@nl .
-
+    rdfs:label "meetwaardeparameter"@nl.
 <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result> a rdf:Property;
-  rdfs:label "meetreeksresultaat"@nl,
-    "fractiemetingresultaat"@nl .
-
+    rdfs:label "meetreeksresultaat"@nl, "fractiemetingresultaat"@nl.
 <http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingCurve.shape> a rdf:Property;
-  rdfs:label "geometrie"@nl .
-
-dc:type a rdf:Property;
-  rdfs:label "type"@nl .
-
+    rdfs:label "geometrie"@nl.
+dct:type a rdf:Property;
+    rdfs:label "type"@nl.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_CurveWaardepaar> a owl:Class;
-  rdfs:label "BO_CurveWaardepaar"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Laat toe om in het geval van een DiscreetCurvebereik een waardepaar te associëren met een Profielelement (bv een Laag in een Bodemprofiel)."@nl;
-  rdfs:comment "Een Curvewaardepaar dat overeenstemt met een Profielelement."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair> .
-
+    rdfs:label "BO_CurveWaardepaar"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Laat toe om in het geval van een DiscreetCurvebereik een waardepaar te associëren met een Profielelement (bv een Laag in een Bodemprofiel)."@nl;
+    rdfs:comment "Een Curvewaardepaar dat overeenstemt met een Profielelement."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingresultaat> a owl:Class;
-  rdfs:label "Fractiemetingresultaat"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Aangezien de Fractiemeting een Meetreeks is bestaat het resultaat uit een reeks individuele Metingen."@nl;
-  rdfs:comment "Resultaat van een Fractiemeting."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeksresultaat> .
-
+    rdfs:label "Fractiemetingresultaat"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Aangezien de Fractiemeting een Meetreeks is bestaat het resultaat uit een reeks individuele Metingen."@nl;
+    rdfs:comment "Resultaat van een Fractiemeting."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeksresultaat>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Laag> a owl:Class;
-  rdfs:label "Laag"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Tussen die uiteinden gebeuren dan de Observaties, bv het Interval gevormd door de doorsnede van een geologische laag. OPMERKING: We noemen dit laaginterval hier gemakshalve Laag, de werkelijke laag is eerder het type laag en/of driedimensioneel object dat de ganse laag omvat."@nl;
-  rdfs:comment "Curve, bepaald door de uiteinden van de doorsnede van een Laagobject."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Interval> .
-
+    rdfs:label "Laag"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Tussen die uiteinden gebeuren dan de Observaties, bv het Interval gevormd door de doorsnede van een geologische laag. OPMERKING: We noemen dit laaginterval hier gemakshalve Laag, de werkelijke laag is eerder het type laag en/of driedimensioneel object dat de ganse laag omvat."@nl;
+    rdfs:comment "Curve, bepaald door de uiteinden van de doorsnede van een Laagobject."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Interval>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Profielelement> a owl:Class;
-  rdfs:label "Profielelement"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bv een Laag."@nl;
-  rdfs:comment "Onderdeel vh Profiel."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature>,
-    <http://def.isotc211.org/iso19156/2011/SamplingCurve#SF_SamplingCurve> .
-
+    rdfs:label "Profielelement"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bv een Laag."@nl;
+    rdfs:comment "Onderdeel vh Profiel."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature>, <http://def.isotc211.org/iso19156/2011/SamplingCurve#SF_SamplingCurve>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld> a owl:Class;
-  rdfs:label "Maaiveld"@nl;
-  rdfs:comment "Het grondoppervlak, waarvan de hoogte vaak opgegeven wordt ten opzichte van een nationaal nul-niveau."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond> .
-
+    rdfs:label "Maaiveld"@nl;
+    rdfs:comment "Het grondoppervlak, waarvan de hoogte vaak opgegeven wordt ten opzichte van een nationaal nul-niveau."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeks> a owl:Class;
-  rdfs:label "Meetreeks"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bv hoe de lengte van een Object verandert met de temperatuur (door uitzetting). We kunnen dit uitdrukken als y=f(x) waarbij in het vb y de lengte is en x de temperatuur. De variabele x noemen we de meetpuntparameter en y is de meetwaardeparameter. De meetwaardeparameter is in feite het geobserveerdKenmerk. Sommige types van Meetreeksen zijn zo specifiek dat ze apart werden gemodelleerd, bvb een Bereikobservatie waarbij een geobserveerdKenmerk varieert volgens positie of tijd (zie het <a href=\"https://data.vlaanderen.be/doc/applicatieprofiel/observaties-en-metingen/\">AP Observaties & Metingen</a> voor meer info over deze klasse)."@nl;
-  rdfs:comment "Observatie waarbij wordt nagegaan hoe een bepaald kenmerk verandert in functie van een ander kenmerk."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation> .
-
+    rdfs:label "Meetreeks"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bv hoe de lengte van een Object verandert met de temperatuur (door uitzetting). We kunnen dit uitdrukken als y=f(x) waarbij in het vb y de lengte is en x de temperatuur. De variabele x noemen we de meetpuntparameter en y is de meetwaardeparameter. De meetwaardeparameter is in feite het geobserveerdKenmerk. Sommige types van Meetreeksen zijn zo specifiek dat ze apart werden gemodelleerd, bvb een Bereikobservatie waarbij een geobserveerdKenmerk varieert volgens positie of tijd (zie het <a href=\"https://data.vlaanderen.be/doc/applicatieprofiel/observaties-en-metingen/\">AP Observaties & Metingen</a> voor meer info over deze klasse)."@nl;
+    rdfs:comment "Observatie waarbij wordt nagegaan hoe een bepaald kenmerk verandert in functie van een ander kenmerk."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeksresultaat> a owl:Class;
-  rdfs:label "Meetreeksresultaat"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Concreet een verzameling Meetreekswaarden, ttz waardeparen met een waarde voor de het geobserveerdKenmerk en een waarde voor de parameter."@nl;
-  rdfs:comment "Resultaat van een Meetreeksobservatie."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond> .
-
+    rdfs:label "Meetreeksresultaat"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Concreet een verzameling Meetreekswaarden, ttz waardeparen met een waarde voor de het geobserveerdKenmerk en een waarde voor de parameter."@nl;
+    rdfs:comment "Resultaat van een Meetreeksobservatie."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde.meetpunt> a owl:ObjectProperty;
-  rdfs:label "meetpunt"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Datatype is te substitueren door het datatype vh meetpunt."@nl;
-  rdfs:comment "Waarde van het meetpunt."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:range rdfs:Resource .
-
+    rdfs:label "meetpunt"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Datatype is te substitueren door het datatype vh meetpunt."@nl;
+    rdfs:comment "Waarde van het meetpunt."@nl;
+    rdfs:domain <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:range rdfs:Resource.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde> a owl:Class;
-  rdfs:label "Fractiemetingwaarde"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Een fractie (in de betekenis van \"aandeel\") houdt in dat een range wordt opgegeven voor de waarde vh meetpunt, vandaar de attributen meetpuntOndergrens en meetpuntBovengrens. De ondergrens kan daarbij ook gefixeerd worden, bvb bij een cummulatieve Korrelverdeling waar fractie=f(maximum korreldiameter) en bij oplopende range van korrelgrootte (=diameter van de zeefopeningen) een oplopende fractie krijgt, bvb korreldiameter 0-0.42mm=0%, 0-0.149mm=25% en 0-0.076mm=100%."@nl;
-  rdfs:comment "Een Meetreekswaarde met een waarde voor de fractie en een waarde voor de parameter."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde> .
-
+    rdfs:label "Fractiemetingwaarde"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Een fractie (in de betekenis van \"aandeel\") houdt in dat een range wordt opgegeven voor de waarde vh meetpunt, vandaar de attributen meetpuntOndergrens en meetpuntBovengrens. De ondergrens kan daarbij ook gefixeerd worden, bvb bij een cummulatieve Korrelverdeling waar fractie=f(maximum korreldiameter) en bij oplopende range van korrelgrootte (=diameter van de zeefopeningen) een oplopende fractie krijgt, bvb korreldiameter 0-0.42mm=0%, 0-0.149mm=25% en 0-0.076mm=100%."@nl;
+    rdfs:comment "Een Meetreekswaarde met een waarde voor de fractie en een waarde voor de parameter."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject> a owl:Class;
-  rdfs:label "BO_RuimtelijkBemonsteringsobject"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Het gaat over kenmerken die typisch zijn in de context van Bemonstering bv bij Boringen het maaiveld en de diepte."@nl;
-  rdfs:comment "RuimtelijkBemonsteringsobject met bijkomende kenmerken relevant voor het domein Bodem en Ondergrond."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
-  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature> .
-
+    rdfs:label "BO_RuimtelijkBemonsteringsobject"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Het gaat over kenmerken die typisch zijn in de context van Bemonstering bv bij Boringen het maaiveld en de diepte."@nl;
+    rdfs:comment "RuimtelijkBemonsteringsobject met bijkomende kenmerken relevant voor het domein Bodem en Ondergrond."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>;
+    rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreekswaarde> a owl:Class;
-  rdfs:label "Meetreekswaarde"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bv als de Meetreeks observeert hoe de lengte van iets varieert met de temperatuur dan omvat een Meetreekswaarde een waarde voor de lengte en één voor de temeratuur."@nl;
-  rdfs:comment "Een waardepaar in een Meetreeks met een waarde voor de het geobserveerdKenmerk en een waarde voor de parameter."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond> .
-
+    rdfs:label "Meetreekswaarde"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bv als de Meetreeks observeert hoe de lengte van iets varieert met de temperatuur dan omvat een Meetreekswaarde een waarde voor de lengte en één voor de temeratuur."@nl;
+    rdfs:comment "Een waardepaar in een Meetreeks met een waarde voor de het geobserveerdKenmerk en een waarde voor de parameter."@nl;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/bodem-en-ondergrond>.
 <https://data.vlaanderen.be/ns/bodem-en-ondergrond> a owl:Ontology;
-  rdfs:label "bodem-en-ondergrond"@en,
-    "bodem-en-ondergrond"@nl;
-  dc:contributor [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Algemeen Boerensyndicaat"];
-    foaf:firstName "Mark";
-    foaf:lastName "Wulfrancke"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Koninklijk Belgisch Instituur voor Natuurwetenschappen – Belgische Geologische Dienst"];
-    foaf:firstName "Jan";
-    foaf:lastName "Walstra"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Instituur voor Natuur- en Bosonderzoek"];
-    foaf:firstName "Mathias";
-    foaf:lastName "Wackenier"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Mobiliteit en Openbare Werken (Geotechniek)"];
-    foaf:firstName "Leen";
-    foaf:lastName "Vincke"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Mobiliteit en Openbare Werken"];
-    foaf:firstName "Wouter";
-    foaf:lastName "Vervaele"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Andere"];
-    foaf:firstName "Peter";
-    foaf:lastName "Verspecht"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "VZW Grondbank"];
-    foaf:firstName "Elisa";
-    foaf:lastName "Vermeulen"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Agentschap Wegen en Verkeer"];
-    foaf:firstName "Gert";
-    foaf:lastName "Vermeersch"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Smet GWT Europe"];
-    foaf:firstName "Joris";
-    foaf:lastName "Vermeer"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Agentschap Wegen en Verkeer"];
-    foaf:firstName "Davy";
-    foaf:lastName "Vanhoudt"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Agentschap Wegen en Verkeer"];
-    foaf:firstName "Jan";
-    foaf:lastName "Vangestel"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Boerenbond"];
-    foaf:firstName "Caroline";
-    foaf:lastName "Van der Heyden"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Universiteit Antwerpen – CurieuzeNeuzen In De Tuin"];
-    foaf:firstName "Stijn";
-    foaf:lastName "Van de Vondel"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vanhecke NV"];
-    foaf:firstName "Naten";
-    foaf:lastName "Van Hemelrijck"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Fluves – pydov"];
-    foaf:firstName "Johan";
-    foaf:lastName "Van De Wauw"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Grondwijzer VZW"];
-    foaf:firstName "Geerts";
-    foaf:lastName "Timothy"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "AC partners"];
-    foaf:firstName "Joris";
-    foaf:lastName "Synaeve"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Universiteit Gent"];
-    foaf:firstName "Bruno";
-    foaf:lastName "Stuyts"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Tractebel – International Marine and Dredging Consultants"];
-    foaf:firstName "Raf";
-    foaf:lastName "Somers"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Openbare Vlaamse Afvalstoffenmaatschappij"];
-    foaf:firstName "Koen";
-    foaf:lastName "Smeets"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vlaamste Instelling voor Technologisch Onderzoek (VITO)"];
-    foaf:firstName "Frank";
-    foaf:lastName "Sleeuwaert"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Openbare Vlaamse Afvalstoffenmaatschappij"];
-    foaf:firstName "Erwin";
-    foaf:lastName "Sevens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Citizens"];
-    foaf:firstName "Piet";
-    foaf:lastName "Seuntjens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Colas Noord NV"];
-    foaf:firstName "Stijn";
-    foaf:lastName "Scheepers"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Instituut voor Landbouw- Visserij- en Voedingsonderzoek"];
-    foaf:firstName "Greet";
-    foaf:lastName "Ruysschaert"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vlaamse Landmaatschappij"];
-    foaf:firstName "Elisabeth";
-    foaf:lastName "Rutten"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Liesbeth";
-    foaf:lastName "Rombouts"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Bodemkundige Dienst van België vzw"];
-    foaf:firstName "Sofie";
-    foaf:lastName "Reynaert"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Bodemkundige Dienst van België"];
-    foaf:firstName "Michaël";
-    foaf:lastName "Rens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Agentschap Onroerend Erfgoed"];
-    foaf:firstName "Marnix";
-    foaf:lastName "Pieters"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Koninklijk Belgisch Instituut voor Natuurwetenschappen"];
-    foaf:firstName "Kris";
-    foaf:lastName "Piessens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Putboringen Van Deynse NV"];
-    foaf:firstName "Nadia";
-    foaf:lastName "Paridaen"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "GeSolutions"];
-    foaf:firstName "Killian";
-    foaf:lastName "Paenen"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "GEBO"];
-    foaf:firstName "Olivier";
-    foaf:lastName "Olyslaegers"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Openbare Vlaamse Afvalstoffenmaatschappij"];
-    foaf:firstName "Geert";
-    foaf:lastName "Nys"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Mobiliteit en Openbare Werken"];
-    foaf:firstName "Jeroen";
-    foaf:lastName "Nyckees"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Stad Gent"];
-    foaf:firstName "Pieter";
-    foaf:lastName "Nieuwlaet"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vlaamse Milieumaatschappij"];
-    foaf:firstName "Willem";
-    foaf:lastName "Maetens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Citizens"];
-    foaf:firstName "Jan";
-    foaf:lastName "Maertens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vlaamse Milieumaatschappij"];
-    foaf:firstName "Frank";
-    foaf:lastName "Lavens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Studiebureau voor Bouwkunde en Expertise (SBE) NV"];
-    foaf:firstName "Tom";
-    foaf:lastName "Jottier"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "De Watergroep"];
-    foaf:firstName "Pieter";
-    foaf:lastName "Jan Haest"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vrije Universiteit Brussel"];
-    foaf:firstName "Marijke";
-    foaf:lastName "Huysmans"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Votquenne Foundations & Revyson"];
-    foaf:firstName "Ludovic";
-    foaf:lastName "Huysentruyt"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Citizens"];
-    foaf:firstName "Stijn";
-    foaf:lastName "Huyghe"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Grondwijzer vzw"];
-    foaf:firstName "Jente";
-    foaf:lastName "Hanssens"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Koninklijk Belgisch Instituut voor Natuurwetenschappen"];
-    foaf:firstName "Stijn";
-    foaf:lastName "Goolaerts"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vlaamste Instelling voor Technologisch Onderzoek (VITO)"];
-    foaf:firstName "Katrijn";
-    foaf:lastName "Dirix"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Andere"];
-    foaf:firstName "Geert";
-    foaf:lastName "Devriese"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Andere"];
-    foaf:firstName "Filip";
-    foaf:lastName "Dehaese"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Instituut voor Natuur- en Bosonderzoek"];
-    foaf:firstName "Aaike";
-    foaf:lastName "De Wever"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vrouwen van het Algemeen Boerensyndicaat"];
-    foaf:firstName "Lieven";
-    foaf:lastName "De Stoppeleire"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vlaamse Milieumaatschappij"];
-    foaf:firstName "Tinneke";
-    foaf:lastName "De Rouck"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Geosparc"];
-    foaf:firstName "Berdien";
-    foaf:lastName "De Ro"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Openbare Vlaamse Afvalstoffenmaatschappij"];
-    foaf:firstName "Sandra";
-    foaf:lastName "De Loore"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vlaamste Instelling voor Technologisch Onderzoek (VITO)"];
-    foaf:firstName "Roel";
-    foaf:lastName "De Koninck"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Vlaamse Milieumaatschappij"];
-    foaf:firstName "Ywan";
-    foaf:lastName "De Jonghe"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Andere"];
-    foaf:firstName "Flor";
-    foaf:lastName "De Cock"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Mobiliteit en Openbare Werken"];
-    foaf:firstName "Patrick";
-    foaf:lastName "De Baets"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Aseptic Excellence Partner"];
-    foaf:firstName "Marnix";
-    foaf:lastName "Coulier"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Inagrvzw"];
-    foaf:firstName "Franky";
-    foaf:lastName "Coopman"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Instituut voor Natuur- en Bosonderzoek"];
-    foaf:firstName "Nathalie";
-    foaf:lastName "Cools"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Agentschap Wegen en Verkeer"];
-    foaf:firstName "Maxim";
-    foaf:lastName "Broos"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Mobiliteit en Openbare Werken"];
-    foaf:firstName "Sophie";
-    foaf:lastName "Bordere"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "FOD Financiën"];
-    foaf:firstName "Reinhilde";
-    foaf:lastName "Blondeel"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Grondbank Tracimat"];
-    foaf:firstName "Christine";
-    foaf:lastName "Berchmans"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Agentschap Wegen en Verkeer"];
-    foaf:firstName "Simon";
-    foaf:lastName "Baert"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Canalcnv"];
-    foaf:firstName "Ilse";
-    foaf:lastName "Baeck"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Universiteit Antwerpen – CurieuzeNeuzen In De Tuin"];
-    foaf:firstName "Camille";
-    foaf:lastName "Allonsius"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Mobiliteit en Openbare Werken"];
-    foaf:firstName "Chandra";
-    foaf:lastName "Algoe"
-  ];
-  dc:issued "TODO";
-  dc:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
-    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
-  dc:mediator [
-    foaf:homepage <https://data.vlaanderen.be>;
-    foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
-    foaf:name "Data Vlaanderen"
-  ];
-  rdfs:seeAlso skos:Concept,
-    dc:type,
-    <http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingCurve.shape>,
-    <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result>,
-    <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty>,
-    <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_GeometryValuePair.value>,
-    <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair.geometry>;
-  <http://www.w3.org/2001/02pd/rec54#editor> [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Eveline";
-    foaf:lastName "Vlassenroot"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Laurens";
-    foaf:lastName "Vercauteren"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Ziggy";
-    foaf:lastName "Vanlishout"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Martin";
-    foaf:lastName "Vanbrabant"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Dwight";
-    foaf:lastName "Van Lancker"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Anthony";
-    foaf:lastName "Van Heymbeeck"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Geert";
-    foaf:lastName "Thijs"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Dimitri";
-    foaf:lastName "Schepers"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Raf";
-    foaf:lastName "Buyle"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Digitaal Vaanderen"];
-    foaf:firstName "Veerle";
-    foaf:lastName "Beyaert"
-  ];
-  foaf:maker [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Jasper";
-    foaf:lastName "Verhaegen"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Veerle";
-    foaf:lastName "Vanwesenbeeck"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Geert";
-    foaf:lastName "Van Haute"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Tom";
-    foaf:lastName "Van Gulck"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Marleen";
-    foaf:lastName "Van Damme"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Frieke";
-    foaf:lastName "Segers"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Katrien";
-    foaf:lastName "Oorts"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Petra";
-    foaf:lastName "Deproost"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Katrien";
-    foaf:lastName "De Nil"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "Departement Omgeving"];
-    foaf:firstName "Sabine";
-    foaf:lastName "Buyle"
-  ] .
+    rdfs:label "bodem-en-ondergrond"@en, "bodem-en-ondergrond"@nl.
+_:n3-377 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-378 <http://xmlns.com/foaf/0.1/name> "Algemeen Boerensyndicaat".
+_:n3-377 <http://schema.org/affiliation> _:n3-378;
+    <http://xmlns.com/foaf/0.1/firstName> "Mark";
+    <http://xmlns.com/foaf/0.1/lastName> "Wulfrancke".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-377.
+_:n3-379 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-380 <http://xmlns.com/foaf/0.1/name> "Koninklijk Belgisch Instituur voor Natuurwetenschappen – Belgische Geologische Dienst".
+_:n3-379 <http://schema.org/affiliation> _:n3-380;
+    <http://xmlns.com/foaf/0.1/firstName> "Jan";
+    <http://xmlns.com/foaf/0.1/lastName> "Walstra".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-379.
+_:n3-381 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-382 <http://xmlns.com/foaf/0.1/name> "Instituur voor Natuur- en Bosonderzoek".
+_:n3-381 <http://schema.org/affiliation> _:n3-382;
+    <http://xmlns.com/foaf/0.1/firstName> "Mathias";
+    <http://xmlns.com/foaf/0.1/lastName> "Wackenier".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-381.
+_:n3-383 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-384 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken (Geotechniek)".
+_:n3-383 <http://schema.org/affiliation> _:n3-384;
+    <http://xmlns.com/foaf/0.1/firstName> "Leen";
+    <http://xmlns.com/foaf/0.1/lastName> "Vincke".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-383.
+_:n3-385 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-386 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-385 <http://schema.org/affiliation> _:n3-386;
+    <http://xmlns.com/foaf/0.1/firstName> "Wouter";
+    <http://xmlns.com/foaf/0.1/lastName> "Vervaele".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-385.
+_:n3-387 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-388 <http://xmlns.com/foaf/0.1/name> "Andere".
+_:n3-387 <http://schema.org/affiliation> _:n3-388;
+    <http://xmlns.com/foaf/0.1/firstName> "Peter";
+    <http://xmlns.com/foaf/0.1/lastName> "Verspecht".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-387.
+_:n3-389 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-390 <http://xmlns.com/foaf/0.1/name> "VZW Grondbank".
+_:n3-389 <http://schema.org/affiliation> _:n3-390;
+    <http://xmlns.com/foaf/0.1/firstName> "Elisa";
+    <http://xmlns.com/foaf/0.1/lastName> "Vermeulen".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-389.
+_:n3-391 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-392 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-391 <http://schema.org/affiliation> _:n3-392;
+    <http://xmlns.com/foaf/0.1/firstName> "Gert";
+    <http://xmlns.com/foaf/0.1/lastName> "Vermeersch".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-391.
+_:n3-393 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-394 <http://xmlns.com/foaf/0.1/name> "Smet GWT Europe".
+_:n3-393 <http://schema.org/affiliation> _:n3-394;
+    <http://xmlns.com/foaf/0.1/firstName> "Joris";
+    <http://xmlns.com/foaf/0.1/lastName> "Vermeer".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-393.
+_:n3-395 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-396 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-395 <http://schema.org/affiliation> _:n3-396;
+    <http://xmlns.com/foaf/0.1/firstName> "Davy";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanhoudt".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-395.
+_:n3-397 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-398 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-397 <http://schema.org/affiliation> _:n3-398;
+    <http://xmlns.com/foaf/0.1/firstName> "Jan";
+    <http://xmlns.com/foaf/0.1/lastName> "Vangestel".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-397.
+_:n3-399 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-400 <http://xmlns.com/foaf/0.1/name> "Boerenbond".
+_:n3-399 <http://schema.org/affiliation> _:n3-400;
+    <http://xmlns.com/foaf/0.1/firstName> "Caroline";
+    <http://xmlns.com/foaf/0.1/lastName> "Van der Heyden".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-399.
+_:n3-401 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-402 <http://xmlns.com/foaf/0.1/name> "Universiteit Antwerpen – CurieuzeNeuzen In De Tuin".
+_:n3-401 <http://schema.org/affiliation> _:n3-402;
+    <http://xmlns.com/foaf/0.1/firstName> "Stijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Van de Vondel".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-401.
+_:n3-403 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-404 <http://xmlns.com/foaf/0.1/name> "Vanhecke NV".
+_:n3-403 <http://schema.org/affiliation> _:n3-404;
+    <http://xmlns.com/foaf/0.1/firstName> "Naten";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Hemelrijck".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-403.
+_:n3-405 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-406 <http://xmlns.com/foaf/0.1/name> "Fluves – pydov".
+_:n3-405 <http://schema.org/affiliation> _:n3-406;
+    <http://xmlns.com/foaf/0.1/firstName> "Johan";
+    <http://xmlns.com/foaf/0.1/lastName> "Van De Wauw".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-405.
+_:n3-407 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-408 <http://xmlns.com/foaf/0.1/name> "Grondwijzer VZW".
+_:n3-407 <http://schema.org/affiliation> _:n3-408;
+    <http://xmlns.com/foaf/0.1/firstName> "Geerts";
+    <http://xmlns.com/foaf/0.1/lastName> "Timothy".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-407.
+_:n3-409 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-410 <http://xmlns.com/foaf/0.1/name> "AC partners".
+_:n3-409 <http://schema.org/affiliation> _:n3-410;
+    <http://xmlns.com/foaf/0.1/firstName> "Joris";
+    <http://xmlns.com/foaf/0.1/lastName> "Synaeve".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-409.
+_:n3-411 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-412 <http://xmlns.com/foaf/0.1/name> "Universiteit Gent".
+_:n3-411 <http://schema.org/affiliation> _:n3-412;
+    <http://xmlns.com/foaf/0.1/firstName> "Bruno";
+    <http://xmlns.com/foaf/0.1/lastName> "Stuyts".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-411.
+_:n3-413 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-414 <http://xmlns.com/foaf/0.1/name> "Tractebel – International Marine and Dredging Consultants".
+_:n3-413 <http://schema.org/affiliation> _:n3-414;
+    <http://xmlns.com/foaf/0.1/firstName> "Raf";
+    <http://xmlns.com/foaf/0.1/lastName> "Somers".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-413.
+_:n3-415 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-416 <http://xmlns.com/foaf/0.1/name> "Openbare Vlaamse Afvalstoffenmaatschappij".
+_:n3-415 <http://schema.org/affiliation> _:n3-416;
+    <http://xmlns.com/foaf/0.1/firstName> "Koen";
+    <http://xmlns.com/foaf/0.1/lastName> "Smeets".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-415.
+_:n3-417 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-418 <http://xmlns.com/foaf/0.1/name> "Vlaamste Instelling voor Technologisch Onderzoek (VITO)".
+_:n3-417 <http://schema.org/affiliation> _:n3-418;
+    <http://xmlns.com/foaf/0.1/firstName> "Frank";
+    <http://xmlns.com/foaf/0.1/lastName> "Sleeuwaert".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-417.
+_:n3-419 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-420 <http://xmlns.com/foaf/0.1/name> "Openbare Vlaamse Afvalstoffenmaatschappij".
+_:n3-419 <http://schema.org/affiliation> _:n3-420;
+    <http://xmlns.com/foaf/0.1/firstName> "Erwin";
+    <http://xmlns.com/foaf/0.1/lastName> "Sevens".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-419.
+_:n3-421 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-422 <http://xmlns.com/foaf/0.1/name> "Citizens".
+_:n3-421 <http://schema.org/affiliation> _:n3-422;
+    <http://xmlns.com/foaf/0.1/firstName> "Piet";
+    <http://xmlns.com/foaf/0.1/lastName> "Seuntjens".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-421.
+_:n3-423 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-424 <http://xmlns.com/foaf/0.1/name> "Colas Noord NV".
+_:n3-423 <http://schema.org/affiliation> _:n3-424;
+    <http://xmlns.com/foaf/0.1/firstName> "Stijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Scheepers".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-423.
+_:n3-425 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-426 <http://xmlns.com/foaf/0.1/name> "Instituut voor Landbouw- Visserij- en Voedingsonderzoek".
+_:n3-425 <http://schema.org/affiliation> _:n3-426;
+    <http://xmlns.com/foaf/0.1/firstName> "Greet";
+    <http://xmlns.com/foaf/0.1/lastName> "Ruysschaert".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-425.
+_:n3-427 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-428 <http://xmlns.com/foaf/0.1/name> "Vlaamse Landmaatschappij".
+_:n3-427 <http://schema.org/affiliation> _:n3-428;
+    <http://xmlns.com/foaf/0.1/firstName> "Elisabeth";
+    <http://xmlns.com/foaf/0.1/lastName> "Rutten".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-427.
+_:n3-429 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-430 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-429 <http://schema.org/affiliation> _:n3-430;
+    <http://xmlns.com/foaf/0.1/firstName> "Liesbeth";
+    <http://xmlns.com/foaf/0.1/lastName> "Rombouts".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-429.
+_:n3-431 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-432 <http://xmlns.com/foaf/0.1/name> "Bodemkundige Dienst van België vzw".
+_:n3-431 <http://schema.org/affiliation> _:n3-432;
+    <http://xmlns.com/foaf/0.1/firstName> "Sofie";
+    <http://xmlns.com/foaf/0.1/lastName> "Reynaert".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-431.
+_:n3-433 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-434 <http://xmlns.com/foaf/0.1/name> "Bodemkundige Dienst van België".
+_:n3-433 <http://schema.org/affiliation> _:n3-434;
+    <http://xmlns.com/foaf/0.1/firstName> "Michaël";
+    <http://xmlns.com/foaf/0.1/lastName> "Rens".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-433.
+_:n3-435 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-436 <http://xmlns.com/foaf/0.1/name> "Agentschap Onroerend Erfgoed".
+_:n3-435 <http://schema.org/affiliation> _:n3-436;
+    <http://xmlns.com/foaf/0.1/firstName> "Marnix";
+    <http://xmlns.com/foaf/0.1/lastName> "Pieters".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-435.
+_:n3-437 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-438 <http://xmlns.com/foaf/0.1/name> "Koninklijk Belgisch Instituut voor Natuurwetenschappen".
+_:n3-437 <http://schema.org/affiliation> _:n3-438;
+    <http://xmlns.com/foaf/0.1/firstName> "Kris";
+    <http://xmlns.com/foaf/0.1/lastName> "Piessens".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-437.
+_:n3-439 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-440 <http://xmlns.com/foaf/0.1/name> "Putboringen Van Deynse NV".
+_:n3-439 <http://schema.org/affiliation> _:n3-440;
+    <http://xmlns.com/foaf/0.1/firstName> "Nadia";
+    <http://xmlns.com/foaf/0.1/lastName> "Paridaen".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-439.
+_:n3-441 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-442 <http://xmlns.com/foaf/0.1/name> "GeSolutions".
+_:n3-441 <http://schema.org/affiliation> _:n3-442;
+    <http://xmlns.com/foaf/0.1/firstName> "Killian";
+    <http://xmlns.com/foaf/0.1/lastName> "Paenen".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-441.
+_:n3-443 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-444 <http://xmlns.com/foaf/0.1/name> "GEBO".
+_:n3-443 <http://schema.org/affiliation> _:n3-444;
+    <http://xmlns.com/foaf/0.1/firstName> "Olivier";
+    <http://xmlns.com/foaf/0.1/lastName> "Olyslaegers".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-443.
+_:n3-445 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-446 <http://xmlns.com/foaf/0.1/name> "Openbare Vlaamse Afvalstoffenmaatschappij".
+_:n3-445 <http://schema.org/affiliation> _:n3-446;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Nys".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-445.
+_:n3-447 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-448 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-447 <http://schema.org/affiliation> _:n3-448;
+    <http://xmlns.com/foaf/0.1/firstName> "Jeroen";
+    <http://xmlns.com/foaf/0.1/lastName> "Nyckees".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-447.
+_:n3-449 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-450 <http://xmlns.com/foaf/0.1/name> "Stad Gent".
+_:n3-449 <http://schema.org/affiliation> _:n3-450;
+    <http://xmlns.com/foaf/0.1/firstName> "Pieter";
+    <http://xmlns.com/foaf/0.1/lastName> "Nieuwlaet".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-449.
+_:n3-451 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-452 <http://xmlns.com/foaf/0.1/name> "Vlaamse Milieumaatschappij".
+_:n3-451 <http://schema.org/affiliation> _:n3-452;
+    <http://xmlns.com/foaf/0.1/firstName> "Willem";
+    <http://xmlns.com/foaf/0.1/lastName> "Maetens".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-451.
+_:n3-453 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-454 <http://xmlns.com/foaf/0.1/name> "Citizens".
+_:n3-453 <http://schema.org/affiliation> _:n3-454;
+    <http://xmlns.com/foaf/0.1/firstName> "Jan";
+    <http://xmlns.com/foaf/0.1/lastName> "Maertens".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-453.
+_:n3-455 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-456 <http://xmlns.com/foaf/0.1/name> "Vlaamse Milieumaatschappij".
+_:n3-455 <http://schema.org/affiliation> _:n3-456;
+    <http://xmlns.com/foaf/0.1/firstName> "Frank";
+    <http://xmlns.com/foaf/0.1/lastName> "Lavens".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-455.
+_:n3-457 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-458 <http://xmlns.com/foaf/0.1/name> "Studiebureau voor Bouwkunde en Expertise (SBE) NV".
+_:n3-457 <http://schema.org/affiliation> _:n3-458;
+    <http://xmlns.com/foaf/0.1/firstName> "Tom";
+    <http://xmlns.com/foaf/0.1/lastName> "Jottier".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-457.
+_:n3-459 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-460 <http://xmlns.com/foaf/0.1/name> "De Watergroep".
+_:n3-459 <http://schema.org/affiliation> _:n3-460;
+    <http://xmlns.com/foaf/0.1/firstName> "Pieter";
+    <http://xmlns.com/foaf/0.1/lastName> "Jan Haest".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-459.
+_:n3-461 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-462 <http://xmlns.com/foaf/0.1/name> "Vrije Universiteit Brussel".
+_:n3-461 <http://schema.org/affiliation> _:n3-462;
+    <http://xmlns.com/foaf/0.1/firstName> "Marijke";
+    <http://xmlns.com/foaf/0.1/lastName> "Huysmans".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-461.
+_:n3-463 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-464 <http://xmlns.com/foaf/0.1/name> "Votquenne Foundations & Revyson".
+_:n3-463 <http://schema.org/affiliation> _:n3-464;
+    <http://xmlns.com/foaf/0.1/firstName> "Ludovic";
+    <http://xmlns.com/foaf/0.1/lastName> "Huysentruyt".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-463.
+_:n3-465 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-466 <http://xmlns.com/foaf/0.1/name> "Citizens".
+_:n3-465 <http://schema.org/affiliation> _:n3-466;
+    <http://xmlns.com/foaf/0.1/firstName> "Stijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Huyghe".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-465.
+_:n3-467 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-468 <http://xmlns.com/foaf/0.1/name> "Grondwijzer vzw".
+_:n3-467 <http://schema.org/affiliation> _:n3-468;
+    <http://xmlns.com/foaf/0.1/firstName> "Jente";
+    <http://xmlns.com/foaf/0.1/lastName> "Hanssens".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-467.
+_:n3-469 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-470 <http://xmlns.com/foaf/0.1/name> "Koninklijk Belgisch Instituut voor Natuurwetenschappen".
+_:n3-469 <http://schema.org/affiliation> _:n3-470;
+    <http://xmlns.com/foaf/0.1/firstName> "Stijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Goolaerts".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-469.
+_:n3-471 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-472 <http://xmlns.com/foaf/0.1/name> "Vlaamste Instelling voor Technologisch Onderzoek (VITO)".
+_:n3-471 <http://schema.org/affiliation> _:n3-472;
+    <http://xmlns.com/foaf/0.1/firstName> "Katrijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Dirix".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-471.
+_:n3-473 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-474 <http://xmlns.com/foaf/0.1/name> "Andere".
+_:n3-473 <http://schema.org/affiliation> _:n3-474;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Devriese".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-473.
+_:n3-475 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-476 <http://xmlns.com/foaf/0.1/name> "Andere".
+_:n3-475 <http://schema.org/affiliation> _:n3-476;
+    <http://xmlns.com/foaf/0.1/firstName> "Filip";
+    <http://xmlns.com/foaf/0.1/lastName> "Dehaese".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-475.
+_:n3-477 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-478 <http://xmlns.com/foaf/0.1/name> "Instituut voor Natuur- en Bosonderzoek".
+_:n3-477 <http://schema.org/affiliation> _:n3-478;
+    <http://xmlns.com/foaf/0.1/firstName> "Aaike";
+    <http://xmlns.com/foaf/0.1/lastName> "De Wever".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-477.
+_:n3-479 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-480 <http://xmlns.com/foaf/0.1/name> "Vrouwen van het Algemeen Boerensyndicaat".
+_:n3-479 <http://schema.org/affiliation> _:n3-480;
+    <http://xmlns.com/foaf/0.1/firstName> "Lieven";
+    <http://xmlns.com/foaf/0.1/lastName> "De Stoppeleire".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-479.
+_:n3-481 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-482 <http://xmlns.com/foaf/0.1/name> "Vlaamse Milieumaatschappij".
+_:n3-481 <http://schema.org/affiliation> _:n3-482;
+    <http://xmlns.com/foaf/0.1/firstName> "Tinneke";
+    <http://xmlns.com/foaf/0.1/lastName> "De Rouck".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-481.
+_:n3-483 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-484 <http://xmlns.com/foaf/0.1/name> "Geosparc".
+_:n3-483 <http://schema.org/affiliation> _:n3-484;
+    <http://xmlns.com/foaf/0.1/firstName> "Berdien";
+    <http://xmlns.com/foaf/0.1/lastName> "De Ro".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-483.
+_:n3-485 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-486 <http://xmlns.com/foaf/0.1/name> "Openbare Vlaamse Afvalstoffenmaatschappij".
+_:n3-485 <http://schema.org/affiliation> _:n3-486;
+    <http://xmlns.com/foaf/0.1/firstName> "Sandra";
+    <http://xmlns.com/foaf/0.1/lastName> "De Loore".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-485.
+_:n3-487 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-488 <http://xmlns.com/foaf/0.1/name> "Vlaamste Instelling voor Technologisch Onderzoek (VITO)".
+_:n3-487 <http://schema.org/affiliation> _:n3-488;
+    <http://xmlns.com/foaf/0.1/firstName> "Roel";
+    <http://xmlns.com/foaf/0.1/lastName> "De Koninck".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-487.
+_:n3-489 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-490 <http://xmlns.com/foaf/0.1/name> "Vlaamse Milieumaatschappij".
+_:n3-489 <http://schema.org/affiliation> _:n3-490;
+    <http://xmlns.com/foaf/0.1/firstName> "Ywan";
+    <http://xmlns.com/foaf/0.1/lastName> "De Jonghe".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-489.
+_:n3-491 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-492 <http://xmlns.com/foaf/0.1/name> "Andere".
+_:n3-491 <http://schema.org/affiliation> _:n3-492;
+    <http://xmlns.com/foaf/0.1/firstName> "Flor";
+    <http://xmlns.com/foaf/0.1/lastName> "De Cock".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-491.
+_:n3-493 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-494 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-493 <http://schema.org/affiliation> _:n3-494;
+    <http://xmlns.com/foaf/0.1/firstName> "Patrick";
+    <http://xmlns.com/foaf/0.1/lastName> "De Baets".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-493.
+_:n3-495 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-496 <http://xmlns.com/foaf/0.1/name> "Aseptic Excellence Partner".
+_:n3-495 <http://schema.org/affiliation> _:n3-496;
+    <http://xmlns.com/foaf/0.1/firstName> "Marnix";
+    <http://xmlns.com/foaf/0.1/lastName> "Coulier".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-495.
+_:n3-497 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-498 <http://xmlns.com/foaf/0.1/name> "Inagrvzw".
+_:n3-497 <http://schema.org/affiliation> _:n3-498;
+    <http://xmlns.com/foaf/0.1/firstName> "Franky";
+    <http://xmlns.com/foaf/0.1/lastName> "Coopman".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-497.
+_:n3-499 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-500 <http://xmlns.com/foaf/0.1/name> "Instituut voor Natuur- en Bosonderzoek".
+_:n3-499 <http://schema.org/affiliation> _:n3-500;
+    <http://xmlns.com/foaf/0.1/firstName> "Nathalie";
+    <http://xmlns.com/foaf/0.1/lastName> "Cools".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-499.
+_:n3-501 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-502 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-501 <http://schema.org/affiliation> _:n3-502;
+    <http://xmlns.com/foaf/0.1/firstName> "Maxim";
+    <http://xmlns.com/foaf/0.1/lastName> "Broos".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-501.
+_:n3-503 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-504 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-503 <http://schema.org/affiliation> _:n3-504;
+    <http://xmlns.com/foaf/0.1/firstName> "Sophie";
+    <http://xmlns.com/foaf/0.1/lastName> "Bordere".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-503.
+_:n3-505 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-506 <http://xmlns.com/foaf/0.1/name> "FOD Financiën".
+_:n3-505 <http://schema.org/affiliation> _:n3-506;
+    <http://xmlns.com/foaf/0.1/firstName> "Reinhilde";
+    <http://xmlns.com/foaf/0.1/lastName> "Blondeel".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-505.
+_:n3-507 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-508 <http://xmlns.com/foaf/0.1/name> "Grondbank Tracimat".
+_:n3-507 <http://schema.org/affiliation> _:n3-508;
+    <http://xmlns.com/foaf/0.1/firstName> "Christine";
+    <http://xmlns.com/foaf/0.1/lastName> "Berchmans".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-507.
+_:n3-509 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-510 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-509 <http://schema.org/affiliation> _:n3-510;
+    <http://xmlns.com/foaf/0.1/firstName> "Simon";
+    <http://xmlns.com/foaf/0.1/lastName> "Baert".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-509.
+_:n3-511 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-512 <http://xmlns.com/foaf/0.1/name> "Canalcnv".
+_:n3-511 <http://schema.org/affiliation> _:n3-512;
+    <http://xmlns.com/foaf/0.1/firstName> "Ilse";
+    <http://xmlns.com/foaf/0.1/lastName> "Baeck".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-511.
+_:n3-513 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-514 <http://xmlns.com/foaf/0.1/name> "Universiteit Antwerpen – CurieuzeNeuzen In De Tuin".
+_:n3-513 <http://schema.org/affiliation> _:n3-514;
+    <http://xmlns.com/foaf/0.1/firstName> "Camille";
+    <http://xmlns.com/foaf/0.1/lastName> "Allonsius".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-513.
+_:n3-515 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-516 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-515 <http://schema.org/affiliation> _:n3-516;
+    <http://xmlns.com/foaf/0.1/firstName> "Chandra";
+    <http://xmlns.com/foaf/0.1/lastName> "Algoe".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:contributor _:n3-515;
+    dct:issued "TODO";
+    dct:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0", <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>.
+_:n3-517 <http://xmlns.com/foaf/0.1/homepage> <https://data.vlaanderen.be>;
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:oslo@kb.vlaanderen.be>;
+    <http://xmlns.com/foaf/0.1/name> "Data Vlaanderen".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> dct:mediator _:n3-517;
+    rdfs:seeAlso skos:Concept, dct:type, <http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingCurve.shape>, <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result>, <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty>, <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_GeometryValuePair.value>, <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair.geometry>.
+_:n3-518 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-519 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-518 <http://schema.org/affiliation> _:n3-519;
+    <http://xmlns.com/foaf/0.1/firstName> "Eveline";
+    <http://xmlns.com/foaf/0.1/lastName> "Vlassenroot".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-518.
+_:n3-520 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-521 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-520 <http://schema.org/affiliation> _:n3-521;
+    <http://xmlns.com/foaf/0.1/firstName> "Laurens";
+    <http://xmlns.com/foaf/0.1/lastName> "Vercauteren".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-520.
+_:n3-522 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-523 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-522 <http://schema.org/affiliation> _:n3-523;
+    <http://xmlns.com/foaf/0.1/firstName> "Ziggy";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanlishout".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-522.
+_:n3-524 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-525 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-524 <http://schema.org/affiliation> _:n3-525;
+    <http://xmlns.com/foaf/0.1/firstName> "Martin";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanbrabant".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-524.
+_:n3-526 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-527 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-526 <http://schema.org/affiliation> _:n3-527;
+    <http://xmlns.com/foaf/0.1/firstName> "Dwight";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Lancker".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-526.
+_:n3-528 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-529 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-528 <http://schema.org/affiliation> _:n3-529;
+    <http://xmlns.com/foaf/0.1/firstName> "Anthony";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Heymbeeck".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-528.
+_:n3-530 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-531 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-530 <http://schema.org/affiliation> _:n3-531;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Thijs".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-530.
+_:n3-532 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-533 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-532 <http://schema.org/affiliation> _:n3-533;
+    <http://xmlns.com/foaf/0.1/firstName> "Dimitri";
+    <http://xmlns.com/foaf/0.1/lastName> "Schepers".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-532.
+_:n3-534 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-535 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-534 <http://schema.org/affiliation> _:n3-535;
+    <http://xmlns.com/foaf/0.1/firstName> "Raf";
+    <http://xmlns.com/foaf/0.1/lastName> "Buyle".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-534.
+_:n3-536 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-537 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-536 <http://schema.org/affiliation> _:n3-537;
+    <http://xmlns.com/foaf/0.1/firstName> "Veerle";
+    <http://xmlns.com/foaf/0.1/lastName> "Beyaert".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-536.
+_:n3-538 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-539 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-538 <http://schema.org/affiliation> _:n3-539;
+    <http://xmlns.com/foaf/0.1/firstName> "Jasper";
+    <http://xmlns.com/foaf/0.1/lastName> "Verhaegen".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-538.
+_:n3-540 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-541 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-540 <http://schema.org/affiliation> _:n3-541;
+    <http://xmlns.com/foaf/0.1/firstName> "Veerle";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanwesenbeeck".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-540.
+_:n3-542 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-543 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-542 <http://schema.org/affiliation> _:n3-543;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Haute".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-542.
+_:n3-544 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-545 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-544 <http://schema.org/affiliation> _:n3-545;
+    <http://xmlns.com/foaf/0.1/firstName> "Tom";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Gulck".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-544.
+_:n3-546 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-547 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-546 <http://schema.org/affiliation> _:n3-547;
+    <http://xmlns.com/foaf/0.1/firstName> "Marleen";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Damme".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-546.
+_:n3-548 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-549 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-548 <http://schema.org/affiliation> _:n3-549;
+    <http://xmlns.com/foaf/0.1/firstName> "Frieke";
+    <http://xmlns.com/foaf/0.1/lastName> "Segers".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-548.
+_:n3-550 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-551 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-550 <http://schema.org/affiliation> _:n3-551;
+    <http://xmlns.com/foaf/0.1/firstName> "Katrien";
+    <http://xmlns.com/foaf/0.1/lastName> "Oorts".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-550.
+_:n3-552 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-553 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-552 <http://schema.org/affiliation> _:n3-553;
+    <http://xmlns.com/foaf/0.1/firstName> "Petra";
+    <http://xmlns.com/foaf/0.1/lastName> "Deproost".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-552.
+_:n3-554 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-555 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-554 <http://schema.org/affiliation> _:n3-555;
+    <http://xmlns.com/foaf/0.1/firstName> "Katrien";
+    <http://xmlns.com/foaf/0.1/lastName> "De Nil".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-554.
+_:n3-556 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-557 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-556 <http://schema.org/affiliation> _:n3-557;
+    <http://xmlns.com/foaf/0.1/firstName> "Sabine";
+    <http://xmlns.com/foaf/0.1/lastName> "Buyle".
+<https://data.vlaanderen.be/ns/bodem-en-ondergrond> <http://xmlns.com/foaf/0.1/maker> _:n3-556.

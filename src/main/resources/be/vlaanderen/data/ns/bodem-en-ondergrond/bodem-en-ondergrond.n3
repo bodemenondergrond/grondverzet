@@ -1,0 +1,4 @@
+
+{ ?x a <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Erkenning> } => { ?x a <https://data.vlaanderen.be/ns/besluit#Besluit> } .
+
+{ ?x a <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Erkenning> } => { ?x a <https://data.vlaanderen.be/ns/besluit#Besluit> } .
