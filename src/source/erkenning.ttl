@@ -38,7 +38,6 @@
 @prefix cl-mat:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/materiaalklasse/> .
 @prefix cl-mmt:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/xyzmethode/> .
 @prefix cl-mtype:                  <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
-@prefix cl-mtype:                  <https://data.bodemenondergrond.vlaanderen.be/id/concept/bemonsteringstype/> .
 @prefix cl-opdraard:               <https://data.bodemenondergrond.vlaanderen.be/id/concept/observatieproceduretype/> .
 @prefix cl-opdrorigine:            <https://data.bodemenondergrond.vlaanderen.be/id/concept/opdrachtaard/> .
 @prefix cl-opt:                    <https://data.bodemenondergrond.vlaanderen.be/id/concept/opdrachtorigine/> .
@@ -84,7 +83,6 @@
 @prefix opdracht:                  <https://data.bodemenondergrond.vlaanderen.be/id/opdracht/> .
 @prefix observation:               <https://data.bodemenondergrond.vlaanderen.be/id/observation/> .
 @prefix observationgroup:          <https://data.bodemenondergrond.vlaanderen.be/id/observationgroup/> .
-@prefix organisatie:               <https://data.bodemenondergrond.vlaanderen.be/id/organisatie/> .
 @prefix omgevingsvergunning:       <https://data.vlaanderen.be/ns/omgevingsvergunning/#> .
 @prefix opm:                       <https://data.bodemenondergrond.vlaanderen.be/id/opmerking/> .
 @prefix periode:                   <https://data.bodemenondergrond.vlaanderen.be/id/periode/> .
@@ -127,36 +125,55 @@
 ### en AP omgevingsvergunning: https://data.vlaanderen.be/doc/applicatieprofiel/omgevingsvergunning/erkendestandaard/2024-11-07/
 boring:1965-068140  a              grondboringen:Grondboring ;
     prov:qualifiedAssociation      association:association001 ;
-    prov:wasAssociatedWith         agent:agent001 .
+    prov:wasAssociatedWith         agent:organisatie5739 .
     #prov:wasGeneratedBy voorafmelding:2021-009917 .
 
 association:association001 a    prov:Association ;
-    prov:agent                  agent:agent001 ;
+    prov:agent                  agent:organisatie5739 ;
     prov:hadPlan                wettelijkkader:boring2021-186067 ;
     prov:hadRole                rol:boorder .
 
 rol:boorder a prov:Role .
 
+# Defintie van Agent
+agent:organisatie5739 a prov:Agent, prov:Organization ;
+    rov:registration           id:organisatie5739 ;  # ID zoals gekend in kern.tbl_organisatie als organisatie_id
+    foaf:name                  "De schutter Boringen" .  # Naam gekend zoals geregistreerd in DOV
 
-wettelijkkader:boring2021-186067 a      grondboringen:WettelijkKaderBoring ; # omgevingsvergunning:JuridischWerk
-    grondboringen:wettelijkKaderBoring  vergunning:boring2021-186067 ; # mogelijkheden hier zijn: omgevingsvergunning, vlaremvergunning, anderwettelijkkader, rechtvaardiging, attestVlarem of VlareboNaleving
-    grondboringen:wettelijkKaderBoorder erkenning:boring2021-186067 .
+id:organisatie5739 a adms:Identifier ;
+    skos:notation              "0820873881" ; # KBO-nummer
+    skos:note                  "KBO-nummer" ; # Aanduiding KBO-nummer
+    adms:schemeAgencyName      "Kruispuntbank van Ondernemingen (KBO)" ; # Aanduiding KBO
+    schema:about               <https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0820873881> ; # optioneel
+    dcterms:source             agent:organisatie5739 .
+
+# Wettelijk kader
+wettelijkkader:boring2021-186067 a      eli:LegalResource ; # grondboringen:WettelijkKaderBoring, omgevingsvergunning:JuridischWerk
+    eli:has_part  vergunning:boring2021-186067 ; # mogelijkheden hier zijn: omgevingsvergunning, vlaremvergunning, anderwettelijkkader, rechtvaardiging, attestVlarem of VlareboNaleving
+    eli:has_part  erkenning:boring2021-186067 ;
+    eli:has_part  voorafmelding:2021-009917 .
 
 
-# Voorafmelding
-voorafmelding:2021-009917 a grondboringen:voorafmelding ; # staat op zichzelf, voorafmelding heeft zijn eigen permkey.
+
+#wettelijkkader:boring2021-186067 a      grondboringen:WettelijkKaderBoring ;
+#    grondboringen:wettelijkKaderBoring  vergunning:boring2021-186067 ; 
+#    grondboringen:wettelijkKaderBoorder erkenning:boring2021-186067 .
+
+
+# Voorafmelding. Zit in een eigen fiche, dus kan als afzonderlijk object gemapt worden.
+voorafmelding:2021-009917 a grondboringen:Voorafmelding ; # staat op zichzelf, voorafmelding heeft zijn eigen permkey.
     rdfs:label              "Voorafmelding aan Grondboring" ;
     dcterms:description     "Verplichte voorafmelding voordat een grondboring mag worden uitgevoerd." ;
     prov:used               wettelijkkader:boring2021-186067 ;
-    prov:wasAssociatedWith  organisatie:organisatie15739 .
+    prov:wasAssociatedWith  agent:organisatie15739 .
 
-organisatie:organisatie15739 a prov:Agent, prov:Organization ;
+agent:organisatie15739 a prov:Agent, prov:Organization ;
     foaf:name                  "De schutter Boringen" .
 
 
 # Erkenning
 erkenning:boring2021-186067 a bodemenondergrond:Erkenning ;
-    dcterms:type    cl-erk:a .
+    dcterms:type              cl-erk:a .
 
 cl-erk:a a sosa:Procedure ; # skos:Concept .
     skos:definition "Boorwerkzaamheden die vallen onder discipline 1: bemalingen van de VLAREL-erkenning artikel 6, 7°, a) 1)."@nl ;
@@ -164,38 +181,37 @@ cl-erk:a a sosa:Procedure ; # skos:Concept .
 
 
  # omgevingsvergunning
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Omgevingsvergunning" ;
-    adms:identifier                 id:omgvergunning-boring2021-186067 ;
+vergunning:boring2021-186067 a      eli:LegalResource ;
+    eli:title                       "Omgevingsvergunning" ;
+    eli:description                 "omgevingsvergunning met projectnummer 2021118121" ;
     rdfs:seeAlso <https://omgevingsloket.omgeving.vlaanderen.be/?project=2021118121> . # hier komt eventueel nog de link naar iioa omgevingsvergunning ivm projectnummer = 2021118121
-
-id:omgvergunning-boring2021-186067 a  adms:Identifier ;
-    skos:notation  "2021118121"^^cl-idt:omgevingsloket .
 
 
  # vlaremvergunning
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Milieuvergunning VLAREM voor Grondboring" ;
-    dcterms:description             "Hier komt het kenmerk en datum van het besluit als vrije tekst" .
+vergunning:boring2021-186067 a      eli:LegalResource ;
+    eli:title                       "Milieuvergunning VLAREM voor Grondboring" ;
+    eli:description                 "Hier komt het kenmerk en datum van het besluit als vrije tekst" .
 
 
  # ander wettelijk kader
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Ander wettelijk kader" ;
-    dcterms:description             "Hier komt het kenmerk en datum van het besluit als vrije tekst" .
+vergunning:boring2021-186067 a      eli:LegalResource ;
+    eli:title                       "Ander wettelijk kader" ;
+    eli:description                 "Hier komt het kenmerk en datum van het besluit als vrije tekst" .
 
 
  # rechtvaardiging
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Reden waarom er alsnog een Grondboring werd uitgevoerd, ondanks gebrek aan wettelijk kader" ;
-    dcterms:description             "Hier komt de reden waarom er alsnog geboord werd als vrije tekst" .
+vergunning:boring2021-186067 a      eli:LegalResource ;
+    eli:title                       "Reden waarom er alsnog een Grondboring werd uitgevoerd, ondanks gebrek aan wettelijk kader" ;
+    eli:description                 "Hier komt de reden waarom er alsnog geboord werd als vrije tekst" .
 
 
  # attest Vlarem
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Attest VLAREM toegekend" .
+vergunning:boring2021-186067 a      eli:LegalResource ;
+    eli:title                       "VLAREM" ;
+    eli:description                 "Attest VLAREM toegekend" .
 
 
  # attest Vlarebo naleving
-vergunning:boring2021-186067 a      eli:LegalExpression ;
-    dcelements:description          "Attest naleving VLAREBO" .
+vergunning:boring2021-186067 a      eli:LegalResource ;
+    eli:title                       "VLAREBO" ;
+    eli:description                 "Attest naleving VLAREBO" .
