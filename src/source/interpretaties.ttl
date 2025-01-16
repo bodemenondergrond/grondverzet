@@ -723,7 +723,7 @@ interp:1983-215741 a                  sosa:Observation ;
 
 observationgroup:interp1983-215741 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group Lithologische beschrijving op locatie van boorgat 1983-024193"@nl ;
-    bodemenondergrond:list              list:interp1983-215741 ;
+    bodemenondergrond:list              list:interp1983-215741-1 ;
     qb:observation                      observation:interp1983-215741-1 ;
     qb:observation                      observation:interp1983-215741-2 ;
     qb:observation                      observation:interp1983-215741-3 ;
@@ -734,19 +734,19 @@ observationgroup:interp1983-215741 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp1983-215741 a   rdf:List ;
+list:interp1983-215741-1 a   rdf:List ;
     rdf:first              observation:interp1983-215741-1 ;
     rdf:rest               list:interp1983-215741-1 .
 
-list:interp1983-215741-1 a rdf:List ;
+list:interp1983-215741-2 a rdf:List ;
     rdf:first              observation:interp1983-215741-2 ;
     rdf:rest               list:interp1983-215741-2 .
 
-list:interp1983-215741-2 a rdf:List ;
+list:interp1983-215741-3 a rdf:List ;
     rdf:first              observation:interp1983-215741-3 ;
     rdf:rest               list:interp1983-215741-3 .
 
-list:interp1983-215741-3 a rdf:List ;
+list:interp1983-215741-4 a rdf:List ;
     rdf:first              observation:interp1983-215741-4 ;
     rdf:rest               rdf:nil .
 
@@ -878,7 +878,7 @@ interp:2000-003285 a                  sosa:Observation ;
 
 observationgroup:interp2000-003285 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group Formele stratigrafie op locatie van boorgat 1983-024193"@nl ;
-    bodemenondergrond:list              list:interp2000-003285 ;
+    bodemenondergrond:list              list:interp2000-003285-1 ;
     qb:observation                      observation:interp2000-003285-1 ;
     qb:observation                      observation:interp2000-003285-2 ;
     qb:observation                      observation:interp2000-003285-3 ;
@@ -889,19 +889,19 @@ observationgroup:interp2000-003285 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp2000-003285 a   rdf:List ;
+list:interp2000-003285-1 a   rdf:List ;
     rdf:first              observation:interp2000-003285-1 ;
     rdf:rest               list:interp2000-003285-1 .
 
-list:interp2000-003285-1 a rdf:List ;
+list:interp2000-003285-2 a rdf:List ;
     rdf:first              observation:interp2000-003285-2 ;
     rdf:rest               list:interp2000-003285-2 .
 
-list:interp2000-003285-2 a rdf:List ;
+list:interp2000-003285-3 a rdf:List ;
     rdf:first              observation:interp2000-003285-3 ;
     rdf:rest               list:interp2000-003285-3 .
 
-list:interp2000-003285-3 a rdf:List ;
+list:interp2000-003285-4 a rdf:List ;
     rdf:first              observation:interp2000-003285-4 ;
     rdf:rest               rdf:nil .
 
@@ -1073,7 +1073,7 @@ interp:1981-217301 a                  sosa:Observation ;
 
 observationgroup:interp1981-217301 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group informele stratigrafie op locatie van boorgat 1981-081861"@nl ;
-    bodemenondergrond:list              list:interp1981-217301 ;
+    bodemenondergrond:list              list:interp1981-217301-1 ;
     qb:observation                      observation:interp1981-217301-1 ;
     qb:observation                      observation:interp1981-217301-2 ;
     qb:observation                      observation:interp1981-217301-3 ;
@@ -1085,23 +1085,23 @@ observationgroup:interp1981-217301 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp1981-217301 a   rdf:List ;
+list:interp1981-217301-1 a   rdf:List ;
     rdf:first              observation:interp1981-217301-1 ;
     rdf:rest               list:interp1981-217301-1 .
 
-list:interp1981-217301-1 a rdf:List ;
+list:interp1981-217301-2 a rdf:List ;
     rdf:first              observation:interp1981-217301-2 ;
     rdf:rest               list:interp1981-217301-2 .
 
-list:interp1981-217301-2 a rdf:List ;
+list:interp1981-217301-3 a rdf:List ;
     rdf:first              observation:interp1981-217301-3 ;
     rdf:rest               list:interp1981-217301-3 .
 
-list:interp1981-217301-3 a rdf:List ;
+list:interp1981-217301-4 a rdf:List ;
     rdf:first              observation:interp1981-217301-4 ;
     rdf:rest               list:interp1981-217301-4 .
 
-list:interp1981-217301-4 a rdf:List ;
+list:interp1981-217301-5 a rdf:List ;
     rdf:first              observation:interp1981-217301-5 ;
     rdf:rest               rdf:nil .
 
@@ -1244,7 +1244,7 @@ interp:1996-104435 a                  sosa:Observation ;
 
 observationgroup:interp1996-104435 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group quartaire stratigrafie op locatie van boorgat 1961-094957"@nl ;
-    bodemenondergrond:list              list:interp1996-104435 ;
+    bodemenondergrond:list              list:interp1996-104435-1 ;
     qb:observation                      observation:interp1996-104435-1 ;
     qb:observation                      observation:interp1996-104435-2 ;
     qb:observation                      observation:interp1996-104435-3 .
@@ -1254,15 +1254,15 @@ observationgroup:interp1996-104435 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp1996-104435 a   rdf:List ;
+list:interp1996-104435-1 a   rdf:List ;
     rdf:first              observation:interp1996-104435-1 ;
     rdf:rest               list:interp1996-104435-1 .
 
-list:interp1996-104435-1 a rdf:List ;
+list:interp1996-104435-2 a rdf:List ;
     rdf:first              observation:interp1996-104435-2 ;
     rdf:rest               list:interp1996-104435-2 .
 
-list:interp1996-104435-2 a rdf:List ;
+list:interp1996-104435-3 a rdf:List ;
     rdf:first              observation:interp1996-104435-3 ;
     rdf:rest               rdf:nil .
 
@@ -1417,7 +1417,7 @@ interp:1981-217464 a                  sosa:Observation ;
 
 observationgroup:interp1981-217464 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group informele hydrostratigrafie op locatie van boorgat 1981-025210"@nl ;
-    bodemenondergrond:list              list:interp1981-217464 ;
+    bodemenondergrond:list              list:interp1981-217464-1 ;
     qb:observation                      observation:interp1981-217464-1 ;
     qb:observation                      observation:interp1981-217464-2 ;
     qb:observation                      observation:interp1981-217464-3 ;
@@ -1430,27 +1430,27 @@ observationgroup:interp1981-217464 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp1981-217464 a   rdf:List ;
+list:interp1981-217464-1 a   rdf:List ;
     rdf:first              observation:interp1981-217464-1 ;
     rdf:rest               list:interp1981-217464-1 .
 
-list:interp1981-217464-1 a rdf:List ;
+list:interp1981-217464-2 a rdf:List ;
     rdf:first              observation:interp1981-217464-2 ;
     rdf:rest               list:interp1981-217464-2 .
 
-list:interp1981-217464-2 a rdf:List ;
+list:interp1981-217464-3 a rdf:List ;
     rdf:first              observation:interp1981-217464-3 ;
     rdf:rest               list:interp1981-217464-3 .
 
-list:interp1981-217464-3 a rdf:List ;
+list:interp1981-217464-4 a rdf:List ;
     rdf:first              observation:interp1981-217464-4 ;
     rdf:rest               list:interp1981-217464-4 .
 
-list:interp1981-217464-4 a rdf:List ;
+list:interp1981-217464-5 a rdf:List ;
     rdf:first              observation:interp1981-217464-5 ;
     rdf:rest               list:interp1981-217464-5 .
 
-list:interp1981-217464-5 a rdf:List ;
+list:interp1981-217464-6 a rdf:List ;
     rdf:first              observation:interp1981-217464-6 ;
     rdf:rest               rdf:nil .
 
@@ -1608,7 +1608,7 @@ interp:2001-046845 a                  sosa:Observation ;
 
 observationgroup:interp2001-046845 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group gecodeerde lithologie op locatie van boorgat 1983-024193"@nl ;
-    bodemenondergrond:list              list:interp2001-046845;
+    bodemenondergrond:list              list:interp2001-046845-1;
     qb:observation                      observation:interp2001-046845-1 ;
     qb:observation                      observation:interp2001-046845-2 ;
     qb:observation                      observation:interp2001-046845-3 ;
@@ -1622,28 +1622,28 @@ observationgroup:interp2001-046845 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp2001-046845 a   rdf:List ;
+list:interp2001-046845-1 a   rdf:List ;
     rdf:first              observation:interp2001-046845-1 ;
     rdf:rest               list:interp2001-046845-1 .
 
-list:interp2001-046845-1 a rdf:List ;
+list:interp2001-046845-2 a rdf:List ;
     rdf:first              observation:interp2001-046845-2 ;
     rdf:rest               list:interp2001-046845-2 .
 
-list:interp2001-046845-2 a rdf:List ;
+list:interp2001-046845-3 a rdf:List ;
     rdf:first              observation:interp2001-046845-3 ;
     rdf:rest               list:interp2001-046845-3 .
 
-list:interp2001-046845-3 a rdf:List ;
+list:interp2001-046845-4 a rdf:List ;
     rdf:first              observation:interp2001-046845-4 ;
     rdf:rest               list:interp2001-046845-4 .
     
-list:interp2001-046845-4 a rdf:List ;
+list:interp2001-046845-5 a rdf:List ;
     rdf:first              observation:interp2001-046845-5 ;
     rdf:rest               list:interp2001-046845-5 .
 
 #Onderstaande observatie is fictief!
-list:interp2001-046845-5 a rdf:List ;
+list:interp2001-046845-6 a rdf:List ;
     rdf:first              observation:interp2001-046845-6 ;
     rdf:rest               rdf:nil .
 
@@ -1860,7 +1860,7 @@ interp:2005-157983 a                  sosa:Observation ;
 
 observationgroup:interp2005-157983 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group geotechnische codering op locatie van boorgat 1948-103796"@nl ;
-    bodemenondergrond:list              list:interp2005-157983;
+    bodemenondergrond:list              list:interp2005-157983-1;
     qb:observation                      observation:interp2005-157983-1 ;
     qb:observation                      observation:interp2005-157983-2 ;
     qb:observation                      observation:interp2005-157983-3 ;
@@ -1874,28 +1874,28 @@ observationgroup:interp2005-157983 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp2005-157983 a   rdf:List ;
+list:interp2005-157983-1 a   rdf:List ;
     rdf:first              observation:interp2005-157983-1 ;
     rdf:rest               list:interp2005-157983-1 .
 
-list:interp2005-157983-1 a rdf:List ;
+list:interp2005-157983-2 a rdf:List ;
     rdf:first              observation:interp2005-157983-2 ;
     rdf:rest               list:interp2005-157983-2 .
 
-list:interp2005-157983-2 a rdf:List ;
+list:interp2005-157983-3 a rdf:List ;
     rdf:first              observation:interp2005-157983-3 ;
     rdf:rest               list:interp2005-157983-3 .
 
-list:interp2005-157983-3 a rdf:List ;
+list:interp2005-157983-4 a rdf:List ;
     rdf:first              observation:interp2005-157983-4 ;
     rdf:rest               list:interp2005-157983-4 .
     
-list:interp2005-157983-4 a rdf:List ;
+list:interp2005-157983-5 a rdf:List ;
     rdf:first              observation:interp2005-157983-5 ;
     rdf:rest               list:interp2005-157983-5 .
 
 #Onderstaande observatie is fictief!
-list:interp2005-157983-5 a rdf:List ;
+list:interp2005-157983-6 a rdf:List ;
     rdf:first              observation:interp2005-157983-6 ;
     rdf:rest               rdf:nil .
 
@@ -2097,7 +2097,7 @@ interp:2001-192188 a                  sosa:Observation ;
 
 observationgroup:interp2001-192188 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group hydrogeologische stratigrafie (HCOVv1) op locatie van boorgat 1961-083086"@nl ;
-    bodemenondergrond:list              list:interp2001-192188 ;
+    bodemenondergrond:list              list:interp2001-192188-1 ;
     qb:observation                      observation:interp2001-192188-1 ;
     qb:observation                      observation:interp2001-192188-2 ;
     qb:observation                      observation:interp2001-192188-3 .
@@ -2107,15 +2107,15 @@ observationgroup:interp2001-192188 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp2001-192188 a   rdf:List ;
+list:interp2001-192188-1 a   rdf:List ;
     rdf:first              observation:interp2001-192188-1 ;
     rdf:rest               list:interp2001-192188-1 .
 
-list:interp2001-192188-1 a rdf:List ;
+list:interp2001-192188-2 a rdf:List ;
     rdf:first              observation:interp2001-192188-2 ;
     rdf:rest               list:interp2001-192188-2 .
 
-list:interp2001-192188-2 a rdf:List ;
+list:interp2001-192188-3 a rdf:List ;
     rdf:first              observation:interp2001-192188-3 ;
     rdf:rest               rdf:nil .
 
@@ -2243,7 +2243,7 @@ interp:2024-380966 a                  sosa:Observation ;
 
 observationgroup:interp2024-380966 a    qb:ObservationGroup ;
     rdfs:label                         "Observation group hydrogeologische stratigrafie (HCOVv2) op locatie van boorgat 2024-214357"@nl ;
-    bodemenondergrond:list              list:interp2024-380966 ;
+    bodemenondergrond:list              list:interp2024-380966-1 ;
     qb:observation                      observation:interp2024-380966-1 ;
     qb:observation                      observation:interp2024-380966-2 ;
     qb:observation                      observation:interp2024-380966-3 ;
@@ -2254,19 +2254,19 @@ observationgroup:interp2024-380966 a    qb:ObservationGroup ;
 ### 2 rdf Sequence
 
 # rdf List
-list:interp2024-380966 a   rdf:List ;
+list:interp2024-380966-1 a   rdf:List ;
     rdf:first              observation:interp2024-380966-1 ;
     rdf:rest               list:interp2024-380966-1 .
 
-list:interp2024-380966-1 a rdf:List ;
+list:interp2024-380966-2 a rdf:List ;
     rdf:first              observation:interp2024-380966-2 ;
     rdf:rest               list:interp2024-380966-2 .
 
-list:interp2024-380966-2 a rdf:List ;
+list:interp2024-380966-3 a rdf:List ;
     rdf:first              observation:interp2024-380966-3 ;
     rdf:rest               list:interp2024-380966-3 .
 
-list:interp2024-380966-3 a rdf:List ;
+list:interp2024-380966-4 a rdf:List ;
     rdf:first              observation:interp2024-380966-4 ;
     rdf:rest               rdf:nil .
 
