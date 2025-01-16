@@ -150,8 +150,8 @@ voorafmelding:2021-009917 a grondboringen:voorafmelding ; # staat op zichzelf, v
     prov:used               wettelijkkader:boring2021-186067 ;
     prov:wasAssociatedWith  organisatie:organisatie15739 .
 
-organisatie:organisatie15739 a prov:Agent, prov:Organization ;
-    foaf:name                  "De schutter Boringen" .
+organisatie:organisatie15739 a prov:Agent ; #, prov:Organization ;
+                                 rdfs:label                  "De schutter Boringen" .
 
 
 # Erkenning
