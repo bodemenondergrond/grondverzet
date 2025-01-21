@@ -108,7 +108,7 @@ boring:1965-068140  a  grondboringen:Grondboring;
                     prov:qualifiedAssociation association:association001 ;
                     prov:qualifiedAssociation association:association002 ;
                     prov:qualifiedAssociation association:association003 ;
-                    grondboringbeno:actuations list:1965-068140-act1;
+                    grselect count(*) from pfas.vw_pfas_brandweer_no_regretondboringbeno:actuations list:1965-068140-act1;
                     grondboringbeno:samplings list:1965-068140-sam1 .
 
 list:1965-068140-act1 a rdf:List ;
