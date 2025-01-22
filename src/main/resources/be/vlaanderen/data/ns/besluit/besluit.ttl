@@ -1,0 +1,617 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix geometry: <https://data.omgeving.vlaanderen.be/id/geometry/>.
+@prefix conc_p: <https://data.omgeving.vlaanderen.be/id/concept/procedure/>.
+@prefix juridische_categorie: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/>.
+@prefix ruimtelijke_eenheid: <https://data.omgeving.vlaanderen.be/id/ruimtelijke_eenheid/>.
+@prefix adms: <http://www.w3.org/ns/adms#>.
+@prefix concept: <https://data.omgeving.vlaanderen.be/id/concept/>.
+@prefix dbo: <http://dbpedia.org/ontology/>.
+@prefix eurovoc: <http://eurovoc.europa.eu/>.
+@prefix perceel: <https://data.vlaanderen.be/ns/perceel#>.
+@prefix identificator: <https://data.omgeving.vlaanderen.be/id/identificator/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix locn: <http://www.w3.org/ns/locn#>.
+@prefix omv: <https://data.vlaanderen.be/ns/omgevingsvergunning#>.
+@prefix project: <https://data.omgeving.vlaanderen.be/id/project/>.
+@prefix voorwerp: <https://data.omgeving.vlaanderen.be/id/voorwerp/>.
+@prefix omv_id: <https://data.omgeving.vlaanderen.be/id/concept/identifier/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix inh: <https://data.omgeving.vlaanderen.be/id/inhoud/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cpsv: <http://purl.org/vocab/cpsv#>.
+@prefix m8g: <http://data.europa.eu/m8g/>.
+@prefix frbr: <http://purl.org/vocab/frbr/core#>.
+@prefix rechtssubject: <https://data.omgeving.vlaanderen.be/id/rechtssubject/>.
+@prefix procedurestap: <https://data.omgeving.vlaanderen.be/id/procedurestap/>.
+@prefix zaakhandeling: <https://data.omgeving.vlaanderen.be/id/zaakhandeling/>.
+@prefix identifier: <https://data.omgeving.vlaanderen.be/id/identifier/>.
+@prefix zaak: <https://data.omgeving.vlaanderen.be/id/zaak/>.
+@prefix crs: <http://www.opengis.net/def/crs/EPSG/0/>.
+@prefix location: <https://data.omgeving.vlaanderen.be/id/location/>.
+@prefix activiteit: <https://data.omgeving.vlaanderen.be/id/activiteit/>.
+@prefix stedenbouwkundig_code: <https://data.omgeving.vlaanderen.be/id/concept/stedenbouwkundig_code/>.
+@prefix handeling_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/handeling_code/>.
+@prefix functie_tobe_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/functie_tobe_code/>.
+@prefix functie_tobe_cascade: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/functie_tobe_cascade/>.
+@prefix voorwerptype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/voorwerptype_code/>.
+@prefix iioa_klasse: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/iioa_klasse/>.
+@prefix actuele_rubriek_klasse: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/actuele_rubriek_klasse/>.
+@prefix actuele_rubriek: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/actuele_rubriek/>.
+@prefix stedenbouwkundigtype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/stedenbouwkundigtype_code/>.
+@prefix terreinobjecttype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/terreinobjecttype_code/>.
+@prefix verkavelingtype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/verkavelingtype_code/>.
+@prefix verkavelingtype_code2: <https://data.omgeving.vlaanderen.be/id/concept/verkavelingtype_code/>.
+@prefix conceptscheme: <https://data.omgeving.vlaanderen.be/id/conceptscheme/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+<http://data.europa.eu/eli/ontology#cites> a rdf:Property.
+<http://data.europa.eu/eli/ontology#date_publication> a rdf:Property;
+    rdfs:label "datum publicatie"@nl.
+<http://data.europa.eu/eli/ontology#description> a rdf:Property;
+    rdfs:label "beschrijving"@nl.
+<http://data.europa.eu/eli/ontology#number> a rdf:Property;
+    rdfs:label "nummer"@nl.
+<http://data.europa.eu/eli/ontology#passed_by> a rdf:Property;
+    rdfs:label "aangenomen door"@nl.
+<http://data.europa.eu/eli/ontology#title_short> a rdf:Property;
+    rdfs:label "korte titel"@nl.
+<http://data.vlaanderen.be/ns/besluit#Agendapunt.type> a owl:ObjectProperty;
+    rdfs:label "type"@en, "type"@nl;
+    rdfs:comment "The type of the agenda item."@en, "Type van het agendapunt."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range skos:Concept.
+<http://data.vlaanderen.be/ns/besluit#Artikel> a owl:Class;
+    rdfs:label "Article"@en, "Artikel"@nl;
+    rdfs:comment "Formally defined part of a legal expression, describing one or more of the intended legal effects."@en, "Formeel afgebakend onderdeel van een besluit, dat een of meer van de beoogde rechtsgevolgen beschrijft."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:subClassOf <http://data.europa.eu/eli/ontology#LegalExpression>, cpsv:FormalFramework.
+<http://data.vlaanderen.be/ns/besluit#aangebrachtNa> a owl:ObjectProperty;
+    rdfs:label "added after"@en, "aangebracht na"@nl;
+    rdfs:comment "The agenda item that preceded this item on the agenda."@en, "Het agendapunt dat op de agenda direct dit agendapunt voorafging."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
+    rdfs:subPropertyOf dct:relation.
+<http://data.vlaanderen.be/ns/besluit#aantalOnthouders> a owl:DatatypeProperty;
+    rdfs:label "number of abstentions"@en, "aantal onthouders"@nl;
+    rdfs:comment "The number of voters that abstained."@en, "Het aantal stemmers dat als onthouding heeft gestemd."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range xsd:integer.
+<http://data.vlaanderen.be/ns/besluit#aantalTegenstanders> a owl:DatatypeProperty;
+    rdfs:label "number of opponents"@en, "aantal tegenstanders"@nl;
+    rdfs:comment "The number of voters who voted against."@en, "Het aantal stemmers dat als tegenstander heeft gestemd."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range xsd:integer.
+<http://data.vlaanderen.be/ns/besluit#aantalVoorstanders> a owl:DatatypeProperty;
+    rdfs:label "number of proponents"@en, "aantal voorstanders"@nl;
+    rdfs:comment "The number of voters that voted in favor."@en, "Het aantal stemmers dat als voorstander heeft gestemd."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range xsd:integer.
+<http://data.vlaanderen.be/ns/besluit#behandelt> a owl:ObjectProperty;
+    rdfs:label "covers"@en, "behandelt"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Items scheduled in advance (before the session) and that may be removed later on, are covered by this definition."@en, "Ook punten die kunnen ingepland worden (voorafgaand aan de zitting) en er eventueel weer af gehaald worden, vallen hieronder."@nl;
+    rdfs:comment "A formally determined topic of the session."@en, "Een formeel vastgelegd agendapunt van de zitting."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Zitting>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/besluit#Agendapunt>.
+<http://data.vlaanderen.be/ns/besluit#bestuurt> a owl:ObjectProperty;
+    rdfs:label "runs"@en, "bestuurt"@nl;
+    rdfs:comment "The administrative unit ran by the body."@en, "De bestuurseenheid die door het orgaan bestuurd wordt."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
+<http://data.vlaanderen.be/ns/besluit#gebeurtNa> a owl:ObjectProperty;
+    rdfs:label "takes place after"@en, "gebeurt na"@nl;
+    rdfs:comment "The preceding agenda item within the same meeting. Allows determination of the order in which items were handled."@en, "Verwijzing naar het voorgaand behandeld agendapunt binnen dezelfde zitting. Laat toe om de volgorde van de behandelingen op te bouwen."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+    rdfs:subPropertyOf dct:relation.
+<http://data.vlaanderen.be/ns/besluit#geheim> a owl:DatatypeProperty;
+    rdfs:label "secret"@en, "geheim"@nl;
+    rdfs:comment "Indicates whether the vote used secret ballots. In a vote using secret ballots the individual choice of voters is not known."@en, "Geeft aan of de stemming geheim was. Bij een geheime stemming wordt niet individueel bekend gemaakt wie op wat heeft gestemd."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range xsd:boolean.
+<http://data.vlaanderen.be/ns/besluit#geplandOpenbaar> a owl:DatatypeProperty;
+    rdfs:label "planned public"@en, "gepland openbaar"@nl;
+    rdfs:comment "Indicates whether the item is planned to be discussed publicly."@en, "Geeft aan of het agendapunt al dan niet bedoeld is om openbaar te bespreken."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range xsd:boolean.
+<http://data.vlaanderen.be/ns/besluit#geplandeStart> a owl:DatatypeProperty;
+    rdfs:label "geplande start"@nl;
+    rdfs:comment "Het tijdstip waarop de zitting gepland is om te beginnen."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Zitting>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range xsd:dateTime;
+    rdfs:subPropertyOf <https://data.vlaanderen.be/ns/generiek#geplandeStart>.
+<http://data.vlaanderen.be/ns/besluit#gevolg> a owl:DatatypeProperty;
+    rdfs:label "consequence"@en, "gevolg"@nl;
+    rdfs:comment "The consequence of the vote."@en, "Het gevolg van de stemming."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range rdf:langString.
+<http://data.vlaanderen.be/ns/besluit#heeftAanwezigeBijStart> a owl:ObjectProperty;
+    rdfs:label "has present at start"@en, "heeft aanwezige bij start"@nl;
+    rdfs:comment "An agent that was present at the start of the activity where he had a certain responsibility."@en, "Een agent die aanwezig was bij de start van de activiteit waar hij een zekere verantwoordelijkheid had."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range dct:Agent;
+    rdfs:subPropertyOf <http://data.vlaanderen.be/ns/besluit#heeftAanwezige>.
+<http://data.vlaanderen.be/ns/besluit#heeftNotulen> a owl:ObjectProperty;
+    rdfs:label "has proceedings"@en, "heeft notulen"@nl;
+    rdfs:comment "The formal proceedings of the session."@en, "De formele notulen van de zitting."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Zitting>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://xmlns.com/foaf/0.1/Document>.
+<http://data.vlaanderen.be/ns/besluit#heeftOnthouder> a owl:ObjectProperty;
+    rdfs:label "has abstainer"@en, "heeft onthouder"@nl;
+    rdfs:comment "A mandatary that abstained their vote on the topic of the vote."@en, "Een mandataris die als onthouder heeft gestemd op het onderwerp van de stemming."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    rdfs:subPropertyOf <http://data.vlaanderen.be/ns/besluit#heeftStemmer>.
+<http://data.vlaanderen.be/ns/besluit#heeftOntwerpbesluit> a owl:ObjectProperty;
+    rdfs:label "has draft resolution"@en, "heeft ontwerpbesluit"@nl;
+    rdfs:comment "A (possibly incomplete) draft for the resolution that would arise from this agenda item."@en, "Een (mogelijks nog aan te vullen of aan te passen) ontwerp voor het besluit dat uit dit agendapunt zou voortkomen."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://xmlns.com/foaf/0.1/Document>.
+<http://data.vlaanderen.be/ns/besluit#heeftSecretaris> a owl:ObjectProperty;
+    rdfs:label "has secretary"@en, "heeft secretaris"@nl;
+    rdfs:comment "The mandatary acting as the secretary during the activity."@en, "De mandataris die de rol van secretaris heeft gedurende de activiteit."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    rdfs:subPropertyOf <http://data.vlaanderen.be/ns/besluit#heeftAanwezige>.
+<http://data.vlaanderen.be/ns/besluit#heeftStemming> a owl:ObjectProperty;
+    rdfs:label "has vote"@en, "heeft stemming"@nl;
+    rdfs:comment "A vote taking place during the handling of the agenda item."@en, "Een stemming die plaatsvond tijdens de behandeling van het agendapunt."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/besluit#Stemming>.
+<http://data.vlaanderen.be/ns/besluit#heeftTegenstander> a owl:ObjectProperty;
+    rdfs:label "has opponent"@en, "heeft tegenstander"@nl;
+    rdfs:comment "A mandatary that voted against the topic of the vote."@en, "Een mandataris die als tegenstander heeft gestemd op het onderwerp van de stemming."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    rdfs:subPropertyOf <http://data.vlaanderen.be/ns/besluit#heeftStemmer>.
+<http://data.vlaanderen.be/ns/besluit#heeftVoorstander> a owl:ObjectProperty;
+    rdfs:label "has proponent"@en, "heeft voorstander"@nl;
+    rdfs:comment "A mandatary that voted in favor of the subject of the vote."@en, "Een mandataris die als voorstander heeft gestemd op het onderwerp van de stemming."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    rdfs:subPropertyOf <http://data.vlaanderen.be/ns/besluit#heeftStemmer>.
+<http://data.vlaanderen.be/ns/besluit#heeftVoorzitter> a owl:ObjectProperty;
+    rdfs:label "has chairman"@en, "heeft voorzitter"@nl;
+    rdfs:comment "Mandatary acting as the chairman during the activity."@en, "De mandataris die de rol als voorzitter heeft gedurende de activiteit."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    rdfs:subPropertyOf <http://data.vlaanderen.be/ns/besluit#heeftAanwezige>.
+<http://data.vlaanderen.be/ns/besluit#heeftZittingsverslag> a owl:ObjectProperty;
+    rdfs:label "has session report"@en, "heeft zittingsverslag"@nl;
+    <http://purl.org/vocab/vann/usageNote> "For example: a transcript, audio recording or video recording."@en, "Bijvoorbeeld een transcript of audio- of video-opname."@nl;
+    rdfs:comment "A report of the session."@en, "Een verslag van de zitting."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Zitting>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://xmlns.com/foaf/0.1/Document>.
+<http://data.vlaanderen.be/ns/besluit#houdtZitting> a owl:ObjectProperty;
+    rdfs:label "has session"@en, "houdt zitting"@nl;
+    rdfs:comment "A session held or planned by the governing body."@en, "Een zitting gehouden of gepland door het bestuursorgaan."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/besluit#Zitting>.
+<http://data.vlaanderen.be/ns/besluit#isGehoudenDoor> a owl:ObjectProperty;
+    rdfs:label "held by"@en, "is gehouden door"@nl;
+    rdfs:comment "The governing body that held the session."@en, "Duidt aan door welk orgaan de zitting is gehouden."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Zitting>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+    rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasStartedBy>.
+<http://data.vlaanderen.be/ns/besluit#motivering> a owl:DatatypeProperty;
+    rdfs:label "motivation"@en, "motivering"@nl;
+    rdfs:comment "Description of the legal and factual motivation behind the decision expressed in the resolution."@en, "Beschrijving van de juridische en feitelijke motivering achter de beslissing die wordt uitgedrukt in het besluit."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Besluit>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range rdf:langString.
+<http://data.vlaanderen.be/ns/besluit#onderwerp> a owl:DatatypeProperty;
+    rdfs:label "subject"@en, "onderwerp"@nl;
+    rdfs:comment "The description of the subject of the vote."@en, "De beschrijving van het onderwerp waarover de stemming gaat."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range rdf:langString.
+<http://data.vlaanderen.be/ns/besluit#openbaar> a owl:DatatypeProperty;
+    rdfs:label "public"@en, "openbaar"@nl;
+    rdfs:comment "Indicates whether the handling effectively happened in public."@en, "Geeft aan of de bespreking effectief openbaar verlopen is."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range xsd:boolean.
+<http://data.vlaanderen.be/ns/besluit#werkingsgebied> a owl:ObjectProperty;
+    rdfs:label "governance area"@en, "werkingsgebied"@nl;
+    rdfs:comment "Geographical area where the administrative unit has certain responsibilities in which it can perform acts of governance."@en, "Geografische gebied waarbinnen de bestuurseenheid bepaalde verantwoordelijkheden heeft waarbinnen het bestuurshandelingen kan stellen."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://www.w3.org/ns/prov#Location>;
+    rdfs:subPropertyOf dct:spatial.
+dct:description a rdf:Property;
+    rdfs:label "beschrijving"@nl.
+dct:references a rdf:Property;
+    rdfs:label "verwijst"@nl.
+dct:subject a rdf:Property;
+    rdfs:label "onderwerp"@nl.
+dct:title a rdf:Property;
+    rdfs:label "titel"@nl.
+skos:prefLabel a rdf:Property;
+    rdfs:label "voorkeurslabel"@nl.
+<http://www.w3.org/ns/org#classification> a rdf:Property;
+    rdfs:label "classificatie"@nl.
+<http://www.w3.org/ns/prov#atLocation> a rdf:Property;
+    rdfs:label "op locatie"@nl.
+<http://www.w3.org/ns/prov#endedAtTime> a rdf:Property;
+    rdfs:label "geëindigd op tijdstip"@nl.
+<http://www.w3.org/ns/prov#generated> a rdf:Property;
+    rdfs:label "heeft gegenereerd"@nl.
+<http://www.w3.org/ns/prov#startedAtTime> a rdf:Property;
+    rdfs:label "gestart op tijdstip"@nl.
+<http://www.w3.org/ns/prov#wasGeneratedBy> a rdf:Property;
+    rdfs:label "is gegenereerd door"@nl.
+<http://data.vlaanderen.be/ns/besluit#Besluit> a owl:Class;
+    rdfs:label "Resolution"@en, "Besluit"@nl;
+    <http://purl.org/vocab/vann/usageNote> "This includes both individual resolutions (legal acts with an individual character such as grants) and general resolutions (decisions of general rules that are aimed at a group rather than individuals, such as the traffic rules)."@en, "Hieronder vallen zowel individuele besluiten (rechtshandelingen met een individueel karakter zoals het toekennen van een subsidie) als besluiten van algemene strekking (beslissingen van algemene reglementaire strekking die niet gericht zijn op een individu maar op een groep, zoals de verkeersregels)."@nl;
+    rdfs:comment "The authentic written summary of a decision of a governing body. This decision involves a legal act with an intended legal effect."@en, "De authentieke schriftelijke neerslag van een beslissing van een bestuursorgaan. Deze beslissing houdt een rechtshandeling in waarbij sprake is van een beoogd rechtsgevolg."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:subClassOf <http://data.europa.eu/eli/ontology#LegalExpression>, cpsv:FormalFramework, <http://xmlns.com/foaf/0.1/Document>.
+<http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> a owl:Class;
+    rdfs:label "Administrative Unit"@en, "Bestuurseenheid"@nl;
+    rdfs:comment "Public, governing organization associated with a territorially defined area and with certain domains in which it can govern."@en, "Publieke, bestuurlijke organisatie verbonden aan een territoriaal omschreven gebied met bepaalde verantwoordelijkheden waarbinnen het bestuurshandelingen kan stellen."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:subClassOf m8g:PublicOrganisation.
+<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> a owl:Class;
+    rdfs:label "Governing Body"@en, "Bestuursorgaan"@nl;
+    rdfs:comment "A formal body of a legal entity authorized to conduct legal acts."@en, "Een formeel orgaan van een rechtspersoon dat bevoegd is om rechtshandelingen te stellen."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:subClassOf <http://www.w3.org/ns/org#Organization>.
+<http://data.vlaanderen.be/ns/besluit#heeftAanwezige> a owl:ObjectProperty;
+    rdfs:label "has present"@en, "heeft aanwezige"@nl;
+    rdfs:comment "An agent (e.g.: mandatary) who was present during (a part of) the activity where he had a certain responsibility."@en, "Een agent (bvb: mandataris) die aanwezig was tijdens (een deel van) de activiteit waar hij een zekere verantwoordelijkheid had."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range dct:Agent;
+    rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith>.
+<http://data.vlaanderen.be/ns/besluit#heeftStemmer> a owl:ObjectProperty;
+    rdfs:label "has voter"@en, "heeft stemmer"@nl;
+    rdfs:comment "A mandatary participating in the vote."@en, "Een mandataris die deelneemt aan de stemming."@nl;
+    rdfs:domain <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:range <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith>.
+<http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt> a owl:Class;
+    rdfs:label "Agenda Item Handling"@en, "Behandeling van Agendapunt"@nl;
+    rdfs:comment "The execution of the actions to process an agenda item during a meeting."@en, "De uitvoering van de acties om een agendapunt te verwerken tijdens een zitting."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:subClassOf <http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit>.
+<http://data.vlaanderen.be/ns/besluit#Agendapunt> a owl:Class;
+    rdfs:label "Agenda Item"@en, "Agendapunt"@nl;
+    rdfs:comment "Formally accepted topic to be discussed in a meeting."@en, "Formeel aanvaard te behandelen onderwerp op een zitting."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>.
+<http://data.vlaanderen.be/ns/besluit#Zitting> a owl:Class;
+    rdfs:label "Session"@en, "Zitting"@nl;
+    rdfs:comment "A formalized meeting of members of a governing body with the purpose of handling matters in its jurisdiction."@en, "Een geformaliseerde samenkomst van de leden van een bestuursorgaan met het doel om de aangelegenheden te regelen waarvoor het bevoegd is."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:subClassOf <http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit>.
+<http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit> a owl:Class;
+    rdfs:label "Meeting Activity"@en, "Vergaderactiviteit"@nl;
+    rdfs:comment "A meeting or phase of a meeting."@en, "Een vergadering of fase ervan."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:subClassOf <http://www.w3.org/ns/prov#Activity>.
+<http://data.vlaanderen.be/ns/besluit#Stemming> a owl:Class;
+    rdfs:label "Vote"@en, "Stemming"@nl;
+    rdfs:comment "Formalized act in which the voting members of a governing body express their choice."@en, "Geformaliseerde handeling waarbij de stemgerechtigde leden van een bestuursorgaan hun keuze te kennen geven."@nl;
+    rdfs:isDefinedBy <http://data.vlaanderen.be/ns/besluit>;
+    rdfs:subClassOf <http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit>.
+<http://data.vlaanderen.be/ns/besluit> a owl:Ontology;
+    rdfs:label "Resolution"@en, "Besluit"@nl.
+_:n3-611 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-612 <http://xmlns.com/foaf/0.1/homepage> <http://Aalst.be>;
+    <http://xmlns.com/foaf/0.1/name> "Stad Aalst".
+_:n3-611 <http://schema.org/affiliation> _:n3-612;
+    <http://xmlns.com/foaf/0.1/firstName> "Chris";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Molle".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-611.
+_:n3-613 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-614 <http://xmlns.com/foaf/0.1/homepage> <http://stad.gent>;
+    <http://xmlns.com/foaf/0.1/name> "Stad Gent".
+_:n3-613 <http://schema.org/affiliation> _:n3-614;
+    <http://xmlns.com/foaf/0.1/firstName> "Sylvie";
+    <http://xmlns.com/foaf/0.1/lastName> "Roos".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-613.
+_:n3-615 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-616 <http://xmlns.com/foaf/0.1/homepage> <http://www.v-ict-or.be>;
+    <http://xmlns.com/foaf/0.1/name> "V-ICT-OR".
+_:n3-615 <http://schema.org/affiliation> _:n3-616;
+    <http://xmlns.com/foaf/0.1/firstName> "Johan";
+    <http://xmlns.com/foaf/0.1/lastName> "Van der Waal".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-615.
+_:n3-617 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-618 <http://xmlns.com/foaf/0.1/homepage> <http://www.kaprijke.be>;
+    <http://xmlns.com/foaf/0.1/name> "Kaprijke".
+_:n3-617 <http://schema.org/affiliation> _:n3-618;
+    <http://xmlns.com/foaf/0.1/firstName> "Kristel";
+    <http://xmlns.com/foaf/0.1/lastName> "Brusselle".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-617.
+_:n3-619 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-620 <http://xmlns.com/foaf/0.1/homepage> <http://www.remmicom.be>;
+    <http://xmlns.com/foaf/0.1/name> "Remmicom".
+_:n3-619 <http://schema.org/affiliation> _:n3-620;
+    <http://xmlns.com/foaf/0.1/firstName> "Jef";
+    <http://xmlns.com/foaf/0.1/lastName> "Peeters".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-619.
+_:n3-621 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-622 <http://xmlns.com/foaf/0.1/homepage> <http://www.vlaamsparlement.be>;
+    <http://xmlns.com/foaf/0.1/name> "Vlaams Parlement".
+_:n3-621 <http://schema.org/affiliation> _:n3-622;
+    <http://xmlns.com/foaf/0.1/firstName> "Renée";
+    <http://xmlns.com/foaf/0.1/lastName> "Cambré".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-621.
+_:n3-623 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-624 <http://xmlns.com/foaf/0.1/homepage> <http://www.cipalschaubroeck.be>;
+    <http://xmlns.com/foaf/0.1/name> "Cipal Schaubroeck".
+_:n3-623 <http://schema.org/affiliation> _:n3-624;
+    <http://xmlns.com/foaf/0.1/firstName> "Jonas";
+    <http://xmlns.com/foaf/0.1/lastName> "Tamsyn".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-623.
+_:n3-625 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-626 <http://xmlns.com/foaf/0.1/homepage> <http://lier.be>;
+    <http://xmlns.com/foaf/0.1/name> "Lier".
+_:n3-625 <http://schema.org/affiliation> _:n3-626;
+    <http://xmlns.com/foaf/0.1/firstName> "Danny";
+    <http://xmlns.com/foaf/0.1/lastName> "Dewelde".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-625.
+_:n3-627 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-628 <http://xmlns.com/foaf/0.1/homepage> <http://www.maldegem.be>;
+    <http://xmlns.com/foaf/0.1/name> "Maldegem".
+_:n3-627 <http://schema.org/affiliation> _:n3-628;
+    <http://xmlns.com/foaf/0.1/firstName> "Heidi";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Deynse".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-627.
+_:n3-629 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-630 <http://xmlns.com/foaf/0.1/homepage> <http://stad.Antwerpen.be>;
+    <http://xmlns.com/foaf/0.1/name> "Antwerpen".
+_:n3-629 <http://schema.org/affiliation> _:n3-630;
+    <http://xmlns.com/foaf/0.1/firstName> "Melissa";
+    <http://xmlns.com/foaf/0.1/lastName> "Merckx".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-629.
+_:n3-631 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-632 <http://xmlns.com/foaf/0.1/homepage> <http://www.vvsg.be>;
+    <http://xmlns.com/foaf/0.1/name> "VVSG".
+_:n3-631 <http://schema.org/affiliation> _:n3-632;
+    <http://xmlns.com/foaf/0.1/firstName> "Marian";
+    <http://xmlns.com/foaf/0.1/lastName> "Verbeek".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-631.
+_:n3-633 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-634 <http://xmlns.com/foaf/0.1/homepage> <http://www.cipalschaubroeck.be>;
+    <http://xmlns.com/foaf/0.1/name> "Cipal Schaubroeck".
+_:n3-633 <http://schema.org/affiliation> _:n3-634;
+    <http://xmlns.com/foaf/0.1/firstName> "Reynder";
+    <http://xmlns.com/foaf/0.1/lastName> "Bierens".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-633.
+_:n3-635 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-636 <http://xmlns.com/foaf/0.1/homepage> <http://www.cevi.be>;
+    <http://xmlns.com/foaf/0.1/name> "CEVI".
+_:n3-635 <http://schema.org/affiliation> _:n3-636;
+    <http://xmlns.com/foaf/0.1/firstName> "Micheline";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Bogaert".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-635.
+_:n3-637 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-638 <http://xmlns.com/foaf/0.1/homepage> <http://www.herzele.be>;
+    <http://xmlns.com/foaf/0.1/name> "Herzele".
+_:n3-637 <http://schema.org/affiliation> _:n3-638;
+    <http://xmlns.com/foaf/0.1/firstName> "Daniël";
+    <http://xmlns.com/foaf/0.1/lastName> "Adriaens".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-637.
+_:n3-639 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-640 <http://xmlns.com/foaf/0.1/homepage> <http://www.vlaamsparlement.be>;
+    <http://xmlns.com/foaf/0.1/name> "Vlaams parlement".
+_:n3-639 <http://schema.org/affiliation> _:n3-640;
+    <http://xmlns.com/foaf/0.1/firstName> "Tom";
+    <http://xmlns.com/foaf/0.1/lastName> "Cocquyt".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-639.
+_:n3-641 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-642 <http://xmlns.com/foaf/0.1/homepage> <http://www.raadvanstate.be/>;
+    <http://xmlns.com/foaf/0.1/name> "Raad Van State".
+_:n3-641 <http://schema.org/affiliation> _:n3-642;
+    <http://xmlns.com/foaf/0.1/firstName> "Wouter";
+    <http://xmlns.com/foaf/0.1/lastName> "De Cock".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-641.
+_:n3-643 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-644 <http://xmlns.com/foaf/0.1/homepage> <http://www.herzele.be>;
+    <http://xmlns.com/foaf/0.1/name> "Herzele".
+_:n3-643 <http://schema.org/affiliation> _:n3-644;
+    <http://xmlns.com/foaf/0.1/firstName> "Marijke";
+    <http://xmlns.com/foaf/0.1/lastName> "Versteels".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-643.
+_:n3-645 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-646 <http://xmlns.com/foaf/0.1/homepage> <http://www.vlaamsparlement.be>;
+    <http://xmlns.com/foaf/0.1/name> "Vlaams Parlement".
+_:n3-645 <http://schema.org/affiliation> _:n3-646;
+    <http://xmlns.com/foaf/0.1/firstName> "Luc";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanpaemel".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-645.
+_:n3-647 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-648 <http://xmlns.com/foaf/0.1/homepage> <https://www.ibabs.eu/>;
+    <http://xmlns.com/foaf/0.1/name> "iBabs BV".
+_:n3-647 <http://schema.org/affiliation> _:n3-648;
+    <http://xmlns.com/foaf/0.1/firstName> "Niels";
+    <http://xmlns.com/foaf/0.1/lastName> "Manshanden".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-647.
+_:n3-649 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-650 <http://xmlns.com/foaf/0.1/homepage> <http://www.herzele.be>;
+    <http://xmlns.com/foaf/0.1/name> "Herzele".
+_:n3-649 <http://schema.org/affiliation> _:n3-650;
+    <http://xmlns.com/foaf/0.1/firstName> "Miranda";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Bockstaele".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-649.
+_:n3-651 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-652 <http://xmlns.com/foaf/0.1/homepage> <http://stad.gent>;
+    <http://xmlns.com/foaf/0.1/name> "Stad Gent".
+_:n3-651 <http://schema.org/affiliation> _:n3-652;
+    <http://xmlns.com/foaf/0.1/firstName> "Ines";
+    <http://xmlns.com/foaf/0.1/lastName> "Acke".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-651.
+_:n3-653 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-654 <http://xmlns.com/foaf/0.1/homepage> <http://binnenland.vlaanderen.be>;
+    <http://xmlns.com/foaf/0.1/name> "ABB".
+_:n3-653 <http://schema.org/affiliation> _:n3-654;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Campenhout".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-653.
+_:n3-655 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-656 <http://xmlns.com/foaf/0.1/homepage> <http://www.herzele.be>;
+    <http://xmlns.com/foaf/0.1/name> "Herzele".
+_:n3-655 <http://schema.org/affiliation> _:n3-656;
+    <http://xmlns.com/foaf/0.1/firstName> "Anja";
+    <http://xmlns.com/foaf/0.1/lastName> "Cosijns".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-655.
+_:n3-657 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-658 <http://xmlns.com/foaf/0.1/homepage> <http://digipolis.be>;
+    <http://xmlns.com/foaf/0.1/name> "Digipolis".
+_:n3-657 <http://schema.org/affiliation> _:n3-658;
+    <http://xmlns.com/foaf/0.1/firstName> "Katrien";
+    <http://xmlns.com/foaf/0.1/lastName> "Behiels".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-657.
+_:n3-659 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-660 <http://xmlns.com/foaf/0.1/homepage> <http://www.niel.be>;
+    <http://xmlns.com/foaf/0.1/name> "Niel".
+_:n3-659 <http://schema.org/affiliation> _:n3-660;
+    <http://xmlns.com/foaf/0.1/firstName> "Eric";
+    <http://xmlns.com/foaf/0.1/lastName> "Vermeiren".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-659.
+_:n3-661 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-662 <http://xmlns.com/foaf/0.1/homepage> <http://Aalst.be>;
+    <http://xmlns.com/foaf/0.1/name> "Stad Aalst".
+_:n3-661 <http://schema.org/affiliation> _:n3-662;
+    <http://xmlns.com/foaf/0.1/firstName> "Sophie";
+    <http://xmlns.com/foaf/0.1/lastName> "Podevyn".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-661.
+_:n3-663 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-664 <http://xmlns.com/foaf/0.1/homepage> <http://stad.antwerpen.be>;
+    <http://xmlns.com/foaf/0.1/name> "Antwerpen".
+_:n3-663 <http://schema.org/affiliation> _:n3-664;
+    <http://xmlns.com/foaf/0.1/firstName> "Lynn";
+    <http://xmlns.com/foaf/0.1/lastName> "Lodewyckx".
+<http://data.vlaanderen.be/ns/besluit> dct:contributor _:n3-663;
+    dct:issued "2017-10-11"^^xsd:date;
+    dct:license <https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html>.
+_:n3-665 <http://xmlns.com/foaf/0.1/homepage> <https://data.vlaanderen.be>;
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:oslo@kb.vlaanderen.be>;
+    <http://xmlns.com/foaf/0.1/name> "Data Vlaanderen".
+<http://data.vlaanderen.be/ns/besluit> dct:mediator _:n3-665;
+    dct:title "Resolution"@en, "Besluit"@nl;
+    <http://purl.org/vocab/vann/preferredNamespaceUri> "http://data.vlaanderen.be/ns/besluit".
+_:n3-666 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-667 <http://xmlns.com/foaf/0.1/homepage> <http://idlab.ugent.be>;
+    <http://xmlns.com/foaf/0.1/name> "imec-IDLab-UGent".
+_:n3-666 <http://schema.org/affiliation> _:n3-667;
+    <http://xmlns.com/foaf/0.1/firstName> "Laurens";
+    <http://xmlns.com/foaf/0.1/lastName> "De Vocht";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:laurens.devocht@ugent.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-666.
+_:n3-668 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-669 <http://xmlns.com/foaf/0.1/homepage> <http://idlab.ugent.be>;
+    <http://xmlns.com/foaf/0.1/name> "imec-IDLab-UGent".
+_:n3-668 <http://schema.org/affiliation> _:n3-669;
+    <http://xmlns.com/foaf/0.1/firstName> "Erik";
+    <http://xmlns.com/foaf/0.1/lastName> "Mannens";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:erik.mannens@ugent.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-668.
+_:n3-670 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-671 <http://xmlns.com/foaf/0.1/homepage> <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+    <http://xmlns.com/foaf/0.1/name> "Informatie Vlaanderen".
+_:n3-670 <http://schema.org/affiliation> _:n3-671;
+    <http://xmlns.com/foaf/0.1/firstName> "Raf";
+    <http://xmlns.com/foaf/0.1/lastName> "Buyle";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:raf.buyle@kb.vlaanderen.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-670.
+_:n3-672 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-673 <http://xmlns.com/foaf/0.1/homepage> <http://idlab.ugent.be>;
+    <http://xmlns.com/foaf/0.1/name> "imec - UGent".
+_:n3-672 <http://schema.org/affiliation> _:n3-673;
+    <http://xmlns.com/foaf/0.1/firstName> "Brecht";
+    <http://xmlns.com/foaf/0.1/lastName> "Van de Vyvere";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:brecht.vandevyvere@ugent.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-672.
+_:n3-674 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-675 <http://xmlns.com/foaf/0.1/homepage> <http://idlab.ugent.be>;
+    <http://xmlns.com/foaf/0.1/name> "imec - UGent".
+_:n3-674 <http://schema.org/affiliation> _:n3-675;
+    <http://xmlns.com/foaf/0.1/firstName> "Laurens";
+    <http://xmlns.com/foaf/0.1/lastName> "De Vocht";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:laurens.devocht@ugent.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-674.
+_:n3-676 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-677 <http://xmlns.com/foaf/0.1/homepage> <https://www.ugent.be/ps/communicatiewetenschappen/mict>;
+    <http://xmlns.com/foaf/0.1/name> "imec-MICT-UGent".
+_:n3-676 <http://schema.org/affiliation> _:n3-677;
+    <http://xmlns.com/foaf/0.1/firstName> "Fie";
+    <http://xmlns.com/foaf/0.1/lastName> "Vandamme";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:fie.vandamme@ugent.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-676.
+_:n3-678 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-679 <http://xmlns.com/foaf/0.1/homepage> <https://www.ugent.be/ps/communicatiewetenschappen/mict>;
+    <http://xmlns.com/foaf/0.1/name> "imec-MICT-UGent".
+_:n3-678 <http://schema.org/affiliation> _:n3-679;
+    <http://xmlns.com/foaf/0.1/firstName> "Mathias";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Compernolle";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:mathias.vancompernolle@ugent.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-678.
+_:n3-680 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-681 <http://xmlns.com/foaf/0.1/homepage> <http://binnenland.vlaanderen.be/>;
+    <http://xmlns.com/foaf/0.1/name> "Agentschap Binnenlands Bestuur".
+_:n3-680 <http://schema.org/affiliation> _:n3-681;
+    <http://xmlns.com/foaf/0.1/firstName> "Heidi";
+    <http://xmlns.com/foaf/0.1/lastName> "Godderis";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:heidi.godderis@bz.vlaanderen.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://xmlns.com/foaf/0.1/maker> _:n3-680.
+_:n3-682 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-683 <http://xmlns.com/foaf/0.1/homepage> <http://binnenland.vlaanderen.be/>;
+    <http://xmlns.com/foaf/0.1/name> "Agentschap Binnenlands Bestuur".
+_:n3-682 <http://schema.org/affiliation> _:n3-683;
+    <http://xmlns.com/foaf/0.1/firstName> "Veronique";
+    <http://xmlns.com/foaf/0.1/lastName> "Volders";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:veronique.volders@bz.vlaanderen.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://xmlns.com/foaf/0.1/maker> _:n3-682.
+_:n3-684 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-685 <http://xmlns.com/foaf/0.1/homepage> <http://binnenland.vlaanderen.be/>;
+    <http://xmlns.com/foaf/0.1/name> "Agentschap Binnenlands Bestuur".
+_:n3-684 <http://schema.org/affiliation> _:n3-685;
+    <http://xmlns.com/foaf/0.1/firstName> "Katrien";
+    <http://xmlns.com/foaf/0.1/lastName> "De Smet";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:katrien.desmet@bz.vlaanderen.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://xmlns.com/foaf/0.1/maker> _:n3-684.
+_:n3-686 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-687 <http://xmlns.com/foaf/0.1/homepage> <http://idlab.ugent.be>;
+    <http://xmlns.com/foaf/0.1/name> "imec-IDLab-UGent".
+_:n3-686 <http://schema.org/affiliation> _:n3-687;
+    <http://xmlns.com/foaf/0.1/firstName> "Dieter";
+    <http://xmlns.com/foaf/0.1/lastName> "De Paepe";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:dieter.depaepe@ugent.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://xmlns.com/foaf/0.1/maker> _:n3-686.
+_:n3-688 a <http://xmlns.com/foaf/0.1/person>.
+_:n3-689 <http://xmlns.com/foaf/0.1/homepage> <http://idlab.ugent.be>;
+    <http://xmlns.com/foaf/0.1/name> "imec - UGent".
+_:n3-688 <http://schema.org/affiliation> _:n3-689;
+    <http://xmlns.com/foaf/0.1/firstName> "Dieter";
+    <http://xmlns.com/foaf/0.1/lastName> "De Paepe";
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:dieter.depaepe@ugent.be>.
+<http://data.vlaanderen.be/ns/besluit> <http://xmlns.com/foaf/0.1/maker> _:n3-688.

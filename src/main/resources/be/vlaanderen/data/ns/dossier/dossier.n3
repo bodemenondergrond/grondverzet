@@ -1,0 +1,12 @@
+{ ?x <https://data.vlaanderen.be/ns/dossier#Dossier.bestaatUit> ?y } => { ?x a <https://data.vlaanderen.be/ns/dossier#Dossier> } .
+{ ?x <https://data.vlaanderen.be/ns/dossier#Dossier.bestaatUit> ?y } => { ?y a <https://data.vlaanderen.be/ns/dossier#Stuk> } .
+{ ?x <https://data.vlaanderen.be/ns/dossier#Dossier.bestaatUit> ?y } => { ?x <http://www.w3.org/ns/prov#hadMember> ?y  } .
+{ ?x <https://data.vlaanderen.be/ns/dossier#Dossier.isNeerslagVan> ?y } => { ?x a <https://data.vlaanderen.be/ns/dossier#Dossier> } .
+{ ?x <https://data.vlaanderen.be/ns/dossier#Dossier.isNeerslagVan> ?y } => { ?y a <http://dbpedia.org/ontology/Case> } .
+{ ?x <https://data.vlaanderen.be/ns/dossier#Dossier.isNeerslagVan> ?y } => { ?x <https://data.vlaanderen.be/ns/dossier#isNeerslagVan> ?y  } .
+{ ?x a <https://data.vlaanderen.be/ns/dossier#Dossier> } => { ?x a <http://www.w3.org/ns/prov#Collection> } .
+{ ?x a <https://data.vlaanderen.be/ns/dossier#Stukonderdeel> } => { ?x a <http://www.w3.org/ns/prov#Entity> } .
+{ ?x a <https://data.vlaanderen.be/ns/dossier#Stukonderdeel> } => { ?x a <https://data.vlaanderen.be/ns/dossier#Stuk> } .
+{ ?x a <https://data.vlaanderen.be/ns/dossier#Stuk> } => { ?x a <http://www.w3.org/ns/prov#Entity> } .
+{ ?x <https://data.vlaanderen.be/ns/dossier#isNeerslagVan> ?y } => { ?x a <http://www.w3.org/ns/prov#Collection> } .
+{ ?x <https://data.vlaanderen.be/ns/dossier#isNeerslagVan> ?y } => { ?y a <http://dbpedia.org/ontology/UnitOfWork> } .

@@ -1,0 +1,8 @@
+http://purl.org/linked-data/sdmx/2009/attribute#
+
+{ ?x <http://purl.org/linked-data/sdmx/2009/attribute#confStatus> ?y } => { ?y a <http://purl.org/linked-data/sdmx/2009/code#ConfStatus> } .
+{ ?x <http://purl.org/linked-data/sdmx/2009/attribute#currency> ?y } => { ?y a <http://purl.org/linked-data/sdmx/2009/code#Currency> } .
+{ ?x <http://purl.org/linked-data/sdmx/2009/attribute#decimals> ?y } => { ?y a <http://purl.org/linked-data/sdmx/2009/code#Decimals> } .
+{ ?x <http://purl.org/linked-data/sdmx/2009/attribute#obsStatus> ?y } => { ?y a <http://purl.org/linked-data/sdmx/2009/code#ObsStatus> } .
+{ ?x <http://purl.org/linked-data/sdmx/2009/attribute#timeFormat> ?y } => { ?y a <http://purl.org/linked-data/sdmx/2009/code#TimeFormat> } .
+{ ?x <http://purl.org/linked-data/sdmx/2009/attribute#unitMult> ?y } => { ?y a <http://purl.org/linked-data/sdmx/2009/code#UnitMult> } .

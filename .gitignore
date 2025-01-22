@@ -18,3 +18,5 @@ node_modules/
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 src/source/sample.ttl
+src/utils/dbconfig.js
+src/.env

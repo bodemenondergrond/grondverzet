@@ -1,0 +1,86 @@
+
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Boor> } => { ?x a <http://www.w3.org/ns/sosa/Sampler> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Boor> } => { ?x a <http://def.isotc211.org/iso19123/2005/DiscreteCoverages#CV_DiscreteCurveCoverage> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#Boorgat.bekisting> ?y } => { ?x a <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Borehole> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#Boorgat.bekisting> ?y } => { ?y a <https://data.vlaanderen.be/ns/grondboringen#Bekisting> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Boorgatdiameterinterval> } => { ?x a <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#Boormethode.methode> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#Boormethode> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#Boormethode.methode> ?y } => { ?y a <https://data.vlaanderen.be/ns/grondboringen#BoormethodeInterval> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Grondmonster> } => { ?x a <http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Grondmonster> } => { ?x a <http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Grondobject> } => { ?x a <http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_DomainFeature> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#aangenomenGrondwaterstand> ?y } => { ?x a <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Borehole> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#aangenomenGrondwaterstand> ?y } => { ?y a <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boorder> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#Grondboring> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boorder> ?y } => { ?y a <http://purl.org/dc/terms/Agent> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boorder> ?y } => { ?x <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> ?y  } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boordiameter> ?y } => { ?x a <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Borehole> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boordiameter> ?y } => { ?y a <https://data.vlaanderen.be/ns/grondboringen#Boorgatdiameter> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boormeester> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#Grondboring> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boormeester> ?y } => { ?y a <http://purl.org/dc/terms/Agent> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boormeester> ?y } => { ?x <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> ?y  } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boringLengte> ?y } => { ?x a <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Borehole> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#boringLengte> ?y } => { ?y a <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#dikte> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#Bekistinginterval> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#dikte> ?y } => { ?y a <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#dikte> ?y } => { ?x <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_GeometryValuePair.value> ?y  } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#inclinatietype> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#Boormethode> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#inclinatietype> ?y } => { ?y a <http://www.w3.org/2004/02/skos/core#Concept> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#isResultaatVan> ?y } => { ?x a <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Borehole> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#isResultaatVan> ?y } => { ?y a <https://data.vlaanderen.be/ns/grondboringen#Grondboring> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#isResultaatVan> ?y } => { ?x <http://www.w3.org/ns/sosa/isresultOf> ?y  } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#materiaal> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#Bekistinginterval> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#materiaal> ?y } => { ?y a <http://www.w3.org/2004/02/skos/core#Concept> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#materiaal> ?y } => { ?x <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_GeometryValuePair.value> ?y  } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#resultaat> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#Grondboring> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#resultaat> ?y } => { ?y a <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Borehole> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#resultaat> ?y } => { ?x <http://www.w3.org/ns/sosa/hasResult> ?y  } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#startpunt> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#Boormethode> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#startpunt> ?y } => { ?y a <http://www.w3.org/2004/02/skos/core#Concept> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#wettelijkKaderBoorder> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#WettelijkKaderBoring> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#wettelijkKaderBoorder> ?y } => { ?y a <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Erkenning> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#wettelijkKaderBoring> ?y } => { ?x a <https://data.vlaanderen.be/ns/grondboringen#WettelijkKaderBoring> } .
+{ ?x <https://data.vlaanderen.be/ns/grondboringen#wettelijkKaderBoring> ?y } => { ?y a <https://data.europa.eu/eli/ontology#LegalExpression> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Bekisting> } => { ?x a <http://def.isotc211.org/iso19123/2005/DiscreteCoverages#CV_DiscreteCurveCoverage> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Boorgatdiameter> } => { ?x a <http://def.isotc211.org/iso19123/2005/DiscreteCoverages#CV_DiscreteCurveCoverage> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#BoormethodeInterval> } => { ?x a <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Bekistinginterval> } => { ?x a <http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#WettelijkKaderBoring> } => { ?x a <https://data.vlaanderen.be/ns/generiek#WettelijkKader> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Boormethode> } => { ?x a <http://def.isotc211.org/iso19123/2005/DiscreteCoverages#CV_DiscreteCurveCoverage> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Boormethode> } => { ?x a <http://www.w3.org/ns/sosa/om#SamplingProcedure> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Grondboring> } => { ?x a <http://www.w3.org/ns/sosa/Sampling> } .
+{ ?x a <https://data.vlaanderen.be/ns/grondboringen#Grondboring> } => { ?x a <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Boring> } .
+
+
+
+
+
+
+
+
+
+
+
+
+
+{ ?x a <http://www.w3.org/ns/sosa/om#SamplingProcedure> } => { ?x a <http://def.isotc211.org/iso19156/2011/Specimen#SF_Process> } .
+{ ?x a <http://www.w3.org/ns/sosa/om#SamplingProcedure> } => { ?x a <http://www.w3.org/ns/sosa/Procedure> } .
+
+
+
+
+
+
+
+{ ?x a <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Erkenning> } => { ?x a <https://data.vlaanderen.be/ns/besluit#Besluit> } .
+
+
+
+
+
+{ ?x <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> ?y } => { ?x a <http://www.w3.org/ns/sosa/Sampling> } .
+{ ?x <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> ?y } => { ?y a <http://purl.org/dc/terms/Agent> } .
+
+
+
+

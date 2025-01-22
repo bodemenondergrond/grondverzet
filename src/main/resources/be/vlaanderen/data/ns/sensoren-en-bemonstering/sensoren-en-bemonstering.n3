@@ -1,0 +1,4 @@
+{ ?x <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> ?y } => { ?x a <http://www.w3.org/ns/sosa/Sampling> } .
+{ ?x <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> ?y } => { ?y a <http://purl.org/dc/terms/Agent> } .
+{ ?x <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> ?y } => { ?x a <http://www.w3.org/ns/sosa/Sampling> } .
+{ ?x <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> ?y } => { ?y a <http://purl.org/dc/terms/Agent> } .

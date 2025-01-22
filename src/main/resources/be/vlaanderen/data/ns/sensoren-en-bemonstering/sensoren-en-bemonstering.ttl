@@ -1,0 +1,684 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix geometry: <https://data.omgeving.vlaanderen.be/id/geometry/>.
+@prefix conc_p: <https://data.omgeving.vlaanderen.be/id/concept/procedure/>.
+@prefix juridische_categorie: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/>.
+@prefix ruimtelijke_eenheid: <https://data.omgeving.vlaanderen.be/id/ruimtelijke_eenheid/>.
+@prefix adms: <http://www.w3.org/ns/adms#>.
+@prefix concept: <https://data.omgeving.vlaanderen.be/id/concept/>.
+@prefix dbo: <http://dbpedia.org/ontology/>.
+@prefix eurovoc: <http://eurovoc.europa.eu/>.
+@prefix perceel: <https://data.vlaanderen.be/ns/perceel#>.
+@prefix identificator: <https://data.omgeving.vlaanderen.be/id/identificator/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix locn: <http://www.w3.org/ns/locn#>.
+@prefix omv: <https://data.vlaanderen.be/ns/omgevingsvergunning#>.
+@prefix project: <https://data.omgeving.vlaanderen.be/id/project/>.
+@prefix voorwerp: <https://data.omgeving.vlaanderen.be/id/voorwerp/>.
+@prefix omv_id: <https://data.omgeving.vlaanderen.be/id/concept/identifier/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix inh: <https://data.omgeving.vlaanderen.be/id/inhoud/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix cpsv: <http://purl.org/vocab/cpsv#>.
+@prefix m8g: <http://data.europa.eu/m8g/>.
+@prefix frbr: <http://purl.org/vocab/frbr/core#>.
+@prefix rechtssubject: <https://data.omgeving.vlaanderen.be/id/rechtssubject/>.
+@prefix procedurestap: <https://data.omgeving.vlaanderen.be/id/procedurestap/>.
+@prefix zaakhandeling: <https://data.omgeving.vlaanderen.be/id/zaakhandeling/>.
+@prefix identifier: <https://data.omgeving.vlaanderen.be/id/identifier/>.
+@prefix zaak: <https://data.omgeving.vlaanderen.be/id/zaak/>.
+@prefix crs: <http://www.opengis.net/def/crs/EPSG/0/>.
+@prefix location: <https://data.omgeving.vlaanderen.be/id/location/>.
+@prefix activiteit: <https://data.omgeving.vlaanderen.be/id/activiteit/>.
+@prefix stedenbouwkundig_code: <https://data.omgeving.vlaanderen.be/id/concept/stedenbouwkundig_code/>.
+@prefix handeling_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/handeling_code/>.
+@prefix functie_tobe_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/functie_tobe_code/>.
+@prefix functie_tobe_cascade: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/functie_tobe_cascade/>.
+@prefix voorwerptype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/voorwerptype_code/>.
+@prefix iioa_klasse: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/iioa_klasse/>.
+@prefix actuele_rubriek_klasse: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/actuele_rubriek_klasse/>.
+@prefix actuele_rubriek: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/actuele_rubriek/>.
+@prefix stedenbouwkundigtype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/stedenbouwkundigtype_code/>.
+@prefix terreinobjecttype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/terreinobjecttype_code/>.
+@prefix verkavelingtype_code: <https://data.omgeving.vlaanderen.be/id/concept/juridische_categorie/verkavelingtype_code/>.
+@prefix verkavelingtype_code2: <https://data.omgeving.vlaanderen.be/id/concept/verkavelingtype_code/>.
+@prefix conceptscheme: <https://data.omgeving.vlaanderen.be/id/conceptscheme/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+dc:coverage a rdfs:Class;
+    rdfs:label "Dekking"@nl.
+skos:Concept a rdfs:Class;
+    rdfs:label "Bemonsteringsproceduretype"@nl, "Systeemtype"@nl, "Platformtype"@nl, "Bemonsteringstype"@nl, "Bemonsteringsdoel"@nl, "Observatieproceduretype"@nl, "OutputType"@nl, "InputType"@nl, "Bemonsteraartype"@nl.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.conditie> a owl:ObjectProperty;
+    rdfs:label "conditie"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bv de weersomstandigheden..."@nl;
+    rdfs:comment "Omstandigheden waarin de Bemonstering plaatsvond."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/Sampling>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range <http://def.isotc211.org/iso19156/2011/Observation#NamedValue>.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.doel> a owl:ObjectProperty;
+    rdfs:label "doel"@nl;
+    rdfs:comment "Reden waarom de Bemonstering wordt uitgevoerd."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/Sampling>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range skos:Concept.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.opdracht> a owl:ObjectProperty;
+    rdfs:label "opdracht"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bv de Opdracht voor een veldonderzoek of voor het uitvoeren van specifieke Metingen of analyses van een Monster."@nl;
+    rdfs:comment "Opdracht in het kader waarvan de Bemonstering plaatsvindt."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/Sampling>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht>.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.uitgevoerdDoor> a owl:ObjectProperty;
+    rdfs:label "uitgevoerdDoor"@nl;
+    rdfs:comment "Agent die de Bemonstering heeft uitgevoerd."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/Sampling>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range dct:Agent.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonstering.wettelijkKader> a owl:ObjectProperty;
+    rdfs:label "wettelijkKader"@nl;
+    rdfs:comment "WettelijkKader waarbinnen de Bemonstering plaatsvindt."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/Sampling>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range <https://data.vlaanderen.be/ns/generiek#WettelijkKader>.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteringsprocedure.parameter> a owl:ObjectProperty;
+    rdfs:label "parameter"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bv een parameter die een aspect van de Bemonsteringsprocedure beschrijft (bv de vereiste hoogte bij een luchtopname) of een noodzakelijke omgevingsparameter (bv het waterpeil bij staalname in een boorgat)."@nl;
+    rdfs:comment "Willekeurig gegeven gassocieerd met de Bemonsteringsprocedure."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/om#SamplingProcedure>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range <http://def.isotc211.org/iso19156/2011/Observation#NamedValue>.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteringsprocedure.specificatie> a owl:DatatypeProperty;
+    rdfs:label "specificatie"@nl;
+    rdfs:comment "Verwijzing naar een document dat de Bemonsteringsprocedure beschrijft."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/om#SamplingProcedure>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range xsd:anyURI.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Input.referentie> a owl:DatatypeProperty;
+    rdfs:label "referentie"@nl;
+    rdfs:comment "Verwijzing naar originele Input."@nl;
+    rdfs:domain <http://www.w3.org/ns/ssn/Input>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range xsd:anyURI.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieprocedure.parameter> a owl:ObjectProperty;
+    rdfs:label "parameter"@nl;
+    <http://purl.org/vocab/vann/usageNote> "Bv een parameter die een aspect van de Observatieprocedure beschrijft (bv de vereiste hoogte voor het observeren van windsnelheid) of een noodzakelijke omgevingsparameter (bv temperatuurbereik waarbinnen een labo-analyse moet plaatsvinden)."@nl;
+    rdfs:comment "Willekeurig gegeven gassocieerd met de Observatieprocedure."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/om#ObservationProcedure>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range <http://def.isotc211.org/iso19156/2011/Observation#NamedValue>.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieprocedure.specificatie> a owl:DatatypeProperty;
+    rdfs:label "specificatie"@nl;
+    rdfs:comment "Verwijzing naar een document dat de Observatieprocedure beschrijft."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/om#ObservationProcedure>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range xsd:anyURI.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieverzameling.metadata> a owl:ObjectProperty;
+    rdfs:label "metadata"@nl;
+    rdfs:comment "Metadata die de collectie beschrijft."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/ObservationCollection>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range <http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata>.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieverzameling.parameter> a owl:ObjectProperty;
+    rdfs:label "parameter"@nl;
+    rdfs:comment "Parameter van de Observaties in de collectie."@nl;
+    rdfs:domain <http://www.w3.org/ns/sosa/ObservationCollection>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range <http://def.isotc211.org/iso19156/2011/Observation#NamedValue>.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Output.referentie> a owl:DatatypeProperty;
+    rdfs:label "referentie"@nl;
+    rdfs:comment "Verwijzing naar originele Output."@nl;
+    rdfs:domain <http://www.w3.org/ns/ssn/Output>;
+    rdfs:isDefinedBy <https://data.vlaanderen.be/ns/sensoren-en-bemonstering>;
+    rdfs:range xsd:anyURI.
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> a owl:Ontology;
+    rdfs:label "sensoren-en-bemonstering"@en, "sensoren-en-bemonstering"@nl.
+_:n3-690 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-691 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-690 <http://schema.org/affiliation> _:n3-691;
+    <http://xmlns.com/foaf/0.1/firstName> "Chandra";
+    <http://xmlns.com/foaf/0.1/lastName> "Algoe".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-690.
+_:n3-692 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-693 <http://xmlns.com/foaf/0.1/name> "Universiteit Antwerpen – CurieuzeNeuzen In De Tuin".
+_:n3-692 <http://schema.org/affiliation> _:n3-693;
+    <http://xmlns.com/foaf/0.1/firstName> "Camille";
+    <http://xmlns.com/foaf/0.1/lastName> "Allonsius".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-692.
+_:n3-694 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-695 <http://xmlns.com/foaf/0.1/name> "Canalcnv".
+_:n3-694 <http://schema.org/affiliation> _:n3-695;
+    <http://xmlns.com/foaf/0.1/firstName> "Ilse";
+    <http://xmlns.com/foaf/0.1/lastName> "Baeck".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-694.
+_:n3-696 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-697 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-696 <http://schema.org/affiliation> _:n3-697;
+    <http://xmlns.com/foaf/0.1/firstName> "Simon";
+    <http://xmlns.com/foaf/0.1/lastName> "Baert".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-696.
+_:n3-698 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-699 <http://xmlns.com/foaf/0.1/name> "Grondbank Tracimat".
+_:n3-698 <http://schema.org/affiliation> _:n3-699;
+    <http://xmlns.com/foaf/0.1/firstName> "Christine";
+    <http://xmlns.com/foaf/0.1/lastName> "Berchmans".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-698.
+_:n3-700 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-701 <http://xmlns.com/foaf/0.1/name> "FOD Financiën".
+_:n3-700 <http://schema.org/affiliation> _:n3-701;
+    <http://xmlns.com/foaf/0.1/firstName> "Reinhilde";
+    <http://xmlns.com/foaf/0.1/lastName> "Blondeel".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-700.
+_:n3-702 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-703 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-702 <http://schema.org/affiliation> _:n3-703;
+    <http://xmlns.com/foaf/0.1/firstName> "Sophie";
+    <http://xmlns.com/foaf/0.1/lastName> "Bordere".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-702.
+_:n3-704 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-705 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-704 <http://schema.org/affiliation> _:n3-705;
+    <http://xmlns.com/foaf/0.1/firstName> "Maxim";
+    <http://xmlns.com/foaf/0.1/lastName> "Broos".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-704.
+_:n3-706 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-707 <http://xmlns.com/foaf/0.1/name> "Instituut voor Natuur- en Bosonderzoek".
+_:n3-706 <http://schema.org/affiliation> _:n3-707;
+    <http://xmlns.com/foaf/0.1/firstName> "Nathalie";
+    <http://xmlns.com/foaf/0.1/lastName> "Cools".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-706.
+_:n3-708 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-709 <http://xmlns.com/foaf/0.1/name> "Inagrvzw".
+_:n3-708 <http://schema.org/affiliation> _:n3-709;
+    <http://xmlns.com/foaf/0.1/firstName> "Franky";
+    <http://xmlns.com/foaf/0.1/lastName> "Coopman".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-708.
+_:n3-710 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-711 <http://xmlns.com/foaf/0.1/name> "Aseptic Excellence Partner".
+_:n3-710 <http://schema.org/affiliation> _:n3-711;
+    <http://xmlns.com/foaf/0.1/firstName> "Marnix";
+    <http://xmlns.com/foaf/0.1/lastName> "Coulier".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-710.
+_:n3-712 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-713 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-712 <http://schema.org/affiliation> _:n3-713;
+    <http://xmlns.com/foaf/0.1/firstName> "Patrick";
+    <http://xmlns.com/foaf/0.1/lastName> "De Baets".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-712.
+_:n3-714 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-715 <http://xmlns.com/foaf/0.1/name> "Andere".
+_:n3-714 <http://schema.org/affiliation> _:n3-715;
+    <http://xmlns.com/foaf/0.1/firstName> "Flor";
+    <http://xmlns.com/foaf/0.1/lastName> "De Cock".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-714.
+_:n3-716 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-717 <http://xmlns.com/foaf/0.1/name> "Vlaamse Milieumaatschappij".
+_:n3-716 <http://schema.org/affiliation> _:n3-717;
+    <http://xmlns.com/foaf/0.1/firstName> "Ywan";
+    <http://xmlns.com/foaf/0.1/lastName> "De Jonghe".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-716.
+_:n3-718 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-719 <http://xmlns.com/foaf/0.1/name> "Vlaamste Instelling voor Technologisch Onderzoek (VITO)".
+_:n3-718 <http://schema.org/affiliation> _:n3-719;
+    <http://xmlns.com/foaf/0.1/firstName> "Roel";
+    <http://xmlns.com/foaf/0.1/lastName> "De Koninck".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-718.
+_:n3-720 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-721 <http://xmlns.com/foaf/0.1/name> "Openbare Vlaamse Afvalstoffenmaatschappij".
+_:n3-720 <http://schema.org/affiliation> _:n3-721;
+    <http://xmlns.com/foaf/0.1/firstName> "Sandra";
+    <http://xmlns.com/foaf/0.1/lastName> "De Loore".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-720.
+_:n3-722 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-723 <http://xmlns.com/foaf/0.1/name> "Geosparc".
+_:n3-722 <http://schema.org/affiliation> _:n3-723;
+    <http://xmlns.com/foaf/0.1/firstName> "Berdien";
+    <http://xmlns.com/foaf/0.1/lastName> "De Ro".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-722.
+_:n3-724 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-725 <http://xmlns.com/foaf/0.1/name> "Vlaamse Milieumaatschappij".
+_:n3-724 <http://schema.org/affiliation> _:n3-725;
+    <http://xmlns.com/foaf/0.1/firstName> "Tinneke";
+    <http://xmlns.com/foaf/0.1/lastName> "De Rouck".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-724.
+_:n3-726 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-727 <http://xmlns.com/foaf/0.1/name> "Vrouwen van het Algemeen Boerensyndicaat".
+_:n3-726 <http://schema.org/affiliation> _:n3-727;
+    <http://xmlns.com/foaf/0.1/firstName> "Lieven";
+    <http://xmlns.com/foaf/0.1/lastName> "De Stoppeleire".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-726.
+_:n3-728 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-729 <http://xmlns.com/foaf/0.1/name> "Instituut voor Natuur- en Bosonderzoek".
+_:n3-728 <http://schema.org/affiliation> _:n3-729;
+    <http://xmlns.com/foaf/0.1/firstName> "Aaike";
+    <http://xmlns.com/foaf/0.1/lastName> "De Wever".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-728.
+_:n3-730 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-731 <http://xmlns.com/foaf/0.1/name> "Andere".
+_:n3-730 <http://schema.org/affiliation> _:n3-731;
+    <http://xmlns.com/foaf/0.1/firstName> "Filip";
+    <http://xmlns.com/foaf/0.1/lastName> "Dehaese".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-730.
+_:n3-732 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-733 <http://xmlns.com/foaf/0.1/name> "Andere".
+_:n3-732 <http://schema.org/affiliation> _:n3-733;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Devriese".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-732.
+_:n3-734 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-735 <http://xmlns.com/foaf/0.1/name> "Vlaamste Instelling voor Technologisch Onderzoek (VITO)".
+_:n3-734 <http://schema.org/affiliation> _:n3-735;
+    <http://xmlns.com/foaf/0.1/firstName> "Katrijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Dirix".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-734.
+_:n3-736 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-737 <http://xmlns.com/foaf/0.1/name> "Koninklijk Belgisch Instituut voor Natuurwetenschappen".
+_:n3-736 <http://schema.org/affiliation> _:n3-737;
+    <http://xmlns.com/foaf/0.1/firstName> "Stijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Goolaerts".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-736.
+_:n3-738 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-739 <http://xmlns.com/foaf/0.1/name> "Grondwijzer vzw".
+_:n3-738 <http://schema.org/affiliation> _:n3-739;
+    <http://xmlns.com/foaf/0.1/firstName> "Jente";
+    <http://xmlns.com/foaf/0.1/lastName> "Hanssens".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-738.
+_:n3-740 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-741 <http://xmlns.com/foaf/0.1/name> "Citizens".
+_:n3-740 <http://schema.org/affiliation> _:n3-741;
+    <http://xmlns.com/foaf/0.1/firstName> "Stijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Huyghe".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-740.
+_:n3-742 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-743 <http://xmlns.com/foaf/0.1/name> "Votquenne Foundations & Revyson".
+_:n3-742 <http://schema.org/affiliation> _:n3-743;
+    <http://xmlns.com/foaf/0.1/firstName> "Ludovic";
+    <http://xmlns.com/foaf/0.1/lastName> "Huysentruyt".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-742.
+_:n3-744 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-745 <http://xmlns.com/foaf/0.1/name> "Vrije Universiteit Brussel".
+_:n3-744 <http://schema.org/affiliation> _:n3-745;
+    <http://xmlns.com/foaf/0.1/firstName> "Marijke";
+    <http://xmlns.com/foaf/0.1/lastName> "Huysmans".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-744.
+_:n3-746 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-747 <http://xmlns.com/foaf/0.1/name> "De Watergroep".
+_:n3-746 <http://schema.org/affiliation> _:n3-747;
+    <http://xmlns.com/foaf/0.1/firstName> "Pieter";
+    <http://xmlns.com/foaf/0.1/lastName> "Jan Haest".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-746.
+_:n3-748 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-749 <http://xmlns.com/foaf/0.1/name> "Studiebureau voor Bouwkunde en Expertise (SBE) NV".
+_:n3-748 <http://schema.org/affiliation> _:n3-749;
+    <http://xmlns.com/foaf/0.1/firstName> "Tom";
+    <http://xmlns.com/foaf/0.1/lastName> "Jottier".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-748.
+_:n3-750 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-751 <http://xmlns.com/foaf/0.1/name> "Vlaamse Milieumaatschappij".
+_:n3-750 <http://schema.org/affiliation> _:n3-751;
+    <http://xmlns.com/foaf/0.1/firstName> "Frank";
+    <http://xmlns.com/foaf/0.1/lastName> "Lavens".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-750.
+_:n3-752 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-753 <http://xmlns.com/foaf/0.1/name> "Citizens".
+_:n3-752 <http://schema.org/affiliation> _:n3-753;
+    <http://xmlns.com/foaf/0.1/firstName> "Jan";
+    <http://xmlns.com/foaf/0.1/lastName> "Maertens".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-752.
+_:n3-754 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-755 <http://xmlns.com/foaf/0.1/name> "Vlaamse Milieumaatschappij".
+_:n3-754 <http://schema.org/affiliation> _:n3-755;
+    <http://xmlns.com/foaf/0.1/firstName> "Willem";
+    <http://xmlns.com/foaf/0.1/lastName> "Maetens".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-754.
+_:n3-756 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-757 <http://xmlns.com/foaf/0.1/name> "Stad Gent".
+_:n3-756 <http://schema.org/affiliation> _:n3-757;
+    <http://xmlns.com/foaf/0.1/firstName> "Pieter";
+    <http://xmlns.com/foaf/0.1/lastName> "Nieuwlaet".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-756.
+_:n3-758 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-759 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-758 <http://schema.org/affiliation> _:n3-759;
+    <http://xmlns.com/foaf/0.1/firstName> "Jeroen";
+    <http://xmlns.com/foaf/0.1/lastName> "Nyckees".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-758.
+_:n3-760 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-761 <http://xmlns.com/foaf/0.1/name> "Openbare Vlaamse Afvalstoffenmaatschappij".
+_:n3-760 <http://schema.org/affiliation> _:n3-761;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Nys".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-760.
+_:n3-762 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-763 <http://xmlns.com/foaf/0.1/name> "GEBO".
+_:n3-762 <http://schema.org/affiliation> _:n3-763;
+    <http://xmlns.com/foaf/0.1/firstName> "Olivier";
+    <http://xmlns.com/foaf/0.1/lastName> "Olyslaegers".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-762.
+_:n3-764 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-765 <http://xmlns.com/foaf/0.1/name> "GeSolutions".
+_:n3-764 <http://schema.org/affiliation> _:n3-765;
+    <http://xmlns.com/foaf/0.1/firstName> "Killian";
+    <http://xmlns.com/foaf/0.1/lastName> "Paenen".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-764.
+_:n3-766 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-767 <http://xmlns.com/foaf/0.1/name> "Putboringen Van Deynse NV".
+_:n3-766 <http://schema.org/affiliation> _:n3-767;
+    <http://xmlns.com/foaf/0.1/firstName> "Nadia";
+    <http://xmlns.com/foaf/0.1/lastName> "Paridaen".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-766.
+_:n3-768 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-769 <http://xmlns.com/foaf/0.1/name> "Koninklijk Belgisch Instituut voor Natuurwetenschappen".
+_:n3-768 <http://schema.org/affiliation> _:n3-769;
+    <http://xmlns.com/foaf/0.1/firstName> "Kris";
+    <http://xmlns.com/foaf/0.1/lastName> "Piessens".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-768.
+_:n3-770 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-771 <http://xmlns.com/foaf/0.1/name> "Agentschap Onroerend Erfgoed".
+_:n3-770 <http://schema.org/affiliation> _:n3-771;
+    <http://xmlns.com/foaf/0.1/firstName> "Marnix";
+    <http://xmlns.com/foaf/0.1/lastName> "Pieters".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-770.
+_:n3-772 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-773 <http://xmlns.com/foaf/0.1/name> "Bodemkundige Dienst van België".
+_:n3-772 <http://schema.org/affiliation> _:n3-773;
+    <http://xmlns.com/foaf/0.1/firstName> "Michaël";
+    <http://xmlns.com/foaf/0.1/lastName> "Rens".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-772.
+_:n3-774 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-775 <http://xmlns.com/foaf/0.1/name> "Bodemkundige Dienst van België vzw".
+_:n3-774 <http://schema.org/affiliation> _:n3-775;
+    <http://xmlns.com/foaf/0.1/firstName> "Sofie";
+    <http://xmlns.com/foaf/0.1/lastName> "Reynaert".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-774.
+_:n3-776 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-777 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-776 <http://schema.org/affiliation> _:n3-777;
+    <http://xmlns.com/foaf/0.1/firstName> "Liesbeth";
+    <http://xmlns.com/foaf/0.1/lastName> "Rombouts".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-776.
+_:n3-778 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-779 <http://xmlns.com/foaf/0.1/name> "Vlaamse Landmaatschappij".
+_:n3-778 <http://schema.org/affiliation> _:n3-779;
+    <http://xmlns.com/foaf/0.1/firstName> "Elisabeth";
+    <http://xmlns.com/foaf/0.1/lastName> "Rutten".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-778.
+_:n3-780 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-781 <http://xmlns.com/foaf/0.1/name> "Instituut voor Landbouw- Visserij- en Voedingsonderzoek".
+_:n3-780 <http://schema.org/affiliation> _:n3-781;
+    <http://xmlns.com/foaf/0.1/firstName> "Greet";
+    <http://xmlns.com/foaf/0.1/lastName> "Ruysschaert".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-780.
+_:n3-782 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-783 <http://xmlns.com/foaf/0.1/name> "Colas Noord NV".
+_:n3-782 <http://schema.org/affiliation> _:n3-783;
+    <http://xmlns.com/foaf/0.1/firstName> "Stijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Scheepers".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-782.
+_:n3-784 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-785 <http://xmlns.com/foaf/0.1/name> "Citizens".
+_:n3-784 <http://schema.org/affiliation> _:n3-785;
+    <http://xmlns.com/foaf/0.1/firstName> "Piet";
+    <http://xmlns.com/foaf/0.1/lastName> "Seuntjens".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-784.
+_:n3-786 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-787 <http://xmlns.com/foaf/0.1/name> "Openbare Vlaamse Afvalstoffenmaatschappij".
+_:n3-786 <http://schema.org/affiliation> _:n3-787;
+    <http://xmlns.com/foaf/0.1/firstName> "Erwin";
+    <http://xmlns.com/foaf/0.1/lastName> "Sevens".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-786.
+_:n3-788 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-789 <http://xmlns.com/foaf/0.1/name> "Vlaamste Instelling voor Technologisch Onderzoek (VITO)".
+_:n3-788 <http://schema.org/affiliation> _:n3-789;
+    <http://xmlns.com/foaf/0.1/firstName> "Frank";
+    <http://xmlns.com/foaf/0.1/lastName> "Sleeuwaert".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-788.
+_:n3-790 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-791 <http://xmlns.com/foaf/0.1/name> "Openbare Vlaamse Afvalstoffenmaatschappij".
+_:n3-790 <http://schema.org/affiliation> _:n3-791;
+    <http://xmlns.com/foaf/0.1/firstName> "Koen";
+    <http://xmlns.com/foaf/0.1/lastName> "Smeets".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-790.
+_:n3-792 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-793 <http://xmlns.com/foaf/0.1/name> "Tractebel – International Marine and Dredging Consultants".
+_:n3-792 <http://schema.org/affiliation> _:n3-793;
+    <http://xmlns.com/foaf/0.1/firstName> "Raf";
+    <http://xmlns.com/foaf/0.1/lastName> "Somers".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-792.
+_:n3-794 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-795 <http://xmlns.com/foaf/0.1/name> "Universiteit Gent".
+_:n3-794 <http://schema.org/affiliation> _:n3-795;
+    <http://xmlns.com/foaf/0.1/firstName> "Bruno";
+    <http://xmlns.com/foaf/0.1/lastName> "Stuyts".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-794.
+_:n3-796 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-797 <http://xmlns.com/foaf/0.1/name> "AC partners".
+_:n3-796 <http://schema.org/affiliation> _:n3-797;
+    <http://xmlns.com/foaf/0.1/firstName> "Joris";
+    <http://xmlns.com/foaf/0.1/lastName> "Synaeve".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-796.
+_:n3-798 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-799 <http://xmlns.com/foaf/0.1/name> "Grondwijzer VZW".
+_:n3-798 <http://schema.org/affiliation> _:n3-799;
+    <http://xmlns.com/foaf/0.1/firstName> "Geerts";
+    <http://xmlns.com/foaf/0.1/lastName> "Timothy".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-798.
+_:n3-800 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-801 <http://xmlns.com/foaf/0.1/name> "Fluves – pydov".
+_:n3-800 <http://schema.org/affiliation> _:n3-801;
+    <http://xmlns.com/foaf/0.1/firstName> "Johan";
+    <http://xmlns.com/foaf/0.1/lastName> "Van De Wauw".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-800.
+_:n3-802 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-803 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-802 <http://schema.org/affiliation> _:n3-803;
+    <http://xmlns.com/foaf/0.1/firstName> "Tom";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Gulck".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-802.
+_:n3-804 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-805 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-804 <http://schema.org/affiliation> _:n3-805;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Haute".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-804.
+_:n3-806 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-807 <http://xmlns.com/foaf/0.1/name> "Vanhecke NV".
+_:n3-806 <http://schema.org/affiliation> _:n3-807;
+    <http://xmlns.com/foaf/0.1/firstName> "Naten";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Hemelrijck".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-806.
+_:n3-808 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-809 <http://xmlns.com/foaf/0.1/name> "Universiteit Antwerpen – CurieuzeNeuzen In De Tuin".
+_:n3-808 <http://schema.org/affiliation> _:n3-809;
+    <http://xmlns.com/foaf/0.1/firstName> "Stijn";
+    <http://xmlns.com/foaf/0.1/lastName> "Van de Vondel".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-808.
+_:n3-810 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-811 <http://xmlns.com/foaf/0.1/name> "Boerenbond".
+_:n3-810 <http://schema.org/affiliation> _:n3-811;
+    <http://xmlns.com/foaf/0.1/firstName> "Caroline";
+    <http://xmlns.com/foaf/0.1/lastName> "Van der Heyden".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-810.
+_:n3-812 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-813 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-812 <http://schema.org/affiliation> _:n3-813;
+    <http://xmlns.com/foaf/0.1/firstName> "Jan";
+    <http://xmlns.com/foaf/0.1/lastName> "Vangestel".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-812.
+_:n3-814 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-815 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-814 <http://schema.org/affiliation> _:n3-815;
+    <http://xmlns.com/foaf/0.1/firstName> "Davy";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanhoudt".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-814.
+_:n3-816 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-817 <http://xmlns.com/foaf/0.1/name> "Smet GWT Europe".
+_:n3-816 <http://schema.org/affiliation> _:n3-817;
+    <http://xmlns.com/foaf/0.1/firstName> "Joris";
+    <http://xmlns.com/foaf/0.1/lastName> "Vermeer".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-816.
+_:n3-818 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-819 <http://xmlns.com/foaf/0.1/name> "Agentschap Wegen en Verkeer".
+_:n3-818 <http://schema.org/affiliation> _:n3-819;
+    <http://xmlns.com/foaf/0.1/firstName> "Gert";
+    <http://xmlns.com/foaf/0.1/lastName> "Vermeersch".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-818.
+_:n3-820 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-821 <http://xmlns.com/foaf/0.1/name> "VZW Grondbank".
+_:n3-820 <http://schema.org/affiliation> _:n3-821;
+    <http://xmlns.com/foaf/0.1/firstName> "Elisa";
+    <http://xmlns.com/foaf/0.1/lastName> "Vermeulen".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-820.
+_:n3-822 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-823 <http://xmlns.com/foaf/0.1/name> "Andere".
+_:n3-822 <http://schema.org/affiliation> _:n3-823;
+    <http://xmlns.com/foaf/0.1/firstName> "Peter";
+    <http://xmlns.com/foaf/0.1/lastName> "Verspecht".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-822.
+_:n3-824 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-825 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken".
+_:n3-824 <http://schema.org/affiliation> _:n3-825;
+    <http://xmlns.com/foaf/0.1/firstName> "Wouter";
+    <http://xmlns.com/foaf/0.1/lastName> "Vervaele".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-824.
+_:n3-826 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-827 <http://xmlns.com/foaf/0.1/name> "Departement Mobiliteit en Openbare Werken (Geotechniek)".
+_:n3-826 <http://schema.org/affiliation> _:n3-827;
+    <http://xmlns.com/foaf/0.1/firstName> "Leen";
+    <http://xmlns.com/foaf/0.1/lastName> "Vincke".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-826.
+_:n3-828 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-829 <http://xmlns.com/foaf/0.1/name> "Instituur voor Natuur- en Bosonderzoek".
+_:n3-828 <http://schema.org/affiliation> _:n3-829;
+    <http://xmlns.com/foaf/0.1/firstName> "Mathias";
+    <http://xmlns.com/foaf/0.1/lastName> "Wackenier".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-828.
+_:n3-830 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-831 <http://xmlns.com/foaf/0.1/name> "Koninklijk Belgisch Instituur voor Natuurwetenschappen – Belgische Geologische Dienst".
+_:n3-830 <http://schema.org/affiliation> _:n3-831;
+    <http://xmlns.com/foaf/0.1/firstName> "Jan";
+    <http://xmlns.com/foaf/0.1/lastName> "Walstra".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-830.
+_:n3-832 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-833 <http://xmlns.com/foaf/0.1/name> "Algemeen Boerensyndicaat".
+_:n3-832 <http://schema.org/affiliation> _:n3-833;
+    <http://xmlns.com/foaf/0.1/firstName> "Mark";
+    <http://xmlns.com/foaf/0.1/lastName> "Wulfrancke".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:contributor _:n3-832;
+    dct:issued "TODO";
+    dct:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0", <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>.
+_:n3-834 <http://xmlns.com/foaf/0.1/homepage> <https://data.vlaanderen.be>;
+    <http://xmlns.com/foaf/0.1/mbox> <mailto:oslo@kb.vlaanderen.be>;
+    <http://xmlns.com/foaf/0.1/name> "Data Vlaanderen".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> dct:mediator _:n3-834;
+    rdfs:seeAlso dc:coverage, skos:Concept.
+_:n3-835 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-836 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-835 <http://schema.org/affiliation> _:n3-836;
+    <http://xmlns.com/foaf/0.1/firstName> "Veerle";
+    <http://xmlns.com/foaf/0.1/lastName> "Beyaert".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-835.
+_:n3-837 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-838 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-837 <http://schema.org/affiliation> _:n3-838;
+    <http://xmlns.com/foaf/0.1/firstName> "Raf";
+    <http://xmlns.com/foaf/0.1/lastName> "Buyle".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-837.
+_:n3-839 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-840 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-839 <http://schema.org/affiliation> _:n3-840;
+    <http://xmlns.com/foaf/0.1/firstName> "Dimitri";
+    <http://xmlns.com/foaf/0.1/lastName> "Schepers".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-839.
+_:n3-841 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-842 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-841 <http://schema.org/affiliation> _:n3-842;
+    <http://xmlns.com/foaf/0.1/firstName> "Geert";
+    <http://xmlns.com/foaf/0.1/lastName> "Thijs".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-841.
+_:n3-843 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-844 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-843 <http://schema.org/affiliation> _:n3-844;
+    <http://xmlns.com/foaf/0.1/firstName> "Anthony";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Heymbeeck".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-843.
+_:n3-845 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-846 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-845 <http://schema.org/affiliation> _:n3-846;
+    <http://xmlns.com/foaf/0.1/firstName> "Dwight";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Lancker".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-845.
+_:n3-847 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-848 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-847 <http://schema.org/affiliation> _:n3-848;
+    <http://xmlns.com/foaf/0.1/firstName> "Martin";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanbrabant".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-847.
+_:n3-849 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-850 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-849 <http://schema.org/affiliation> _:n3-850;
+    <http://xmlns.com/foaf/0.1/firstName> "Ziggy";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanlishout".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-849.
+_:n3-851 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-852 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-851 <http://schema.org/affiliation> _:n3-852;
+    <http://xmlns.com/foaf/0.1/firstName> "Laurens";
+    <http://xmlns.com/foaf/0.1/lastName> "Vercauteren".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-851.
+_:n3-853 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-854 <http://xmlns.com/foaf/0.1/name> "Digitaal Vaanderen".
+_:n3-853 <http://schema.org/affiliation> _:n3-854;
+    <http://xmlns.com/foaf/0.1/firstName> "Eveline";
+    <http://xmlns.com/foaf/0.1/lastName> "Vlassenroot".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://www.w3.org/2001/02pd/rec54#editor> _:n3-853.
+_:n3-855 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-856 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-855 <http://schema.org/affiliation> _:n3-856;
+    <http://xmlns.com/foaf/0.1/firstName> "Sabine";
+    <http://xmlns.com/foaf/0.1/lastName> "Buyle".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://xmlns.com/foaf/0.1/maker> _:n3-855.
+_:n3-857 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-858 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-857 <http://schema.org/affiliation> _:n3-858;
+    <http://xmlns.com/foaf/0.1/firstName> "Katrien";
+    <http://xmlns.com/foaf/0.1/lastName> "De Nil".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://xmlns.com/foaf/0.1/maker> _:n3-857.
+_:n3-859 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-860 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-859 <http://schema.org/affiliation> _:n3-860;
+    <http://xmlns.com/foaf/0.1/firstName> "Petra";
+    <http://xmlns.com/foaf/0.1/lastName> "Deproost".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://xmlns.com/foaf/0.1/maker> _:n3-859.
+_:n3-861 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-862 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-861 <http://schema.org/affiliation> _:n3-862;
+    <http://xmlns.com/foaf/0.1/firstName> "Katrien";
+    <http://xmlns.com/foaf/0.1/lastName> "Oorts".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://xmlns.com/foaf/0.1/maker> _:n3-861.
+_:n3-863 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-864 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-863 <http://schema.org/affiliation> _:n3-864;
+    <http://xmlns.com/foaf/0.1/firstName> "Frieke";
+    <http://xmlns.com/foaf/0.1/lastName> "Segers".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://xmlns.com/foaf/0.1/maker> _:n3-863.
+_:n3-865 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-866 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-865 <http://schema.org/affiliation> _:n3-866;
+    <http://xmlns.com/foaf/0.1/firstName> "Marleen";
+    <http://xmlns.com/foaf/0.1/lastName> "Van Damme".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://xmlns.com/foaf/0.1/maker> _:n3-865.
+_:n3-867 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-868 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-867 <http://schema.org/affiliation> _:n3-868;
+    <http://xmlns.com/foaf/0.1/firstName> "Veerle";
+    <http://xmlns.com/foaf/0.1/lastName> "Vanwesenbeeck".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://xmlns.com/foaf/0.1/maker> _:n3-867.
+_:n3-869 a <http://xmlns.com/foaf/0.1/Person>.
+_:n3-870 <http://xmlns.com/foaf/0.1/name> "Departement Omgeving".
+_:n3-869 <http://schema.org/affiliation> _:n3-870;
+    <http://xmlns.com/foaf/0.1/firstName> "Jasper";
+    <http://xmlns.com/foaf/0.1/lastName> "Verhaegen".
+<https://data.vlaanderen.be/ns/sensoren-en-bemonstering> <http://xmlns.com/foaf/0.1/maker> _:n3-869.

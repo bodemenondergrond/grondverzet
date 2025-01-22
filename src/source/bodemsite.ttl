@@ -184,25 +184,25 @@ bl:bodemsite2011-000247-2 a   bodemenondergrond:Bijlage ;
 
 
 ### Alternatief, gelijkaardig aan opdracht
-bodemsite:2011-000247 a dossier:Stuk ;
-    prov:wasAttributedTo                agent:agent001 ; # auteur in de DOV-fiche.
-    prov:qualifiedAttribution           attribution:agent001_bodemsite2011-000247 ;
-    dcterms:relation                    opdracht:2021-040177, opdracht:2022-040175 ; # gekoppelde opdrachten: fictief voorbeeld hier.
-    dcterms:date                        "2011-06-14"^^xsd:date ; # Waarnemingsdatum
-    dcterms:created                     "2011-06-14"^^xsd:date ; # Invoerdatum (fictief in dit voorbeeld)
-    prov:value                          "bos"@nl ; # beschrijving van de bodemsite
-    rdfs:label                          "bos"@nl ; # beschrijving van de bodemsite
-    dossier:beschrijft                  location:bodemsite2011-000247 ; # de locatie van de bodemsite.
-    dcterms:title                       "Watermaal-Bosvoorde_Zoniënwoud"@nl . # Naam bodemsite
+# bodemsite:2011-000247 a dossier:Stuk ;
+#    prov:wasAttributedTo                agent:agent001 ; # auteur in de DOV-fiche.
+#    prov:qualifiedAttribution           attribution:agent001_bodemsite2011-000247 ;
+#    dcterms:relation                    opdracht:2021-040177, opdracht:2022-040175 ; # gekoppelde opdrachten: fictief voorbeeld hier.
+#    dcterms:date                        "2011-06-14"^^xsd:date ; # Waarnemingsdatum
+#    dcterms:created                     "2011-06-14"^^xsd:date ; # Invoerdatum (fictief in dit voorbeeld)
+#    prov:value                          "bos"@nl ; # beschrijving van de bodemsite
+#    rdfs:label                          "bos"@nl ; # beschrijving van de bodemsite
+#    dossier:beschrijft                  location:bodemsite2011-000247 ; # de locatie van de bodemsite.
+#    dcterms:title                       "Watermaal-Bosvoorde_Zoniënwoud"@nl . # Naam bodemsite
 
-agent:agent001 a prov:Agent . # auteur
+#agent:agent001 a prov:Agent . # auteur
 
-attribution:agent001_bodemsite2011-000247 a prov:Attribution ;
-    prov:hadRole cl-rol:auteur ; 
-    prov:agent agent:agent001 .
+#attribution:agent001_bodemsite2011-000247 a prov:Attribution ;
+#    prov:hadRole cl-rol:auteur ; 
+#    prov:agent agent:agent001 .
 
-cl-rol:auteur a prov:Role .
+#cl-rol:auteur a prov:Role .
 
 
-location:bodemsite2011-000247 a prov:Location ;
-    geosparql:asWKT "POLYGON ((4.50 51.22, 4.6 51.20, 4.6 51.18, 4.50 51.22)"^^geosparql:wktLiteral . # fictieve geometrie van de bodemsite
+#location:bodemsite2011-000247 a prov:Location ;
+#    geosparql:asWKT "POLYGON ((4.50 51.22, 4.6 51.20, 4.6 51.18, 4.50 51.22)"^^geosparql:wktLiteral . # fictieve geometrie van de bodemsite
