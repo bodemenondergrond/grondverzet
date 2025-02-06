@@ -4,6 +4,14 @@
             "@id": "adms:identifier",
             "@type": "@id"
         },
+        "id": {
+            "@id": "@id",
+            "@type": "@id"
+        },
+        "type": {
+            "@id": "@type",
+            "@type": "@id"
+        },
         "qualifiedAssociation": {
             "@id": "prov:qualifiedAssociation",
             "@type": "@id"
@@ -228,7 +236,7 @@
         "grondboringen": "https://data.vlaanderen.be/ns/grondboringen#",
         "grondobject": "https://data.bodemenondergrond.vlaanderen.be/id/grondobject/",
         "hel": "https://data.bodemenondergrond.vlaanderen.be/id/helling/",
-        "id": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
+        "_id": "https://data.bodemenondergrond.vlaanderen.be/id/identificator/",
         "incl": "https://data.bodemenondergrond.vlaanderen.be/id/inclinatie/",
         "list": "https://data.bodemenondergrond.vlaanderen.be/id/list/",
         "moment": "https://data.bodemenondergrond.vlaanderen.be/id/moment/",
@@ -259,111 +267,111 @@
     },
     "@graph": [
         {
-            "@id": "bl:boring1965-068140_1",
-            "@type": "grondboringbeno:Bijlage",
+            "id": "bl:boring1965-068140_1",
+            "type": "grondboringbeno:Bijlage",
             "dcterms:creator": {
-                "@id": "ag:agent001",
-                "@type": "prov:Agent",
+                "id": "ag:agent001",
+                "type": "prov:Agent",
                 "actedOnBehalfOf": {
-                    "@id": "ag:agent003",
-                    "@type": "prov:Agent"
+                    "id": "ag:agent003",
+                    "type": "prov:Agent"
                 }
             },
             "date": "2010-01-05",
             "seeAlso": "https://www.dov.vlaanderen.be/proeven-ocdov/proxy/bestand/11801/inhoud",
             "about": {
-                "@id": "boring:1965-068140",
-                "@type": "grondboringen:Grondboring",
-                "identifier": "id:boring1965-068140",
+                "id": "boring:1965-068140",
+                "type": "grondboringen:Grondboring",
+                "identifier": "_id:boring1965-068140",
                 "qualifiedAssociation": [
                     "ass:association001",
                     "ass:association002",
                     "ass:association003"
                 ],
                 "wasStartedBy": {
-                    "@id": "opdracht:2007-005512",
-                    "@type": "boe:Opdracht",
+                    "id": "opdracht:2007-005512",
+                    "type": "boe:Opdracht",
                     "wasAttributedTo": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
+                        "id": "ag:agent003",
+                        "type": "prov:Agent"
                     }
                 },
                 "resultTime": "1965-01-01T00:00:00.000",
                 "actuations": "list:1965-068140-act1",
                 "opdrachtgever": {
-                    "@id": "ag:agent003",
-                    "@type": "prov:Agent"
+                    "id": "ag:agent003",
+                    "type": "prov:Agent"
                 },
                 "samplings": "list:1965-068140-sam1",
                 "boorder": {
-                    "@id": "ag:agent001",
-                    "@type": "prov:Agent",
+                    "id": "ag:agent001",
+                    "type": "prov:Agent",
                     "actedOnBehalfOf": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
+                        "id": "ag:agent003",
+                        "type": "prov:Agent"
                     }
                 },
                 "boormeester": {
-                    "@id": "ag:agent002",
-                    "@type": "prov:Agent",
+                    "id": "ag:agent002",
+                    "type": "prov:Agent",
                     "actedOnBehalfOf": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
+                        "id": "ag:agent003",
+                        "type": "prov:Agent"
                     }
                 }
             }
         },
         {
-            "@id": "bl:boring1965-068140_2",
-            "@type": "grondboringbeno:Bijlage",
+            "id": "bl:boring1965-068140_2",
+            "type": "grondboringbeno:Bijlage",
             "dcterms:creator": {
-                "@id": "ag:agent001",
-                "@type": "prov:Agent",
+                "id": "ag:agent001",
+                "type": "prov:Agent",
                 "actedOnBehalfOf": {
-                    "@id": "ag:agent003",
-                    "@type": "prov:Agent"
+                    "id": "ag:agent003",
+                    "type": "prov:Agent"
                 }
             },
             "date": "2010-01-07",
             "seeAlso": "https://www.dov.vlaanderen.be/proeven-ocdov/proxy/bestand/10795/inhoud",
             "about": {
-                "@id": "boring:1965-068140",
-                "@type": "grondboringen:Grondboring",
-                "identifier": "id:boring1965-068140",
+                "id": "boring:1965-068140",
+                "type": "grondboringen:Grondboring",
+                "identifier": "_id:boring1965-068140",
                 "qualifiedAssociation": [
                     "ass:association001",
                     "ass:association002",
                     "ass:association003"
                 ],
                 "wasStartedBy": {
-                    "@id": "opdracht:2007-005512",
-                    "@type": "boe:Opdracht",
+                    "id": "opdracht:2007-005512",
+                    "type": "boe:Opdracht",
                     "wasAttributedTo": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
+                        "id": "ag:agent003",
+                        "type": "prov:Agent"
                     }
                 },
                 "resultTime": "1965-01-01T00:00:00.000",
                 "actuations": "list:1965-068140-act1",
                 "opdrachtgever": {
-                    "@id": "ag:agent003",
-                    "@type": "prov:Agent"
+                    "id": "ag:agent003",
+                    "type": "prov:Agent"
                 },
                 "samplings": "list:1965-068140-sam1",
                 "boorder": {
-                    "@id": "ag:agent001",
-                    "@type": "prov:Agent",
+                    "id": "ag:agent001",
+                    "type": "prov:Agent",
                     "actedOnBehalfOf": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
+                        "id": "ag:agent003",
+                        "type": "prov:Agent"
                     }
                 },
                 "boormeester": {
-                    "@id": "ag:agent002",
-                    "@type": "prov:Agent",
+                    "id": "ag:agent002",
+                    "type": "prov:Agent",
                     "actedOnBehalfOf": {
-                        "@id": "ag:agent003",
-                        "@type": "prov:Agent"
+                        "id": "ag:agent003",
+                        "type": "prov:Agent"
                     }
                 }
             }
