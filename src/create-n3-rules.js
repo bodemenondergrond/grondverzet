@@ -36,6 +36,19 @@ function subproperty_rule(property, superproperty){
     return '{ ?x <' + property + '> ?y } => { ?x <' + superproperty + '> ?y  } .'
 }
 
+function inverseOf_rule(property, inverse_property){
+    return '{ ?x <' + property + '> ?y } => { ?y <' + inverse_property + '> ?x  } .\n{ ?x <' + inverse_property + '> ?y } => { ?y <' + property + '> ?x  } .'
+}
+
+function transitivity_rule(property){
+    return '{ ?x <' + property + '> ?y .  ?y <' + property + '> ?z  } => { ?x <' + property + '> ?z  } .'
+}
+
+function symmetry_rule(property){
+    return '{ ?x <' + property + '> ?y } => { ?y <' + property + '> ?x  } .'
+}
+
+
 function paden(url){
     const domain = url.split('/')[2].split('.').reverse().join('/');
     let pad = ''
@@ -79,7 +92,7 @@ async function deref(_url, uri, regexp_uri, regexp_ns, regexp_url, domain,  pad,
                    }
                }                ;
                 if (quad.predicate.id === "http://www.w3.org/2000/01/rdf-schema#range") {
-                    if (!regexp_langString.test(quad.object.id) && !regexp_XMLSchema.test(quad.object.id) && !regexp_Literal.test(quad.object.id)) {
+                    if (quad.object.termType !== 'BlankNode' && regexp_langString.test(quad.object.id) && !regexp_XMLSchema.test(quad.object.id) && !regexp_Literal.test(quad.object.id)) {
                         rule_array.push(range_rule(quad.subject.id, quad.object.id))
                         if (!regexp_uri.test(quad.object.id)) {
                             objects.push(quad.object.id)
@@ -87,7 +100,7 @@ async function deref(_url, uri, regexp_uri, regexp_ns, regexp_url, domain,  pad,
                     }
                     ;
                 } else if (quad.predicate.value === "http://www.w3.org/2000/01/rdf-schema#range") {
-                    if (!regexp_langString.test(quad.object.value) && !regexp_XMLSchema.test(quad.object.value ) && !regexp_Literal.test(quad.object.value)) {
+                    if (quad.object.termType !== 'BlankNode' && !regexp_langString.test(quad.object.value) && !regexp_XMLSchema.test(quad.object.value ) && !regexp_Literal.test(quad.object.value)) {
                         rule_array.push(range_rule(quad.subject.value, quad.object.value))
                         if (!regexp_uri.test(quad.object.value)) {
                             objects.push(quad.object.value)
@@ -126,6 +139,46 @@ async function deref(_url, uri, regexp_uri, regexp_ns, regexp_url, domain,  pad,
                    }
                    ;
                }
+               if (quad.predicate.id === "http://www.w3.org/2002/07/owl#inverseOf") {
+                   rule_array.push(inverseOf_rule(quad.subject.id, quad.object.id))
+                   if (!regexp_uri.test(quad.object.id)) {
+                       objects.push(quad.object.id)
+                   }
+                   ;
+               }else if (quad.predicate.value === "http://www.w3.org/2002/07/owl#inverseOf") {
+                   rule_array.push(inverseOf_rule(quad.subject.value, quad.object.value))
+                   if (!regexp_uri.test(quad.object.value)) {
+                       objects.push(quad.object.value)
+                   }
+                   ;
+               }
+               if (quad.object.id === "http://www.w3.org/2002/07/owl#TransitiveProperty") {
+                   rule_array.push(transitivity_rule(quad.subject.id))
+                   if (!regexp_uri.test(quad.object.id)) {
+                       objects.push(quad.object.id)
+                   }
+                   ;
+               }else if (quad.object.value === "http://www.w3.org/2002/07/owl#TransitiveProperty") {
+                   rule_array.push(transitivity_rule(quad.subject.value))
+                   if (!regexp_uri.test(quad.object.value)) {
+                       objects.push(quad.object.value)
+                   }
+                   ;
+               }
+               if (quad.object.id === "http://www.w3.org/2002/07/owl#SymmetricProperty") {
+                   rule_array.push(symmetry_rule(quad.subject.id))
+                   if (!regexp_uri.test(quad.object.id)) {
+                       objects.push(quad.object.id)
+                   }
+                   ;
+               }else if (quad.object.value === "http://www.w3.org/2002/07/owl#SymmetricProperty") {
+                   rule_array.push(symmetry_rule(quad.subject.value))
+                   if (!regexp_uri.test(quad.object.value)) {
+                       objects.push(quad.object.value)
+                   }
+                   ;
+               }
+
 
           }
         })
@@ -166,5 +219,6 @@ async function iterate(uris) {
 }
 //const my_url = 'http://purl.org/dc/terms/FileFormat'
 //const my_url = 'http://xmlns.com/foaf/0.1/homepage'
-const my_url = 'https://data.vlaanderen.be/ns/grondboringen'
+//const my_url = 'https://data.vlaanderen.be/ns/grondboringen'
+const my_url = 'http://www.w3.org/2004/02/skos/core'
 iterate([my_url])
